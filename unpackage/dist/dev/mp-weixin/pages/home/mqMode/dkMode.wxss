@@ -1,0 +1,9 @@
+
+input{
+	text-align: right;
+}
+.switch-Text{
+	width: 50%;
+	text-align: right;
+}
+

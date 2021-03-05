@@ -1,0 +1,255 @@
+<template xlang="wxml" minapp="mpvue">
+	<view>
+		<cu-custom bgColor="bg-gradual-blue" :isBack="true">
+			<block slot="backText">返回</block>
+			<block slot="content">二维码</block>
+		</cu-custom>
+		<view class="tki-qrcode">
+			<!-- #ifndef MP-ALIPAY -->
+			<canvas class="tki-qrcode-canvas" :canvas-id="cid" :style="{width:cpSize+'px',height:cpSize+'px'}" />
+			<!-- #endif -->
+			<!-- #ifdef MP-ALIPAY -->
+			<canvas :id="cid" :width="cpSize" :height="cpSize" class="tki-qrcode-canvas" />
+			<!-- #endif -->
+			<image v-show="show" :src="result" :style="{width:cpSize+'px',height:cpSize+'px'}" />
+		</view>
+		
+		<view class="padding flex flex-direction margin-top-xl" @click="loadMake()">
+			<button class="cu-btn bg-grey lg">生成专属二维码</button>
+		</view>
+	</view>
+	
+</template>
+
+<script>
+import QRCode from "./qrcode.js"
+let qrcode
+export default {
+	name: "tki-qrcode",
+	props: {
+		cid: {
+			type: String,
+			default: 'tki-qrcode-canvas'
+		},
+		size: {
+			type: Number,
+			default: 200
+		},
+		unit: {
+			type: String,
+			default: 'upx'
+		},
+		show: {
+			type: Boolean,
+			default: true
+		},
+		val: {
+			type: String,
+			default: '这里填写需要被扫描出的内容即可'
+		},
+		background: {
+			type: String,
+			default: '#ffffff'
+		},
+		foreground: {
+			type: String,
+			default: '#000000'
+		},
+		pdground: {
+			type: String,
+			default: '#000000'
+		},
+		icon: {
+			type: String,
+			default: ''
+		},
+		iconSize: {
+			type: Number,
+			default: 40
+		},
+		lv: {
+			type: Number,
+			default: 3
+		},
+		onval: {
+			type: Boolean,
+			default: false
+		},
+		loadMake: {
+			type: Boolean,
+			default: true,
+		},
+		usingComponents: {
+			type: Boolean,
+			default: true
+		},
+		showLoading: {
+			type: Boolean,
+			default: true
+		},
+		loadingText: {
+			type: String,
+			default: '二维码生成中'
+		},
+	},
+	data() {
+		return {
+			result: '',
+		}
+	},
+	onLoad:function(){
+		console.log("tki-qrcode onload")
+		if (this.loadMake) {
+			if (!this._empty(this.val)) {
+				setTimeout(() => {
+					this._makeCode()
+				}, 0);
+			}
+		}
+	},
+	methods: {
+		shaoma(){
+			// 调起条码扫描
+			uni.scanCode({
+				//scanType: ['barCode'],
+				success: function (res) {
+					console.log("扫码结果："+JSON.stringify(res));
+					console.log('条码类型：' + res.scanType);
+					console.log('条码内容：' + res.result);
+				}
+			});	
+		},
+		_makeCode() {
+			let that = this
+			if (!this._empty(this.val)) {
+			
+				qrcode = new QRCode({
+					context: that, // 上下文环境
+					canvasId:that.cid, // canvas-id
+					usingComponents: that.usingComponents, // 是否是自定义组件
+					showLoading: that.showLoading, // 是否显示loading
+					loadingText: that.loadingText, // loading文字
+					text: that.val, // 生成内容
+					size: that.cpSize, // 二维码大小
+					background: that.background, // 背景色
+					foreground: that.foreground, // 前景色
+					pdground: that.pdground, // 定位角点颜色
+					correctLevel: that.lv, // 容错级别
+					image: that.icon, // 二维码图标
+					imageSize: that.iconSize,// 二维码图标大小
+					cbResult: function (res) { // 生成二维码的回调
+						that._result(res)
+					},
+				});
+			} else {
+				uni.showToast({
+					title: '二维码内容不能为空',
+					icon: 'none',
+					duration: 2000
+				});
+			}
+		},
+		_clearCode() {
+			this._result('')
+			qrcode.clear()
+		},
+		_saveCode() {
+			console.log("_saveCode");
+			let that = this;
+			if (this.result != "") {
+				uni.saveImageToPhotosAlbum({
+					filePath: that.result,
+					success: function () {
+						uni.showToast({
+							title: '二维码保存成功',
+							icon: 'success',
+							duration: 2000
+						});
+						uni.setStorage({
+							key: 'my_qrcode',
+							data: that.result,
+							success: function () {
+								console.log('my_qrcode success');
+							}
+						});
+					}
+				});
+			}
+		},
+		_result(res) {
+			this.result = res;
+			this._saveCode();
+			
+			this.$emit('result', res)
+		},
+		_empty(v) {
+			let tp = typeof v,
+				rt = false;
+			if (tp == "number" && String(v) == "") {
+				rt = true
+			} else if (tp == "undefined") {
+				rt = true
+			} else if (tp == "object") {
+				if (JSON.stringify(v) == "{}" || JSON.stringify(v) == "[]" || v == null) rt = true
+			} else if (tp == "string") {
+				if (v == "" || v == "undefined" || v == "null" || v == "{}" || v == "[]") rt = true
+			} else if (tp == "function") {
+				rt = false
+			}
+			return rt
+		}
+	},
+	watch: {
+		size: function (n, o) {
+			if (n != o && !this._empty(n)) {
+				this.cSize = n
+				if (!this._empty(this.val)) {
+					setTimeout(() => {
+						this._makeCode()
+					}, 100);
+				}
+			}
+		},
+		val: function (n, o) {
+			if (this.onval) {
+				if (n != o && !this._empty(n)) {
+					setTimeout(() => {
+						this._makeCode()
+					}, 0);
+				}
+			}
+		}
+	},
+	computed: {
+		cpSize() {
+			// if(this.unit == "upx"){
+			// 	return uni.upx2px(this.size)
+			// }else{
+			// 	return this.size
+			// }
+			var size=0;
+			uni.getSystemInfo({
+			    success: function (res) {
+					console.log("systeminfo:"+JSON.stringify(res));
+					size = res.windowWidth - 80;
+					
+			    }
+			});
+			return size;
+		}
+	},
+	
+}
+</script>
+<style>
+.tki-qrcode {
+  position: relative;
+  margin:40px;
+}
+.tki-qrcode-canvas {
+  position: fixed;
+  top: -99999upx;
+  left: -99999upx;
+  z-index: -99999;
+}
+</style>

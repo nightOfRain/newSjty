@@ -1,0 +1,1 @@
+input{text-align:right}input:-ms-input-placeholder{color:red}input::-webkit-input-placeholder{color:red}input::-moz-placeholder{color:red}input:-moz-placeholder{color:red}.switch-Text{width:50%;text-align:right}

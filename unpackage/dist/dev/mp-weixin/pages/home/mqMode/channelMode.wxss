@@ -1,0 +1,24 @@
+
+input{
+	text-align: right;
+}
+input:-ms-input-placeholder {
+    color: red;
+}
+/* Internet Explorer 10+ */
+input::-webkit-input-placeholder {
+    color: red;
+}
+/* WebKit browsers */
+input::-moz-placeholder {
+    color: red;
+}
+/* Mozilla Firefox 4 to 18 */
+input:-moz-placeholder {
+    color: red;
+}
+.switch-Text{
+	width: 50%;
+	text-align: right;
+}
+
