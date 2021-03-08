@@ -212,8 +212,8 @@
 				var data={}
 				data.HandlerType="GetReportInfo";
 
-				 data.City = _this.places[1].replace("市","");
-				 data.Area = _this.places[2].replace("区","");
+				data.City = _this.places[1].replace("市","");
+				data.Area = _this.places[2].replace("区","");
 				//data.City = '';
 				//data.Area = '';
 				data.Token = _this.hftoken;
