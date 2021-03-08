@@ -175,7 +175,7 @@
 					color: 'olive',
 					badge: 0,
 					name: '洪房评估',
-					url:'',
+					url:'/pages/query/hfcx',
 					isShow:true,
 					id:'14',
 				}],
