@@ -4,9 +4,6 @@
 		{
 			"path": "pages/index/home",
 			"style": {}
-		},{
-			"path": "pages/index/index",
-			"style": {}
 		},
 		{
 			"path": "pages/home/mqlists",
@@ -57,141 +54,9 @@
 			"style": {}
 		},
 		{
-			"path": "pages/basics/layout",
+			"path": "pages/home/allthings",
 			"style": {}
-		},
-		{
-			"path": "pages/basics/background",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/text",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/icon",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/button",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/design",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/tag",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/avatar",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/progress",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/shadow",
-			"style": {}
-		},
-		{
-			"path": "pages/basics/loading",
-			"style": {}
-		},
-		{
-			"path": "pages/component/bar",
-			"style": {}
-		},
-		{
-			"path": "pages/component/nav",
-			"style": {}
-		},
-		{
-			"path": "pages/component/list",
-			"style": {}
-		},
-		{
-			"path": "pages/component/card",
-			"style": {}
-		},
-		{
-			"path": "pages/component/form",
-			"style": {}
-		},
-		{
-			"path": "pages/component/timeline",
-			"style": {}
-		},
-		{
-			"path": "pages/component/chat",
-			"style": {}
-		},
-		{
-			"path": "pages/component/swiper",
-			"style": {}
-		},
-		{
-			"path": "pages/component/modal",
-			"style": {}
-		},
-		{
-			"path": "pages/component/steps",
-			"style": {}
-		}, {
-			"path": "pages/plugin/indexes",
-			"style": {}
-		}, {
-			"path": "pages/plugin/animation",
-			"style": {}
-		}, {
-			"path": "pages/plugin/drawer",
-			"style": {}
-		}, {
-			"path": "pages/plugin/verticalnav",
-			"style": {}
-		}, {
-			"path": "pages/plugin/canvas",
-			"style": {}
-		}, {
-			"path": "pages/plugin/tki-qrcode",
-			"style": {}
-		},{
-			"path": "pages/plugin/myCharts",
-			"style": {}
-		},{
-			"path": "pages/plugin/myVideo",
-			"style": {}
-		},{
-			"path": "pages/login/login",
-			"style": {}
-		}, {
-			"path": "pages/login/forget",
-			"style": {}
-		}, {
-			"path": "pages/login/register",
-			"style": {}
-		},{
-			"path": "pages/me/HMPersonalCenter",
-			"style": {}
-		},{
-            "path" : "pages/query/ajQuery/ajQuery",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        },{
-            "path" : "pages/query/tjQuery/tjQuery",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
+		}
         ,{
             "path" : "pages/me/maps/maps",
             "style" :                                                                                    
@@ -203,15 +68,6 @@
         }
         ,{
             "path" : "pages/undo/flow_notes/flow_notes",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/query/yjpm",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
@@ -238,20 +94,19 @@
             
         }
         ,{
-            "path" : "pages/query/cwcx",
+            "path" : "pages/add/index",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
             
-        }
-        ,{
-            "path" : "pages/query/hfcx",
+        },{
+            "path" : "pages/undo/home",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": true
             }
             
         }

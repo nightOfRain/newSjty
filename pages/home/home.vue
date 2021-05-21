@@ -1,65 +1,69 @@
 <template>
 	<view>
+		<cu-custom bgColor="bg-clean" :isBack="false">
+			<block slot="backText"></block>
+			<block slot="content">问题跟踪</block>
+		</cu-custom>
+		
+		 <view class="bg-img  flex align-center" style="background-image: url('/static/images/title.png');height:340px;margin-top:-64px;">
+			<view class="margin-sm bg-white radius shadow" style="width: 100%;margin-top:50px;">
+				<view class="flex p-xs mb-sm text-center">
+					<view class="flex-sub margin" hover-class="hover-class" style="border-right: solid 1rpx #f1f1f1;" @click="queryBynum(0)">总数量：{{counts[0]}}</view>
+					<view class="flex-sub margin" hover-class="hover-class" style="border-right: solid 1rpx #f1f1f1;;" @click="queryBynum(1)">已解决：{{counts[1]}}</view>
+					<view class="flex-sub margin" hover-class="hover-class" style="border-right: solid 1rpx #f1f1f1;;" @click="queryBynum(2)">待处理：{{counts[2]}}</view>
+				</view>
+			</view>
+		 </view>
+			
 
-		<!-- 	<image src="https://cdn.nlark.com/yuque/0/2019/png/280374/1552996358228-assets/web-upload/e256b4ce-d9a4-488b-8da2-032747213982.png"
-			 mode="widthFix" class="response"></image> -->
-			 
-			 <view class="bg-img bg-mask flex align-center" style="background-image: url('https://cdn.nlark.com/yuque/0/2019/png/280374/1552996358228-assets/web-upload/e256b4ce-d9a4-488b-8da2-032747213982.png');height: 414upx;">
-			 	<view class="padding-xl text-white">
-			 		<view class="padding-xs text-xxl text-bold">
-			 			钢铁之翼
-			 		</view>
-			 		<view class="padding-xs text-lg">
-			 			Only the guilty need fear me.
-			 		</view>
-			 	</view>
-			 </view>
-			<view class="cu-bar bg-white solid-bottom margin-top">
-				<view class="action">
-					<text class="cuIcon-title text-orange "></text> 菜单列表
-				</view>
-				
+		<view class="padding flex flex-direction" v-if="!loginStat" @click="loginApp">
+			<button class="cu-btn bg-grey lg">请先登录</button>
+		</view>
+	<!-- 	<view class="cu-bar bg-white solid-bottom" style="margin-top:-100px" v-if="loginStat">
+			<view class="action">
+				<text class="cuIcon-title text-orange "></text> 消息列表
 			</view>
-			<view class="cu-list grid" :class="['col-' + gridCol,gridBorder?'':'no-border']">
-				<view class="cu-item"   v-for="(item,index) in cuIconNewList" :key="index" v-if="item.isShow">
-					<view @click="naviTo" :data-url="item.url" hover-class="hover-class">						
-						<view :class="['cuIcon-' + item.cuIcon,'text-' + item.color]">
-							<view class="cu-tag badge" v-if="item.badge!=0">
-								<block v-if="item.badge!=1">{{item.badge>99?'99+':item.badge}}</block>
-							</view>
-						</view>
-						<text>{{item.name}}</text>						
+		</view> -->
+		<view class="cu-bar bg-white solid-bottom" style="margin-top:-100px;padding-right:20upx;" v-if="loginStat">
+			<view class="action"><text class="cuIcon-title text-orange "></text>消息列表</view>
+			<radio-group @change="SetType">
+				<label class="margin-left-sm">
+					<radio class="blue radio" value="0" checked></radio>
+					<text class="margin-left-sm">问题</text>
+				</label>
+				<label class="margin-left-sm">
+					<radio class="blue radio" value="1" ></radio>
+					<text class="margin-left-sm">事项</text>
+				</label>
+			</radio-group>
+		</view>
+		<view class="cu-list menu-avatar" style="padding-bottom: 120upx;" v-if="loginStat">
+			<block  v-for="(item,index) in msgList" :key="index">
+				<view class="cu-item cur"   @click="queryByFileno" :data-fileno="item.id">
+					<view class="cu-avatar radius lg" :style="'background-image:url(../../static/images/icon'+((index+1)%4+1)+'.png);'">
+						<!-- <view class="cu-tag badge"></view> -->
 					</view>
-				</view>
-			</view>
-
-			<view class="padding flex flex-direction" v-if="!loginStat" @click="loginApp">
-				<button class="cu-btn bg-grey lg">请先登录</button>
-			</view>
-			<view class="cu-bar bg-white solid-bottom margin-top" v-if="loginStat">
-				<view class="action">
-					<text class="cuIcon-title text-orange "></text> 消息列表
-				</view>
-			</view>
-			<view class="cu-list menu-avatar" style="padding-bottom: 120upx;" v-if="loginStat">
-				<view class="cu-item cur"  v-for="(item,index) in msgList" :key="index" @click="queryByFileno" :data-fileno="item.fileNo">
-					<view class="cu-avatar radius lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81020.jpg);">
-						<view class="cu-tag badge"></view>
-					</view>
-					<view class="content">
+					<view class="content" hover-class="hover-class">
 						<view>
-							<view class="text-cut">{{item.jkrXm}}-{{item.flowName}}</view>
-							<view class="cu-tag round bg-orange sm">{{getLoanName(item.loanType)}}</view>
+							<view class="text-cut">{{item.title}}</view>
+							<view class="cu-tag round  sm" :class="item.flow == 1?'bg-orange':'bg-blue'">{{flowName[item.flow]}}</view>
 						</view>
 						<view class="text-gray text-sm flex">
-							<view class="text-cut"> {{item.note}}.<text class="cuIcon-locationfill text-orange margin-right-xs"></text>{{item.bankName}}</view></view>
+							<view class="text-cut"> {{item.deptName}}.<text class="cuIcon-peoplefill  margin-right-xs" :class="item.flow == 1?'text-orange':'text-blue'"></text>经办人：{{item.jbr}}</view></view>
 					</view>
-					<view class="action">
-						<view class="text-grey text-xs">{{doneTimeStr(item.dynamicTime)}}</view>
-						<view class="cuIcon-notice_forbid_fill text-gray"></view>
+					<view class="action" >
+						<view class="text-grey text-xs">{{doneTimeStr(item.startDate)}}</view>
+						<view :class="item.flow==1?'cuIcon-questionfill text-orange':'cuIcon-roundcheckfill text-blue'"></view>
 					</view>
 				</view>
+			</block>
+			<view class="padding-xl bg-white text-center" v-if="msgList.length==0">
+				目前还没有问题或事项提交
 			</view>
+			<view class="padding-xl bg-white text-center" v-if="msgList.length>9">
+				<view class="text-blue" style="text-decoration: underline;" @click="queryBynum(0)">更多</view>
+			</view>
+		</view>
 		
 		
 	</view>
@@ -71,115 +75,9 @@
 	export default {
 		data() {
 			return {
-				cuIconNewList:[],
-				cuIconList: [{
-					cuIcon: 'cardboardfill',
-					color: 'red',
-					badge: 0,
-					name: '贷款面签',
-					url:'/pages/home/mqlists',
-					isShow:false,
-					id:'1',
-				}, {
-					cuIcon: 'recordfill', 
-					color: 'orange',
-					badge: 0,
-					name: '案卷查询',
-					url:'/pages/query/ajQuery/ajQuery',
-					isShow:false,
-					id:'2',
-				}, {
-					cuIcon: 'picfill',
-					color: 'yellow',
-					badge: 0,
-					name: '案卷统计',
-					url:'',
-					isShow:false,
-					id:'6',
-				}, {
-					cuIcon: 'noticefill',
-					color: 'olive',
-					badge: 0,
-					name: '案卷评价',
-					url:'',
-					isShow:false,
-					id:'3',
-				}, {
-					cuIcon: 'upstagefill',
-					color: 'cyan',
-					badge: 0,
-					name: '财务查询',
-					url:'/pages/query/cwcx',
-					isShow:false,
-					id:'5',
-				}, {
-					cuIcon: 'clothesfill',
-					color: 'blue',
-					badge: 0,
-					name: '业绩排名',
-					url:'/pages/query/yjpm',
-					isShow:false,
-					id:'4',
-					},
-				// }, {
-				// 	cuIcon: 'discoverfill',
-				// 	color: 'purple',
-				// 	badge: 0,
-				// 	name: '提成排名',
-				// 	url:'',
-				// 	isShow:false,
-				// 	id:'7',
-				// }, {
-				// 	cuIcon: 'questionfill',
-				// 	color: 'mauve',
-				// 	badge: 0,
-				// 	name: '还款计划',
-				// 	url:'',
-				// 	isShow:false,
-				// 	id:'8',
-				// }, {
-				// 	cuIcon: 'commandfill',
-				// 	color: 'purple',
-				// 	badge: 0,
-				// 	name: '公司排名',
-				// 	url:'',
-				// 	isShow:false,
-				// 	id:'9',
-				// }, {
-				// 	cuIcon: 'brandfill',
-				// 	color: 'mauve',
-				// 	badge: 0,
-				// 	name: '交行状态',
-				// 	url:'',
-				// 	isShow:false,
-				// 	id:'10',
-				// }, {
-					{
-					cuIcon: 'brandfill',
-					color: 'mauve',
-					badge: 0,
-					name: 'LPR计算',
-					url:'/pages/me/calculator',
-					isShow:true,
-					id:'13',
-				}, {
-					cuIcon: 'brandfill',
-					color: 'yellow',
-					badge: 0,
-					name: '税费计算',
-					url:'',
-					isShow:true,
-					id:'12',
-				}, {
-					cuIcon: 'samefill',
-					color: 'olive',
-					badge: 0,
-					name: '洪房评估',
-					url:'/pages/query/hfcx',
-					isShow:true,
-					id:'14',
-				}],
 				msgList:[],
+				flowName:['已提交','正在处理','已完成'],
+				counts:[96,78,18],
 				modalName: null,
 				gridCol: 5,
 				gridBorder: false,
@@ -187,78 +85,28 @@
 				menuArrow: false,
 				menuCard: false,
 				skin: false,
-				loginStat: false,
+				loginStat: true,
 				listTouchStart: 0,
 				listTouchDirection: null,
+				type:'0'
 			};
 			
 		},
 		
 		methods: {
-			showModal(e) {
-				this.modalName = e.currentTarget.dataset.target
-			},
-			hideModal(e) {
-				this.modalName = null
-			},
-			Gridchange(e) {
-				this.gridCol = e.detail.value
-			},
-			Gridswitch(e) {
-				this.gridBorder = e.detail.value
-			},
-			MenuBorder(e) {
-				this.menuBorder = e.detail.value
-			},
-			MenuArrow(e) {
-				this.menuArrow = e.detail.value
-			},
-			MenuCard(e) {
-				this.menuCard = e.detail.value
-			},
-			naviTo(e) {
-				var url = e.currentTarget.dataset.url;
-				if(utils.isEmpty(url)){
-					uni.showToast({
-						title:"该模块暂未开放",
-						duration:2000
-					});
-					return;
-				}
-				uni.navigateTo({
-					url:url
-				})
-			},
 
-			// ListTouch触摸开始
-			ListTouchStart(e) {
-				this.listTouchStart = e.touches[0].pageX
-			},
-
-			// ListTouch计算方向
-			ListTouchMove(e) {
-				this.listTouchDirection = e.touches[0].pageX - this.listTouchStart > 0 ? 'right' : 'left'
-			},
-
-			// ListTouch计算滚动
-			ListTouchEnd(e) {
-				if (this.listTouchDirection == 'left') {
-					this.modalName = e.currentTarget.dataset.target
-				} else {
-					this.modalName = null
-				}
-				this.listTouchDirection = null
+			SetType:function(e){
+				this.type = e.detail.value;
+				this.initPages();
 			},
 			doneTimeStr(timeStr){
 				return utils.get_time_str(timeStr);
 			},
-			getLoanName(ids){
-				return utils.getLoanName(ids);
-			},
+	
 			queryByFileno:function(e){
 				console.log("queryByFileno:"+JSON.stringify(e));
 				uni.navigateTo({
-					url:'/pages/undo/flow_done?fileNo='+e.currentTarget.dataset.fileno
+					url:'/pages/undo/flow-timeline'
 				})
 			},
 			updated(){
@@ -272,47 +120,28 @@
 				})
 			},
 			initPages:function(){
-				var _this = this;
+				
 				console.log("HOME==========initPages:"+this.loginStat);
-				var userInfo = uni.getStorageSync("userInfo");
-				_this.loginStat = userInfo.loginStat;
-				if(_this.loginStat){
-					_this.accessToken = userInfo.accessToken;
-									
-					var appMenuList = uni.getStorageSync("appMenuList");
+			
+	
+				var _this = this;
+				//初始化页面消息
+				var data = {};
+				data.userId = '15071177366';
+				data.type = _this.type;
+			
+				_this.commRequest('/app/getMsgList', data, function(res){
+					console.log("/app/getMsgList success in home:"+res);
 					
-					var tmpMune = _this.cuIconList;
-					var outMune = [];
-					//初始化菜单
-					for(var i = 0; i < appMenuList.length; i++){
-						var tmpItem = tmpMune.filter((item)=>{
-							return item.id == appMenuList[i].id
-						});
-						
-						if(tmpItem.length>0){
-							tmpItem[0].isShow = true;
-							console.log(i+":tmpItem: " + JSON.stringify(tmpItem));
-						}							
-					}
-					
-					_this.cuIconNewList = tmpMune.filter((item)=>{
-						return item.isShow == true;
-					});
-					var _this = this;
-					//初始化页面消息
-					var data = {};
-					data.userId = userInfo.userId;
-					data.type = 0;
-					data.pages = 1;
-					data.number = 20;
-					_this.commRequest('6017', data, function(res){
-						console.log("6017 success in home:"+res);
-						
-						_this.msgList = res.responseData.unDoFileDynamicList;
-					});
-				}else{
-					_this.cuIconNewList = _this.cuIconList;
-				}
+					_this.msgList = res.list;
+				});
+				
+			},
+			queryBynum:function(index){
+				var _this = this;
+				uni.navigateTo({
+					url:'/pages/home/allthings?index='+index+'&type='+_this.type
+				})
 			}
 		},
 		mounted(){
@@ -320,11 +149,19 @@
 			
 			var _this = this;
 			
-			
-				
-			_this.initPages();	
+			_this.initPages();
+			// var userInfo = uni.getStorageSync("userInfo");
+			// _this.loginStat = userInfo.loginStat;
+			// if(_this.loginStat){
+			// 	_this.accessToken = userInfo.accessToken;
+			// 	_this.initPages();	
+			// }
 	
-			
+			// uni.request({
+			// 	url:'/app/login',
+			// }).then(res =>{
+			// 	console.log("/app/login recv:" + JSON.stringify(res));
+			// })
 			
 			uni.$on('update', this.updated);
 		}

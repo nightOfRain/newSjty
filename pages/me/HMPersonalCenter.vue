@@ -55,10 +55,10 @@
 				loginStat:false,
 				orderTypeLise:[
 					//name-标题 icon-图标 badge-角标
-					{name:'待付款',icon:'l1.png',badge:1},
-					{name:'待发货',icon:'l2.png',badge:2},
-					{name:'待收货',icon:'l3.png',badge:6},
-					{name:'待评价',icon:'l4.png',badge:9},
+					{name:'待付款',icon:'l1.png',badge:0},
+					{name:'待发货',icon:'l2.png',badge:0},
+					{name:'待收货',icon:'l3.png',badge:0},
+					{name:'待评价',icon:'l4.png',badge:0},
 					{name:'退换货',icon:'l5.png',badge:0}
 				],
 				severList:[
@@ -66,7 +66,7 @@
 						{name:'地图',icon:'point.png',url:'/pages/me/maps/maps'},
 						{name:'专属二维码',icon:'quan.png',url:'/pages/plugin/tki-qrcode'},
 						{name:'海报',icon:'momey.png',url:'/pages/plugin/canvas'},
-						{name:'我的视频',icon:'renw.png',url:'/pages/plugin/myVideo'},
+						//{name:'我的视频',icon:'renw.png',url:'/pages/plugin/myVideo'},
 					],
 					[
 						{name:'图表展示',icon:'mingxi.png',url:'/pages/plugin/myCharts'},

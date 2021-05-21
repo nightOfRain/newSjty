@@ -1,5 +1,5 @@
 {
-    "name" : "房易通",
+    "name" : "综合办公",
     "appid" : "__UNI__BED4E04",
     "description" : "一款用于提高办公效率，完善业务流程的应用软件",
     "versionName" : "1.0.3",
@@ -114,11 +114,14 @@
             "splashscreen" : {
                 "androidStyle" : "default",
                 "android" : {
-                    "hdpi" : "/Users/wenjieliu/Downloads/1611816376778.png",
-                    "xhdpi" : "/Users/wenjieliu/Downloads/1611816376778.png",
-                    "xxhdpi" : "/Users/wenjieliu/Downloads/1611816376778.png"
+                    "hdpi" : "C:/Users/刘文杰/Desktop/bj.png",
+                    "xhdpi" : "C:/Users/刘文杰/Desktop/bj.png",
+                    "xxhdpi" : "C:/Users/刘文杰/Desktop/bj.png"
                 }
             }
+        },
+        "compatible" : {
+            "ignoreVersion" : true //true表示忽略版本检查提示框，HBuilderX1.9.0及以上版本支持  
         }
     },
     /* SDK配置 */

@@ -22,21 +22,21 @@
 			<input placeholder="我的二维码" disabled=true></input>
 			<text class='cuIcon-right text-black'></text>
 		</view>
-		<view class="cu-form-group" @click="canvasTap">
+<!-- 		<view class="cu-form-group" @click="canvasTap">
 			<view class="title">海报</view>
 			<input placeholder="专属海报" disabled=true></input>
 			<text class='cuIcon-right text-black'></text>
-		</view>
+		</view> -->
 		<view class="cu-form-group  margin-top">
 			<view class="title">入职时间</view>
 			<input placeholder="三字标题" :value="entryTime" disabled=true></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">当前状态</view>
-			<input placeholder="三字标题" :value="userStat[statIndex]" disabled=true></input>
+			<view class="title">所属支行</view>
+			<input placeholder="三字标题" :value="dept" disabled=true></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">所属机构</view>
+			<view class="title">所属部门</view>
 			<input placeholder="三字标题" :value="userGroupName" disabled=true></input>
 		</view>
 		<view class="cu-form-group">
@@ -71,15 +71,16 @@
 	export default {
 		data() {
 			return {
-				userName:'',
-				userTel:'',
+				userName:'张三',
+				userTel:'176****123',
 				userStat:["试用","正式","请假","离职"],
 				statIndex:0,
-				entryTime:'',
-				pos:'',
-				userGroupName:'',
+				entryTime:'2018-09-28',
+				pos:'个贷客户经理',
+				userGroupName:'XX部门',
+				dept:'XX支行',
 				imgList:[],
-				faceIcon:'',
+				faceIcon:'/static/images/me.png',
 				userImage:'',
 			}
 		},
@@ -139,20 +140,7 @@
 			//userInfo = JSON.parse(userInfo);
 			userInfo = userInfo.sysUserDetailRelate;
 			console.log("onLoad userInfo:"+JSON.stringify(userInfo));
-			this.userName = userInfo.userName;
-			this.userTel = userInfo.userTel;
-			this.statIndex = userInfo.userStatus;
-			this.entryTime = userInfo.entryTime;
-			this.userGroupName = userInfo.userGroupEntity.userGroupName;
-			var pos = '';
-			for(var i = 0; i < userInfo.userPostList.length; i++){
-				if(i == (userInfo.userPostList.length-1)){
-					pos += userInfo.userPostList[i].postName;
-				}else{
-					pos += userInfo.userPostList[i].postName+'-';
-				}
-			}
-			this.pos = pos;
+		
 		}
 	}
 </script>

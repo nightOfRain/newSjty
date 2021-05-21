@@ -1,8 +1,0 @@
-
-.cu-list.menu-avatar>.cu-item .content {
-	position: absolute;
-	left: 146rpx;
-	width: calc(100% - 96rpx );
-	line-height: 1.6em;
-}
-

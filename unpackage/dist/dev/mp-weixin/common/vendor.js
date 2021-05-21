@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.createApp = createApp;exports.createComponent = createComponent;exports.createPage = createPage;exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}
+Object.defineProperty(exports, "__esModule", { value: true });exports.createApp = createApp;exports.createComponent = createComponent;exports.createPage = createPage;exports.createPlugin = createPlugin;exports.createSubpackageApp = createSubpackageApp;exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}
 
 var _toString = Object.prototype.toString;
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -241,7 +241,7 @@ var promiseInterceptor = {
 
 
 var SYNC_API_RE =
-/^\$|sendNativeEvent|restoreGlobal|getCurrentSubNVue|getMenuButtonBoundingClientRect|^report|interceptors|Interceptor$|getSubNVueById|requireNativePlugin|upx2px|hideKeyboard|canIUse|^create|Sync$|Manager$|base64ToArrayBuffer|arrayBufferToBase64/;
+/^\$|Window$|WindowStyle$|sendNativeEvent|restoreGlobal|getCurrentSubNVue|getMenuButtonBoundingClientRect|^report|interceptors|Interceptor$|getSubNVueById|requireNativePlugin|upx2px|hideKeyboard|canIUse|^create|Sync$|Manager$|base64ToArrayBuffer|arrayBufferToBase64/;
 
 var CONTEXT_API_RE = /^create|Manager$/;
 
@@ -432,7 +432,19 @@ var previewImage = {
   } };
 
 
-// import navigateTo from 'uni-helpers/navigate-to'
+var UUID_KEY = '__DC_STAT_UUID';
+var deviceId;
+function addUuid(result) {
+  deviceId = deviceId || wx.getStorageSync(UUID_KEY);
+  if (!deviceId) {
+    deviceId = Date.now() + '' + Math.floor(Math.random() * 1e7);
+    wx.setStorage({
+      key: UUID_KEY,
+      data: deviceId });
+
+  }
+  result.deviceId = deviceId;
+}
 
 function addSafeAreaInsets(result) {
   if (result.safeArea) {
@@ -445,16 +457,22 @@ function addSafeAreaInsets(result) {
 
   }
 }
+
+var getSystemInfo = {
+  returnValue: function returnValue(result) {
+    addUuid(result);
+    addSafeAreaInsets(result);
+  } };
+
+
+// import navigateTo from 'uni-helpers/navigate-to'
+
 var protocols = {
   redirectTo: redirectTo,
   // navigateTo,  // 由于在微信开发者工具的页面参数，会显示__id__参数，因此暂时关闭mp-weixin对于navigateTo的AOP
   previewImage: previewImage,
-  getSystemInfo: {
-    returnValue: addSafeAreaInsets },
-
-  getSystemInfoSync: {
-    returnValue: addSafeAreaInsets } };
-
+  getSystemInfo: getSystemInfo,
+  getSystemInfoSync: getSystemInfo };
 
 var todos = [
 'vibrate',
@@ -485,7 +503,7 @@ function processArgs(methodName, fromArgs) {var argsOption = arguments.length > 
           keyOption = keyOption(fromArgs[key], fromArgs, toArgs);
         }
         if (!keyOption) {// 不支持的参数
-          console.warn("\u5FAE\u4FE1\u5C0F\u7A0B\u5E8F ".concat(methodName, "\u6682\u4E0D\u652F\u6301").concat(key));
+          console.warn("The '".concat(methodName, "' method of platform '\u5FAE\u4FE1\u5C0F\u7A0B\u5E8F' does not support option '").concat(key, "'"));
         } else if (isStr(keyOption)) {// 重写参数 key
           toArgs[keyOption] = fromArgs[key];
         } else if (isPlainObject(keyOption)) {// {name:newName,value:value}可重新指定参数 key:value
@@ -520,7 +538,7 @@ function wrapper(methodName, method) {
     var protocol = protocols[methodName];
     if (!protocol) {// 暂不支持的 api
       return function () {
-        console.error("\u5FAE\u4FE1\u5C0F\u7A0B\u5E8F \u6682\u4E0D\u652F\u6301".concat(methodName));
+        console.error("Platform '\u5FAE\u4FE1\u5C0F\u7A0B\u5E8F' does not support '".concat(methodName, "'."));
       };
     }
     return function (arg1, arg2) {// 目前 api 最多两个参数
@@ -567,7 +585,7 @@ function createTodoApi(name) {
 
   {var fail = _ref.fail,complete = _ref.complete;
     var res = {
-      errMsg: "".concat(name, ":fail:\u6682\u4E0D\u652F\u6301 ").concat(name, " \u65B9\u6CD5") };
+      errMsg: "".concat(name, ":fail method '").concat(name, "' not supported") };
 
     isFn(fail) && fail(res);
     isFn(complete) && complete(res);
@@ -601,7 +619,7 @@ function getProvider(_ref2)
     isFn(success) && success(res);
   } else {
     res = {
-      errMsg: 'getProvider:fail:服务[' + service + ']不存在' };
+      errMsg: 'getProvider:fail service not found' };
 
     isFn(fail) && fail(res);
   }
@@ -663,7 +681,7 @@ var customize = cached(function (str) {
 
 function initTriggerEvent(mpInstance) {
   {
-    if (!wx.canIUse('nextTick')) {
+    if (!wx.canIUse || !wx.canIUse('nextTick')) {
       return;
     }
   }
@@ -686,16 +704,19 @@ function initHook(name, options) {
     };
   }
 }
+if (!MPPage.__$wrappered) {
+  MPPage.__$wrappered = true;
+  Page = function Page() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    initHook('onLoad', options);
+    return MPPage(options);
+  };
+  Page.after = MPPage.after;
 
-Page = function Page() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  initHook('onLoad', options);
-  return MPPage(options);
-};
-
-Component = function Component() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  initHook('created', options);
-  return MPComponent(options);
-};
+  Component = function Component() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    initHook('created', options);
+    return MPComponent(options);
+  };
+}
 
 var PAGE_EVENT_HOOKS = [
 'onPullDownRefresh',
@@ -801,7 +822,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"交易通","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"综合办公","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -1214,9 +1235,13 @@ function handleEvent(event) {var _this = this;
           isCustom,
           methodName);
 
+          params = Array.isArray(params) ? params : [];
           // 参数尾部增加原始事件对象用于复杂表达式内获取额外数据
-          // eslint-disable-next-line no-sparse-arrays
-          ret.push(handler.apply(handlerCtx, (Array.isArray(params) ? params : []).concat([,,,,,,,,,, event])));
+          if (/=\s*\S+\.eventParams\s*\|\|\s*\S+\[['"]event-params['"]\]/.test(handler.toString())) {
+            // eslint-disable-next-line no-sparse-arrays
+            params = params.concat([,,,,,,,,,, event]);
+          }
+          ret.push(handler.apply(handlerCtx, params));
         }
       });
     }
@@ -1231,6 +1256,19 @@ function handleEvent(event) {var _this = this;
   }
 }
 
+var eventChannels = {};
+
+var eventChannelStack = [];
+
+function getEventChannel(id) {
+  if (id) {
+    var eventChannel = eventChannels[id];
+    delete eventChannels[id];
+    return eventChannel;
+  }
+  return eventChannelStack.shift();
+}
+
 var hooks = [
 'onShow',
 'onHide',
@@ -1240,10 +1278,80 @@ var hooks = [
 'onUnhandledRejection'];
 
 
+function initEventChannel() {
+  _vue.default.prototype.getOpenerEventChannel = function () {
+    // 微信小程序使用自身getOpenerEventChannel
+    {
+      return this.$scope.getOpenerEventChannel();
+    }
+  };
+  var callHook = _vue.default.prototype.__call_hook;
+  _vue.default.prototype.__call_hook = function (hook, args) {
+    if (hook === 'onLoad' && args && args.__id__) {
+      this.__eventChannel__ = getEventChannel(args.__id__);
+      delete args.__id__;
+    }
+    return callHook.call(this, hook, args);
+  };
+}
+
+function initScopedSlotsParams() {
+  var center = {};
+  var parents = {};
+
+  _vue.default.prototype.$hasScopedSlotsParams = function (vueId) {
+    var has = center[vueId];
+    if (!has) {
+      parents[vueId] = this;
+      this.$on('hook:destory', function () {
+        delete parents[vueId];
+      });
+    }
+    return has;
+  };
+
+  _vue.default.prototype.$getScopedSlotsParams = function (vueId, name, key) {
+    var data = center[vueId];
+    if (data) {
+      var object = data[name] || {};
+      return key ? object[key] : object;
+    } else {
+      parents[vueId] = this;
+      this.$on('hook:destory', function () {
+        delete parents[vueId];
+      });
+    }
+  };
+
+  _vue.default.prototype.$setScopedSlotsParams = function (name, value) {
+    var vueId = this.$options.propsData.vueId;
+    var object = center[vueId] = center[vueId] || {};
+    object[name] = value;
+    if (parents[vueId]) {
+      parents[vueId].$forceUpdate();
+    }
+  };
+
+  _vue.default.mixin({
+    destroyed: function destroyed() {
+      var propsData = this.$options.propsData;
+      var vueId = propsData && propsData.vueId;
+      if (vueId) {
+        delete center[vueId];
+        delete parents[vueId];
+      }
+    } });
+
+}
+
 function parseBaseApp(vm, _ref3)
 
 
 {var mocks = _ref3.mocks,initRefs = _ref3.initRefs;
+  initEventChannel();
+  {
+    initScopedSlotsParams();
+  }
   if (vm.$options.store) {
     _vue.default.prototype.$store = vm.$options.store;
   }
@@ -1267,7 +1375,12 @@ function parseBaseApp(vm, _ref3)
 
       delete this.$options.mpType;
       delete this.$options.mpInstance;
-
+      if (this.mpType === 'page' && typeof getApp === 'function') {// hack vue-i18n
+        var app = getApp();
+        if (app.$vm && app.$vm.$i18n) {
+          this._i18n = app.$vm.$i18n;
+        }
+      }
       if (this.mpType !== 'app') {
         initRefs(this);
         initMocks(this, mocks);
@@ -1281,7 +1394,7 @@ function parseBaseApp(vm, _ref3)
         return;
       }
       {
-        if (!wx.canIUse('nextTick')) {// 事实 上2.2.3 即可，简单使用 2.3.0 的 nextTick 判断
+        if (wx.canIUse && !wx.canIUse('nextTick')) {// 事实 上2.2.3 即可，简单使用 2.3.0 的 nextTick 判断
           console.error('当前微信基础库版本过低，请将 微信开发者工具-详情-项目设置-调试基础库版本 更换为`2.3.0`以上');
         }
       }
@@ -1412,34 +1525,7 @@ function parseApp(vm) {
 
 }
 
-var eventChannels = {};
-
-var eventChannelStack = [];
-
-function getEventChannel(id) {
-  if (id) {
-    var eventChannel = eventChannels[id];
-    delete eventChannels[id];
-    return eventChannel;
-  }
-  return eventChannelStack.shift();
-}
-
 function createApp(vm) {
-  _vue.default.prototype.getOpenerEventChannel = function () {
-    // 微信小程序使用自身getOpenerEventChannel
-    {
-      return this.$scope.getOpenerEventChannel();
-    }
-  };
-  var callHook = _vue.default.prototype.__call_hook;
-  _vue.default.prototype.__call_hook = function (hook, args) {
-    if (hook === 'onLoad' && args && args.__id__) {
-      this.__eventChannel__ = getEventChannel(args.__id__);
-      delete args.__id__;
-    }
-    return callHook.call(this, hook, args);
-  };
   App(parseApp(vm));
   return vm;
 }
@@ -1642,6 +1728,60 @@ function createComponent(vueOptions) {
   }
 }
 
+function createSubpackageApp(vm) {
+  var appOptions = parseApp(vm);
+  var app = getApp({
+    allowDefault: true });
+
+  var globalData = app.globalData;
+  if (globalData) {
+    Object.keys(appOptions.globalData).forEach(function (name) {
+      if (!hasOwn(globalData, name)) {
+        globalData[name] = appOptions.globalData[name];
+      }
+    });
+  }
+  Object.keys(appOptions).forEach(function (name) {
+    if (!hasOwn(app, name)) {
+      app[name] = appOptions[name];
+    }
+  });
+  if (isFn(appOptions.onShow) && wx.onAppShow) {
+    wx.onAppShow(function () {for (var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {args[_key5] = arguments[_key5];}
+      appOptions.onShow.apply(app, args);
+    });
+  }
+  if (isFn(appOptions.onHide) && wx.onAppHide) {
+    wx.onAppHide(function () {for (var _len6 = arguments.length, args = new Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {args[_key6] = arguments[_key6];}
+      appOptions.onHide.apply(app, args);
+    });
+  }
+  if (isFn(appOptions.onLaunch)) {
+    var args = wx.getLaunchOptionsSync && wx.getLaunchOptionsSync();
+    appOptions.onLaunch.call(app, args);
+  }
+  return vm;
+}
+
+function createPlugin(vm) {
+  var appOptions = parseApp(vm);
+  if (isFn(appOptions.onShow) && wx.onAppShow) {
+    wx.onAppShow(function () {for (var _len7 = arguments.length, args = new Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {args[_key7] = arguments[_key7];}
+      appOptions.onShow.apply(vm, args);
+    });
+  }
+  if (isFn(appOptions.onHide) && wx.onAppHide) {
+    wx.onAppHide(function () {for (var _len8 = arguments.length, args = new Array(_len8), _key8 = 0; _key8 < _len8; _key8++) {args[_key8] = arguments[_key8];}
+      appOptions.onHide.apply(vm, args);
+    });
+  }
+  if (isFn(appOptions.onLaunch)) {
+    var args = wx.getLaunchOptionsSync && wx.getLaunchOptionsSync();
+    appOptions.onLaunch.call(vm, args);
+  }
+  return vm;
+}
+
 todos.forEach(function (todoApi) {
   protocols[todoApi] = false;
 });
@@ -1721,6 +1861,8 @@ if (typeof Proxy !== 'undefined' && "mp-weixin" !== 'app-plus') {
 wx.createApp = createApp;
 wx.createPage = createPage;
 wx.createComponent = createComponent;
+wx.createSubpackageApp = createSubpackageApp;
+wx.createPlugin = createPlugin;
 
 var uni$1 = uni;var _default =
 
@@ -1857,530 +1999,6 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 16:
-/*!********************************************************!*\
-  !*** /Users/wenjieliu/hbuilderSpaces/newSjty/utils.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(uni) {function _createForOfIteratorHelper(o, allowArrayLike) {var it;if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {if (it) o = it;var i = 0;var F = function F() {};return { s: F, n: function n() {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };}, e: function e(_e) {throw _e;}, f: F };}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var normalCompletion = true,didErr = false,err;return { s: function s() {it = o[Symbol.iterator]();}, n: function n() {var step = it.next();normalCompletion = step.done;return step;}, e: function e(_e2) {didErr = true;err = _e2;}, f: function f() {try {if (!normalCompletion && it.return != null) it.return();} finally {if (didErr) throw err;}} };}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;} /*
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * Digest Algorithm, as defined in RFC 1321.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * Version 2.1 Copyright (C) Paul Johnston 1999 - 2002.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * Distributed under the BSD License
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * See http://pajhome.org.uk/crypt/md5 for more info.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        */
-
-/*
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * Configurable variables. You may need to tweak these to be compatible with
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * the server-side, but the defaults work in most cases.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            */
-var hexcase = 0; /* hex output format. 0 - lowercase; 1 - uppercase        */
-var b64pad = ""; /* base-64 pad character. "=" for strict RFC compliance   */
-var chrsz = 8; /* bits per input character. 8 - ASCII; 16 - Unicode      */
-
-/*
-                                                                             * These are the functions you'll usually want to call
-                                                                             * They take string arguments and return either hex or base-64 encoded strings
-                                                                             */
-function hex_md5(s) {return binl2hex(core_md5(str2binl(s), s.length * chrsz));}
-function b64_md5(s) {return binl2b64(core_md5(str2binl(s), s.length * chrsz));}
-function str_md5(s) {return binl2str(core_md5(str2binl(s), s.length * chrsz));}
-function hex_hmac_md5(key, data) {return binl2hex(core_hmac_md5(key, data));}
-function b64_hmac_md5(key, data) {return binl2b64(core_hmac_md5(key, data));}
-function str_hmac_md5(key, data) {return binl2str(core_hmac_md5(key, data));}
-
-/*
-                                                                               * Perform a simple self-test to see if the VM is working
-                                                                               */
-function md5_vm_test()
-{
-  return hex_md5("abc") == "900150983cd24fb0d6963f7d28e17f72";
-}
-
-/*
-   * Calculate the MD5 of an array of little-endian words, and a bit length
-   */
-function core_md5(x, len)
-{
-  /* append padding */
-  x[len >> 5] |= 0x80 << len % 32;
-  x[(len + 64 >>> 9 << 4) + 14] = len;
-
-  var a = 1732584193;
-  var b = -271733879;
-  var c = -1732584194;
-  var d = 271733878;
-
-  for (var i = 0; i < x.length; i += 16)
-  {
-    var olda = a;
-    var oldb = b;
-    var oldc = c;
-    var oldd = d;
-
-    a = md5_ff(a, b, c, d, x[i + 0], 7, -680876936);
-    d = md5_ff(d, a, b, c, x[i + 1], 12, -389564586);
-    c = md5_ff(c, d, a, b, x[i + 2], 17, 606105819);
-    b = md5_ff(b, c, d, a, x[i + 3], 22, -1044525330);
-    a = md5_ff(a, b, c, d, x[i + 4], 7, -176418897);
-    d = md5_ff(d, a, b, c, x[i + 5], 12, 1200080426);
-    c = md5_ff(c, d, a, b, x[i + 6], 17, -1473231341);
-    b = md5_ff(b, c, d, a, x[i + 7], 22, -45705983);
-    a = md5_ff(a, b, c, d, x[i + 8], 7, 1770035416);
-    d = md5_ff(d, a, b, c, x[i + 9], 12, -1958414417);
-    c = md5_ff(c, d, a, b, x[i + 10], 17, -42063);
-    b = md5_ff(b, c, d, a, x[i + 11], 22, -1990404162);
-    a = md5_ff(a, b, c, d, x[i + 12], 7, 1804603682);
-    d = md5_ff(d, a, b, c, x[i + 13], 12, -40341101);
-    c = md5_ff(c, d, a, b, x[i + 14], 17, -1502002290);
-    b = md5_ff(b, c, d, a, x[i + 15], 22, 1236535329);
-
-    a = md5_gg(a, b, c, d, x[i + 1], 5, -165796510);
-    d = md5_gg(d, a, b, c, x[i + 6], 9, -1069501632);
-    c = md5_gg(c, d, a, b, x[i + 11], 14, 643717713);
-    b = md5_gg(b, c, d, a, x[i + 0], 20, -373897302);
-    a = md5_gg(a, b, c, d, x[i + 5], 5, -701558691);
-    d = md5_gg(d, a, b, c, x[i + 10], 9, 38016083);
-    c = md5_gg(c, d, a, b, x[i + 15], 14, -660478335);
-    b = md5_gg(b, c, d, a, x[i + 4], 20, -405537848);
-    a = md5_gg(a, b, c, d, x[i + 9], 5, 568446438);
-    d = md5_gg(d, a, b, c, x[i + 14], 9, -1019803690);
-    c = md5_gg(c, d, a, b, x[i + 3], 14, -187363961);
-    b = md5_gg(b, c, d, a, x[i + 8], 20, 1163531501);
-    a = md5_gg(a, b, c, d, x[i + 13], 5, -1444681467);
-    d = md5_gg(d, a, b, c, x[i + 2], 9, -51403784);
-    c = md5_gg(c, d, a, b, x[i + 7], 14, 1735328473);
-    b = md5_gg(b, c, d, a, x[i + 12], 20, -1926607734);
-
-    a = md5_hh(a, b, c, d, x[i + 5], 4, -378558);
-    d = md5_hh(d, a, b, c, x[i + 8], 11, -2022574463);
-    c = md5_hh(c, d, a, b, x[i + 11], 16, 1839030562);
-    b = md5_hh(b, c, d, a, x[i + 14], 23, -35309556);
-    a = md5_hh(a, b, c, d, x[i + 1], 4, -1530992060);
-    d = md5_hh(d, a, b, c, x[i + 4], 11, 1272893353);
-    c = md5_hh(c, d, a, b, x[i + 7], 16, -155497632);
-    b = md5_hh(b, c, d, a, x[i + 10], 23, -1094730640);
-    a = md5_hh(a, b, c, d, x[i + 13], 4, 681279174);
-    d = md5_hh(d, a, b, c, x[i + 0], 11, -358537222);
-    c = md5_hh(c, d, a, b, x[i + 3], 16, -722521979);
-    b = md5_hh(b, c, d, a, x[i + 6], 23, 76029189);
-    a = md5_hh(a, b, c, d, x[i + 9], 4, -640364487);
-    d = md5_hh(d, a, b, c, x[i + 12], 11, -421815835);
-    c = md5_hh(c, d, a, b, x[i + 15], 16, 530742520);
-    b = md5_hh(b, c, d, a, x[i + 2], 23, -995338651);
-
-    a = md5_ii(a, b, c, d, x[i + 0], 6, -198630844);
-    d = md5_ii(d, a, b, c, x[i + 7], 10, 1126891415);
-    c = md5_ii(c, d, a, b, x[i + 14], 15, -1416354905);
-    b = md5_ii(b, c, d, a, x[i + 5], 21, -57434055);
-    a = md5_ii(a, b, c, d, x[i + 12], 6, 1700485571);
-    d = md5_ii(d, a, b, c, x[i + 3], 10, -1894986606);
-    c = md5_ii(c, d, a, b, x[i + 10], 15, -1051523);
-    b = md5_ii(b, c, d, a, x[i + 1], 21, -2054922799);
-    a = md5_ii(a, b, c, d, x[i + 8], 6, 1873313359);
-    d = md5_ii(d, a, b, c, x[i + 15], 10, -30611744);
-    c = md5_ii(c, d, a, b, x[i + 6], 15, -1560198380);
-    b = md5_ii(b, c, d, a, x[i + 13], 21, 1309151649);
-    a = md5_ii(a, b, c, d, x[i + 4], 6, -145523070);
-    d = md5_ii(d, a, b, c, x[i + 11], 10, -1120210379);
-    c = md5_ii(c, d, a, b, x[i + 2], 15, 718787259);
-    b = md5_ii(b, c, d, a, x[i + 9], 21, -343485551);
-
-    a = safe_add(a, olda);
-    b = safe_add(b, oldb);
-    c = safe_add(c, oldc);
-    d = safe_add(d, oldd);
-  }
-  return Array(a, b, c, d);
-
-}
-
-/*
-   * These functions implement the four basic operations the algorithm uses.
-   */
-function md5_cmn(q, a, b, x, s, t)
-{
-  return safe_add(bit_rol(safe_add(safe_add(a, q), safe_add(x, t)), s), b);
-}
-function md5_ff(a, b, c, d, x, s, t)
-{
-  return md5_cmn(b & c | ~b & d, a, b, x, s, t);
-}
-function md5_gg(a, b, c, d, x, s, t)
-{
-  return md5_cmn(b & d | c & ~d, a, b, x, s, t);
-}
-function md5_hh(a, b, c, d, x, s, t)
-{
-  return md5_cmn(b ^ c ^ d, a, b, x, s, t);
-}
-function md5_ii(a, b, c, d, x, s, t)
-{
-  return md5_cmn(c ^ (b | ~d), a, b, x, s, t);
-}
-
-/*
-   * Calculate the HMAC-MD5, of a key and some data
-   */
-function core_hmac_md5(key, data)
-{
-  var bkey = str2binl(key);
-  if (bkey.length > 16) bkey = core_md5(bkey, key.length * chrsz);
-
-  var ipad = Array(16),opad = Array(16);
-  for (var i = 0; i < 16; i++)
-  {
-    ipad[i] = bkey[i] ^ 0x36363636;
-    opad[i] = bkey[i] ^ 0x5C5C5C5C;
-  }
-
-  var hash = core_md5(ipad.concat(str2binl(data)), 512 + data.length * chrsz);
-  return core_md5(opad.concat(hash), 512 + 128);
-}
-
-/*
-   * Add integers, wrapping at 2^32. This uses 16-bit operations internally
-   * to work around bugs in some JS interpreters.
-   */
-function safe_add(x, y)
-{
-  var lsw = (x & 0xFFFF) + (y & 0xFFFF);
-  var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
-  return msw << 16 | lsw & 0xFFFF;
-}
-
-/*
-   * Bitwise rotate a 32-bit number to the left.
-   */
-function bit_rol(num, cnt)
-{
-  return num << cnt | num >>> 32 - cnt;
-}
-
-/*
-   * Convert a string to an array of little-endian words
-   * If chrsz is ASCII, characters >255 have their hi-byte silently ignored.
-   */
-function str2binl(str)
-{
-  var bin = Array();
-  var mask = (1 << chrsz) - 1;
-  for (var i = 0; i < str.length * chrsz; i += chrsz) {
-    bin[i >> 5] |= (str.charCodeAt(i / chrsz) & mask) << i % 32;}
-  return bin;
-}
-
-/*
-   * Convert an array of little-endian words to a string
-   */
-function binl2str(bin)
-{
-  var str = "";
-  var mask = (1 << chrsz) - 1;
-  for (var i = 0; i < bin.length * 32; i += chrsz) {
-    str += String.fromCharCode(bin[i >> 5] >>> i % 32 & mask);}
-  return str;
-}
-
-/*
-   * Convert an array of little-endian words to a hex string.
-   */
-function binl2hex(binarray)
-{
-  var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
-  var str = "";
-  for (var i = 0; i < binarray.length * 4; i++)
-  {
-    str += hex_tab.charAt(binarray[i >> 2] >> i % 4 * 8 + 4 & 0xF) +
-    hex_tab.charAt(binarray[i >> 2] >> i % 4 * 8 & 0xF);
-  }
-  return str;
-}
-
-/*
-   * Convert an array of little-endian words to a base-64 string
-   */
-function binl2b64(binarray)
-{
-  var tab = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-  var str = "";
-  for (var i = 0; i < binarray.length * 4; i += 3)
-  {
-    var triplet = (binarray[i >> 2] >> 8 * (i % 4) & 0xFF) << 16 |
-    (binarray[i + 1 >> 2] >> 8 * ((i + 1) % 4) & 0xFF) << 8 |
-    binarray[i + 2 >> 2] >> 8 * ((i + 2) % 4) & 0xFF;
-    for (var j = 0; j < 4; j++)
-    {
-      if (i * 8 + j * 6 > binarray.length * 32) str += b64pad;else
-      str += tab.charAt(triplet >> 6 * (3 - j) & 0x3F);
-    }
-  }
-  return str;
-}
-var commRequest = function commRequest(trancode, data, succ) {
-  console.log(trancode + " send: " + JSON.stringify(data));
-  if (trancode != '6001') {
-    data.accessToken = uni.getStorageSync('accessToken');
-  }
-  uni.request({
-    url: 'http://www.sjyjr.net/sjyjf/app/' + trancode, //仅为示例，并非真实接口地址。
-    data: data,
-    method: 'POST',
-    dataType: 'application/json',
-    header: {
-      "Content-Type": "application/x-www-form-urlencoded" },
-
-    success: function success(res) {
-      console.log(trancode + " success:" + res.data);
-      succ(res);
-      //  this.text = 'request success';
-    },
-    complete: function complete(res) {
-
-    } });
-
-};
-
-var isEmpty = function isEmpty(obj) {
-  if (!obj || obj == 0 || obj == '' || obj == 'null' || obj == 'undefined') {
-    return true;
-  }
-
-  if (Array.prototype.isPrototypeOf(obj) && obj.length == 0) {
-    return true;
-  }
-
-  return false;
-};
-
-var get_time_str = function get_time_str(date1) {
-
-  var date2 = new Date(); //结束时间  
-  var date3 = date2.getTime() - new Date(date1.replace(/\-/g, '/')).getTime(); //时间差的毫秒数        
-
-  //------------------------------  
-
-  //计算出相差天数  
-  var days = Math.floor(date3 / (24 * 3600 * 1000));
-
-  //计算出小时数  
-
-  var leave1 = date3 % (24 * 3600 * 1000); //计算天数后剩余的毫秒数  
-  var hours = Math.floor(leave1 / (3600 * 1000));
-  //计算相差分钟数  
-  var leave2 = leave1 % (3600 * 1000); //计算小时数后剩余的毫秒数  
-  var minutes = Math.floor(leave2 / (60 * 1000));
-  //计算相差秒数  
-  var leave3 = leave2 % (60 * 1000); //计算分钟数后剩余的毫秒数  
-  var seconds = Math.round(leave3 / 1000);
-
-  if (days > 0) {
-    var arys1 = date1.substr(0, 10).split("-");
-    var ssdate = new Date(arys1[0], parseInt(arys1[1] - 1), arys1[2]);
-    var week1 = String(ssdate.getDay()).replace("0", "日").replace("1", "一").replace("2", "二").replace("3", "三").replace("4", "四").replace("5", "五").replace("6", "六"); //就是你要的星期几
-    var week = date1.substr(0, 10) + " 星期" + week1;
-    return week;
-  } else {
-    if (hours > 0) {
-      return hours + "小时前";
-    } else {
-      if (minutes > 0) {
-        return minutes + "分钟前";
-      } else {
-        return "刚才";
-      }
-    }
-  }
-};
-
-var getLoanName = function getLoanName(ids) {
-  var loanTypeTree = uni.getStorageSync('loanTypeTree');
-  for (var i = 0; i < loanTypeTree.length; i++) {
-    for (var j = 0; j < loanTypeTree[i].children.length; j++) {
-      if (ids == loanTypeTree[i].children[j].id) {
-        return loanTypeTree[i].children[j].label;
-      }
-    }
-  }
-};
-var getLoanClassid = function getLoanClassid(ids) {
-  console.log("ids=" + ids);
-  var loanTypeTree = uni.getStorageSync('loanTypeTree');
-  for (var i = 0; i < loanTypeTree.length; i++) {
-    for (var j = 0; j < loanTypeTree[i].children.length; j++) {
-      if (ids == loanTypeTree[i].children[j].id) {
-        return loanTypeTree[i].children[j].porgnId;
-      }
-    }
-  }
-};
-var twoJsonMerge = function twoJsonMerge(json1, json2) {
-  var length1 = 0,length2 = 0,jsonStr,str;
-
-  for (var ever in json1) {length1++;}
-  for (var ever in json2) {length2++;}
-
-  if (length1 && length2) str = ',';else
-  str = '';
-
-  jsonStr = (JSON.stringify(json1).replace(/,}/, '}') + JSON.stringify(json2).replace(/,}/, '}')).replace(/}{/, str);
-
-  return JSON.parse(jsonStr);
-};
-var getImgUrlList = function getImgUrlList(imgStr, fileno) {
-  var imgList = imgStr.split("|");
-  var resultList = [];
-  var imgPath = "http://www.sjyjr.net/static/";var _iterator = _createForOfIteratorHelper(
-  imgList),_step;try {for (_iterator.s(); !(_step = _iterator.n()).done;) {var item = _step.value;
-      item = imgPath + fileno + '/' + item;
-      console.log("item:" + item);
-      resultList.push(item);
-    }} catch (err) {_iterator.e(err);} finally {_iterator.f();}
-
-  return resultList;
-};
-
-var getImgType = function getImgType(index) {
-  var img_map = [
-  "imgMf",
-  "imgMfdlr",
-  "imgJkrTp",
-  "imgGtjkrTp",
-  "imgJkrDlrTp",
-  "imgJy",
-  "jkhtTp",
-  "imgFc",
-  "imgFcPg",
-  "imgCwyfTp",
-  "img_jjxx",
-  "imgJkrQtzc",
-  "clTp",
-  "dkTp",
-  "jyTp",
-  "qyTp"];
-
-  return img_map[index];
-};
-
-var getIdArrayIndex = function getIdArrayIndex(idType) {
-  var idTypeValue = ['E1', 'E2', 'I1', 'I2', 'I3', 'I4', 'I5', 'I6', 'I9', 'Ia', 'I8'];
-
-  for (var i = 0; i < idTypeValue.length; i++) {
-    if (idTypeValue[i] == idType) {
-      return i;
-    }
-  }
-  //默认就返回2
-  return 2;
-};
-
-var getNowTime = function getNowTime() {
-  var now = new Date();
-  var year = now.getFullYear();
-  var month = now.getMonth() + 1;
-  var day = now.getDate();
-  var hh = now.getHours();
-  var mm = now.getMinutes();
-  var ss = now.getSeconds();
-  var clock = year + "-";
-  if (month < 10)
-  clock += "0";
-  clock += month + "-";
-  if (day < 10)
-  clock += "0";
-  clock += day + " ";
-  if (hh < 10)
-  clock += "0";
-  clock += hh + ":";
-  if (mm < 10) clock += '0';
-  clock += mm + ":";
-  if (ss < 10) clock += '0';
-  clock += ss;
-  return clock;
-};
-/**
-    * 图片路径转成canvas
-    * @param {图片url} url
-    */
-function imgToCanvas(url) {
-  console.log("imgToCanvas:" + url);
-  // 创建img元素
-  var img = document.createElement("img");
-  img.src = url;
-  img.setAttribute("crossOrigin", "anonymous"); // 防止跨域引起的 Failed to execute 'toDataURL' on 'HTMLCanvasElement': Tainted canvases may not be exported.
-  new Promise(function (resolve) {return img.onload = resolve;});
-  // 创建canvas DOM元素，并设置其宽高和图片一样
-  var canvas = document.createElement("canvas");
-  canvas.width = img.width;
-  canvas.height = img.height;
-  // 坐标(0,0) 表示从此处开始绘制，相当于偏移。
-  canvas.getContext("2d").drawImage(img, 0, 0);
-  return canvas;
-}
-
-/**
-   * canvas添加水印
-   * @param {canvas对象} canvas
-   * @param {水印文字} text
-   */
-function addWatermark(canvas, text) {
-  console.log("addWatermark:" + JSON.stringify(canvas));
-  var ctx = canvas.getContext("2d");
-  ctx.fillStyle = "red";
-  ctx.textBaseline = "middle";
-  ctx.fillText(text, 20, 20);
-  return canvas;
-}
-
-/**
-   * canvas转成img
-   * @param {canvas对象} canvas
-   */
-function convasToImg(canvas) {
-  console.log("convasToImg:" + JSON.stringify(canvas));
-  // 新建Image对象，可以理解为DOM
-  var image = new Image();
-  //canvas.toDataURL 返回的是一串Base64编码的URL
-  //指定格式 PNG
-  image.src = canvas.toDataURL("image/png");
-  return image;
-  //return canvas.toDataURL("image/png");
-
-}
-
-// 运行示例
-var imgAddWater = function imgAddWater(water, imgurl) {
-  console.log("imgAddWater water:" + water + ";imgurl" + imgurl);
-  // 1.图片路径转成canvas
-  var tempCanvas = imgToCanvas(imgurl);
-  // 2.canvas添加水印
-  var canvas = addWatermark(tempCanvas, water);
-  //3.canvas转成img
-  var img = convasToImg(canvas);
-  // 查看效果
-  document.body.appendChild(img);
-  //return convasToImg(canvas);
-};
-module.exports = {
-  hex_md5: hex_md5,
-  commRequest: commRequest,
-  isEmpty: isEmpty,
-  get_time_str: get_time_str,
-  getLoanName: getLoanName,
-  getLoanClassid: getLoanClassid,
-  twoJsonMerge: twoJsonMerge,
-  getImgUrlList: getImgUrlList,
-  getImgType: getImgType,
-  getIdArrayIndex: getIdArrayIndex,
-  imgAddWater: imgAddWater,
-  getNowTime: getNowTime };
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
 /***/ 2:
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!
@@ -2392,7 +2010,7 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(global) {/*!
  * Vue.js v2.6.11
- * (c) 2014-2020 Evan You
+ * (c) 2014-2021 Evan You
  * Released under the MIT License.
  */
 /*  */
@@ -5036,7 +4654,7 @@ function renderList (
       var iterator = val[Symbol.iterator]();
       var result = iterator.next();
       while (!result.done) {
-        ret.push(render(result.value, ret.length, i++, i)); // fixed by xxxxxx
+        ret.push(render(result.value, ret.length, i, i++)); // fixed by xxxxxx
         result = iterator.next();
       }
     } else {
@@ -7907,7 +7525,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"交易通","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"综合办公","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7928,14 +7546,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"交易通","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"综合办公","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"交易通","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"综合办公","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -8021,7 +7639,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"交易通","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"综合办公","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8197,7 +7815,7 @@ function internalMixin(Vue) {
     Vue.util.warn(("Error in " + info + ": \"" + (err.toString()) + "\""), vm);
     console.error(err);
     /* eslint-disable no-undef */
-    var app = getApp();
+    var app = typeof getApp === 'function' && getApp();
     if (app && app.onError) {
       app.onError(err);
     }
@@ -8351,6 +7969,7 @@ var LIFECYCLE_HOOKS$1 = [
     'onError',
     'onUnhandledRejection',
     //Page
+    'onInit',
     'onLoad',
     // 'onShow',
     'onReady',
@@ -8459,5715 +8078,21 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 318:
-/*!**********************************************************************!*\
-  !*** /Users/wenjieliu/hbuilderSpaces/newSjty/pages/plugin/qrcode.js ***!
-  \**********************************************************************/
+/***/ 39:
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var QRCode = {};
-(function () {
-  /**
-               * 获取单个字符的utf8编码
-               * unicode BMP平面约65535个字符
-               * @param {num} code
-               * return {array}
-               */
-  function unicodeFormat8(code) {
-    // 1 byte
-    var c0, c1, c2;
-    if (code < 128) {
-      return [code];
-      // 2 bytes
-    } else if (code < 2048) {
-      c0 = 192 + (code >> 6);
-      c1 = 128 + (code & 63);
-      return [c0, c1];
-      // 3 bytes
-    } else {
-      c0 = 224 + (code >> 12);
-      c1 = 128 + (code >> 6 & 63);
-      c2 = 128 + (code & 63);
-      return [c0, c1, c2];
-    }
-  }
-  /**
-     * 获取字符串的utf8编码字节串
-     * @param {string} string
-     * @return {array}
-     */
-  function getUTF8Bytes(string) {
-    var utf8codes = [];
-    for (var i = 0; i < string.length; i++) {
-      var code = string.charCodeAt(i);
-      var utf8 = unicodeFormat8(code);
-      for (var j = 0; j < utf8.length; j++) {
-        utf8codes.push(utf8[j]);
-      }
-    }
-    return utf8codes;
-  }
-  /**
-     * 二维码算法实现
-     * @param {string} data              要编码的信息字符串
-     * @param {num} errorCorrectLevel 纠错等级
-     */
-  function QRCodeAlg(data, errorCorrectLevel) {
-    this.typeNumber = -1; //版本
-    this.errorCorrectLevel = errorCorrectLevel;
-    this.modules = null; //二维矩阵，存放最终结果
-    this.moduleCount = 0; //矩阵大小
-    this.dataCache = null; //数据缓存
-    this.rsBlocks = null; //版本数据信息
-    this.totalDataCount = -1; //可使用的数据量
-    this.data = data;
-    this.utf8bytes = getUTF8Bytes(data);
-    this.make();
-  }
-  QRCodeAlg.prototype = {
-    constructor: QRCodeAlg,
-    /**
-                             * 获取二维码矩阵大小
-                             * @return {num} 矩阵大小
-                             */
-    getModuleCount: function getModuleCount() {
-      return this.moduleCount;
-    },
-    /**
-        * 编码
-        */
-    make: function make() {
-      this.getRightType();
-      this.dataCache = this.createData();
-      this.createQrcode();
-    },
-    /**
-        * 设置二位矩阵功能图形
-        * @param  {bool} test 表示是否在寻找最好掩膜阶段
-        * @param  {num} maskPattern 掩膜的版本
-        */
-    makeImpl: function makeImpl(maskPattern) {
-      this.moduleCount = this.typeNumber * 4 + 17;
-      this.modules = new Array(this.moduleCount);
-      for (var row = 0; row < this.moduleCount; row++) {
-        this.modules[row] = new Array(this.moduleCount);
-      }
-      this.setupPositionProbePattern(0, 0);
-      this.setupPositionProbePattern(this.moduleCount - 7, 0);
-      this.setupPositionProbePattern(0, this.moduleCount - 7);
-      this.setupPositionAdjustPattern();
-      this.setupTimingPattern();
-      this.setupTypeInfo(true, maskPattern);
-      if (this.typeNumber >= 7) {
-        this.setupTypeNumber(true);
-      }
-      this.mapData(this.dataCache, maskPattern);
-    },
-    /**
-        * 设置二维码的位置探测图形
-        * @param  {num} row 探测图形的中心横坐标
-        * @param  {num} col 探测图形的中心纵坐标
-        */
-    setupPositionProbePattern: function setupPositionProbePattern(row, col) {
-      for (var r = -1; r <= 7; r++) {
-        if (row + r <= -1 || this.moduleCount <= row + r) continue;
-        for (var c = -1; c <= 7; c++) {
-          if (col + c <= -1 || this.moduleCount <= col + c) continue;
-          if (0 <= r && r <= 6 && (c == 0 || c == 6) || 0 <= c && c <= 6 && (r == 0 || r == 6) || 2 <= r && r <= 4 && 2 <= c && c <= 4) {
-            this.modules[row + r][col + c] = true;
-          } else {
-            this.modules[row + r][col + c] = false;
-          }
-        }
-      }
-    },
-    /**
-        * 创建二维码
-        * @return {[type]} [description]
-        */
-    createQrcode: function createQrcode() {
-      var minLostPoint = 0;
-      var pattern = 0;
-      var bestModules = null;
-      for (var i = 0; i < 8; i++) {
-        this.makeImpl(i);
-        var lostPoint = QRUtil.getLostPoint(this);
-        if (i == 0 || minLostPoint > lostPoint) {
-          minLostPoint = lostPoint;
-          pattern = i;
-          bestModules = this.modules;
-        }
-      }
-      this.modules = bestModules;
-      this.setupTypeInfo(false, pattern);
-      if (this.typeNumber >= 7) {
-        this.setupTypeNumber(false);
-      }
-    },
-    /**
-        * 设置定位图形
-        * @return {[type]} [description]
-        */
-    setupTimingPattern: function setupTimingPattern() {
-      for (var r = 8; r < this.moduleCount - 8; r++) {
-        if (this.modules[r][6] != null) {
-          continue;
-        }
-        this.modules[r][6] = r % 2 == 0;
-        if (this.modules[6][r] != null) {
-          continue;
-        }
-        this.modules[6][r] = r % 2 == 0;
-      }
-    },
-    /**
-        * 设置矫正图形
-        * @return {[type]} [description]
-        */
-    setupPositionAdjustPattern: function setupPositionAdjustPattern() {
-      var pos = QRUtil.getPatternPosition(this.typeNumber);
-      for (var i = 0; i < pos.length; i++) {
-        for (var j = 0; j < pos.length; j++) {
-          var row = pos[i];
-          var col = pos[j];
-          if (this.modules[row][col] != null) {
-            continue;
-          }
-          for (var r = -2; r <= 2; r++) {
-            for (var c = -2; c <= 2; c++) {
-              if (r == -2 || r == 2 || c == -2 || c == 2 || r == 0 && c == 0) {
-                this.modules[row + r][col + c] = true;
-              } else {
-                this.modules[row + r][col + c] = false;
-              }
-            }
-          }
-        }
-      }
-    },
-    /**
-        * 设置版本信息（7以上版本才有）
-        * @param  {bool} test 是否处于判断最佳掩膜阶段
-        * @return {[type]}      [description]
-        */
-    setupTypeNumber: function setupTypeNumber(test) {
-      var bits = QRUtil.getBCHTypeNumber(this.typeNumber);
-      for (var i = 0; i < 18; i++) {
-        var mod = !test && (bits >> i & 1) == 1;
-        this.modules[Math.floor(i / 3)][i % 3 + this.moduleCount - 8 - 3] = mod;
-        this.modules[i % 3 + this.moduleCount - 8 - 3][Math.floor(i / 3)] = mod;
-      }
-    },
-    /**
-        * 设置格式信息（纠错等级和掩膜版本）
-        * @param  {bool} test
-        * @param  {num} maskPattern 掩膜版本
-        * @return {}
-        */
-    setupTypeInfo: function setupTypeInfo(test, maskPattern) {
-      var data = QRErrorCorrectLevel[this.errorCorrectLevel] << 3 | maskPattern;
-      var bits = QRUtil.getBCHTypeInfo(data);
-      // vertical
-      for (var i = 0; i < 15; i++) {
-        var mod = !test && (bits >> i & 1) == 1;
-        if (i < 6) {
-          this.modules[i][8] = mod;
-        } else if (i < 8) {
-          this.modules[i + 1][8] = mod;
-        } else {
-          this.modules[this.moduleCount - 15 + i][8] = mod;
-        }
-        // horizontal
-        var mod = !test && (bits >> i & 1) == 1;
-        if (i < 8) {
-          this.modules[8][this.moduleCount - i - 1] = mod;
-        } else if (i < 9) {
-          this.modules[8][15 - i - 1 + 1] = mod;
-        } else {
-          this.modules[8][15 - i - 1] = mod;
-        }
-      }
-      // fixed module
-      this.modules[this.moduleCount - 8][8] = !test;
-    },
-    /**
-        * 数据编码
-        * @return {[type]} [description]
-        */
-    createData: function createData() {
-      var buffer = new QRBitBuffer();
-      var lengthBits = this.typeNumber > 9 ? 16 : 8;
-      buffer.put(4, 4); //添加模式
-      buffer.put(this.utf8bytes.length, lengthBits);
-      for (var i = 0, l = this.utf8bytes.length; i < l; i++) {
-        buffer.put(this.utf8bytes[i], 8);
-      }
-      if (buffer.length + 4 <= this.totalDataCount * 8) {
-        buffer.put(0, 4);
-      }
-      // padding
-      while (buffer.length % 8 != 0) {
-        buffer.putBit(false);
-      }
-      // padding
-      while (true) {
-        if (buffer.length >= this.totalDataCount * 8) {
-          break;
-        }
-        buffer.put(QRCodeAlg.PAD0, 8);
-        if (buffer.length >= this.totalDataCount * 8) {
-          break;
-        }
-        buffer.put(QRCodeAlg.PAD1, 8);
-      }
-      return this.createBytes(buffer);
-    },
-    /**
-        * 纠错码编码
-        * @param  {buffer} buffer 数据编码
-        * @return {[type]}
-        */
-    createBytes: function createBytes(buffer) {
-      var offset = 0;
-      var maxDcCount = 0;
-      var maxEcCount = 0;
-      var length = this.rsBlock.length / 3;
-      var rsBlocks = new Array();
-      for (var i = 0; i < length; i++) {
-        var count = this.rsBlock[i * 3 + 0];
-        var totalCount = this.rsBlock[i * 3 + 1];
-        var dataCount = this.rsBlock[i * 3 + 2];
-        for (var j = 0; j < count; j++) {
-          rsBlocks.push([dataCount, totalCount]);
-        }
-      }
-      var dcdata = new Array(rsBlocks.length);
-      var ecdata = new Array(rsBlocks.length);
-      for (var r = 0; r < rsBlocks.length; r++) {
-        var dcCount = rsBlocks[r][0];
-        var ecCount = rsBlocks[r][1] - dcCount;
-        maxDcCount = Math.max(maxDcCount, dcCount);
-        maxEcCount = Math.max(maxEcCount, ecCount);
-        dcdata[r] = new Array(dcCount);
-        for (var i = 0; i < dcdata[r].length; i++) {
-          dcdata[r][i] = 0xff & buffer.buffer[i + offset];
-        }
-        offset += dcCount;
-        var rsPoly = QRUtil.getErrorCorrectPolynomial(ecCount);
-        var rawPoly = new QRPolynomial(dcdata[r], rsPoly.getLength() - 1);
-        var modPoly = rawPoly.mod(rsPoly);
-        ecdata[r] = new Array(rsPoly.getLength() - 1);
-        for (var i = 0; i < ecdata[r].length; i++) {
-          var modIndex = i + modPoly.getLength() - ecdata[r].length;
-          ecdata[r][i] = modIndex >= 0 ? modPoly.get(modIndex) : 0;
-        }
-      }
-      var data = new Array(this.totalDataCount);
-      var index = 0;
-      for (var i = 0; i < maxDcCount; i++) {
-        for (var r = 0; r < rsBlocks.length; r++) {
-          if (i < dcdata[r].length) {
-            data[index++] = dcdata[r][i];
-          }
-        }
-      }
-      for (var i = 0; i < maxEcCount; i++) {
-        for (var r = 0; r < rsBlocks.length; r++) {
-          if (i < ecdata[r].length) {
-            data[index++] = ecdata[r][i];
-          }
-        }
-      }
-      return data;
-
-    },
-    /**
-        * 布置模块，构建最终信息
-        * @param  {} data
-        * @param  {} maskPattern
-        * @return {}
-        */
-    mapData: function mapData(data, maskPattern) {
-      var inc = -1;
-      var row = this.moduleCount - 1;
-      var bitIndex = 7;
-      var byteIndex = 0;
-      for (var col = this.moduleCount - 1; col > 0; col -= 2) {
-        if (col == 6) col--;
-        while (true) {
-          for (var c = 0; c < 2; c++) {
-            if (this.modules[row][col - c] == null) {
-              var dark = false;
-              if (byteIndex < data.length) {
-                dark = (data[byteIndex] >>> bitIndex & 1) == 1;
-              }
-              var mask = QRUtil.getMask(maskPattern, row, col - c);
-              if (mask) {
-                dark = !dark;
-              }
-              this.modules[row][col - c] = dark;
-              bitIndex--;
-              if (bitIndex == -1) {
-                byteIndex++;
-                bitIndex = 7;
-              }
-            }
-          }
-          row += inc;
-          if (row < 0 || this.moduleCount <= row) {
-            row -= inc;
-            inc = -inc;
-            break;
-          }
-        }
-      }
-    } };
-
-  /**
-          * 填充字段
-          */
-  QRCodeAlg.PAD0 = 0xEC;
-  QRCodeAlg.PAD1 = 0x11;
-  //---------------------------------------------------------------------
-  // 纠错等级对应的编码
-  //---------------------------------------------------------------------
-  var QRErrorCorrectLevel = [1, 0, 3, 2];
-  //---------------------------------------------------------------------
-  // 掩膜版本
-  //---------------------------------------------------------------------
-  var QRMaskPattern = {
-    PATTERN000: 0,
-    PATTERN001: 1,
-    PATTERN010: 2,
-    PATTERN011: 3,
-    PATTERN100: 4,
-    PATTERN101: 5,
-    PATTERN110: 6,
-    PATTERN111: 7 };
-
-  //---------------------------------------------------------------------
-  // 工具类
-  //---------------------------------------------------------------------
-  var QRUtil = {
-    /*
-                 每个版本矫正图形的位置
-                  */
-    PATTERN_POSITION_TABLE: [
-    [],
-    [6, 18],
-    [6, 22],
-    [6, 26],
-    [6, 30],
-    [6, 34],
-    [6, 22, 38],
-    [6, 24, 42],
-    [6, 26, 46],
-    [6, 28, 50],
-    [6, 30, 54],
-    [6, 32, 58],
-    [6, 34, 62],
-    [6, 26, 46, 66],
-    [6, 26, 48, 70],
-    [6, 26, 50, 74],
-    [6, 30, 54, 78],
-    [6, 30, 56, 82],
-    [6, 30, 58, 86],
-    [6, 34, 62, 90],
-    [6, 28, 50, 72, 94],
-    [6, 26, 50, 74, 98],
-    [6, 30, 54, 78, 102],
-    [6, 28, 54, 80, 106],
-    [6, 32, 58, 84, 110],
-    [6, 30, 58, 86, 114],
-    [6, 34, 62, 90, 118],
-    [6, 26, 50, 74, 98, 122],
-    [6, 30, 54, 78, 102, 126],
-    [6, 26, 52, 78, 104, 130],
-    [6, 30, 56, 82, 108, 134],
-    [6, 34, 60, 86, 112, 138],
-    [6, 30, 58, 86, 114, 142],
-    [6, 34, 62, 90, 118, 146],
-    [6, 30, 54, 78, 102, 126, 150],
-    [6, 24, 50, 76, 102, 128, 154],
-    [6, 28, 54, 80, 106, 132, 158],
-    [6, 32, 58, 84, 110, 136, 162],
-    [6, 26, 54, 82, 110, 138, 166],
-    [6, 30, 58, 86, 114, 142, 170]],
-
-    G15: 1 << 10 | 1 << 8 | 1 << 5 | 1 << 4 | 1 << 2 | 1 << 1 | 1 << 0,
-    G18: 1 << 12 | 1 << 11 | 1 << 10 | 1 << 9 | 1 << 8 | 1 << 5 | 1 << 2 | 1 << 0,
-    G15_MASK: 1 << 14 | 1 << 12 | 1 << 10 | 1 << 4 | 1 << 1,
-    /*
-                                                             BCH编码格式信息
-                                                              */
-    getBCHTypeInfo: function getBCHTypeInfo(data) {
-      var d = data << 10;
-      while (QRUtil.getBCHDigit(d) - QRUtil.getBCHDigit(QRUtil.G15) >= 0) {
-        d ^= QRUtil.G15 << QRUtil.getBCHDigit(d) - QRUtil.getBCHDigit(QRUtil.G15);
-      }
-      return (data << 10 | d) ^ QRUtil.G15_MASK;
-    },
-    /*
-       BCH编码版本信息
-        */
-    getBCHTypeNumber: function getBCHTypeNumber(data) {
-      var d = data << 12;
-      while (QRUtil.getBCHDigit(d) - QRUtil.getBCHDigit(QRUtil.G18) >= 0) {
-        d ^= QRUtil.G18 << QRUtil.getBCHDigit(d) - QRUtil.getBCHDigit(QRUtil.G18);
-      }
-      return data << 12 | d;
-    },
-    /*
-       获取BCH位信息
-        */
-    getBCHDigit: function getBCHDigit(data) {
-      var digit = 0;
-      while (data != 0) {
-        digit++;
-        data >>>= 1;
-      }
-      return digit;
-    },
-    /*
-       获取版本对应的矫正图形位置
-        */
-    getPatternPosition: function getPatternPosition(typeNumber) {
-      return QRUtil.PATTERN_POSITION_TABLE[typeNumber - 1];
-    },
-    /*
-       掩膜算法
-        */
-    getMask: function getMask(maskPattern, i, j) {
-      switch (maskPattern) {
-        case QRMaskPattern.PATTERN000:
-          return (i + j) % 2 == 0;
-        case QRMaskPattern.PATTERN001:
-          return i % 2 == 0;
-        case QRMaskPattern.PATTERN010:
-          return j % 3 == 0;
-        case QRMaskPattern.PATTERN011:
-          return (i + j) % 3 == 0;
-        case QRMaskPattern.PATTERN100:
-          return (Math.floor(i / 2) + Math.floor(j / 3)) % 2 == 0;
-        case QRMaskPattern.PATTERN101:
-          return i * j % 2 + i * j % 3 == 0;
-        case QRMaskPattern.PATTERN110:
-          return (i * j % 2 + i * j % 3) % 2 == 0;
-        case QRMaskPattern.PATTERN111:
-          return (i * j % 3 + (i + j) % 2) % 2 == 0;
-        default:
-          throw new Error("bad maskPattern:" + maskPattern);}
-
-    },
-    /*
-       获取RS的纠错多项式
-        */
-    getErrorCorrectPolynomial: function getErrorCorrectPolynomial(errorCorrectLength) {
-      var a = new QRPolynomial([1], 0);
-      for (var i = 0; i < errorCorrectLength; i++) {
-        a = a.multiply(new QRPolynomial([1, QRMath.gexp(i)], 0));
-      }
-      return a;
-    },
-    /*
-       获取评价
-        */
-    getLostPoint: function getLostPoint(qrCode) {
-      var moduleCount = qrCode.getModuleCount(),
-      lostPoint = 0,
-      darkCount = 0;
-      for (var row = 0; row < moduleCount; row++) {
-        var sameCount = 0;
-        var head = qrCode.modules[row][0];
-        for (var col = 0; col < moduleCount; col++) {
-          var current = qrCode.modules[row][col];
-          //level 3 评价
-          if (col < moduleCount - 6) {
-            if (current && !qrCode.modules[row][col + 1] && qrCode.modules[row][col + 2] && qrCode.modules[row][col + 3] && qrCode.modules[row][col + 4] && !qrCode.modules[row][col + 5] && qrCode.modules[row][col + 6]) {
-              if (col < moduleCount - 10) {
-                if (qrCode.modules[row][col + 7] && qrCode.modules[row][col + 8] && qrCode.modules[row][col + 9] && qrCode.modules[row][col + 10]) {
-                  lostPoint += 40;
-                }
-              } else if (col > 3) {
-                if (qrCode.modules[row][col - 1] && qrCode.modules[row][col - 2] && qrCode.modules[row][col - 3] && qrCode.modules[row][col - 4]) {
-                  lostPoint += 40;
-                }
-              }
-            }
-          }
-          //level 2 评价
-          if (row < moduleCount - 1 && col < moduleCount - 1) {
-            var count = 0;
-            if (current) count++;
-            if (qrCode.modules[row + 1][col]) count++;
-            if (qrCode.modules[row][col + 1]) count++;
-            if (qrCode.modules[row + 1][col + 1]) count++;
-            if (count == 0 || count == 4) {
-              lostPoint += 3;
-            }
-          }
-          //level 1 评价
-          if (head ^ current) {
-            sameCount++;
-          } else {
-            head = current;
-            if (sameCount >= 5) {
-              lostPoint += 3 + sameCount - 5;
-            }
-            sameCount = 1;
-          }
-          //level 4 评价
-          if (current) {
-            darkCount++;
-          }
-        }
-      }
-      for (var col = 0; col < moduleCount; col++) {
-        var sameCount = 0;
-        var head = qrCode.modules[0][col];
-        for (var row = 0; row < moduleCount; row++) {
-          var current = qrCode.modules[row][col];
-          //level 3 评价
-          if (row < moduleCount - 6) {
-            if (current && !qrCode.modules[row + 1][col] && qrCode.modules[row + 2][col] && qrCode.modules[row + 3][col] && qrCode.modules[row + 4][col] && !qrCode.modules[row + 5][col] && qrCode.modules[row + 6][col]) {
-              if (row < moduleCount - 10) {
-                if (qrCode.modules[row + 7][col] && qrCode.modules[row + 8][col] && qrCode.modules[row + 9][col] && qrCode.modules[row + 10][col]) {
-                  lostPoint += 40;
-                }
-              } else if (row > 3) {
-                if (qrCode.modules[row - 1][col] && qrCode.modules[row - 2][col] && qrCode.modules[row - 3][col] && qrCode.modules[row - 4][col]) {
-                  lostPoint += 40;
-                }
-              }
-            }
-          }
-          //level 1 评价
-          if (head ^ current) {
-            sameCount++;
-          } else {
-            head = current;
-            if (sameCount >= 5) {
-              lostPoint += 3 + sameCount - 5;
-            }
-            sameCount = 1;
-          }
-        }
-      }
-      // LEVEL4
-      var ratio = Math.abs(100 * darkCount / moduleCount / moduleCount - 50) / 5;
-      lostPoint += ratio * 10;
-      return lostPoint;
-    } };
-
-
-  //---------------------------------------------------------------------
-  // QRMath使用的数学工具
-  //---------------------------------------------------------------------
-  var QRMath = {
-    /*
-                 将n转化为a^m
-                  */
-    glog: function glog(n) {
-      if (n < 1) {
-        throw new Error("glog(" + n + ")");
-      }
-      return QRMath.LOG_TABLE[n];
-    },
-    /*
-       将a^m转化为n
-        */
-    gexp: function gexp(n) {
-      while (n < 0) {
-        n += 255;
-      }
-      while (n >= 256) {
-        n -= 255;
-      }
-      return QRMath.EXP_TABLE[n];
-    },
-    EXP_TABLE: new Array(256),
-    LOG_TABLE: new Array(256) };
-
-
-  for (var i = 0; i < 8; i++) {
-    QRMath.EXP_TABLE[i] = 1 << i;
-  }
-  for (var i = 8; i < 256; i++) {
-    QRMath.EXP_TABLE[i] = QRMath.EXP_TABLE[i - 4] ^ QRMath.EXP_TABLE[i - 5] ^ QRMath.EXP_TABLE[i - 6] ^ QRMath.EXP_TABLE[i - 8];
-  }
-  for (var i = 0; i < 255; i++) {
-    QRMath.LOG_TABLE[QRMath.EXP_TABLE[i]] = i;
-  }
-  //---------------------------------------------------------------------
-  // QRPolynomial 多项式
-  //---------------------------------------------------------------------
-  /**
-   * 多项式类
-   * @param {Array} num   系数
-   * @param {num} shift a^shift
-   */
-  function QRPolynomial(num, shift) {
-    if (num.length == undefined) {
-      throw new Error(num.length + "/" + shift);
-    }
-    var offset = 0;
-    while (offset < num.length && num[offset] == 0) {
-      offset++;
-    }
-    this.num = new Array(num.length - offset + shift);
-    for (var i = 0; i < num.length - offset; i++) {
-      this.num[i] = num[i + offset];
-    }
-  }
-  QRPolynomial.prototype = {
-    get: function get(index) {
-      return this.num[index];
-    },
-    getLength: function getLength() {
-      return this.num.length;
-    },
-    /**
-        * 多项式乘法
-        * @param  {QRPolynomial} e 被乘多项式
-        * @return {[type]}   [description]
-        */
-    multiply: function multiply(e) {
-      var num = new Array(this.getLength() + e.getLength() - 1);
-      for (var i = 0; i < this.getLength(); i++) {
-        for (var j = 0; j < e.getLength(); j++) {
-          num[i + j] ^= QRMath.gexp(QRMath.glog(this.get(i)) + QRMath.glog(e.get(j)));
-        }
-      }
-      return new QRPolynomial(num, 0);
-    },
-    /**
-        * 多项式模运算
-        * @param  {QRPolynomial} e 模多项式
-        * @return {}
-        */
-    mod: function mod(e) {
-      var tl = this.getLength(),
-      el = e.getLength();
-      if (tl - el < 0) {
-        return this;
-      }
-      var num = new Array(tl);
-      for (var i = 0; i < tl; i++) {
-        num[i] = this.get(i);
-      }
-      while (num.length >= el) {
-        var ratio = QRMath.glog(num[0]) - QRMath.glog(e.get(0));
-
-        for (var i = 0; i < e.getLength(); i++) {
-          num[i] ^= QRMath.gexp(QRMath.glog(e.get(i)) + ratio);
-        }
-        while (num[0] == 0) {
-          num.shift();
-        }
-      }
-      return new QRPolynomial(num, 0);
-    } };
-
-
-  //---------------------------------------------------------------------
-  // RS_BLOCK_TABLE
-  //---------------------------------------------------------------------
-  /*
-  二维码各个版本信息[块数, 每块中的数据块数, 每块中的信息块数]
-   */
-  var RS_BLOCK_TABLE = [
-  // L
-  // M
-  // Q
-  // H
-  // 1
-  [1, 26, 19],
-  [1, 26, 16],
-  [1, 26, 13],
-  [1, 26, 9],
-
-  // 2
-  [1, 44, 34],
-  [1, 44, 28],
-  [1, 44, 22],
-  [1, 44, 16],
-
-  // 3
-  [1, 70, 55],
-  [1, 70, 44],
-  [2, 35, 17],
-  [2, 35, 13],
-
-  // 4
-  [1, 100, 80],
-  [2, 50, 32],
-  [2, 50, 24],
-  [4, 25, 9],
-
-  // 5
-  [1, 134, 108],
-  [2, 67, 43],
-  [2, 33, 15, 2, 34, 16],
-  [2, 33, 11, 2, 34, 12],
-
-  // 6
-  [2, 86, 68],
-  [4, 43, 27],
-  [4, 43, 19],
-  [4, 43, 15],
-
-  // 7
-  [2, 98, 78],
-  [4, 49, 31],
-  [2, 32, 14, 4, 33, 15],
-  [4, 39, 13, 1, 40, 14],
-
-  // 8
-  [2, 121, 97],
-  [2, 60, 38, 2, 61, 39],
-  [4, 40, 18, 2, 41, 19],
-  [4, 40, 14, 2, 41, 15],
-
-  // 9
-  [2, 146, 116],
-  [3, 58, 36, 2, 59, 37],
-  [4, 36, 16, 4, 37, 17],
-  [4, 36, 12, 4, 37, 13],
-
-  // 10
-  [2, 86, 68, 2, 87, 69],
-  [4, 69, 43, 1, 70, 44],
-  [6, 43, 19, 2, 44, 20],
-  [6, 43, 15, 2, 44, 16],
-
-  // 11
-  [4, 101, 81],
-  [1, 80, 50, 4, 81, 51],
-  [4, 50, 22, 4, 51, 23],
-  [3, 36, 12, 8, 37, 13],
-
-  // 12
-  [2, 116, 92, 2, 117, 93],
-  [6, 58, 36, 2, 59, 37],
-  [4, 46, 20, 6, 47, 21],
-  [7, 42, 14, 4, 43, 15],
-
-  // 13
-  [4, 133, 107],
-  [8, 59, 37, 1, 60, 38],
-  [8, 44, 20, 4, 45, 21],
-  [12, 33, 11, 4, 34, 12],
-
-  // 14
-  [3, 145, 115, 1, 146, 116],
-  [4, 64, 40, 5, 65, 41],
-  [11, 36, 16, 5, 37, 17],
-  [11, 36, 12, 5, 37, 13],
-
-  // 15
-  [5, 109, 87, 1, 110, 88],
-  [5, 65, 41, 5, 66, 42],
-  [5, 54, 24, 7, 55, 25],
-  [11, 36, 12],
-
-  // 16
-  [5, 122, 98, 1, 123, 99],
-  [7, 73, 45, 3, 74, 46],
-  [15, 43, 19, 2, 44, 20],
-  [3, 45, 15, 13, 46, 16],
-
-  // 17
-  [1, 135, 107, 5, 136, 108],
-  [10, 74, 46, 1, 75, 47],
-  [1, 50, 22, 15, 51, 23],
-  [2, 42, 14, 17, 43, 15],
-
-  // 18
-  [5, 150, 120, 1, 151, 121],
-  [9, 69, 43, 4, 70, 44],
-  [17, 50, 22, 1, 51, 23],
-  [2, 42, 14, 19, 43, 15],
-
-  // 19
-  [3, 141, 113, 4, 142, 114],
-  [3, 70, 44, 11, 71, 45],
-  [17, 47, 21, 4, 48, 22],
-  [9, 39, 13, 16, 40, 14],
-
-  // 20
-  [3, 135, 107, 5, 136, 108],
-  [3, 67, 41, 13, 68, 42],
-  [15, 54, 24, 5, 55, 25],
-  [15, 43, 15, 10, 44, 16],
-
-  // 21
-  [4, 144, 116, 4, 145, 117],
-  [17, 68, 42],
-  [17, 50, 22, 6, 51, 23],
-  [19, 46, 16, 6, 47, 17],
-
-  // 22
-  [2, 139, 111, 7, 140, 112],
-  [17, 74, 46],
-  [7, 54, 24, 16, 55, 25],
-  [34, 37, 13],
-
-  // 23
-  [4, 151, 121, 5, 152, 122],
-  [4, 75, 47, 14, 76, 48],
-  [11, 54, 24, 14, 55, 25],
-  [16, 45, 15, 14, 46, 16],
-
-  // 24
-  [6, 147, 117, 4, 148, 118],
-  [6, 73, 45, 14, 74, 46],
-  [11, 54, 24, 16, 55, 25],
-  [30, 46, 16, 2, 47, 17],
-
-  // 25
-  [8, 132, 106, 4, 133, 107],
-  [8, 75, 47, 13, 76, 48],
-  [7, 54, 24, 22, 55, 25],
-  [22, 45, 15, 13, 46, 16],
-
-  // 26
-  [10, 142, 114, 2, 143, 115],
-  [19, 74, 46, 4, 75, 47],
-  [28, 50, 22, 6, 51, 23],
-  [33, 46, 16, 4, 47, 17],
-
-  // 27
-  [8, 152, 122, 4, 153, 123],
-  [22, 73, 45, 3, 74, 46],
-  [8, 53, 23, 26, 54, 24],
-  [12, 45, 15, 28, 46, 16],
-
-  // 28
-  [3, 147, 117, 10, 148, 118],
-  [3, 73, 45, 23, 74, 46],
-  [4, 54, 24, 31, 55, 25],
-  [11, 45, 15, 31, 46, 16],
-
-  // 29
-  [7, 146, 116, 7, 147, 117],
-  [21, 73, 45, 7, 74, 46],
-  [1, 53, 23, 37, 54, 24],
-  [19, 45, 15, 26, 46, 16],
-
-  // 30
-  [5, 145, 115, 10, 146, 116],
-  [19, 75, 47, 10, 76, 48],
-  [15, 54, 24, 25, 55, 25],
-  [23, 45, 15, 25, 46, 16],
-
-  // 31
-  [13, 145, 115, 3, 146, 116],
-  [2, 74, 46, 29, 75, 47],
-  [42, 54, 24, 1, 55, 25],
-  [23, 45, 15, 28, 46, 16],
-
-  // 32
-  [17, 145, 115],
-  [10, 74, 46, 23, 75, 47],
-  [10, 54, 24, 35, 55, 25],
-  [19, 45, 15, 35, 46, 16],
-
-  // 33
-  [17, 145, 115, 1, 146, 116],
-  [14, 74, 46, 21, 75, 47],
-  [29, 54, 24, 19, 55, 25],
-  [11, 45, 15, 46, 46, 16],
-
-  // 34
-  [13, 145, 115, 6, 146, 116],
-  [14, 74, 46, 23, 75, 47],
-  [44, 54, 24, 7, 55, 25],
-  [59, 46, 16, 1, 47, 17],
-
-  // 35
-  [12, 151, 121, 7, 152, 122],
-  [12, 75, 47, 26, 76, 48],
-  [39, 54, 24, 14, 55, 25],
-  [22, 45, 15, 41, 46, 16],
-
-  // 36
-  [6, 151, 121, 14, 152, 122],
-  [6, 75, 47, 34, 76, 48],
-  [46, 54, 24, 10, 55, 25],
-  [2, 45, 15, 64, 46, 16],
-
-  // 37
-  [17, 152, 122, 4, 153, 123],
-  [29, 74, 46, 14, 75, 47],
-  [49, 54, 24, 10, 55, 25],
-  [24, 45, 15, 46, 46, 16],
-
-  // 38
-  [4, 152, 122, 18, 153, 123],
-  [13, 74, 46, 32, 75, 47],
-  [48, 54, 24, 14, 55, 25],
-  [42, 45, 15, 32, 46, 16],
-
-  // 39
-  [20, 147, 117, 4, 148, 118],
-  [40, 75, 47, 7, 76, 48],
-  [43, 54, 24, 22, 55, 25],
-  [10, 45, 15, 67, 46, 16],
-
-  // 40
-  [19, 148, 118, 6, 149, 119],
-  [18, 75, 47, 31, 76, 48],
-  [34, 54, 24, 34, 55, 25],
-  [20, 45, 15, 61, 46, 16]];
-
-
-  /**
-                              * 根据数据获取对应版本
-                              * @return {[type]} [description]
-                              */
-  QRCodeAlg.prototype.getRightType = function () {
-    for (var typeNumber = 1; typeNumber < 41; typeNumber++) {
-      var rsBlock = RS_BLOCK_TABLE[(typeNumber - 1) * 4 + this.errorCorrectLevel];
-      if (rsBlock == undefined) {
-        throw new Error("bad rs block @ typeNumber:" + typeNumber + "/errorCorrectLevel:" + this.errorCorrectLevel);
-      }
-      var length = rsBlock.length / 3;
-      var totalDataCount = 0;
-      for (var i = 0; i < length; i++) {
-        var count = rsBlock[i * 3 + 0];
-        var dataCount = rsBlock[i * 3 + 2];
-        totalDataCount += dataCount * count;
-      }
-      var lengthBytes = typeNumber > 9 ? 2 : 1;
-      if (this.utf8bytes.length + lengthBytes < totalDataCount || typeNumber == 40) {
-        this.typeNumber = typeNumber;
-        this.rsBlock = rsBlock;
-        this.totalDataCount = totalDataCount;
-        break;
-      }
-    }
-  };
-
-  //---------------------------------------------------------------------
-  // QRBitBuffer
-  //---------------------------------------------------------------------
-  function QRBitBuffer() {
-    this.buffer = new Array();
-    this.length = 0;
-  }
-  QRBitBuffer.prototype = {
-    get: function get(index) {
-      var bufIndex = Math.floor(index / 8);
-      return this.buffer[bufIndex] >>> 7 - index % 8 & 1;
-    },
-    put: function put(num, length) {
-      for (var i = 0; i < length; i++) {
-        this.putBit(num >>> length - i - 1 & 1);
-      }
-    },
-    putBit: function putBit(bit) {
-      var bufIndex = Math.floor(this.length / 8);
-      if (this.buffer.length <= bufIndex) {
-        this.buffer.push(0);
-      }
-      if (bit) {
-        this.buffer[bufIndex] |= 0x80 >>> this.length % 8;
-      }
-      this.length++;
-    } };
-
-
-
-
-  // xzedit
-  var qrcodeAlgObjCache = [];
-  /**
-                               * 二维码构造函数，主要用于绘制
-                               * @param  {参数列表} opt 传递参数
-                               * @return {}
-                               */
-  QRCode = function QRCode(opt) {
-    //设置默认参数
-    this.options = {
-      text: '',
-      size: 256,
-      correctLevel: 3,
-      background: '#ffffff',
-      foreground: '#000000',
-      pdground: '#000000',
-      image: '',
-      imageSize: 30,
-      canvasId: opt.canvasId,
-      context: opt.context,
-      usingComponents: opt.usingComponents,
-      showLoading: opt.showLoading,
-      loadingText: opt.loadingText };
-
-    if (typeof opt === 'string') {// 只编码ASCII字符串
-      opt = {
-        text: opt };
-
-    }
-    if (opt) {
-      for (var i in opt) {
-        this.options[i] = opt[i];
-      }
-    }
-    //使用QRCodeAlg创建二维码结构
-    var qrCodeAlg = null;
-    for (var i = 0, l = qrcodeAlgObjCache.length; i < l; i++) {
-      if (qrcodeAlgObjCache[i].text == this.options.text && qrcodeAlgObjCache[i].text.correctLevel == this.options.correctLevel) {
-        qrCodeAlg = qrcodeAlgObjCache[i].obj;
-        break;
-      }
-    }
-    if (i == l) {
-      qrCodeAlg = new QRCodeAlg(this.options.text, this.options.correctLevel);
-      qrcodeAlgObjCache.push({
-        text: this.options.text,
-        correctLevel: this.options.correctLevel,
-        obj: qrCodeAlg });
-
-    }
-    /**
-       * 计算矩阵点的前景色
-       * @param {Obj} config
-       * @param {Number} config.row 点x坐标
-       * @param {Number} config.col 点y坐标
-       * @param {Number} config.count 矩阵大小
-       * @param {Number} config.options 组件的options
-       * @return {String}
-       */
-    var getForeGround = function getForeGround(config) {
-      var options = config.options;
-      if (options.pdground && (
-      config.row > 1 && config.row < 5 && config.col > 1 && config.col < 5 ||
-      config.row > config.count - 6 && config.row < config.count - 2 && config.col > 1 && config.col < 5 ||
-      config.row > 1 && config.row < 5 && config.col > config.count - 6 && config.col < config.count - 2))
-      {
-        return options.pdground;
-      }
-      return options.foreground;
-    };
-    // 创建canvas
-    var createCanvas = function createCanvas(options) {
-      if (options.showLoading) {
-        uni.showLoading({
-          title: options.loadingText,
-          mask: true });
-
-      }
-      var ctx = uni.createCanvasContext(options.canvasId, options.context);
-      var count = qrCodeAlg.getModuleCount();
-      var ratioSize = options.size;
-      var ratioImgSize = options.imageSize;
-      //计算每个点的长宽
-      var tileW = (ratioSize / count).toPrecision(4);
-      var tileH = (ratioSize / count).toPrecision(4);
-      //绘制
-      for (var row = 0; row < count; row++) {
-        for (var col = 0; col < count; col++) {
-          var w = Math.ceil((col + 1) * tileW) - Math.floor(col * tileW);
-          var h = Math.ceil((row + 1) * tileW) - Math.floor(row * tileW);
-          var foreground = getForeGround({
-            row: row,
-            col: col,
-            count: count,
-            options: options });
-
-          ctx.setFillStyle(qrCodeAlg.modules[row][col] ? foreground : options.background);
-          ctx.fillRect(Math.round(col * tileW), Math.round(row * tileH), w, h);
-        }
-      }
-      if (options.image) {
-
-
-
-
-        // 画圆角矩形
-        var drawRoundedRect = function drawRoundedRect(ctxi, x, y, width, height, r, lineWidth, fill, stroke) {
-          ctxi.setLineWidth(lineWidth);
-          ctxi.setFillStyle(options.background);
-          ctxi.setStrokeStyle(options.background);
-          ctxi.beginPath(); // draw top and top right corner 
-          ctxi.moveTo(x + r, y);
-          ctxi.arcTo(x + width, y, x + width, y + r, r); // draw right side and bottom right corner 
-          ctxi.arcTo(x + width, y + height, x + width - r, y + height, r); // draw bottom and bottom left corner 
-          ctxi.arcTo(x, y + height, x, y + height - r, r); // draw left and top left corner 
-          ctxi.arcTo(x, y, x + r, y, r);
-          ctxi.closePath();
-          if (fill) {
-            ctxi.fill();
-          }
-          if (stroke) {
-            ctxi.stroke();
-          }
-        };var x = Number(((ratioSize - ratioImgSize) / 2).toFixed(2));var y = Number(((ratioSize - ratioImgSize) / 2).toFixed(2));drawRoundedRect(ctx, x, y, ratioImgSize, ratioImgSize, 2, 6, true, true);ctx.drawImage(options.image, x, y, ratioImgSize, ratioImgSize);
-      }
-      setTimeout(function () {
-        ctx.draw(true, function () {
-          // 保存到临时区域
-          setTimeout(function () {
-            uni.canvasToTempFilePath({
-              width: options.width,
-              height: options.height,
-              destWidth: options.width,
-              destHeight: options.height,
-              canvasId: options.canvasId,
-              quality: Number(1),
-              success: function success(res) {
-                if (options.cbResult) {
-                  options.cbResult(res.tempFilePath);
-                }
-              },
-              fail: function fail(res) {
-                if (options.cbResult) {
-                  options.cbResult(res);
-                }
-              },
-              complete: function complete() {
-                if (options.showLoading) {
-                  uni.hideLoading();
-                }
-              } },
-            options.context);
-          }, options.text.length + 100);
-        });
-      }, options.usingComponents ? 0 : 150);
-    };
-    createCanvas(this.options);
-    // 空判定
-    var empty = function empty(v) {
-      var tp = typeof v,
-      rt = false;
-      if (tp == "number" && String(v) == "") {
-        rt = true;
-      } else if (tp == "undefined") {
-        rt = true;
-      } else if (tp == "object") {
-        if (JSON.stringify(v) == "{}" || JSON.stringify(v) == "[]" || v == null) rt = true;
-      } else if (tp == "string") {
-        if (v == "" || v == "undefined" || v == "null" || v == "{}" || v == "[]") rt = true;
-      } else if (tp == "function") {
-        rt = false;
-      }
-      return rt;
-    };
-  };
-  QRCode.prototype.clear = function (fn) {
-    var ctx = uni.createCanvasContext(this.options.canvasId, this.options.context);
-    ctx.clearRect(0, 0, this.options.size, this.options.size);
-    ctx.draw(false, function () {
-      if (fn) {
-        fn();
-      }
-    });
-  };
-})();var _default =
-
-QRCode;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 327:
-/*!************************************************************************************!*\
-  !*** /Users/wenjieliu/hbuilderSpaces/newSjty/components/u-charts/js/chartsUtil.js ***!
-  \************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-var _uCharts = _interopRequireDefault(__webpack_require__(/*! ./u-charts.js */ 328));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // import uCharts from './u-charts.min.js'
-
-var chartsUtil = {
-  getSampleData: function getSampleData() {
-    /*下面是服务器返回的数据格式，现已改成从服务器获取数据，以供有些朋友不知道怎么从后台获取数据后调用*/
-    var Data = {
-      Column: { categories: ['2012', '2013', '2014', '2015', '2016', '2017'], series: [{ name: '成交量1', data: [15, { value: 20, color: '#f04864' }, 45, 37, 43, 34] }, { name: '成交量2', data: [30, { value: 40, color: '#facc14' }, 25, 14, 34, 18] }] },
-      ColumnB: { categories: ['2013', '2014', '2015', '2016', '2017', '2018'], series: [{ name: '新成交量3', data: [35, 36, 31, 33, 13, 34] }, { name: '新成交量4', data: [18, 27, 21, 34, 14, 38] }] },
-      LineA: { categories: ['2012', '2013', '2014', '2015', '2016', '2017'], series: [{ name: '成交量A', data: [35, 20, 25, 37, 4, 20] }, { name: '成交量B', data: [70, 40, 65, 100, 44, 68] }, { name: '成交量C', data: [100, 80, 95, 150, 112, 132] }] },
-      LineB: { categories: ['2012', '2013', '2014', '2015', '2016', '2017'], series: [{ name: '成交量A', data: [35, 20, 25, 37, 4, 20] }, { name: '成交量B', data: [70, 40, 65, 100, 44, 68] }, { name: '成交量C', data: [100, 80, 95, 150, 112, 132] }] },
-      LineC: { categories: ['一师', '二师', '三师', '四师', '五师', '六师', '七师', '八师', '九师', '十师', '十一师', '十二师', '十三师', '十四师'], series: [{ name: '完成度', data: [35, 20, 25, 37, 14, 20, 28, 35, 20, 25, 37, 24, 20, 28] }] },
-      Area: { categories: ['2012', '2013', '2014', '2015', '2016', '2017'], series: [{ name: '成交量A', data: [100, 80, 95, 150, 112, 132], color: '#facc14' }, { name: '成交量B', data: [70, 40, 65, 100, 44, 68], color: '#2fc25b' }, { name: '成交量C', data: [35, 20, 25, 37, 4, 20], color: '#1890ff' }] },
-      Pie: { series: [{ name: '一师', data: 50 }, { name: '二师', data: 30 }, { name: '三师', data: 20 }, { name: '四师', data: 18 }, { name: '五师', data: 8 }] },
-      Ring: { series: [{ name: '一师', data: 50, format: function format() {return '一师:50人';} }, { name: '二师', data: 30, format: function format() {return '二师:30人';} }, { name: '三师', data: 20, format: function format() {return '三师:20人';} }, { name: '四师', data: 18, format: function format() {return '四师:18人';} }, { name: '五师', data: 8, format: function format() {return '五师:8人';} }] },
-      Radar: { categories: ['维度1', '维度2', '维度3', '维度4', '维度5', '维度6'], series: [{ name: '成交量1', data: [90, 110, 165, 195, 187, 172] }, { name: '成交量2', data: [190, 210, 105, 35, 27, 102] }] },
-      Arcbar1: { series: [{ name: '正确率', data: 0.29, color: '#2fc25b' }] },
-      Arcbar2: { series: [{ name: '错误率', data: 0.65, color: '#f04864' }] },
-      Arcbar3: { series: [{ name: '完成率', data: 0.85, color: '#1890ff' }] },
-      Gauge: { categories: [{ value: 0.2, color: '#2fc25b' }, { value: 0.8, color: '#f04864' }, { value: 1, color: '#1890ff' }], series: [{ name: '完成率', data: 0.85 }] },
-      ColumnMeter: {
-        categories: ["2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018"],
-        series: [{
-          "name": "目标值",
-          "data": [35, 33, 13, 34, 36, 31, 35, 36, 31, 33, 13, 34],
-          "color": "#2fc25b" },
-        {
-          "name": "完成量",
-          "data": [18, 24, 6, 28, 27, 21, 18, 27, 21, 24, 6, 28],
-          "color": "#1890ff" }] } };
-
-
-
-    return Data;
-  },
-  /*-----------------------------
-     * func:动态图表
-     * canvasId-画布id
-     * data-图表格式化数据
-     * target-this(全局对象this)
-     -------------------------------*/
-  showCharts: function showCharts(canvasId, data, target) {
-    return new _uCharts.default({
-      $this: target, //this实例组件内使用图表，必须传入this实例 
-      canvasId: canvasId, //页面组件canvas-id，支付宝中为id
-      width: data.width || target.cWidth || uni.upx2px(750) * (data.pixelRatio || target.pixelRatio || 1), //canvas宽度，单位为px，支付宝高分屏需要乘像素比 
-      height: data.height || target.cHeight || uni.upx2px(500) * (data.pixelRatio || target.pixelRatio || 1), //canvas高度，单位为px，支付宝高分屏需要乘像素比
-      type: data.type, //图表类型，可选值为rose、pie、line、column、area、ring、radar、arcbar、gauge、candle、bar、mix
-      pixelRatio: data.pixelRatio || target.pixelRatio || 1, //像素比，默认为1，非H5端引用无需设置
-      rotate: data.rotate || false, //横屏模式，默认为false
-      rotateLock: data.rotateLock || false, //锁定横屏模式，如果在支付宝和百度小程序中使用横屏模式，请赋值true，否则每次都会旋转90度。跨端使用通过uni-app的条件编译来赋值 
-      fontSize: data.fontSize || 11, //全局默认字体大小，单位为px，默认13px，高分屏不必乘像素比，自动计算 
-      background: data.background || '#FFFFFF', //canvas背景颜色（如果页面背景颜色不是白色请设置为页面的背景颜色，默认#ffffff）
-      enableScroll: data.enableScroll || false, //是否开启图表可拖拽滚动 默认false
-      /*支持line、area、 column、 candle图表类型(需配合绑定@touchstart、@touchmove、@touchend方法) ",使用图表拖拽功能时，建议给canvas增加disable-scroll=true属性，在拖拽时禁止屏幕滚动*/
-      enableMarkLine: data.enableMarkLine || false, //是否显示辅助线 默认false 支持line、area、column、candle图表类型 
-      animation: data.animation || false, //是否动画展示，默认为 true
-      legend: data.legend || (data.type == 'arcbar' || data.type == 'gauge' ? false : true), //图例设置，是否显示图表下方各类别的标识
-      dataLabel: data.dataLabel || true, //是否在图表中显示数据标签内容值
-      dataPointShape: data.dataPointShape || true, //是否在图表中显示数据点图形标识
-      disablePieStroke: data.disablePieStroke || false, //不绘制饼图（圆环图）各区块的白色分割线
-      categories: data.categories || (data.type == 'gauge' ? [{ value: 0.2, color: '#2fc25b' }, { value: 0.8, color: '#f04864' }, { value: 1, color: '#1890ff' }] : []), //图表X轴数据，数据类别(饼图、圆环图不需要)
-      //categories.value|Number仅仪表盘有效，定义仪表盘分段值 
-      //categories.color|String仅仪表盘有效，定义仪表盘分段背景颜色
-      series: data.series || [], //图表Y轴数据，数据列表
-      //series.data|Array|required|(饼图、圆环图为Number) 数据，如果传入null图表该处出现断点
-      //series.data.value|Number|仅针对柱状图有效，主要作用为柱状图自定义颜色
-      //series.data.color|String|仅针对柱状图有效，主要作用为柱状图自定义颜色
-      //series.color|String|例如#7cb5ec不传入则使用系统默认配色方案
-      //series.textColor|String|控制dataLabel颜色，例如#666666不传入则使用系统默认配色方案
-      //series.name|String|数据名称
-      //series.type|String|`混合图表`图形展示方式，有效值为point、line、column详细使用方法见demo
-      //series.disableLegend|String|默认false|`混合图表`中禁止显示ToolTip图例，默认false即默认显示该类别图例
-      //series.style|String|默认straight|暂时定义为`混合图表折线图样式`，有效值为`curve`曲线,`straight`直线
-      //series.shape|String|默认为circle|图例样式，有效值为diamond:◇， circle:○， triangle:△， rect:□ 
-      //series.format|Function|自定义显示数据内容
-      /*
-      	format:((val)=>{return val.toFixed(2)+'%'})
-      	format: function (item, category) {
-      		return (category||'') + ' ' + item.name + ':' + item.data 
-      	}
-      */
-      title: data.title || { //适用于`ring`、`arcbar`、`gauge`
-        name: data.type == 'arcbar' || data.type == 'gauge' ? Math.round(data.series[0].data * 100) + '%' : '', //标题内容
-        fontSize: data.titlefontSize || 11, //标题字体大小（可选，单位为px）
-        color: data.titlecolor || (data.type == 'arcbar' || data.type == 'gauge' ? data.series[0].color : '#333333'), //标题颜色（可选）
-        offsetX: data.titleoffsetX || 0, //默认0px | 标题横向位置偏移量，单位px
-        offsetY: data.titleoffsetY || 0 //默认0px | 标题纵向位置偏移量，单位px
-      },
-      subtitle: data.subtitle || { //适用于`ring`、`arcbar`、`gauge`
-        name: data.type == 'arcbar' || data.type == 'gauge' ? data.series[0].name : '', //副标题内容
-        offsetX: data.subtitleoffsetX || 0, //副标题横向位置偏移量，单位px，默认0
-        offsetY: data.subtitleoffsetY || 0, //副标题横向位置偏移量，单位px，默认0
-        fontSize: data.subtitlefontSize || 11, //副标题字体大小（可选，单位为px）
-        color: data.subtitlecolor || '#666666' || '#333333' //副标题颜色（可选）
-      },
-      xAxis: data.xAxis || { //X轴配置
-        rotateLabel: data.rotateLabel || true, //Boolean 默认为 false | X轴刻度（数值）标签是否旋转（仅在文案超过单屏宽度时有效）
-        itemCount: data.itemCount || 5, //Number|默认为5|X轴可见区域`数据数量`（即X轴数据密度），配合拖拽滚动使用（即仅在启用enableScroll时有效）
-        labelCount: data.labelCount, //Number|X轴可见区域`标签数量`（即X轴数刻度标签单屏幕限制显示的数量）
-        scrollShow: data.scrollShow || true, //默认为 false | 是否显示滚动条，配合拖拽滚动使用（即仅在启用enableScroll时有效）
-        scrollAlign: data.scrollAlign || 'left', //默认为 left | 滚动条初始位置，left为数据整体左对齐，right为右对齐 
-        scrollBackgroundColor: data.scrollBackgroundColor || '#EFEBEF', //默认为 #EFEBEF | X轴滚动条背景颜色，配合拖拽滚动使用（即仅在启用enableScroll时有效）
-        scrollColor: data.scrollColor || '#A6A6A6', //X轴滚动条颜色，配合拖拽滚动使用（即仅在启用enableScroll时有效）
-        disabled: data.xAxisdisabled || false, //默认为 false | 不绘制X轴
-        disableGrid: data.xAxisdisableGrid || false, //默认为 false | 不绘制X轴网格(即默认绘制网格)
-        type: data.xAxistype || 'calibration', //X轴网格样式，可选值calibration（刻度）、grid（网格）
-        gridColor: data.xAxisgridColor || '#cccccc', //X轴网格颜色 例如#7cb5ec
-        gridType: data.xAxisgridType || 'solid', //X轴网格线型 'solid'为实线、'dash'为虚线
-        dashLength: data.xAxisdashLength || 4, //默认为 4px | X轴网格为虚线时，单段虚线长度
-        fontColor: data.xAxisfontColor || '#666666' //X轴数据点颜色 例如#7cb5ec
-      },
-      yAxis: data.yAxis || {
-        format: data.yAxisformat || function (val) {return val.toFixed(data.fixed || 0) + (data.unit || '');}, //如不写此方法，Y轴刻度默认保留两位小数。Function|自定义Y轴文案显示
-        min: data.yAxismin, //Number|Y轴起始值
-        max: data.yAxismax, //Number|Y轴终止值
-        title: data.yAxistitle || '', //Y轴title
-        disabled: data.yAxisdisabled || false, //不绘制Y轴
-        disableGrid: data.yAxisdisableGrid || false, //不绘制Y轴网格(即默认绘制网格)
-        splitNumber: data.yAxissplitNumber || 5, //Y轴网格数量
-        gridType: data.yAxisgridType || 'dash', //Y轴网格线型 'solid'为实线、'dash'为虚线
-        dashLength: data.yAxisdashLength || 4, //Y轴网格为虚线时，单段虚线长度
-        gridColor: data.yAxisgridColor || '#cccccc', //Y轴网格颜色 例如#7cb5ec
-        fontColor: data.yAxisfontColor || '#666666', //Y轴数据点颜色 例如#7cb5ec
-        titleFontColor: data.yAxistitleFontColor || '#333333' //Y轴title颜色 例如#7cb5ec
-      },
-      extra: data.extra || {
-        arcbar: data.arcbar || { //圆弧进度图相关配置
-          type: data.extratype || 'default', //默认default |圆弧进度图样式，default为半圆弧，circle为整圆
-          width: (data.extraWidth || target.arcbarWidth || uni.upx2px(12)) * (data.pixelRatio || target.pixelRatio || 1), //Number | 默认12px |圆弧进度图弧线宽度，单位为px
-          backgroundColor: data.backgroundColor || '#ffe3e8', //默认#E9E9E9 |圆弧进度图背景颜色
-          startAngle: data.startAngle || 1.25, //默认0.75 |圆弧进度图起始角度，0-2之间，0为3点钟位置，0.5为6点钟，1为9点钟，1.5为12点钟
-          endAngle: data.endAngle || 0.75 //默认0.25 |圆弧进度图结束角度，0-2之间，0为3点钟位置，0.5为6点钟，1为9点钟，1.5为12点钟
-        },
-        gauge: data.gauge || { //仪表盘相关配置
-          type: data.extratype || 'default', //默认default |仪表盘样式，default为百度样式，`其他样式开发中`
-          width: (data.extraWidth || uni.upx2px(30)) * (data.pixelRatio || target.pixelRatio || 1), //仪表盘背景的宽度,默认15px |仪表盘坐标轴（指示盘）线宽度，单位为px
-          labelColor: data.labelColor || '#666666', //默认#666666|仪表盘刻度尺标签文字颜色",
-          startAngle: data.startAngle || 0.75, //默认0.75 |仪表盘起始角度，0-2之间，0为3点钟位置，0.5为6点钟，1为9点钟，1.5为12点钟
-          endAngle: data.endAngle || 0.25, //默认0.25 |仪表盘结束角度，0-2之间，0为3点钟位置，0.5为6点钟，1为9点钟，1.5为12点钟
-          startNumber: data.startNumber || 0, //默认0 |仪表盘起始数值
-          endNumber: data.endNumber || 100, //默认100 |仪表盘结束数值
-          splitLine: data.splitLine || { //仪表盘刻度线配置
-            fixRadius: data.fixRadius || 0, //默认0 |仪表盘刻度线径向偏移量
-            splitNumber: data.splitNumber || 10, //默认10 |仪表盘刻度线分段总数量
-            width: data.splitLinewidth || uni.upx2px(30) * (data.pixelRatio || target.pixelRatio || 1), //默认15px |仪表盘分割线长度
-            color: data.splitLinecolor || '#FFFFFF', //默认#FFFFFF |仪表盘分割线颜色
-            childNumber: data.childNumber || 5, //默认5 |仪表盘子刻度线数量
-            childWidth: data.childWidth || uni.upx2px(30) * 0.4 * (data.pixelRatio || target.pixelRatio || 1) //默认5px |仪表盘子刻度线长度
-          },
-          pointer: data.pointer || { //仪表盘指针配置
-            width: data.pointerwidth || uni.upx2px(30) * 0.8 * (data.pixelRatio || target.pixelRatio || 1), //默认15px |仪表盘指针宽度
-            color: data.pointercolor || 'auto' //默认auto |仪表盘指针颜色，定义为auto时，随仪表盘背景颜色改变,或者可以指定颜色例如#7cb5ec
-          } },
-
-        radar: data.radar || { //雷达图相关配置
-          max: data.max || 200, //默认为 series |data的最大值，数据区间最大值，用于调整数据显示的比例
-          labelColor: data.labelColor || '#666666', //默认为 #666666|各项标识文案的颜色
-          gridColor: data.gridColor || '#cccccc' //默认为 #cccccc| 雷达图网格颜色
-        },
-        column: data.column || { //柱状图相关配置
-          type: data.extratype || 'group', //柱状图类型：group分组柱状图，stack为堆叠柱状图（未完成开发中），meter为温度计式图
-          width: (data.width || target.cWidth || uni.upx2px(750)) * (data.pixelRatio || target.pixelRatio || 1) * 0.45 / (data.type == 'column' ? data.categories.length : 5), //柱状图每项的图形宽度，单位为px
-          meter: data.meter || {
-            border: data.border || 3, //边框宽度，单位为px，默认1px
-            fillColor: data.fillColor || '#E5FDC3' //默认#FFFFFF |空余填充颜色
-          } },
-
-        pie: data.pie || { //饼图、圆环图相关配置
-          activeOpacity: data.activeOpacity || 0.5, //启用Tooltip点击时，突出部分的透明度，默认0.5 
-          offsetAngle: data.offsetAngle || 0, //起始角度偏移度数，顺时针方向，起点为3点钟位置（比如要设置起点为12点钟位置，即逆时针偏移90度，传入-90即可
-          lableWidth: data.lableWidth || 15, //数据标签到饼图外圆连线的长度，必填参数，否则报错，单位为px
-          ringWidth: data.ringWidth || 30 * (data.pixelRatio || target.pixelRatio || 1) //ringChart圆环宽度，单位为px
-        },
-        rose: data.rose || { //玫瑰图相关配置
-          type: data.extratype || 'area', //玫瑰图模式，可选值`area`面积模式，`radius`半径模式"
-          minRadius: data.minRadius || 50, //默认为图形半径的50% | 最小半径值
-          activeOpacity: data.activeOpacity || 0.5, //启用Tooltip点击时，突出部分的透明度，默认0.5
-          offsetAngle: data.offsetAngle || 0, //起始角度偏移度数，顺时针方向，起点为3点钟位置（比如要设置起点为12点钟位置，即逆时针偏移90度，传入-90即可）
-          lableWidth: data.lableWidth || 15 //数据标签到饼图外圆连线的长度，必填参数，否则报错，单位为px
-        },
-        line: data.line || { //折线图配置
-          type: data.extratype || 'straight', //curve曲线，straight直线
-          width: data.extrawidth || 2 //默认2px | 折线宽度
-        },
-        area: data.area || { //区域图配置
-          type: data.extratype || 'straight', //可选值：curve曲线，straight直线
-          opacity: data.opacity || 0.2, //区域图透明度
-          addLine: data.addLine || false, //是否叠加相应的折线
-          width: data.extrawidth || 2 //默认2px | 折线宽度
-        },
-        candle: data.candle || {//K线图相关配置
-          /*
-          "opts.extra.candle| Object | |K线图相关配置",
-          "opts.extra.candle.color| Object | |K线图颜色配置",
-          "opts.extra.candle.color.upLine| String | 默认#f04864 |K线图为涨时线颜色",
-          "opts.extra.candle.color.upFill| String | 默认#f04864 |K线图为涨时填充颜色",
-          "opts.extra.candle.color.downLine| String | 默认#2fc25b |K线图为跌时线颜色",
-          "opts.extra.candle.color.downFill| String | 默认#2fc25b |K线图为跌时填充颜色",
-          "opts.extra.candle.average| Object | |均线设置",
-          "opts.extra.candle.average.show | Boolean | 默认false |是否显示均线",
-          "opts.extra.candle.average.name | `Array` |  |均线名称（例如['MA5','MA20']）用于下方图例显示",
-          "opts.extra.candle.average.day | `Array` |  |均线单位日期（例如[5,20]为显示5日及20日均线）",
-          "opts.extra.candle.average.color | `Array` |  |均线颜色，例如['#1890ff', '#2fc25b']"
-          */},
-
-        bar: data.bar || { //条状图相关配置`开发中`
-          type: data.extratype || 'group', //条状图类型：`group`分组条状图，`stack`为堆叠条状图`开发中
-          width: data.extrawidth //条状图每项的图形宽度，单位为px`开发中
-        },
-        markLine: data.markLine || {//在柱状图、折线图、区域图、K线图中额外增加水平直线，仅在`opts.enableMarkLine`为true时显示
-          /*
-          "opts.extra.markLine |Object | | 在柱状图、折线图、区域图、K线图中额外增加水平直线，仅在`opts.enableMarkLine`为true时显示",
-          "opts.extra.markLine.type |String | 默认为 solid| 线型 'solid'为实线、'dash'为虚线",
-          "opts.extra.markLine.dashLength |Number | 默认为 4px | 单段虚线长度  ",
-          "opts.extra.markLine.data |`Array` | | 辅助线数据，请传入`数组`类型，支持多条辅助线",
-          "opts.extra.markLine.data.value |Number | | 辅助线数值",
-          "opts.extra.markLine.data.color |String | 默认为 #| 辅助线颜色",
-          "opts.extra.markLine.data.label |Boolean| 默认为 false | 是否显示数据标签",
-          "opts.extra.markLine.data.labelBgColor |String | 默认为# | 数据标签背景颜色 ",
-          "opts.extra.markLine.data.labelBgOpacity |String | 默认为# | 数据标签背景颜色透明度 ",
-          "opts.extra.markLine.data.labelAlign |String | 默认为left | 数据标签显示位置，有效值left和right "
-          */},
-
-
-        tooltip: data.tooltip || {//ToolTip设置
-          /*
-          "opts.extra.tooltip |Object | | ToolTip设置",
-          "opts.extra.tooltip.bgColor| String | 默认#000000 | ToolTip背景颜色",
-          "opts.extra.tooltip.bgOpacity | Number | 默认0.7 | ToolTip背景颜色透明度",
-          "opts.extra.tooltip.gridType | String | 默认为 solid | 分割线线型 'solid'为实线、'dash'为虚线 ",
-          "opts.extra.tooltip.dashLength | Number | 默认为 4px | 分割线为虚线时，单段虚线长度 ",
-          "opts.extra.tooltip.gridColor | String | 默认为 # | 分割线颜色 ",
-          "opts.extra.tooltip.fontColor | String | 默认为 #FFFFFF| 文字颜色 例如#7cb5ec ",
-          "opts.extra.tooltip.horizentalLine| Boolean| 默认为 false| 是否显示水平横线 ",
-          "opts.extra.tooltip.xAxisLabel |Boolean| 默认为 false | 是否显示数据标签",
-          "opts.extra.tooltip.yAxisLabel |Boolean| 默认为 false | 是否显示数据标签",
-          "opts.extra.tooltip.labelBgColor |String | 默认为#000000 | 数据标签背景颜色 ",
-          "opts.extra.tooltip.labelBgOpacity |Number | 默认为0.7 | 数据标签背景颜色透明度 ",
-          "opts.extra.tooltip.labelFontColor  |String | 默认为# | 数据标签文字颜色 ",
-          "opts.extra.tooltip.activeBgColor |String |默认为#000000 | 仅柱状图类适用，当前点击柱状图的背景颜色 ",
-          "opts.extra.tooltip.activeBgOpacity |Number |默认0.08 | 仅柱状图类适用，当前点击柱状图的背景颜色透明度 "
-          */},
-
-        legendTextColor: data.legendTextColor || '#333333', //'#cccccc',//图例文案颜色 例如#7cb5ec`后期将变更为opts.legend.textColor迁移到基础配置里
-        touchMoveLimit: data.touchMoveLimit || 20 //图表拖拽时，每秒重新渲染的帧数`用于图表拖拽卡顿
-      }
-
-      /*
-        [//2.0
-        " updateData(data) | Function |  | 例如LineA.updateData({data}) ",
-        "data | Object|  | 更新的数据 ",
-        "data.categories| Array | 当前实例categories  | 同opts.categories ",
-        "data.series| Array | 当前实例series | 同opts.series",
-        "data.title| Array | 当前实例title | 同opts.title",
-        "data.subtitle| Array | 当前实例subtitle | 同opts.subtitle",
-        "data.scrollPosition| String | current | 开启图表拖拽后，更新图表后图表时，滚动条的偏移距离，可选值`left`更新后强制左对齐；`right`更新后强制右对齐；`current`更新后保持当前偏移距离",
-        " data.animation | Boolean | 当前实例animation  | 是否动画展示 "
-        ],[//2.1
-        "stopAnimation()  |  |  | 停止当前正在进行的动画效果，直接展示渲染的最终结果"
-        ],[//2.2
-        "addEventListener(type, listener)  |  |  | 添加事件监听，type: String事件类型，listener: function 处理方法"
-        ],[//2.3
-        "getCurrentDataIndex(e) |  |  | 获取图表中点击时的数据序列编号(-1表示未找到对应的数据区域), e: Object微信小程序标准事件，需要手动的去绑定touch事件，具体可参考wx-charts-demo中column图示例"
-        ],[//2.4
-        "showToolTip(e, options?) |  |  | 图表中展示数据详细内容(目前仅支持line和area图表类型)，e: Object微信小程序标准事件，options: Object可选，tooltip的自定义配置，支持option.background，默认为#000000; option.format, function类型，接受两个传入的参数，seriesItem(Object, 包括seriesItem.name以及seriesItem.data)和category，可自定义tooltip显示内容。具体可参考ucharts-demo中line图示例"
-        ],[//2.5
-        "scrollStart(e), scroll(e),scrollEnd(e) |  |  | 设置支持图表拖拽系列事件(支持line, area, column)，具体参考wx-charts-demo中ScrollLine图示例"
-        ],[//2.6
-        "zoom(val) |  |  | 启用滚动条时，放大或缩小屏幕范围内数据数量。"
-        ],[//2.7
-        "renderComplete |  |  | 图表渲染完成（如果有动画效果，则动画效果完成时触发）"
-        ]
-        */ });
-
-
-
-  },
-
-  /*----------------------
-     * func: 触摸开始事件
-     * e-事件
-     * obj-图表对象
-     -------------------------*/
-  start: function start(e, obj) {obj.scrollStart(e);},
-
-  /*----------------------
-                                                       * func: 触摸移动事件
-                                                       * e-事件
-                                                       * obj-图表对象
-                                                       -------------------------*/
-  move: function move(e, obj) {obj.scroll(e);},
-
-  /*----------------------
-                                                * func: 触摸结束事件
-                                                * e-事件
-                                                * obj-图表对象
-                                                -------------------------*/
-  end: function end(e, obj) {obj.scrollEnd(e);},
-
-  /*----------------------
-                                                 * func: 显示提示信息事件
-                                                 * e-事件
-                                                 * obj-图表对象
-                                                 -------------------------*/
-  tip: function tip(e, obj) {
-    obj.showToolTip(e, {
-      format: function format(item, category) {
-        return (category || '') + ' ' + item.name + ':' + (item.data.value || item.data);
-      } });
-
-  },
-
-  /*----------------------
-     * func: 改变y坐标数值
-     * e-事件
-     * t-y轴顶部坐标值
-     -------------------------*/
-  touchY: function touchY(e, t) {
-    var ty = e.changedTouches ? e.changedTouches[0].y : e.mp.changedTouches[0].y;
-    if (e.changedTouches) {
-      e.changedTouches[0].y = ty < 0 ? ty + t : ty;
-    } else {
-      e.mp.changedTouches[0].y = ty < 0 ? ty + t : ty;
-    }
-    return e;
-  },
-  /*----------------------
-     * func: 计算图表x轴分类对应y值的合计
-     * obj-要累计的数组对象
-     -------------------------*/
-  sumArr: function sumArr(obj) {var _this = this;
-    obj.forEach(function (e) {
-      if (e.table.ts) {
-        e.opts = e.table.ts;
-        _this.sumObj(e);
-      } else {
-        e.opts = e.table[0];
-        _this.sumArray(e);
-      }
-    });
-  },
-  sumObj: function sumObj(e) {
-    if (e.chartType == 'pie') {
-      if (e.table.ts) e.table.ts.series.forEach(function (v) {
-        if (e.table.ts.sum != undefined) e.table.ts.sum += v.data;
-      });
-      if (e.table.ts) e.table.ts.series.forEach(function (v) {
-        if (e.table.ts.zb) e.table.ts.zb.push((v.data * 100 / e.table.ts.sum).toFixed(2));
-      });
-      if (e.table.mj) e.table.mj.series.forEach(function (v) {
-        if (e.table.mj.sum != undefined) e.table.mj.sum += v.data;
-      });
-      if (e.table.je) e.table.je.series.forEach(function (v) {
-        if (e.table.je.sum != undefined) e.table.je.sum += v.data;
-      });
-    } else if (e.chartType == 'column') {
-      if (e.table.ts) e.table.ts.series[0].data.forEach(function (v, i) {
-        if (e.table.ts.sum != undefined) e.table.ts.sum += v.value || v;
-        if (e.table.ts.sum1 != undefined) e.table.ts.sum1 += e.table.ts.series[1].data[i].value || e.table.ts.series[1].data[i];
-        if (e.table.ts.sum2 != undefined) e.table.ts.sum2 += e.table.ts.series[2].data[i].value || e.table.ts.series[2].data[i];
-        if (e.table.ts.ce) e.table.ts.ce.push(v.value ? e.table.ts.series[1].data[i].value * 1 - v.value * 1 : e.table.ts.series[1].data[i] * 1 - v * 1);
-        if (e.table.ts.zb) e.table.ts.zb.push((v.value ? v.value * 100 / e.table.ts.series[1].data[i].value : v * 100 / e.table.ts.series[1].data[i]).toFixed(2));
-      });
-      if (e.table.ts.ce) e.table.ts.ce.push(e.table.ts.sum1 - e.table.ts.sum);
-      if (e.table.ts.zb) e.table.ts.zb.push((e.table.ts.sum * 100 / e.table.ts.sum1).toFixed(2));
-      if (e.table.mj) e.table.mj.series[0].data.forEach(function (v) {
-        if (e.table.mj.sum != undefined) e.table.mj.sum += v.value || v;
-      });
-      if (e.table.je) e.table.je.series[0].data.forEach(function (v) {
-        if (e.table.je.sum != undefined) e.table.je.sum += v.value || v;
-      });
-    }
-  },
-  sumArray: function sumArray(e) {
-    if (e.chartType == 'pie') {
-      if (e.table[0]) e.table[0].series.forEach(function (v) {
-        if (e.table[0].sum != undefined) e.table[0].sum += v.data;
-      });
-      if (e.table[0]) e.table[0].series.forEach(function (v) {
-        if (e.table[0].zb) e.table[0].zb.push((v.data * 100 / e.table[0].sum).toFixed(2));
-      });
-      if (e.table[1]) e.table[1].series.forEach(function (v) {
-        if (e.table[1].sum != undefined) e.table[1].sum += v.data;
-      });
-      if (e.table[2]) e.table[2].series.forEach(function (v) {
-        if (e.table[2].sum != undefined) e.table[2].sum += v.data;
-      });
-      if (e.table[3]) e.table[3].series.forEach(function (v) {
-        if (e.table[3].sum != undefined) e.table[3].sum += v.data;
-      });
-      if (e.table[3]) e.table[3].sum = e.table[3].sum / e.table[0].series.length;
-    } else if (e.chartType == 'column') {
-      if (e.table[0]) e.table[0].series[0].data.forEach(function (v, i) {
-        if (e.table[0].sum != undefined) e.table[0].sum += v.value || v;
-        if (e.table[0].sum1 != undefined) e.table[0].sum1 += e.table[0].series[1].data[i].value || e.table[0].series[1].data[i];
-        if (e.table[0].sum2 != undefined) e.table[0].sum2 += e.table[0].series[2].data[i].value || e.table[0].series[2].data[i];
-        if (e.table[0].ce) e.table[0].ce.push(v.value ? e.table[0].series[1].data[i].value * 1 - v.value * 1 : e.table[0].series[1].data[i] * 1 - v * 1);
-        if (e.table[0].zb) e.table[0].zb.push((v.value ? v.value * 100 / e.table[0].series[1].data[i].value : v * 100 / e.table[0].series[1].data[i]).toFixed(2));
-      });
-      if (e.table[0].ce) e.table[0].ce.push(e.table[0].sum1 - e.table[0].sum);
-      if (e.table[0].zb) e.table[0].zb.push((e.table[0].sum * 100 / e.table[0].sum1).toFixed(2));
-      if (e.table[1]) e.table[1].series[0].data.forEach(function (v) {
-        if (e.table[1].sum != undefined) e.table[1].sum += v.value || v;
-      });
-      if (e.table[2]) e.table[2].series[0].data.forEach(function (v) {
-        if (e.table[2].sum != undefined) e.table[2].sum += v.value || v;
-      });
-    }
-  } };var _default =
-
-chartsUtil;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 328:
-/*!**********************************************************************************!*\
-  !*** /Users/wenjieliu/hbuilderSpaces/newSjty/components/u-charts/js/u-charts.js ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {/*
- * uCharts v1.7.0.20190630
- * uni-app平台高性能跨全端图表，支持H5、APP、小程序（微信/支付宝/百度/头条）
- * Copyright (c) 2019 QIUN秋云 https://www.ucharts.cn All rights reserved.
- * Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
- * 
- * uCharts官方网站
- * https://www.uCharts.cn
- * 
- * 开源地址:
- * https://gitee.com/uCharts/uCharts
- * 
- * uni-app插件市场地址：
- * http://ext.dcloud.net.cn/plugin?id=271
- * 
- * 
- */
-
-
-
-var config = {
-  yAxisWidth: 15,
-  yAxisSplit: 5,
-  xAxisHeight: 15,
-  xAxisLineHeight: 15,
-  legendHeight: 15,
-  yAxisTitleWidth: 15,
-  padding: 12,
-  pixelRatio: 1, //适配H5高分屏
-  rotate: false, //横屏模式
-  columePadding: 3,
-  fontSize: 13,
-  //dataPointShape: ['diamond', 'circle', 'triangle', 'rect'],
-  dataPointShape: ['circle', 'circle', 'circle', 'circle'], //仿F2图例样式改为圆点
-  // colors: ['#1890ff', '#2fc25b', '#facc14', '#f04864', '#8543e0', '#90ed7d'],
-  colors: ['#1890ff', '#2fc25b', '#facc14', '#f04864', '#8543e0', '#90ed7d', '#5caf20', '#30b0d7', '#ff6d58', '#1A79B9', '#f97723', '#f3792c'],
-  pieChartLinePadding: 15,
-  pieChartTextPadding: 5,
-  xAxisTextPadding: 3,
-  titleColor: '#333333',
-  titleFontSize: 20,
-  subtitleColor: '#999999',
-  subtitleFontSize: 15,
-  toolTipPadding: 3,
-  toolTipBackground: '#000000',
-  toolTipOpacity: 0.7,
-  toolTipLineHeight: 20,
-  radarGridCount: 3,
-  radarLabelTextMargin: 15,
-  gaugeLabelTextMargin: 15 };
-
-
-// Object.assign polyfill
-// https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
-function assign(target, varArgs) {
-  if (target == null) {
-    // TypeError if undefined or null
-    throw new TypeError('Cannot convert undefined or null to object');
-  }
-
-  var to = Object(target);
-
-  for (var index = 1; index < arguments.length; index++) {
-    var nextSource = arguments[index];
-
-    if (nextSource != null) {
-      // Skip over if undefined or null
-      for (var nextKey in nextSource) {
-        // Avoid bugs when hasOwnProperty is shadowed
-        if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
-          to[nextKey] = nextSource[nextKey];
-        }
-      }
-    }
-  }
-  return to;
-}
-
-var util = {
-  toFixed: function toFixed(num, limit) {
-    limit = limit || 2;
-    if (this.isFloat(num)) {
-      num = num.toFixed(limit);
-    }
-    return num;
-  },
-  isFloat: function isFloat(num) {
-    return num % 1 !== 0;
-  },
-  approximatelyEqual: function approximatelyEqual(num1, num2) {
-    return Math.abs(num1 - num2) < 1e-10;
-  },
-  isSameSign: function isSameSign(num1, num2) {
-    return Math.abs(num1) === num1 && Math.abs(num2) === num2 || Math.abs(num1) !== num1 && Math.abs(num2) !== num2;
-  },
-  isSameXCoordinateArea: function isSameXCoordinateArea(p1, p2) {
-    return this.isSameSign(p1.x, p2.x);
-  },
-  isCollision: function isCollision(obj1, obj2) {
-    obj1.end = {};
-    obj1.end.x = obj1.start.x + obj1.width;
-    obj1.end.y = obj1.start.y - obj1.height;
-    obj2.end = {};
-    obj2.end.x = obj2.start.x + obj2.width;
-    obj2.end.y = obj2.start.y - obj2.height;
-    var flag = obj2.start.x > obj1.end.x || obj2.end.x < obj1.start.x || obj2.end.y > obj1.start.y || obj2.start.y <
-    obj1.end.y;
-
-    return !flag;
-  } };
-
-
-// hex 转 rgba
-function hexToRgb(hexValue, opc) {
-  var rgx = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-  var hex = hexValue.replace(rgx, function (m, r, g, b) {
-    return r + r + g + g + b + b;
-  });
-  var rgb = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  var r = parseInt(rgb[1], 16);
-  var g = parseInt(rgb[2], 16);
-  var b = parseInt(rgb[3], 16);
-  return 'rgba(' + r + ',' + g + ',' + b + ',' + opc + ')';
-}
-
-function findRange(num, type, limit) {
-  if (isNaN(num)) {
-    throw new Error('[wxCharts] unvalid series data!');
-  }
-  limit = limit || 10;
-  type = type ? type : 'upper';
-  var multiple = 1;
-  while (limit < 1) {
-    limit *= 10;
-    multiple *= 10;
-  }
-  if (type === 'upper') {
-    num = Math.ceil(num * multiple);
-  } else {
-    num = Math.floor(num * multiple);
-  }
-  while (num % limit !== 0) {
-    if (type === 'upper') {
-      num++;
-    } else {
-      num--;
-    }
-  }
-
-  return num / multiple;
-}
-
-function calCandleMA(dayArr, nameArr, colorArr, kdata) {
-  var seriesTemp = [];
-  for (var k = 0; k < dayArr.length; k++) {
-    var seriesItem = {
-      data: [],
-      name: nameArr[k],
-      color: colorArr[k] };
-
-    for (var i = 0, len = kdata.length; i < len; i++) {
-      if (i < dayArr[k]) {
-        seriesItem.data.push(null);
-        continue;
-      }
-      var sum = 0;
-      for (var j = 0; j < dayArr[k]; j++) {
-        sum += kdata[i - j][1];
-      }
-      seriesItem.data.push(+(sum / dayArr[k]).toFixed(3));
-    }
-    seriesTemp.push(seriesItem);
-  }
-  return seriesTemp;
-}
-
-function calValidDistance(distance, chartData, config, opts) {
-
-  var dataChartAreaWidth = opts.width - config.padding - chartData.xAxisPoints[0];
-  var dataChartWidth = chartData.eachSpacing * opts.categories.length;
-  var validDistance = distance;
-  if (distance >= 0) {
-    validDistance = 0;
-  } else if (Math.abs(distance) >= dataChartWidth - dataChartAreaWidth) {
-    validDistance = dataChartAreaWidth - dataChartWidth;
-  }
-  return validDistance;
-}
-
-function isInAngleRange(angle, startAngle, endAngle) {
-  function adjust(angle) {
-    while (angle < 0) {
-      angle += 2 * Math.PI;
-    }
-    while (angle > 2 * Math.PI) {
-      angle -= 2 * Math.PI;
-    }
-
-    return angle;
-  }
-
-  angle = adjust(angle);
-  startAngle = adjust(startAngle);
-  endAngle = adjust(endAngle);
-  if (startAngle > endAngle) {
-    endAngle += 2 * Math.PI;
-    if (angle < startAngle) {
-      angle += 2 * Math.PI;
-    }
-  }
-
-  return angle >= startAngle && angle <= endAngle;
-}
-
-function calRotateTranslate(x, y, h) {
-  var xv = x;
-  var yv = h - y;
-
-  var transX = xv + (h - yv - xv) / Math.sqrt(2);
-  transX *= -1;
-
-  var transY = (h - yv) * (Math.sqrt(2) - 1) - (h - yv - xv) / Math.sqrt(2);
-
-  return {
-    transX: transX,
-    transY: transY };
-
-}
-
-function createCurveControlPoints(points, i) {
-
-  function isNotMiddlePoint(points, i) {
-    if (points[i - 1] && points[i + 1]) {
-      return points[i].y >= Math.max(points[i - 1].y, points[i + 1].y) || points[i].y <= Math.min(points[i - 1].y, points[
-      i + 1].y);
-    } else {
-      return false;
-    }
-  }
-
-  var a = 0.2;
-  var b = 0.2;
-  var pAx = null;
-  var pAy = null;
-  var pBx = null;
-  var pBy = null;
-  if (i < 1) {
-    pAx = points[0].x + (points[1].x - points[0].x) * a;
-    pAy = points[0].y + (points[1].y - points[0].y) * a;
-  } else {
-    pAx = points[i].x + (points[i + 1].x - points[i - 1].x) * a;
-    pAy = points[i].y + (points[i + 1].y - points[i - 1].y) * a;
-  }
-
-  if (i > points.length - 3) {
-    var last = points.length - 1;
-    pBx = points[last].x - (points[last].x - points[last - 1].x) * b;
-    pBy = points[last].y - (points[last].y - points[last - 1].y) * b;
-  } else {
-    pBx = points[i + 1].x - (points[i + 2].x - points[i].x) * b;
-    pBy = points[i + 1].y - (points[i + 2].y - points[i].y) * b;
-  }
-
-  // fix issue https://github.com/xiaolin3303/wx-charts/issues/79
-  if (isNotMiddlePoint(points, i + 1)) {
-    pBy = points[i + 1].y;
-  }
-  if (isNotMiddlePoint(points, i)) {
-    pAy = points[i].y;
-  }
-
-  return {
-    ctrA: {
-      x: pAx,
-      y: pAy },
-
-    ctrB: {
-      x: pBx,
-      y: pBy } };
-
-
-}
-
-function convertCoordinateOrigin(x, y, center) {
-  return {
-    x: center.x + x,
-    y: center.y - y };
-
-}
-
-function avoidCollision(obj, target) {
-  if (target) {
-    // is collision test
-    while (util.isCollision(obj, target)) {
-      if (obj.start.x > 0) {
-        obj.start.y--;
-      } else if (obj.start.x < 0) {
-        obj.start.y++;
-      } else {
-        if (obj.start.y > 0) {
-          obj.start.y++;
-        } else {
-          obj.start.y--;
-        }
-      }
-    }
-  }
-  return obj;
-}
-
-function fillSeriesColor(series, config) {
-  var index = 0;
-  return series.map(function (item) {
-    if (!item.color) {
-      item.color = config.colors[index];
-      index = (index + 1) % config.colors.length;
-    }
-    return item;
-  });
-}
-
-function fillSeriesType(series, opts) {
-  return series.map(function (item) {
-    if (!item.type) {
-      item.type = opts.type;
-    }
-    return item;
-  });
-}
-
-function getDataRange(minData, maxData) {
-  var limit = 0;
-  var range = maxData - minData;
-  if (range >= 10000) {
-    limit = 1000;
-  } else if (range >= 1000) {
-    limit = 100;
-  } else if (range >= 100) {
-    limit = 10;
-  } else if (range >= 10) {
-    limit = 5;
-  } else if (range >= 1) {
-    limit = 1;
-  } else if (range >= 0.1) {
-    limit = 0.1;
-  } else {
-    limit = 0.01;
-  }
-  return {
-    minRange: findRange(minData, 'lower', limit),
-    maxRange: findRange(maxData, 'upper', limit) };
-
-}
-
-function measureText(text) {
-  var fontSize = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : config.fontSize;
-
-  // wx canvas 未实现measureText方法, 此处自行实现
-  // 适配修改初始字体10px为其他大小的方法
-  text = String(text);
-  var text = text.split('');
-  var width = 0;
-  for (var i = 0; i < text.length; i++) {
-    var item = text[i];
-    if (/[a-zA-Z]/.test(item)) {
-      width += 7;
-    } else if (/[0-9]/.test(item)) {
-      width += 5.5;
-    } else if (/\./.test(item)) {
-      width += 2.7;
-    } else if (/-/.test(item)) {
-      width += 3.25;
-    } else if (/[\u4e00-\u9fa5]/.test(item)) {
-      width += 10;
-    } else if (/\(|\)/.test(item)) {
-      width += 3.73;
-    } else if (/\s/.test(item)) {
-      width += 2.5;
-    } else if (/%/.test(item)) {
-      width += 8;
-    } else {
-      width += 10;
-    }
-  }
-  return width * fontSize / 10;
-}
-
-function dataCombine(series) {
-  return series.reduce(function (a, b) {
-    return (a.data ? a.data : a).concat(b.data);
-  }, []);
-}
-
-function dataCombineStack(series) {
-  var sum = new Array(series[0].data.length);
-  for (var j = 0; j < sum.length; j++) {
-    sum[j] = 0;
-  }
-  for (var i = 0; i < series.length; i++) {
-    for (var j = 0; j < sum.length; j++) {
-      sum[j] += series[i].data[j];
-    }
-  }
-  return series.reduce(function (a, b) {
-    return (a.data ? a.data : a).concat(b.data).concat(sum);
-  }, []);
-}
-
-function getTouches(touches, opts, e) {
-  var x, y;
-  if (touches.clientX) {
-    if (opts.rotate) {//适配横屏
-      y = opts.height - touches.clientX * opts.pixelRatio;
-      x = (touches.pageY - e.currentTarget.offsetTop - opts.height / opts.pixelRatio / 2 * (opts.pixelRatio - 1)) *
-      opts.pixelRatio;
-    } else {
-      x = touches.clientX * opts.pixelRatio;
-      y = (touches.pageY - e.currentTarget.offsetTop - opts.height / opts.pixelRatio / 2 * (opts.pixelRatio - 1)) *
-      opts.pixelRatio;
-    }
-  } else {
-    if (opts.rotate) {//适配横屏
-      y = opts.height - touches.x * opts.pixelRatio;
-      x = touches.y * opts.pixelRatio;
-    } else {
-      x = touches.x * opts.pixelRatio;
-      y = touches.y * opts.pixelRatio;
-    }
-  }
-  return {
-    x: x,
-    y: y };
-
-}
-
-function getSeriesDataItem(series, index) {
-  var data = [];
-  for (var i = 0; i < series.length; i++) {
-    var item = series[i];
-    if (item.data[index] !== null && typeof item.data[index] !== 'undefined') {
-      var seriesItem = {};
-      seriesItem.color = item.color;
-      seriesItem.type = item.type;
-      seriesItem.style = item.style;
-      seriesItem.shape = item.shape;
-      seriesItem.disableLegend = item.disableLegend;
-      seriesItem.name = item.name;
-      seriesItem.data = item.format ? item.format(item.data[index]) : item.data[index];
-      data.push(seriesItem);
-    }
-  }
-  return data;
-}
-
-function getMaxTextListLength(list) {
-  var lengthList = list.map(function (item) {
-    return measureText(item);
-  });
-  return Math.max.apply(null, lengthList);
-}
-
-function getRadarCoordinateSeries(length) {
-  var eachAngle = 2 * Math.PI / length;
-  var CoordinateSeries = [];
-  for (var i = 0; i < length; i++) {
-    CoordinateSeries.push(eachAngle * i);
-  }
-
-  return CoordinateSeries.map(function (item) {
-    return -1 * item + Math.PI / 2;
-  });
-}
-
-function getToolTipData(seriesData, calPoints, index, categories) {
-  var option = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
-
-  var textList = seriesData.map(function (item) {
-    return {
-      text: option.format ? option.format(item, categories[index]) : item.name + ': ' + item.data,
-      color: item.color };
-
-  });
-  var validCalPoints = [];
-  var offset = {
-    x: 0,
-    y: 0 };
-
-  for (var i = 0; i < calPoints.length; i++) {
-    var points = calPoints[i];
-    if (typeof points[index] !== 'undefined' && points[index] !== null) {
-      validCalPoints.push(points[index]);
-    }
-  }
-  for (var _i = 0; _i < validCalPoints.length; _i++) {
-    var item = validCalPoints[_i];
-    offset.x = Math.round(item.x);
-    offset.y += item.y;
-  }
-  offset.y /= validCalPoints.length;
-  return {
-    textList: textList,
-    offset: offset };
-
-}
-
-function getMixToolTipData(seriesData, calPoints, index, categories) {
-  var option = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
-  var textList = seriesData.map(function (item) {
-    return {
-      text: option.format ? option.format(item, categories[index]) : item.name + ': ' + item.data,
-      color: item.color,
-      disableLegend: item.disableLegend ? true : false };
-
-  });
-  textList = textList.filter(function (item) {
-    if (item.disableLegend !== true) {
-      return item;
-    }
-  });
-  var validCalPoints = [];
-  var offset = {
-    x: 0,
-    y: 0 };
-
-  for (var i = 0; i < calPoints.length; i++) {
-    var points = calPoints[i];
-    if (typeof points[index] !== 'undefined' && points[index] !== null) {
-      validCalPoints.push(points[index]);
-    }
-  }
-  for (var _i2 = 0; _i2 < validCalPoints.length; _i2++) {
-    var item = validCalPoints[_i2];
-    offset.x = Math.round(item.x);
-    offset.y += item.y;
-  }
-  offset.y /= validCalPoints.length;
-  return {
-    textList: textList,
-    offset: offset };
-
-}
-
-function getCandleToolTipData(series, seriesData, calPoints, index, categories, extra) {
-  var option = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : {};
-  var upColor = extra.color.upFill;
-  var downColor = extra.color.downFill;
-  //颜色顺序为开盘，收盘，最低，最高
-  var color = [upColor, upColor, downColor, upColor];
-  var textList = [];
-  var text0 = {
-    text: categories[index],
-    color: null };
-
-  textList.push(text0);
-  seriesData.map(function (item) {
-    //console.log(color)
-    if (index == 0 && item.data[1] - item.data[0] < 0) {
-      color[1] = downColor;
-    } else {
-      if (item.data[0] < series[index - 1][1]) {
-        color[0] = downColor;
-      }
-      if (item.data[1] < item.data[0]) {
-        color[1] = downColor;
-      }
-      if (item.data[2] > series[index - 1][1]) {
-        color[2] = upColor;
-      }
-      if (item.data[3] < series[index - 1][1]) {
-        color[3] = downColor;
-      }
-    }
-
-    var text1 = {
-      text: '开盘：' + item.data[0],
-      color: color[0] };
-
-    var text2 = {
-      text: '收盘：' + item.data[1],
-      color: color[1] };
-
-    var text3 = {
-      text: '最低：' + item.data[2],
-      color: color[2] };
-
-    var text4 = {
-      text: '最高：' + item.data[3],
-      color: color[3] };
-
-    textList.push(text1, text2, text3, text4);
-  });
-  var validCalPoints = [];
-  var offset = {
-    x: 0,
-    y: 0 };
-
-  for (var i = 0; i < calPoints.length; i++) {
-    var points = calPoints[i];
-    if (typeof points[index] !== 'undefined' && points[index] !== null) {
-      validCalPoints.push(points[index]);
-    }
-  }
-  offset.x = Math.round(validCalPoints[0][0].x);
-  return {
-    textList: textList,
-    offset: offset };
-
-}
-
-function findCurrentIndex(currentPoints, xAxisPoints, opts, config) {
-  var offset = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
-  var currentIndex = -1;
-  if (isInExactChartArea(currentPoints, opts, config)) {
-    xAxisPoints.forEach(function (item, index) {
-      if (currentPoints.x + offset > item) {
-        currentIndex = index;
-      }
-    });
-  }
-
-  return currentIndex;
-}
-
-function isInExactChartArea(currentPoints, opts, config) {
-  return currentPoints.x < opts.width - config.padding && currentPoints.x > config.padding + config.yAxisWidth + config.yAxisTitleWidth &&
-  currentPoints.y > config.padding && currentPoints.y < opts.height - config.legendHeight - config.xAxisHeight - config.
-  padding;
-}
-
-function findRadarChartCurrentIndex(currentPoints, radarData, count) {
-  var eachAngleArea = 2 * Math.PI / count;
-  var currentIndex = -1;
-  if (isInExactPieChartArea(currentPoints, radarData.center, radarData.radius)) {
-    var fixAngle = function fixAngle(angle) {
-      if (angle < 0) {
-        angle += 2 * Math.PI;
-      }
-      if (angle > 2 * Math.PI) {
-        angle -= 2 * Math.PI;
-      }
-      return angle;
-    };
-
-    var angle = Math.atan2(radarData.center.y - currentPoints.y, currentPoints.x - radarData.center.x);
-    angle = -1 * angle;
-    if (angle < 0) {
-      angle += 2 * Math.PI;
-    }
-
-    var angleList = radarData.angleList.map(function (item) {
-      item = fixAngle(-1 * item);
-
-      return item;
-    });
-
-    angleList.forEach(function (item, index) {
-      var rangeStart = fixAngle(item - eachAngleArea / 2);
-      var rangeEnd = fixAngle(item + eachAngleArea / 2);
-      if (rangeEnd < rangeStart) {
-        rangeEnd += 2 * Math.PI;
-      }
-      if (angle >= rangeStart && angle <= rangeEnd || angle + 2 * Math.PI >= rangeStart && angle + 2 * Math.PI <=
-      rangeEnd) {
-        currentIndex = index;
-      }
-    });
-  }
-
-  return currentIndex;
-}
-
-function findPieChartCurrentIndex(currentPoints, pieData) {
-  var currentIndex = -1;
-  if (isInExactPieChartArea(currentPoints, pieData.center, pieData.radius)) {
-    var angle = Math.atan2(pieData.center.y - currentPoints.y, currentPoints.x - pieData.center.x);
-    angle = -angle;
-    for (var i = 0, len = pieData.series.length; i < len; i++) {
-      var item = pieData.series[i];
-      if (isInAngleRange(angle, item._start_, item._start_ + item._proportion_ * 2 * Math.PI)) {
-        currentIndex = i;
-        break;
-      }
-    }
-  }
-
-  return currentIndex;
-}
-
-function isInExactPieChartArea(currentPoints, center, radius) {
-  return Math.pow(currentPoints.x - center.x, 2) + Math.pow(currentPoints.y - center.y, 2) <= Math.pow(radius, 2);
-}
-
-function splitPoints(points) {
-  var newPoints = [];
-  var items = [];
-  points.forEach(function (item, index) {
-    if (item !== null) {
-      items.push(item);
-    } else {
-      if (items.length) {
-        newPoints.push(items);
-      }
-      items = [];
-    }
-  });
-  if (items.length) {
-    newPoints.push(items);
-  }
-
-  return newPoints;
-}
-
-function calLegendData(series, opts, config) {
-  if (opts.legend === false) {
-    return {
-      legendList: [],
-      legendHeight: 0 };
-
-  }
-  //适配H5高分屏
-  var padding = 5 * opts.pixelRatio;
-  var marginTop = 8 * opts.pixelRatio;
-  var shapeWidth = 15 * opts.pixelRatio;
-  var legendList = [];
-  var widthCount = 0;
-  var currentRow = [];
-  for (var i = 0; i < series.length; i++) {
-    var item = series[i];
-    var itemWidth = 3 * padding + shapeWidth + measureText(item.name || 'undefined');
-    if (widthCount + itemWidth > opts.width) {
-      legendList.push(currentRow);
-      widthCount = itemWidth;
-      currentRow = [item];
-    } else {
-      widthCount += itemWidth;
-      currentRow.push(item);
-    }
-  }
-  if (currentRow.length) {
-    legendList.push(currentRow);
-  }
-
-  return {
-    legendList: legendList,
-    legendHeight: legendList.length * (config.fontSize + marginTop) + padding };
-
-}
-
-function calCategoriesData(categories, opts, config) {
-  var result = {
-    angle: 0,
-    xAxisHeight: config.xAxisHeight };
-
-
-  var _getXAxisPoints = getXAxisPoints(categories, opts, config),
-  eachSpacing = _getXAxisPoints.eachSpacing;
-
-  // get max length of categories text
-
-
-  var categoriesTextLenth = categories.map(function (item) {
-    return measureText(item);
-  });
-
-  var maxTextLength = Math.max.apply(this, categoriesTextLenth);
-
-  if (opts.xAxis.rotateLabel == true && maxTextLength + 2 * config.xAxisTextPadding > eachSpacing) {
-    result.angle = 45 * Math.PI / 180;
-    result.xAxisHeight = 2 * config.xAxisTextPadding + maxTextLength * Math.sin(result.angle);
-  }
-
-  return result;
-}
-
-function getRadarDataPoints(angleList, center, radius, series, opts) {
-  var process = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 1;
-
-  var radarOption = opts.extra.radar || {};
-  radarOption.max = radarOption.max || 0;
-  var maxData = Math.max(radarOption.max, Math.max.apply(null, dataCombine(series)));
-
-  var data = [];var _loop2 = function _loop2(
-  i) {
-    var each = series[i];
-    var listItem = {};
-    listItem.color = each.color;
-    listItem.data = [];
-    each.data.forEach(function (item, index) {
-      var tmp = {};
-      tmp.angle = angleList[index];
-
-      tmp.proportion = item / maxData;
-      tmp.position = convertCoordinateOrigin(radius * tmp.proportion * process * Math.cos(tmp.angle), radius * tmp.proportion *
-      process * Math.sin(tmp.angle), center);
-      listItem.data.push(tmp);
-    });
-
-    data.push(listItem);};for (var i = 0; i < series.length; i++) {_loop2(i);
-  }
-
-  return data;
-}
-
-function getPieDataPoints(series, radius) {
-  var process = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
-
-  var count = 0;
-  var _start_ = 0;
-  for (var i = 0; i < series.length; i++) {
-    var item = series[i];
-    item.data = item.data === null ? 0 : item.data;
-    count += item.data;
-  }
-  for (var _i3 = 0; _i3 < series.length; _i3++) {
-    var _item = series[_i3];
-    _item.data = _item.data === null ? 0 : _item.data;
-    if (count === 0) {
-      _item._proportion_ = 1 / series.length * process;
-    } else {
-      _item._proportion_ = _item.data / count * process;
-    }
-    _item._radius_ = radius;
-  }
-  for (var _i4 = 0; _i4 < series.length; _i4++) {
-    var _item2 = series[_i4];
-    _item2._start_ = _start_;
-    _start_ += 2 * _item2._proportion_ * Math.PI;
-  }
-
-  return series;
-}
-
-function getRoseDataPoints(series, type, minRadius, radius) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-  var count = 0;
-  var _start_ = 0;
-
-  var dataArr = [];
-  for (var i = 0; i < series.length; i++) {
-    var item = series[i];
-    item.data = item.data === null ? 0 : item.data;
-    count += item.data;
-    dataArr.push(item.data);
-  }
-  var minData = dataArr.pop();
-  var maxData = dataArr.shift();
-  var radiusLength = radius - minRadius;
-
-  for (var _i5 = 0; _i5 < series.length; _i5++) {
-    var _item3 = series[_i5];
-    _item3.data = _item3.data === null ? 0 : _item3.data;
-    if (count === 0 || type == 'area') {
-      _item3._proportion_ = 1 / series.length * process;
-    } else {
-      _item3._proportion_ = _item3.data / count * process;
-    }
-    _item3._radius_ = minRadius + radiusLength * ((_item3.data - minData) / (maxData - minData));
-  }
-  for (var _i6 = 0; _i6 < series.length; _i6++) {
-    var _item4 = series[_i6];
-    _item4._start_ = _start_;
-    _start_ += 2 * _item4._proportion_ * Math.PI;
-  }
-
-  return series;
-}
-
-function getArcbarDataPoints(series, arcbarOption) {
-  var process = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
-  if (process == 1) {
-    process = 0.999999;
-  }
-  for (var i = 0; i < series.length; i++) {
-    var item = series[i];
-    item.data = item.data === null ? 0 : item.data;
-    var totalAngle = void 0;
-    if (arcbarOption.type == 'default') {
-      totalAngle = arcbarOption.startAngle - arcbarOption.endAngle + 1;
-    } else {
-      totalAngle = 2;
-    }
-    item._proportion_ = totalAngle * item.data * process + arcbarOption.startAngle;
-    if (item._proportion_ >= 2) {
-      item._proportion_ = item._proportion_ % 2;
-    }
-  }
-  return series;
-}
-
-function getGaugeAxisPoints(categories, startAngle, endAngle) {
-  var totalAngle = startAngle - endAngle + 1;
-  var tempStartAngle = startAngle;
-  for (var i = 0; i < categories.length; i++) {
-    categories[i].value = categories[i].value === null ? 0 : categories[i].value;
-    categories[i]._startAngle_ = tempStartAngle;
-    categories[i]._endAngle_ = totalAngle * categories[i].value + startAngle;
-    if (categories[i]._endAngle_ >= 2) {
-      categories[i]._endAngle_ = categories[i]._endAngle_ % 2;
-    }
-    tempStartAngle = categories[i]._endAngle_;
-  }
-  return categories;
-}
-
-function getGaugeDataPoints(series, categories, gaugeOption) {
-  var process = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 1;
-  for (var i = 0; i < series.length; i++) {
-    var item = series[i];
-    item.data = item.data === null ? 0 : item.data;
-    if (gaugeOption.pointer.color == 'auto') {
-      for (var _i7 = 0; _i7 < categories.length; _i7++) {
-        if (item.data <= categories[_i7].value) {
-          item.color = categories[_i7].color;
-          break;
-        }
-      }
-    } else {
-      item.color = gaugeOption.pointer.color;
-    }
-    var totalAngle = gaugeOption.startAngle - gaugeOption.endAngle + 1;
-    item._endAngle_ = totalAngle * item.data + gaugeOption.startAngle;
-    item._oldAngle_ = gaugeOption.oldAngle;
-    if (gaugeOption.oldAngle < gaugeOption.endAngle) {
-      item._oldAngle_ += 2;
-    }
-    if (item.data >= gaugeOption.oldData) {
-      item._proportion_ = (item._endAngle_ - item._oldAngle_) * process + gaugeOption.oldAngle;
-    } else {
-      item._proportion_ = item._oldAngle_ - (item._oldAngle_ - item._endAngle_) * process;
-    }
-    if (item._proportion_ >= 2) {
-      item._proportion_ = item._proportion_ % 2;
-    }
-  }
-  return series;
-}
-
-
-function getPieTextMaxLength(series) {
-  series = getPieDataPoints(series);
-  var maxLength = 0;
-  for (var i = 0; i < series.length; i++) {
-    var item = series[i];
-    var text = item.format ? item.format(+item._proportion_.toFixed(2)) : util.toFixed(item._proportion_ * 100) + '%';
-    maxLength = Math.max(maxLength, measureText(text));
-  }
-
-  return maxLength;
-}
-
-function fixColumeData(points, eachSpacing, columnLen, index, config, opts) {
-  return points.map(function (item) {
-    if (item === null) {
-      return null;
-    }
-    item.width = (eachSpacing - 2 * config.columePadding) / columnLen;
-
-    if (opts.extra.column && opts.extra.column.width && +opts.extra.column.width > 0) {
-      // customer column width
-      item.width = Math.min(item.width, +opts.extra.column.width);
-    } else {
-      // default width should less tran 25px
-      // don't ask me why, I don't know
-      item.width = Math.min(item.width, 25);
-    }
-    item.x += (index + 0.5 - columnLen / 2) * item.width;
-
-    return item;
-  });
-}
-
-function fixColumeMeterData(points, eachSpacing, columnLen, index, config, opts, border) {
-  return points.map(function (item) {
-    if (item === null) {
-      return null;
-    }
-    item.width = eachSpacing - 2 * config.columePadding;
-
-    if (opts.extra.column && opts.extra.column.width && +opts.extra.column.width > 0) {
-      item.width = Math.min(item.width, +opts.extra.column.width);
-    } else {
-      item.width = Math.min(item.width, 25);
-    }
-    if (index > 0) {
-      item.width -= 2 * border;
-    }
-    return item;
-  });
-}
-
-function fixColumeStackData(points, eachSpacing, columnLen, index, config, opts, series) {
-
-  return points.map(function (item, indexn) {
-
-    if (item === null) {
-      return null;
-    }
-    item.width = eachSpacing - 2 * config.columePadding;
-
-    if (opts.extra.column && opts.extra.column.width && +opts.extra.column.width > 0) {
-      item.width = Math.min(item.width, +opts.extra.column.width);
-    } else {
-      item.width = Math.min(item.width, 25);
-    }
-    return item;
-  });
-}
-
-function getXAxisPoints(categories, opts, config) {
-  var yAxisTotalWidth = config.yAxisWidth + config.yAxisTitleWidth;
-  var spacingValid = opts.width - 2 * config.padding - yAxisTotalWidth;
-  var dataCount = opts.enableScroll ? Math.min(opts.xAxis.itemCount, categories.length) : categories.length;
-  var eachSpacing = spacingValid / dataCount;
-
-  var xAxisPoints = [];
-  var startX = config.padding + yAxisTotalWidth;
-  var endX = opts.width - config.padding;
-  categories.forEach(function (item, index) {
-    xAxisPoints.push(startX + index * eachSpacing);
-  });
-  if (opts.enableScroll === true) {
-    xAxisPoints.push(startX + categories.length * eachSpacing);
-  } else {
-    xAxisPoints.push(endX);
-  }
-
-  return {
-    xAxisPoints: xAxisPoints,
-    startX: startX,
-    endX: endX,
-    eachSpacing: eachSpacing };
-
-}
-
-function getCandleDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config) {
-  var process = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : 1;
-
-  var points = [];
-  var validHeight = opts.height - 2 * config.padding - config.xAxisHeight - config.legendHeight;
-  data.forEach(function (item, index) {
-    if (item === null) {
-      points.push(null);
-    } else {
-      var cPoints = [];
-      item.forEach(function (items, indexs) {
-        var point = {};
-        point.x = xAxisPoints[index] + Math.round(eachSpacing / 2);
-        var value = items.value || items;
-        var height = validHeight * (value - minRange) / (maxRange - minRange);
-        height *= process;
-        point.y = opts.height - config.xAxisHeight - config.legendHeight - Math.round(height) - config.padding;
-        cPoints.push(point);
-      });
-      points.push(cPoints);
-    }
-  });
-
-  return points;
-}
-
-function getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config) {
-  var process = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : 1;
-
-  var points = [];
-  var validHeight = opts.height - 2 * config.padding - config.xAxisHeight - config.legendHeight;
-  data.forEach(function (item, index) {
-    if (item === null) {
-      points.push(null);
-    } else {
-      var point = {};
-      point.color = item.color;
-      point.x = xAxisPoints[index] + Math.round(eachSpacing / 2);
-      var value = item;
-      if (typeof item === 'object' && item !== null) {
-        value = item.value;
-      }
-      var height = validHeight * (value - minRange) / (maxRange - minRange);
-      height *= process;
-      point.y = opts.height - config.xAxisHeight - config.legendHeight - Math.round(height) - config.padding;
-      points.push(point);
-    }
-  });
-
-  return points;
-}
-
-function getStackDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, seriesIndex, stackSeries) {
-  var process = arguments.length > 9 && arguments[9] !== undefined ? arguments[9] : 1;
-  var points = [];
-  var validHeight = opts.height - 2 * config.padding - config.xAxisHeight - config.legendHeight;
-
-  data.forEach(function (item, index) {
-    if (item === null) {
-      points.push(null);
-    } else {
-      var point = {};
-      point.color = item.color;
-      point.x = xAxisPoints[index] + Math.round(eachSpacing / 2);
-
-      if (seriesIndex > 0) {
-        var value = 0;
-        for (var i = 0; i <= seriesIndex; i++) {
-          value += stackSeries[i].data[index];
-        }
-        var value0 = value - item;
-        var height = validHeight * (value - minRange) / (maxRange - minRange);
-        var height0 = validHeight * (value0 - minRange) / (maxRange - minRange);
-      } else {
-        var value = item;
-        var height = validHeight * (value - minRange) / (maxRange - minRange);
-        var height0 = 0;
-      }
-      var heightc = height0;
-      height *= process;
-      heightc *= process;
-      point.y = opts.height - config.xAxisHeight - config.legendHeight - Math.round(height) - config.padding;
-      point.y0 = opts.height - config.xAxisHeight - config.legendHeight - Math.round(heightc) - config.padding;
-      points.push(point);
-    }
-  });
-
-  return points;
-}
-
-function getYAxisTextList(series, opts, config, stack) {
-  var data;
-  if (stack == 'stack') {
-    //data = dataCombine(series);
-    data = dataCombineStack(series);
-  } else {
-    data = dataCombine(series);
-  }
-
-  var sorted = [];
-  // remove null from data
-  data = data.filter(function (item) {
-    //return item !== null;
-    if (typeof item === 'object' && item !== null) {
-      //判断是否为数组
-      if (item.constructor == Array) {
-        return item !== null;
-      } else {
-        return item.value !== null;
-      }
-    } else {
-      return item !== null;
-    }
-  });
-  //var minData = Math.min.apply(this, data);
-  //var maxData = Math.max.apply(this, data);
-  data.map(function (item) {
-    if (typeof item === 'object') {
-      if (item.constructor == Array) {
-        item.map(function (subitem) {
-          sorted.push(subitem);
-        });
-      } else {
-        sorted.push(item.value);
-      }
-    } else {
-      sorted.push(item);
-    }
-    //typeof item === 'object' ? sorted.push(item.value) : sorted.push(item)
-  });
-  var minData = 0;
-  var maxData = 0;
-  if (sorted.length > 0) {
-    minData = Math.min.apply(this, sorted);
-    maxData = Math.max.apply(this, sorted);
-  }
-  if (typeof opts.yAxis.min === 'number') {
-    minData = Math.min(opts.yAxis.min, minData);
-  }
-  if (typeof opts.yAxis.max === 'number') {
-    maxData = Math.max(opts.yAxis.max, maxData);
-  }
-
-  // fix issue https://github.com/xiaolin3303/wx-charts/issues/9
-  if (minData === maxData) {
-    var rangeSpan = maxData || 10;
-    //minData -= rangeSpan;
-    maxData += rangeSpan;
-  }
-
-  var dataRange = getDataRange(minData, maxData);
-  var minRange = dataRange.minRange;
-  var maxRange = dataRange.maxRange;
-
-  var range = [];
-  var eachRange = (maxRange - minRange) / config.yAxisSplit;
-
-  for (var i = 0; i <= config.yAxisSplit; i++) {
-    range.push(minRange + eachRange * i);
-  }
-  return range.reverse();
-}
-
-function calYAxisData(series, opts, config) {
-  //堆叠图重算Y轴
-  var columnstyle = assign({}, opts.extra.column || {
-    "type": "" });
-
-
-  var ranges = getYAxisTextList(series, opts, config, columnstyle.type);
-  var yAxisWidth = config.yAxisWidth;
-  var rangesFormat = ranges.map(function (item) {
-    item = util.toFixed(item, 2);
-    item = opts.yAxis.format ? opts.yAxis.format(Number(item)) : item;
-    yAxisWidth = Math.max(yAxisWidth, measureText(item) + 5);
-    return item;
-  });
-  if (opts.yAxis.disabled === true) {
-    yAxisWidth = 0;
-  }
-
-  return {
-    rangesFormat: rangesFormat,
-    ranges: ranges,
-    yAxisWidth: yAxisWidth };
-
-}
-
-function calTooltipYAxisData(point, series, opts, config, eachSpacing) {
-  var ranges = getYAxisTextList(series, opts, config);
-  var spacingValid = opts.height - 2 * config.padding - config.xAxisHeight - config.legendHeight;
-  var maxVal = ranges[0];
-  var minVal = ranges[ranges.length - 1];
-  var minAxis = config.padding;
-  var maxAxis = config.padding + spacingValid;
-  var item = maxVal - (maxVal - minVal) * (point - minAxis) / (maxAxis - minAxis);
-  item = opts.yAxis.format ? opts.yAxis.format(Number(item)) : item;
-  return item;
-}
-
-function contextRotate(context, opts) {
-  if (opts.rotateLock !== true) {
-    context.translate(opts.height, 0);
-    context.rotate(90 * Math.PI / 180);
-  } else if (opts._rotate_ !== true) {
-    context.translate(opts.height, 0);
-    context.rotate(90 * Math.PI / 180);
-    opts._rotate_ = true;
-  }
-}
-
-function drawPointShape(points, color, shape, context, opts) {
-  context.beginPath();
-  context.setStrokeStyle("#ffffff");
-  context.setLineWidth(1 * opts.pixelRatio);
-  context.setFillStyle(color);
-  if (shape === 'diamond') {
-    points.forEach(function (item, index) {
-      if (item !== null) {
-        context.moveTo(item.x, item.y - 4.5);
-        context.lineTo(item.x - 4.5, item.y);
-        context.lineTo(item.x, item.y + 4.5);
-        context.lineTo(item.x + 4.5, item.y);
-        context.lineTo(item.x, item.y - 4.5);
-      }
-    });
-  } else if (shape === 'circle') {
-    points.forEach(function (item, index) {
-      if (item !== null) {
-        context.moveTo(item.x + 3.5 * opts.pixelRatio, item.y);
-        context.arc(item.x, item.y, 4 * opts.pixelRatio, 0, 2 * Math.PI, false);
-      }
-    });
-  } else if (shape === 'rect') {
-    points.forEach(function (item, index) {
-      if (item !== null) {
-        context.moveTo(item.x - 3.5, item.y - 3.5);
-        context.rect(item.x - 3.5, item.y - 3.5, 7, 7);
-      }
-    });
-  } else if (shape === 'triangle') {
-    points.forEach(function (item, index) {
-      if (item !== null) {
-        context.moveTo(item.x, item.y - 4.5);
-        context.lineTo(item.x - 4.5, item.y + 4.5);
-        context.lineTo(item.x + 4.5, item.y + 4.5);
-        context.lineTo(item.x, item.y - 4.5);
-      }
-    });
-  }
-  context.closePath();
-  context.fill();
-  context.stroke();
-}
-
-function drawRingTitle(opts, config, context) {
-  var titlefontSize = opts.title.fontSize || config.titleFontSize;
-  var subtitlefontSize = opts.subtitle.fontSize || config.subtitleFontSize;
-  var title = opts.title.name || '';
-  var subtitle = opts.subtitle.name || '';
-  var titleFontColor = opts.title.color || config.titleColor;
-  var subtitleFontColor = opts.subtitle.color || config.subtitleColor;
-  var titleHeight = title ? titlefontSize : 0;
-  var subtitleHeight = subtitle ? subtitlefontSize : 0;
-  var margin = 5;
-  if (subtitle) {
-    var textWidth = measureText(subtitle, subtitlefontSize);
-    var startX = (opts.width - textWidth) / 2 + (opts.subtitle.offsetX || 0);
-    var startY = (opts.height - config.legendHeight + subtitlefontSize) / 2 + (opts.subtitle.offsetY || 0);
-    if (title) {
-      startY -= (titleHeight + margin) / 2;
-    }
-    context.beginPath();
-    context.setFontSize(subtitlefontSize);
-    context.setFillStyle(subtitleFontColor);
-    context.fillText(subtitle, startX, startY);
-    context.closePath();
-    context.stroke();
-  }
-  if (title) {
-    var _textWidth = measureText(title, titlefontSize);
-    var _startX = (opts.width - _textWidth) / 2 + (opts.title.offsetX || 0);
-    var _startY = (opts.height - config.legendHeight + titlefontSize) / 2 + (opts.title.offsetY || 0);
-    if (subtitle) {
-      _startY += (subtitleHeight + margin) / 2;
-    }
-    context.beginPath();
-    context.setFontSize(titlefontSize);
-    context.setFillStyle(titleFontColor);
-    context.fillText(title, _startX, _startY);
-    context.closePath();
-    context.stroke();
-  }
-}
-
-function drawPointText(points, series, config, context) {
-  // 绘制数据文案
-  var data = series.data;
-  var textColor = series.textColor == undefined ? '#666666' : series.textColor;
-
-  points.forEach(function (item, index) {
-    if (item !== null) {
-      //var formatVal = series.format ? series.format(data[index]) : data[index];
-      context.beginPath();
-      context.setFontSize(config.fontSize);
-      context.setFillStyle(textColor);
-      var value = data[index];
-      if (typeof data[index] === 'object' && data[index] !== null) {
-        value = data[index].value;
-      }
-      var formatVal = series.format ? series.format(value) : value;
-      context.fillText(formatVal, item.x - measureText(formatVal) / 2, item.y - 2);
-      context.closePath();
-      context.stroke();
-    }
-  });
-
-}
-
-function drawGaugeLabel(gaugeOption, radius, centerPosition, opts, config, context) {
-  radius -= gaugeOption.width / 2 + config.gaugeLabelTextMargin;
-
-  var totalAngle = gaugeOption.startAngle - gaugeOption.endAngle + 1;
-  var splitAngle = totalAngle / gaugeOption.splitLine.splitNumber;
-  var totalNumber = gaugeOption.endNumber - gaugeOption.startNumber;
-  var splitNumber = totalNumber / gaugeOption.splitLine.splitNumber;
-  var nowAngle = gaugeOption.startAngle;
-  var nowNumber = gaugeOption.startNumber;
-  for (var i = 0; i < gaugeOption.splitLine.splitNumber + 1; i++) {
-    var pos = {
-      x: radius * Math.cos(nowAngle * Math.PI),
-      y: radius * Math.sin(nowAngle * Math.PI) };
-
-    pos.x += centerPosition.x - measureText(nowNumber) / 2;
-    pos.y += centerPosition.y;
-    var startX = pos.x;
-    var startY = pos.y;
-
-    context.beginPath();
-    context.setFontSize(config.fontSize);
-    context.setFillStyle(gaugeOption.labelColor || '#666666');
-    context.fillText(nowNumber, startX, startY + config.fontSize / 2);
-    context.closePath();
-    context.stroke();
-
-    nowAngle += splitAngle;
-    if (nowAngle >= 2) {
-      nowAngle = nowAngle % 2;
-    }
-    nowNumber += splitNumber;
-  }
-
-}
-
-function drawRadarLabel(angleList, radius, centerPosition, opts, config, context) {
-  var radarOption = opts.extra.radar || {};
-  radius += config.radarLabelTextMargin;
-
-  angleList.forEach(function (angle, index) {
-    var pos = {
-      x: radius * Math.cos(angle),
-      y: radius * Math.sin(angle) };
-
-    var posRelativeCanvas = convertCoordinateOrigin(pos.x, pos.y, centerPosition);
-    var startX = posRelativeCanvas.x;
-    var startY = posRelativeCanvas.y;
-    if (util.approximatelyEqual(pos.x, 0)) {
-      startX -= measureText(opts.categories[index] || '') / 2;
-    } else if (pos.x < 0) {
-      startX -= measureText(opts.categories[index] || '');
-    }
-    context.beginPath();
-    context.setFontSize(config.fontSize);
-    context.setFillStyle(radarOption.labelColor || '#666666');
-    context.fillText(opts.categories[index] || '', startX, startY + config.fontSize / 2);
-    context.closePath();
-    context.stroke();
-  });
-
-}
-
-function drawPieText(series, opts, config, context, radius, center) {
-  var lineRadius = config.pieChartLinePadding;
-  var textObjectCollection = [];
-  var lastTextObject = null;
-
-  var seriesConvert = series.map(function (item) {
-    var arc = 2 * Math.PI - (item._start_ + 2 * Math.PI * item._proportion_ / 2);
-    var text = item.format ? item.format(+item._proportion_.toFixed(2)) : util.toFixed(item._proportion_ * 100) + '%';
-    var color = item.color;
-    var radius = item._radius_;
-    return {
-      arc: arc,
-      text: text,
-      color: color,
-      radius: radius };
-
-  });
-  for (var i = 0; i < seriesConvert.length; i++) {
-    var item = seriesConvert[i];
-    // line end
-    var orginX1 = Math.cos(item.arc) * (item.radius + lineRadius);
-    var orginY1 = Math.sin(item.arc) * (item.radius + lineRadius);
-
-    // line start
-    var orginX2 = Math.cos(item.arc) * item.radius;
-    var orginY2 = Math.sin(item.arc) * item.radius;
-
-    // text start
-    var orginX3 = orginX1 >= 0 ? orginX1 + config.pieChartTextPadding : orginX1 - config.pieChartTextPadding;
-    var orginY3 = orginY1;
-
-    var textWidth = measureText(item.text);
-    var startY = orginY3;
-
-    if (lastTextObject && util.isSameXCoordinateArea(lastTextObject.start, {
-      x: orginX3 }))
-    {
-      if (orginX3 > 0) {
-        startY = Math.min(orginY3, lastTextObject.start.y);
-      } else if (orginX1 < 0) {
-        startY = Math.max(orginY3, lastTextObject.start.y);
-      } else {
-        if (orginY3 > 0) {
-          startY = Math.max(orginY3, lastTextObject.start.y);
-        } else {
-          startY = Math.min(orginY3, lastTextObject.start.y);
-        }
-      }
-    }
-
-    if (orginX3 < 0) {
-      orginX3 -= textWidth;
-    }
-
-    var textObject = {
-      lineStart: {
-        x: orginX2,
-        y: orginY2 },
-
-      lineEnd: {
-        x: orginX1,
-        y: orginY1 },
-
-      start: {
-        x: orginX3,
-        y: startY },
-
-      width: textWidth,
-      height: config.fontSize,
-      text: item.text,
-      color: item.color };
-
-
-    lastTextObject = avoidCollision(textObject, lastTextObject);
-    textObjectCollection.push(lastTextObject);
-  }
-
-  for (var _i8 = 0; _i8 < textObjectCollection.length; _i8++) {
-    var _item5 = textObjectCollection[_i8];
-    var lineStartPoistion = convertCoordinateOrigin(_item5.lineStart.x, _item5.lineStart.y, center);
-    var lineEndPoistion = convertCoordinateOrigin(_item5.lineEnd.x, _item5.lineEnd.y, center);
-    var textPosition = convertCoordinateOrigin(_item5.start.x, _item5.start.y, center);
-    context.setLineWidth(1 * opts.pixelRatio);
-    context.setFontSize(config.fontSize);
-    context.beginPath();
-    context.setStrokeStyle(_item5.color);
-    context.setFillStyle(_item5.color);
-    context.moveTo(lineStartPoistion.x, lineStartPoistion.y);
-    var curveStartX = _item5.start.x < 0 ? textPosition.x + _item5.width : textPosition.x;
-    var textStartX = _item5.start.x < 0 ? textPosition.x - 5 : textPosition.x + 5;
-    context.quadraticCurveTo(lineEndPoistion.x, lineEndPoistion.y, curveStartX, textPosition.y);
-    context.moveTo(lineStartPoistion.x, lineStartPoistion.y);
-    context.stroke();
-    context.closePath();
-    context.beginPath();
-    context.moveTo(textPosition.x + _item5.width, textPosition.y);
-    context.arc(curveStartX, textPosition.y, 2, 0, 2 * Math.PI);
-    context.closePath();
-    context.fill();
-    context.beginPath();
-    context.setFontSize(config.fontSize);
-    context.setFillStyle('#666666');
-    context.fillText(_item5.text, textStartX, textPosition.y + 3);
-    context.closePath();
-    context.stroke();
-    context.closePath();
-  }
-}
-
-function drawToolTipSplitLine(offsetX, opts, config, context) {
-  var toolTipOption = opts.extra.tooltip || {};
-  toolTipOption.gridType = toolTipOption.gridType == undefined ? 'solid' : toolTipOption.gridType;
-  toolTipOption.dashLength = toolTipOption.dashLength == undefined ? 4 : toolTipOption.dashLength;
-  var startY = config.padding;
-  var endY = opts.height - config.padding - config.xAxisHeight - config.legendHeight;
-
-  if (toolTipOption.gridType == 'dash') {
-    context.setLineDash([toolTipOption.dashLength, toolTipOption.dashLength]);
-  }
-  context.beginPath();
-  context.setStrokeStyle(toolTipOption.gridColor || '#cccccc');
-  context.setLineWidth(1 * opts.pixelRatio);
-  context.moveTo(offsetX, startY);
-  context.lineTo(offsetX, endY);
-  context.closePath();
-  context.stroke();
-  context.setLineDash([]);
-
-  if (toolTipOption.xAxisLabel) {
-    var lableText = opts.categories[opts.tooltip.index];
-    context.setFontSize(config.fontSize);
-    var textWidth = context.measureText(lableText).width;
-
-    var textX = offsetX - config.toolTipPadding - 0.5 * textWidth;
-    var textY = endY;
-    context.beginPath();
-    context.setFillStyle(hexToRgb(toolTipOption.labelBgColor || config.toolTipBackground, toolTipOption.labelBgOpacity ||
-    config.toolTipOpacity));
-    context.setStrokeStyle(toolTipOption.labelBgColor || config.toolTipBackground);
-    context.setLineWidth(1 * opts.pixelRatio);
-    context.rect(textX, textY, textWidth + 2 * config.toolTipPadding, config.fontSize + 2 * config.toolTipPadding);
-    context.closePath();
-    context.stroke();
-    context.fill();
-
-    context.beginPath();
-    context.setFontSize(config.fontSize);
-    context.setFillStyle(toolTipOption.labelFontColor || config.fontColor);
-    context.fillText(lableText, textX + 2 * config.toolTipPadding, textY + config.toolTipPadding + config.fontSize);
-    context.closePath();
-    context.stroke();
-  }
-}
-
-function drawToolTipHorizentalLine(opts, config, context, eachSpacing, xAxisPoints) {
-  var toolTipOption = opts.extra.tooltip || {};
-  toolTipOption.gridType = toolTipOption.gridType == undefined ? 'solid' : toolTipOption.gridType;
-  toolTipOption.dashLength = toolTipOption.dashLength == undefined ? 4 : toolTipOption.dashLength;
-  var startX = config.padding + config.yAxisWidth + config.yAxisTitleWidth;
-  var endX = opts.width - config.padding;
-
-  if (toolTipOption.gridType == 'dash') {
-    context.setLineDash([toolTipOption.dashLength, toolTipOption.dashLength]);
-  }
-  context.beginPath();
-  context.setStrokeStyle(toolTipOption.gridColor || '#cccccc');
-  context.setLineWidth(1 * opts.pixelRatio);
-  context.moveTo(startX, opts.tooltip.offset.y);
-  context.lineTo(endX, opts.tooltip.offset.y);
-  context.closePath();
-  context.stroke();
-  context.setLineDash([]);
-
-  if (toolTipOption.yAxisLabel) {
-
-    var lableText = calTooltipYAxisData(opts.tooltip.offset.y, opts.series, opts, config, eachSpacing);
-    context.setFontSize(config.fontSize);
-    var textWidth = context.measureText(lableText).width;
-
-    var textX = startX - 2 * config.toolTipPadding - textWidth;
-    var textY = opts.tooltip.offset.y;
-    context.beginPath();
-    context.setFillStyle(hexToRgb(toolTipOption.labelBgColor || config.toolTipBackground, toolTipOption.labelBgOpacity ||
-    config.toolTipOpacity));
-    context.setStrokeStyle(toolTipOption.labelBgColor || config.toolTipBackground);
-    context.setLineWidth(1 * opts.pixelRatio);
-    context.rect(textX, textY - 0.5 * config.fontSize - config.toolTipPadding, textWidth + 2 * config.toolTipPadding,
-    config.fontSize + 2 * config.toolTipPadding);
-    context.closePath();
-    context.stroke();
-    context.fill();
-
-    context.beginPath();
-    context.setFontSize(config.fontSize);
-    context.setFillStyle(toolTipOption.labelFontColor || config.fontColor);
-    context.fillText(lableText, textX + config.toolTipPadding, textY + 0.5 * config.fontSize);
-    context.closePath();
-    context.stroke();
-  }
-}
-
-
-function drawToolTipSplitArea(offsetX, opts, config, context, eachSpacing) {
-  var toolTipOption = opts.extra.tooltip || {
-    activeBgColor: '#000000',
-    activeBgOpacity: 0.08 };
-
-  toolTipOption.activeBgColor = toolTipOption.activeBgColor ? toolTipOption.activeBgColor : '#000000';
-  toolTipOption.activeBgOpacity = toolTipOption.activeBgOpacity ? toolTipOption.activeBgOpacity : 0.08;
-  var startY = config.padding;
-  var endY = opts.height - config.padding - config.xAxisHeight - config.legendHeight;
-  context.beginPath();
-  context.setFillStyle(hexToRgb(toolTipOption.activeBgColor, toolTipOption.activeBgOpacity));
-  context.rect(offsetX - eachSpacing / 2, startY, eachSpacing, endY - startY);
-  context.closePath();
-  context.fill();
-}
-
-function drawToolTip(textList, offset, opts, config, context, eachSpacing, xAxisPoints) {
-  var toolTipOption = opts.extra.tooltip || {
-    bgColor: '#000000',
-    bgOpacity: 0.7,
-    fontColor: '#FFFFFF' };
-
-  toolTipOption.bgColor = toolTipOption.bgColor ? toolTipOption.bgColor : '#000000';
-  toolTipOption.bgOpacity = toolTipOption.bgOpacity ? toolTipOption.bgOpacity : 0.7;
-  toolTipOption.fontColor = toolTipOption.fontColor ? toolTipOption.fontColor : '#FFFFFF';
-  var legendWidth = 4 * opts.pixelRatio;
-  var legendMarginRight = 5 * opts.pixelRatio;
-  var arrowWidth = 8 * opts.pixelRatio;
-  var isOverRightBorder = false;
-  if (opts.type == 'line' || opts.type == 'area' || opts.type == 'candle' || opts.type == 'mix') {
-    drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
-  }
-
-  offset = assign({
-    x: 0,
-    y: 0 },
-  offset);
-  offset.y -= 8 * opts.pixelRatio;
-  var textWidth = textList.map(function (item) {
-    return measureText(item.text);
-  });
-
-  var toolTipWidth = legendWidth + legendMarginRight + 4 * config.toolTipPadding + Math.max.apply(null, textWidth);
-  var toolTipHeight = 2 * config.toolTipPadding + textList.length * config.toolTipLineHeight;
-
-  // if beyond the right border
-  if (offset.x - Math.abs(opts._scrollDistance_) + arrowWidth + toolTipWidth > opts.width) {
-    isOverRightBorder = true;
-  }
-
-  // draw background rect
-  context.beginPath();
-  context.setFillStyle(hexToRgb(toolTipOption.bgColor || config.toolTipBackground, toolTipOption.bgOpacity || config.toolTipOpacity));
-  if (isOverRightBorder) {
-    context.moveTo(offset.x, offset.y + 10 * opts.pixelRatio);
-    context.lineTo(offset.x - arrowWidth, offset.y + 10 * opts.pixelRatio - 5 * opts.pixelRatio);
-    context.lineTo(offset.x - arrowWidth, offset.y);
-    context.lineTo(offset.x - arrowWidth - Math.round(toolTipWidth), offset.y);
-    context.lineTo(offset.x - arrowWidth - Math.round(toolTipWidth), offset.y + toolTipHeight);
-    context.lineTo(offset.x - arrowWidth, offset.y + toolTipHeight);
-    context.lineTo(offset.x - arrowWidth, offset.y + 10 * opts.pixelRatio + 5 * opts.pixelRatio);
-    context.lineTo(offset.x, offset.y + 10 * opts.pixelRatio);
-  } else {
-    context.moveTo(offset.x, offset.y + 10 * opts.pixelRatio);
-    context.lineTo(offset.x + arrowWidth, offset.y + 10 * opts.pixelRatio - 5 * opts.pixelRatio);
-    context.lineTo(offset.x + arrowWidth, offset.y);
-    context.lineTo(offset.x + arrowWidth + Math.round(toolTipWidth), offset.y);
-    context.lineTo(offset.x + arrowWidth + Math.round(toolTipWidth), offset.y + toolTipHeight);
-    context.lineTo(offset.x + arrowWidth, offset.y + toolTipHeight);
-    context.lineTo(offset.x + arrowWidth, offset.y + 10 * opts.pixelRatio + 5 * opts.pixelRatio);
-    context.lineTo(offset.x, offset.y + 10 * opts.pixelRatio);
-  }
-
-  context.closePath();
-  context.fill();
-
-  // draw legend
-  textList.forEach(function (item, index) {
-    if (item.color !== null) {
-      context.beginPath();
-      context.setFillStyle(item.color);
-      var startX = offset.x + arrowWidth + 2 * config.toolTipPadding;
-      var startY = offset.y + (config.toolTipLineHeight - config.fontSize) / 2 + config.toolTipLineHeight * index +
-      config.toolTipPadding + 1;
-      if (isOverRightBorder) {
-        startX = offset.x - toolTipWidth - arrowWidth + 2 * config.toolTipPadding;
-      }
-      context.fillRect(startX, startY, legendWidth, config.fontSize);
-      context.closePath();
-    }
-  });
-
-  // draw text list
-
-  textList.forEach(function (item, index) {
-    var startX = offset.x + arrowWidth + 2 * config.toolTipPadding + legendWidth + legendMarginRight;
-    if (isOverRightBorder) {
-      startX = offset.x - toolTipWidth - arrowWidth + 2 * config.toolTipPadding + +legendWidth + legendMarginRight;
-    }
-    var startY = offset.y + (config.toolTipLineHeight - config.fontSize) / 2 + config.toolTipLineHeight * index +
-    config.toolTipPadding;
-    context.beginPath();
-    context.setFontSize(config.fontSize);
-    context.setFillStyle(toolTipOption.fontColor);
-    context.fillText(item.text, startX, startY + config.fontSize);
-    context.closePath();
-    context.stroke();
-  });
-}
-
-function drawYAxisTitle(title, opts, config, context) {
-  var startX = config.xAxisHeight + (opts.height - config.xAxisHeight - measureText(title)) / 2;
-  context.save();
-  context.beginPath();
-  context.setFontSize(config.fontSize);
-  context.setFillStyle(opts.yAxis.titleFontColor || '#333333');
-  context.translate(0, opts.height);
-  context.rotate(-90 * Math.PI / 180);
-  context.fillText(title, startX, config.padding + 0.5 * config.fontSize);
-  context.closePath();
-  context.stroke();
-  context.restore();
-}
-
-function drawColumnDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-  var columnOption = opts.extra.column || {
-    type: {},
-    meter: {} };
-
-  columnOption.type = columnOption.type == undefined ? 'group' : columnOption.type;
-  columnOption.meter = columnOption.meter || {};
-  columnOption.meter.border = columnOption.meter.border == undefined ? 4 : columnOption.meter.border;
-  columnOption.meter.fillColor = columnOption.meter.fillColor == undefined ? '#FFFFFF' : columnOption.meter.fillColor;
-  var _calYAxisData = calYAxisData(series, opts, config),
-  ranges = _calYAxisData.ranges;
-
-  var _getXAxisPoints = getXAxisPoints(opts.categories, opts, config),
-  xAxisPoints = _getXAxisPoints.xAxisPoints,
-  eachSpacing = _getXAxisPoints.eachSpacing;
-
-  var minRange = ranges.pop();
-  var maxRange = ranges.shift();
-  var calPoints = [];
-
-  context.save();
-  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
-    context.translate(opts._scrollDistance_, 0);
-  }
-  if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
-    drawToolTipSplitArea(opts.tooltip.offset.x, opts, config, context, eachSpacing);
-  }
-
-  series.forEach(function (eachSeries, seriesIndex) {
-    var data = eachSeries.data;
-    switch (columnOption.type) {
-      case 'group':
-        var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-        var tooltipPoints = getStackDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config,
-        seriesIndex, series, process);
-        calPoints.push(tooltipPoints);
-        points = fixColumeData(points, eachSpacing, series.length, seriesIndex, config, opts);
-        points.forEach(function (item, index) {
-          if (item !== null) {
-            context.beginPath();
-            context.setFillStyle(item.color || eachSeries.color);
-            var startX = item.x - item.width / 2 + 1;
-            var height = opts.height - item.y - config.padding - config.xAxisHeight - config.legendHeight;
-            context.moveTo(startX, item.y);
-            context.fillRect(startX, item.y, item.width - 2, height);
-            context.closePath();
-            context.fill();
-          }
-        });
-        break;
-      case 'stack':
-        // 绘制堆叠数据图
-        var points = getStackDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, seriesIndex,
-        series, process);
-        calPoints.push(points);
-        points = fixColumeStackData(points, eachSpacing, series.length, seriesIndex, config, opts, series);
-
-        points.forEach(function (item, index) {
-          if (item !== null) {
-            context.beginPath();
-            context.setFillStyle(item.color || eachSeries.color);
-            var startX = item.x - item.width / 2 + 1;
-            var height = opts.height - item.y - config.padding - config.xAxisHeight - config.legendHeight;
-            var height0 = opts.height - item.y0 - config.padding - config.xAxisHeight - config.legendHeight;
-            if (seriesIndex > 0) {
-              height -= height0;
-            }
-            context.moveTo(startX, item.y);
-            context.fillRect(startX, item.y, item.width - 2, height);
-            context.closePath();
-            context.fill();
-          }
-        });
-        break;
-      case 'meter':
-        // 绘制温度计数据图
-        var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-        calPoints.push(points);
-        points = fixColumeMeterData(points, eachSpacing, series.length, seriesIndex, config, opts, columnOption.meter.border);
-        if (seriesIndex == 0) {
-          points.forEach(function (item, index) {
-            if (item !== null) {
-              //画背景颜色
-              context.beginPath();
-              context.setFillStyle(columnOption.meter.fillColor);
-              var startX = item.x - item.width / 2 + 1;
-              var height = opts.height - item.y - config.padding - config.xAxisHeight - config.legendHeight;
-              context.moveTo(startX, item.y);
-              context.fillRect(startX, item.y, item.width - 2, height);
-              context.closePath();
-              context.fill();
-              //画边框线
-              context.beginPath();
-              context.setStrokeStyle(eachSeries.color);
-              context.setLineWidth(columnOption.meter.border * opts.pixelRatio);
-              context.moveTo(startX + columnOption.meter.border * 0.5, item.y + height);
-              context.lineTo(startX + columnOption.meter.border * 0.5, item.y + columnOption.meter.border * 0.5);
-              context.lineTo(startX + item.width - columnOption.meter.border, item.y + columnOption.meter.border * 0.5);
-              context.lineTo(startX + item.width - columnOption.meter.border, item.y + height);
-              context.stroke();
-            }
-          });
-        } else {
-          points.forEach(function (item, index) {
-            if (item !== null) {
-              context.beginPath();
-              context.setFillStyle(item.color || eachSeries.color);
-              var startX = item.x - item.width / 2 + 1;
-              var height = opts.height - item.y - config.padding - config.xAxisHeight - config.legendHeight;
-              context.moveTo(startX, item.y);
-              context.rect(startX, item.y, item.width - 2, height);
-              context.closePath();
-              context.fill();
-            }
-          });
-        }
-        break;}
-
-  });
-  if (opts.dataLabel !== false && process === 1) {
-    series.forEach(function (eachSeries, seriesIndex) {
-      var data = eachSeries.data;
-      switch (columnOption.type) {
-        case 'group':
-          var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-          points = fixColumeData(points, eachSpacing, series.length, seriesIndex, config, opts);
-
-          drawPointText(points, eachSeries, config, context);
-          break;
-        case 'stack':
-          var points = getStackDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, seriesIndex,
-          series, process);
-          drawPointText(points, eachSeries, config, context);
-          break;
-        case 'meter':
-          var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-          drawPointText(points, eachSeries, config, context);
-          break;}
-
-    });
-  }
-
-  context.restore();
-
-  return {
-    xAxisPoints: xAxisPoints,
-    calPoints: calPoints,
-    eachSpacing: eachSpacing };
-
-}
-
-function drawCandleDataPoints(series, seriesMA, opts, config, context) {
-  var process = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 1;
-  var candleOption = opts.extra.candle || {
-    color: {},
-    average: {} };
-
-  candleOption.color.upLine = candleOption.color.upLine ? candleOption.color.upLine : '#f04864';
-  candleOption.color.upFill = candleOption.color.upFill ? candleOption.color.upFill : '#f04864';
-  candleOption.color.downLine = candleOption.color.downLine ? candleOption.color.downLine : '#2fc25b';
-  candleOption.color.downFill = candleOption.color.downFill ? candleOption.color.downFill : '#2fc25b';
-  candleOption.average.show = candleOption.average.show === true ? true : false;
-  candleOption.average.name = candleOption.average.name ? candleOption.average.name : [];
-  candleOption.average.day = candleOption.average.day ? candleOption.average.day : [];
-  candleOption.average.color = candleOption.average.color ? candleOption.average.color : ['#1890ff', '#2fc25b',
-  '#facc14', '#f04864', '#8543e0', '#90ed7d'];
-
-  opts.extra.candle = candleOption;
-
-  var _calYAxisData5 = calYAxisData(series, opts, config),
-  ranges = _calYAxisData5.ranges;
-
-  var _getXAxisPoints5 = getXAxisPoints(opts.categories, opts, config),
-  xAxisPoints = _getXAxisPoints5.xAxisPoints,
-  eachSpacing = _getXAxisPoints5.eachSpacing;
-
-  var minRange = ranges.pop();
-  var maxRange = ranges.shift();
-  var calPoints = [];
-
-  context.save();
-  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
-    context.translate(opts._scrollDistance_, 0);
-  }
-  //画均线
-  if (candleOption.average.show) {
-    seriesMA.forEach(function (eachSeries, seriesIndex) {
-      var data = eachSeries.data;
-      var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-      //calPoints.push(points);
-      var splitPointList = splitPoints(points);
-
-      splitPointList.forEach(function (points, index) {
-        context.beginPath();
-        context.setStrokeStyle(eachSeries.color);
-        context.setLineWidth(1);
-        if (points.length === 1) {
-          context.moveTo(points[0].x, points[0].y);
-          context.arc(points[0].x, points[0].y, 1, 0, 2 * Math.PI);
-        } else {
-          context.moveTo(points[0].x, points[0].y);
-          points.forEach(function (item, index) {
-            if (index > 0) {
-              var ctrlPoint = createCurveControlPoints(points, index - 1);
-              context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, item.x, item.
-              y);
-            }
-          });
-          context.moveTo(points[0].x, points[0].y);
-        }
-        context.closePath();
-        context.stroke();
-      });
-    });
-  }
-  //画K线
-  series.forEach(function (eachSeries, seriesIndex) {
-    var data = eachSeries.data;
-    var points = getCandleDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-    calPoints.push(points);
-    var splitPointList = splitPoints(points);
-    splitPointList = splitPointList[0];
-
-    splitPointList.forEach(function (points, index) {
-      context.beginPath();
-      //如果上涨
-      if (data[index][1] - data[index][0] > 0) {
-        context.setStrokeStyle(candleOption.color.upLine);
-        context.setFillStyle(candleOption.color.upFill);
-        context.setLineWidth(1 * opts.pixelRatio);
-        context.moveTo(points[3].x, points[3].y); //顶点
-        context.lineTo(points[1].x, points[1].y); //收盘中间点
-        context.lineTo(points[1].x - eachSpacing / 4, points[1].y); //收盘左侧点
-        context.lineTo(points[0].x - eachSpacing / 4, points[0].y); //开盘左侧点
-        context.lineTo(points[0].x, points[0].y); //开盘中间点
-        context.lineTo(points[2].x, points[2].y); //底点
-        context.lineTo(points[0].x, points[0].y); //开盘中间点
-        context.lineTo(points[0].x + eachSpacing / 4, points[0].y); //开盘右侧点
-        context.lineTo(points[1].x + eachSpacing / 4, points[1].y); //收盘右侧点
-        context.lineTo(points[1].x, points[1].y); //收盘中间点
-        context.moveTo(points[3].x, points[3].y); //顶点
-      } else {
-        context.setStrokeStyle(candleOption.color.downLine);
-        context.setFillStyle(candleOption.color.downFill);
-        context.setLineWidth(1 * opts.pixelRatio);
-        context.moveTo(points[3].x, points[3].y); //顶点
-        context.lineTo(points[0].x, points[0].y); //开盘中间点
-        context.lineTo(points[0].x - eachSpacing / 4, points[0].y); //开盘左侧点
-        context.lineTo(points[1].x - eachSpacing / 4, points[1].y); //收盘左侧点
-        context.lineTo(points[1].x, points[1].y); //收盘中间点
-        context.lineTo(points[2].x, points[2].y); //底点
-        context.lineTo(points[1].x, points[1].y); //收盘中间点
-        context.lineTo(points[1].x + eachSpacing / 4, points[1].y); //收盘右侧点
-        context.lineTo(points[0].x + eachSpacing / 4, points[0].y); //开盘右侧点
-        context.lineTo(points[0].x, points[0].y); //开盘中间点
-        context.moveTo(points[3].x, points[3].y); //顶点
-      }
-      context.closePath();
-      context.fill();
-      context.stroke();
-    });
-  });
-
-
-  context.restore();
-
-
-
-  return {
-    xAxisPoints: xAxisPoints,
-    calPoints: calPoints,
-    eachSpacing: eachSpacing };
-
-}
-
-function drawAreaDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-  var areaOption = opts.extra.area || {
-    type: 'straight',
-    opacity: 0.5,
-    addLine: false,
-    width: 2 };
-
-  areaOption.type = areaOption.type ? areaOption.type : 'straight';
-  areaOption.opacity = areaOption.opacity ? areaOption.opacity : 0.2;
-  areaOption.addLine = areaOption.addLine == true ? true : false;
-  areaOption.width = areaOption.width ? areaOption.width : 2;
-  var _calYAxisData2 = calYAxisData(series, opts, config),
-  ranges = _calYAxisData2.ranges;
-
-  var _getXAxisPoints2 = getXAxisPoints(opts.categories, opts, config),
-  xAxisPoints = _getXAxisPoints2.xAxisPoints,
-  eachSpacing = _getXAxisPoints2.eachSpacing;
-
-  var minRange = ranges.pop();
-  var maxRange = ranges.shift();
-  var endY = opts.height - config.padding - config.xAxisHeight - config.legendHeight;
-  var calPoints = [];
-
-  context.save();
-  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
-    context.translate(opts._scrollDistance_, 0);
-  }
-
-  if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
-    drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
-  }
-
-
-  series.forEach(function (eachSeries, seriesIndex) {
-    var data = eachSeries.data;
-    var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-    calPoints.push(points);
-
-    var splitPointList = splitPoints(points);var _loop3 = function _loop3(
-
-    i) {
-      var points = splitPointList[i];
-      // 绘制区域数
-      context.beginPath();
-      context.setStrokeStyle(hexToRgb(eachSeries.color, areaOption.opacity));
-      context.setFillStyle(hexToRgb(eachSeries.color, areaOption.opacity));
-      context.setLineWidth(areaOption.width * opts.pixelRatio);
-      if (points.length > 1) {
-        var firstPoint = points[0];
-        var lastPoint = points[points.length - 1];
-
-        context.moveTo(firstPoint.x, firstPoint.y);
-        if (areaOption.type === 'curve') {
-          points.forEach(function (item, index) {
-            if (index > 0) {
-              var ctrlPoint = createCurveControlPoints(points, index - 1);
-              context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, item.x, item.
-              y);
-            }
-          });
-        } else {
-          points.forEach(function (item, index) {
-            if (index > 0) {
-              context.lineTo(item.x, item.y);
-            }
-          });
-        }
-
-        context.lineTo(lastPoint.x, endY);
-        context.lineTo(firstPoint.x, endY);
-        context.lineTo(firstPoint.x, firstPoint.y);
-      } else {
-        var item = points[0];
-        context.moveTo(item.x - eachSpacing / 2, item.y);
-        context.lineTo(item.x + eachSpacing / 2, item.y);
-        context.lineTo(item.x + eachSpacing / 2, endY);
-        context.lineTo(item.x - eachSpacing / 2, endY);
-        context.moveTo(item.x - eachSpacing / 2, item.y);
-      }
-      context.closePath();
-      context.fill();
-
-
-      //画连线
-      if (areaOption.addLine) {
-        context.beginPath();
-        context.setStrokeStyle(eachSeries.color);
-        context.setLineWidth(areaOption.width * opts.pixelRatio);
-        if (points.length === 1) {
-          context.moveTo(points[0].x, points[0].y);
-          context.arc(points[0].x, points[0].y, 1, 0, 2 * Math.PI);
-        } else {
-          context.moveTo(points[0].x, points[0].y);
-          if (areaOption.type === 'curve') {
-            points.forEach(function (item, index) {
-              if (index > 0) {
-                var ctrlPoint = createCurveControlPoints(points, index - 1);
-                context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, item.x,
-                item.y);
-              }
-            });
-          } else {
-            points.forEach(function (item, index) {
-              if (index > 0) {
-                context.lineTo(item.x, item.y);
-              }
-            });
-          }
-          context.moveTo(points[0].x, points[0].y);
-        }
-        context.closePath();
-        context.stroke();
-      }};for (var i = 0; i < splitPointList.length; i++) {_loop3(i);
-    }
-
-    //画点
-    if (opts.dataPointShape !== false) {
-      var shape = config.dataPointShape[seriesIndex % config.dataPointShape.length];
-      drawPointShape(points, eachSeries.color, shape, context, opts);
-    }
-
-  });
-  if (opts.dataLabel !== false && process === 1) {
-    series.forEach(function (eachSeries, seriesIndex) {
-      var data = eachSeries.data;
-      var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-      drawPointText(points, eachSeries, config, context);
-    });
-  }
-
-  context.restore();
-
-  return {
-    xAxisPoints: xAxisPoints,
-    calPoints: calPoints,
-    eachSpacing: eachSpacing };
-
-}
-
-function drawLineDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-  var lineOption = opts.extra.line || {
-    type: 'straight',
-    width: 2 };
-
-  lineOption.type = lineOption.type ? lineOption.type : 'straight';
-  lineOption.width = lineOption.width ? lineOption.width : 2;
-  var _calYAxisData3 = calYAxisData(series, opts, config),
-  ranges = _calYAxisData3.ranges;
-
-  var _getXAxisPoints3 = getXAxisPoints(opts.categories, opts, config),
-  xAxisPoints = _getXAxisPoints3.xAxisPoints,
-  eachSpacing = _getXAxisPoints3.eachSpacing;
-
-  var minRange = ranges.pop();
-  var maxRange = ranges.shift();
-  var calPoints = [];
-
-  context.save();
-  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
-    context.translate(opts._scrollDistance_, 0);
-  }
-
-  if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
-    drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
-  }
-
-  series.forEach(function (eachSeries, seriesIndex) {
-    var data = eachSeries.data;
-    var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-    calPoints.push(points);
-    var splitPointList = splitPoints(points);
-
-    splitPointList.forEach(function (points, index) {
-      context.beginPath();
-      context.setStrokeStyle(eachSeries.color);
-      context.setLineWidth(lineOption.width * opts.pixelRatio);
-      if (points.length === 1) {
-        context.moveTo(points[0].x, points[0].y);
-        context.arc(points[0].x, points[0].y, 1, 0, 2 * Math.PI);
-      } else {
-        context.moveTo(points[0].x, points[0].y);
-        if (lineOption.type === 'curve') {
-          points.forEach(function (item, index) {
-            if (index > 0) {
-              var ctrlPoint = createCurveControlPoints(points, index - 1);
-              context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, item.x, item.
-              y);
-            }
-          });
-        } else {
-          points.forEach(function (item, index) {
-            if (index > 0) {
-              context.lineTo(item.x, item.y);
-            }
-          });
-        }
-        context.moveTo(points[0].x, points[0].y);
-      }
-      context.closePath();
-      context.stroke();
-    });
-
-    if (opts.dataPointShape !== false) {
-      var shape = config.dataPointShape[seriesIndex % config.dataPointShape.length];
-      drawPointShape(points, eachSeries.color, shape, context, opts);
-    }
-  });
-  if (opts.dataLabel !== false && process === 1) {
-    series.forEach(function (eachSeries, seriesIndex) {
-      var data = eachSeries.data;
-      var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-      drawPointText(points, eachSeries, config, context);
-    });
-  }
-
-  context.restore();
-
-  return {
-    xAxisPoints: xAxisPoints,
-    calPoints: calPoints,
-    eachSpacing: eachSpacing };
-
-}
-
-function drawMixDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-
-  var _calYAxisData6 = calYAxisData(series, opts, config),
-  ranges = _calYAxisData6.ranges;
-
-  var _getXAxisPoints6 = getXAxisPoints(opts.categories, opts, config),
-  xAxisPoints = _getXAxisPoints6.xAxisPoints,
-  eachSpacing = _getXAxisPoints6.eachSpacing;
-
-  var minRange = ranges.pop();
-  var maxRange = ranges.shift();
-  var endY = opts.height - config.padding - config.xAxisHeight - config.legendHeight;
-  var calPoints = [];
-
-  var columnIndex = 0;
-  var columnLength = 0;
-  series.forEach(function (eachSeries, seriesIndex) {
-    if (eachSeries.type == 'column') {
-      columnLength += 1;
-    }
-  });
-  context.save();
-  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
-    context.translate(opts._scrollDistance_, 0);
-  }
-
-  if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
-    drawToolTipSplitLine(opts.tooltip.offset.x, opts, config, context);
-  }
-
-  series.forEach(function (eachSeries, seriesIndex) {
-    var data = eachSeries.data;
-    var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-    calPoints.push(points);
-
-    // 绘制柱状数据图
-    if (eachSeries.type == 'column') {
-      points = fixColumeData(points, eachSpacing, columnLength, columnIndex, config, opts);
-      points.forEach(function (item, index) {
-        if (item !== null) {
-          context.beginPath();
-          context.setFillStyle(item.color || eachSeries.color);
-          var startX = item.x - item.width / 2 + 1;
-          var height = opts.height - item.y - config.padding - config.xAxisHeight - config.legendHeight;
-          context.moveTo(startX, item.y);
-          context.rect(startX, item.y, item.width - 2, height);
-          context.closePath();
-          context.fill();
-        }
-      });
-      columnIndex += 1;
-    }
-
-    //绘制区域图数据
-
-    if (eachSeries.type == 'area') {
-      var _splitPointList = splitPoints(points);var _loop4 = function _loop4(
-      i) {
-        var points = _splitPointList[i];
-        // 绘制区域数据
-        context.beginPath();
-        context.setStrokeStyle(eachSeries.color);
-        context.setFillStyle(eachSeries.color);
-        context.setGlobalAlpha(0.2);
-        context.setLineWidth(2 * opts.pixelRatio);
-        if (points.length > 1) {
-          firstPoint = points[0];
-          var lastPoint = points[points.length - 1];
-          context.moveTo(firstPoint.x, firstPoint.y);
-          if (eachSeries.style === 'curve') {
-            points.forEach(function (item, index) {
-              if (index > 0) {
-                var ctrlPoint = createCurveControlPoints(points, index - 1);
-                context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, item.x,
-                item.y);
-              }
-            });
-          } else {
-            points.forEach(function (item, index) {
-              if (index > 0) {
-                context.lineTo(item.x, item.y);
-              }
-            });
-          }
-          context.lineTo(lastPoint.x, endY);
-          context.lineTo(firstPoint.x, endY);
-          context.lineTo(firstPoint.x, firstPoint.y);
-        } else {
-          var item = points[0];
-          context.moveTo(item.x - eachSpacing / 2, item.y);
-          context.lineTo(item.x + eachSpacing / 2, item.y);
-          context.lineTo(item.x + eachSpacing / 2, endY);
-          context.lineTo(item.x - eachSpacing / 2, endY);
-          context.moveTo(item.x - eachSpacing / 2, item.y);
-        }
-        context.closePath();
-        context.fill();
-        context.setGlobalAlpha(1);};for (var i = 0; i < _splitPointList.length; i++) {var firstPoint;_loop4(i);
-      }
-    }
-
-
-
-    // 绘制折线数据图
-    if (eachSeries.type == 'line') {
-      var splitPointList = splitPoints(points);
-      splitPointList.forEach(function (points, index) {
-        context.beginPath();
-        context.setStrokeStyle(eachSeries.color);
-        context.setLineWidth(2 * opts.pixelRatio);
-        if (points.length === 1) {
-          context.moveTo(points[0].x, points[0].y);
-          context.arc(points[0].x, points[0].y, 1, 0, 2 * Math.PI);
-        } else {
-          context.moveTo(points[0].x, points[0].y);
-          if (eachSeries.style == 'curve') {
-            points.forEach(function (item, index) {
-              if (index > 0) {
-                var ctrlPoint = createCurveControlPoints(points, index - 1);
-                context.bezierCurveTo(ctrlPoint.ctrA.x, ctrlPoint.ctrA.y, ctrlPoint.ctrB.x, ctrlPoint.ctrB.y, item.x,
-                item.y);
-              }
-            });
-          } else {
-            points.forEach(function (item, index) {
-              if (index > 0) {
-                context.lineTo(item.x, item.y);
-              }
-            });
-          }
-          context.moveTo(points[0].x, points[0].y);
-        }
-        context.closePath();
-        context.stroke();
-      });
-    }
-
-    // 绘制点数据图
-    if (eachSeries.type == 'point') {
-      var splitPointList = splitPoints(points);
-      splitPointList.forEach(function (points, index) {
-        context.beginPath();
-        context.setStrokeStyle(eachSeries.color);
-        context.setLineWidth(2 * opts.pixelRatio);
-        context.moveTo(points[0].x, points[0].y);
-        context.arc(points[0].x, points[0].y, 1, 0, 2 * Math.PI);
-        context.closePath();
-        context.stroke();
-      });
-    }
-
-    if (opts.dataPointShape !== false && eachSeries.type !== 'column') {
-      var shape = config.dataPointShape[seriesIndex % config.dataPointShape.length];
-      drawPointShape(points, eachSeries.color, shape, context, opts);
-    }
-  });
-  if (opts.dataLabel !== false && process === 1) {
-    var columnIndex = 0;
-    series.forEach(function (eachSeries, seriesIndex) {
-      var data = eachSeries.data;
-      var points = getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts, config, process);
-      if (eachSeries.type !== 'column') {
-        drawPointText(points, eachSeries, config, context);
-      } else {
-        points = fixColumeData(points, eachSpacing, columnLength, columnIndex, config, opts);
-        drawPointText(points, eachSeries, config, context);
-        columnIndex += 1;
-      }
-
-    });
-  }
-
-  context.restore();
-
-  return {
-    xAxisPoints: xAxisPoints,
-    calPoints: calPoints,
-    eachSpacing: eachSpacing };
-
-}
-
-function drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints) {
-  var toolTipOption = opts.extra.tooltip || {};
-  if (toolTipOption.horizentalLine && opts.tooltip && process === 1 && (opts.type == 'line' || opts.type == 'area' ||
-  opts.type == 'column' || opts.type == 'candle' || opts.type == 'mix')) {
-    drawToolTipHorizentalLine(opts, config, context, eachSpacing, xAxisPoints);
-  }
-  context.save();
-  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0 && opts.enableScroll === true) {
-    context.translate(opts._scrollDistance_, 0);
-  }
-  if (opts.tooltip && opts.tooltip.textList && opts.tooltip.textList.length && process === 1) {
-    drawToolTip(opts.tooltip.textList, opts.tooltip.offset, opts, config, context, eachSpacing, xAxisPoints);
-  }
-  context.restore();
-
-}
-
-function drawXAxis(categories, opts, config, context) {
-
-  var _getXAxisPoints4 = getXAxisPoints(categories, opts, config),
-  xAxisPoints = _getXAxisPoints4.xAxisPoints,
-  startX = _getXAxisPoints4.startX,
-  endX = _getXAxisPoints4.endX,
-  eachSpacing = _getXAxisPoints4.eachSpacing;
-
-  var startY = opts.height - config.padding - config.xAxisHeight - config.legendHeight;
-  var endY = config.padding;
-
-
-  //绘制滚动条
-  if (opts.enableScroll && opts.xAxis.scrollShow) {
-    var scrollY = opts.height - config.padding - config.legendHeight + 6 * opts.pixelRatio;
-    var scrollScreenWidth = endX - startX;
-    var scrollTotalWidth = eachSpacing * (xAxisPoints.length - 1);
-    var scrollWidth = scrollScreenWidth * scrollScreenWidth / scrollTotalWidth;
-    var scrollLeft = 0;
-    if (opts._scrollDistance_) {
-      scrollLeft = -opts._scrollDistance_ * scrollScreenWidth / scrollTotalWidth;
-    }
-    context.beginPath();
-    context.setLineCap('round');
-    context.setLineWidth(6 * opts.pixelRatio);
-    context.setStrokeStyle(opts.xAxis.scrollBackgroundColor || "#EFEBEF");
-    context.moveTo(startX, scrollY);
-    context.lineTo(endX, scrollY);
-    context.stroke();
-    context.closePath();
-    context.beginPath();
-    context.setLineCap('round');
-    context.setLineWidth(6 * opts.pixelRatio);
-    context.setStrokeStyle(opts.xAxis.scrollColor || "#A6A6A6");
-    context.moveTo(startX + scrollLeft, scrollY);
-    context.lineTo(startX + scrollLeft + scrollWidth, scrollY);
-    context.stroke();
-    context.setLineCap('butt');
-    context.closePath();
-  }
-
-  context.save();
-
-  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0) {
-    context.translate(opts._scrollDistance_, 0);
-  }
-
-  context.beginPath();
-  context.setStrokeStyle(opts.xAxis.gridColor || "#cccccc");
-  context.setLineCap('butt');
-  context.setLineWidth(1 * opts.pixelRatio);
-  if (opts.xAxis.gridType == 'dash') {
-    context.setLineDash([opts.xAxis.dashLength, opts.xAxis.dashLength]);
-  }
-  if (opts.xAxis.disableGrid !== true) {
-    if (opts.xAxis.type === 'calibration') {
-      xAxisPoints.forEach(function (item, index) {
-        if (index > 0) {
-          context.moveTo(item - eachSpacing / 2, startY);
-          context.lineTo(item - eachSpacing / 2, startY + 4 * opts.pixelRatio);
-        }
-      });
-    } else {
-      xAxisPoints.forEach(function (item, index) {
-        context.moveTo(item, startY);
-        context.lineTo(item, endY);
-      });
-    }
-  }
-  context.closePath();
-  context.stroke();
-  context.setLineDash([]);
-
-  //不绘制X轴
-  if (opts.xAxis.disabled !== true) {
-    // 对X轴列表做抽稀处理
-    var validWidth = opts.width - 2 * config.padding - config.yAxisWidth - config.yAxisTitleWidth;
-    //默认全部显示X轴标签
-    var maxXAxisListLength = categories.length;
-    //如果不旋转X轴文案
-    if (config._xAxisTextAngle_ === 0) {
-      //如果设置了X轴单屏数量
-      if (opts.xAxis.labelCount) {
-        //如果设置X轴密度
-        if (opts.xAxis.itemCount) {
-          maxXAxisListLength = Math.ceil(categories.length / opts.xAxis.itemCount * opts.xAxis.labelCount);
-        } else {
-          maxXAxisListLength = opts.xAxis.labelCount;
-        }
-        maxXAxisListLength -= 1;
-      }
-    } else {
-      //旋转标签文案
-      maxXAxisListLength = Math.min(categories.length, Math.ceil(validWidth / config.fontSize / 1.5));
-    }
-
-    var ratio = Math.ceil(categories.length / maxXAxisListLength);
-
-    var newCategories = [];
-    var cgLength = categories.length;
-    for (var i = 0; i < cgLength; i++) {
-      if (i % ratio !== 0) {
-        newCategories.push("");
-      } else {
-        newCategories.push(categories[i]);
-      }
-    }
-    newCategories[cgLength - 1] = categories[cgLength - 1];
-    /*
-                                                            categories = categories.map(function (item, index) {
-                                                            	return index % ratio !== 0 ? '' : item;
-                                                            });*/
-
-
-    if (config._xAxisTextAngle_ === 0) {
-      newCategories.forEach(function (item, index) {
-        var offset = eachSpacing / 2 - measureText(item) / 2;
-        context.beginPath();
-        context.setFontSize(config.fontSize);
-        context.setFillStyle(opts.xAxis.fontColor || '#666666');
-        context.fillText(item, xAxisPoints[index] + offset, startY + config.fontSize + 5);
-        context.closePath();
-        context.stroke();
-      });
-
-    } else {
-      newCategories.forEach(function (item, index) {
-        context.save();
-        context.beginPath();
-        context.setFontSize(config.fontSize);
-        context.setFillStyle(opts.xAxis.fontColor || '#666666');
-        var textWidth = measureText(item);
-        var offset = eachSpacing / 2 - textWidth;
-
-        var _calRotateTranslate = calRotateTranslate(xAxisPoints[index] + eachSpacing / 2, startY + config.fontSize / 2 +
-        5, opts.height),
-        transX = _calRotateTranslate.transX,
-        transY = _calRotateTranslate.transY;
-
-        context.rotate(-1 * config._xAxisTextAngle_);
-        context.translate(transX, transY);
-        context.fillText(item, xAxisPoints[index] + offset, startY + config.fontSize + 5);
-        context.closePath();
-        context.stroke();
-        context.restore();
-      });
-    }
-  }
-  context.restore();
-
-}
-
-function drawYAxisGrid(categories, opts, config, context) {
-  if (opts.yAxis.disableGrid === true) {
-    return;
-  }
-  var spacingValid = opts.height - 2 * config.padding - config.xAxisHeight - config.legendHeight;
-  var eachSpacing = Math.floor(spacingValid / config.yAxisSplit);
-  var yAxisTotalWidth = config.yAxisWidth + config.yAxisTitleWidth;
-  var startX = config.padding + yAxisTotalWidth;
-  var _getXAxisPoints4 = getXAxisPoints(categories, opts, config),
-  xAxisPoints = _getXAxisPoints4.xAxisPoints,
-  xAxiseachSpacing = _getXAxisPoints4.eachSpacing;
-  var TotalWidth = xAxiseachSpacing * (xAxisPoints.length - 1);
-  var endX = startX + TotalWidth;
-
-  var points = [];
-  for (var i = 0; i < config.yAxisSplit; i++) {
-    points.push(config.padding + eachSpacing * i);
-  }
-  points.push(config.padding + eachSpacing * config.yAxisSplit + 2);
-
-  context.save();
-  if (opts._scrollDistance_ && opts._scrollDistance_ !== 0) {
-    context.translate(opts._scrollDistance_, 0);
-  }
-
-  if (opts.yAxis.gridType == 'dash') {
-    context.setLineDash([opts.yAxis.dashLength, opts.yAxis.dashLength]);
-  }
-  context.beginPath();
-  context.setStrokeStyle(opts.yAxis.gridColor || "#cccccc");
-
-  context.setLineWidth(1 * opts.pixelRatio);
-  points.forEach(function (item, index) {
-    context.moveTo(startX, item);
-    context.lineTo(endX, item);
-  });
-  context.closePath();
-  context.stroke();
-  context.setLineDash([]);
-
-  context.restore();
-}
-
-function drawYAxis(series, opts, config, context) {
-  if (opts.yAxis.disabled === true) {
-    return;
-  }
-
-  var _calYAxisData4 = calYAxisData(series, opts, config),
-  rangesFormat = _calYAxisData4.rangesFormat;
-
-  var yAxisTotalWidth = config.yAxisWidth + config.yAxisTitleWidth;
-
-  var spacingValid = opts.height - 2 * config.padding - config.xAxisHeight - config.legendHeight;
-  var eachSpacing = Math.floor(spacingValid / config.yAxisSplit);
-  var startX = config.padding + yAxisTotalWidth;
-  var endX = opts.width - config.padding;
-  var endY = opts.height - config.padding - config.xAxisHeight - config.legendHeight + config.xAxisTextPadding;
-
-  // set YAxis background
-  context.beginPath();
-  context.setFillStyle(opts.background || '#ffffff');
-  if (opts._scrollDistance_ < 0) {
-    context.fillRect(0, 0, startX, endY + config.xAxisHeight);
-  }
-  context.fillRect(endX, 0, opts.width, endY + config.xAxisHeight);
-  context.closePath();
-  context.stroke();
-
-  var points = [];
-  for (var i = 0; i <= config.yAxisSplit; i++) {
-    points.push(config.padding + eachSpacing * i);
-  }
-
-
-  rangesFormat.forEach(function (item, index) {
-    var pos = points[index] ? points[index] : endY;
-    context.beginPath();
-    context.setFontSize(config.fontSize);
-    context.setFillStyle(opts.yAxis.fontColor || '#666666');
-    context.fillText(item, config.padding + config.yAxisTitleWidth, pos + config.fontSize / 2);
-    context.closePath();
-    context.stroke();
-  });
-
-
-  if (opts.yAxis.title) {
-    drawYAxisTitle(opts.yAxis.title, opts, config, context);
-  }
-}
-
-function drawLegend(series, opts, config, context) {
-  if (opts.legend === false) {
-    return;
-  }
-  // each legend shape width 15px
-  // the spacing between shape and text in each legend is the `padding`
-  // each legend spacing is the `padding`
-  // legend margin top `config.padding`
-
-  var _calLegendData = calLegendData(series, opts, config),
-  legendList = _calLegendData.legendList;
-
-  var padding = 5 * opts.pixelRatio;
-  var marginTop = 10 * opts.pixelRatio;
-  var shapeWidth = 15 * opts.pixelRatio;
-  legendList.forEach(function (itemList, listIndex) {
-    var width = 0;
-    for (var i = 0; i < itemList.length; i++) {
-      var item = itemList[i];
-      item.name = item.name || 'undefined';
-      width += 3 * padding + measureText(item.name) + shapeWidth;
-    }
-    var startX = (opts.width - width) / 2 + padding;
-    var startY = opts.height - config.padding - config.legendHeight + listIndex * (config.fontSize + marginTop) +
-    padding + marginTop;
-
-    context.setFontSize(config.fontSize);
-    for (var _i9 = 0; _i9 < itemList.length; _i9++) {
-      var _item6 = itemList[_i9];
-      switch (opts.type) {
-        case 'line':
-          context.beginPath();
-          context.setLineWidth(1 * opts.pixelRatio);
-          context.setStrokeStyle(_item6.color);
-          context.setFillStyle(_item6.color);
-          context.moveTo(startX + 7.5 * opts.pixelRatio, startY + 5 * opts.pixelRatio);
-          context.arc(startX + 7.5 * opts.pixelRatio, startY + 5 * opts.pixelRatio, 6 * opts.pixelRatio, 0, 2 * Math.PI);
-          context.closePath();
-          context.fill();
-          context.stroke();
-          break;
-        case 'pie':
-          context.beginPath();
-          context.setLineWidth(1 * opts.pixelRatio);
-          context.setStrokeStyle(_item6.color);
-          context.setFillStyle(_item6.color);
-          context.moveTo(startX + 7.5 * opts.pixelRatio, startY + 5 * opts.pixelRatio);
-          context.arc(startX + 7.5 * opts.pixelRatio, startY + 5 * opts.pixelRatio, 6 * opts.pixelRatio, 0, 2 * Math.PI);
-          context.closePath();
-          context.fill();
-          context.stroke();
-          break;
-        case 'ring':
-        case 'rose':
-          context.beginPath();
-          context.setLineWidth(1 * opts.pixelRatio);
-          context.setStrokeStyle(_item6.color);
-          context.setFillStyle(_item6.color);
-          context.moveTo(startX + 7.5 * opts.pixelRatio, startY + 5 * opts.pixelRatio);
-          context.arc(startX + 7.5 * opts.pixelRatio, startY + 5 * opts.pixelRatio, 6 * opts.pixelRatio, 0, 2 * Math.PI);
-          context.closePath();
-          context.fill();
-          context.stroke();
-          break;
-        //圆弧进度图不显示图例
-        case 'gauge':
-          break;
-        case 'arcbar':
-          break;
-        default:
-          context.beginPath();
-          context.setLineWidth(1 * opts.pixelRatio);
-          context.setStrokeStyle(_item6.color);
-          context.setFillStyle(_item6.color);
-          context.moveTo(startX, startY);
-          context.fillRect(startX, startY, 15 * opts.pixelRatio, 10 * opts.pixelRatio);
-          context.closePath();
-          context.fill();
-          context.stroke();}
-
-      startX += padding + shapeWidth;
-      context.beginPath();
-      context.setFontSize(config.fontSize);
-      context.setFillStyle(opts.extra.legendTextColor || '#333333');
-      context.fillText(_item6.name, startX, startY + 6 * opts.pixelRatio + 3 * opts.pixelRatio);
-      context.closePath();
-      context.stroke();
-      startX += measureText(_item6.name) + 2 * padding;
-    }
-  });
-}
-
-function drawPieDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-
-  var pieOption = opts.extra.pie || {};
-  var centerPosition = {
-    x: opts.width / 2,
-    y: (opts.height - config.legendHeight) / 2 };
-
-  var radius = Math.min(centerPosition.x - config.pieChartLinePadding - config.pieChartTextPadding - config._pieTextMaxLength_,
-  centerPosition.y - config.pieChartLinePadding - config.pieChartTextPadding);
-  if (opts.dataLabel) {
-    radius -= 10;
-  } else {
-    radius -= 2 * config.padding;
-  }
-  series = getPieDataPoints(series, radius, process);
-
-  var activeRadius = config.pieChartLinePadding / 2;
-
-  series = series.map(function (eachSeries) {
-    eachSeries._start_ += (pieOption.offsetAngle || 0) * Math.PI / 180;
-    return eachSeries;
-  });
-  series.forEach(function (eachSeries, seriesIndex) {
-    if (opts.tooltip) {
-      if (opts.tooltip.index == seriesIndex) {
-        context.beginPath();
-        context.setFillStyle(hexToRgb(eachSeries.color, opts.extra.pie.activeOpacity || 0.5));
-        context.moveTo(centerPosition.x, centerPosition.y);
-        context.arc(centerPosition.x, centerPosition.y, eachSeries._radius_ + activeRadius, eachSeries._start_, eachSeries._start_ + 2 *
-        eachSeries._proportion_ * Math.PI);
-        context.closePath();
-        context.fill();
-      }
-    }
-    context.beginPath();
-    context.setLineWidth(2 * opts.pixelRatio);
-    context.lineJoin = "round";
-    context.setStrokeStyle('#ffffff');
-    context.setFillStyle(eachSeries.color);
-    context.moveTo(centerPosition.x, centerPosition.y);
-    context.arc(centerPosition.x, centerPosition.y, eachSeries._radius_, eachSeries._start_, eachSeries._start_ + 2 * eachSeries._proportion_ *
-    Math.PI);
-    context.closePath();
-    context.fill();
-    if (opts.disablePieStroke !== true) {
-      context.stroke();
-    }
-  });
-
-  if (opts.type === 'ring') {
-    var innerPieWidth = radius * 0.6;
-    if (typeof opts.extra.pie.ringWidth === 'number' && opts.extra.pie.ringWidth > 0) {
-      innerPieWidth = Math.max(0, radius - opts.extra.pie.ringWidth);
-    }
-    context.beginPath();
-    context.setFillStyle(opts.background || '#ffffff');
-    context.moveTo(centerPosition.x, centerPosition.y);
-    context.arc(centerPosition.x, centerPosition.y, innerPieWidth, 0, 2 * Math.PI);
-    context.closePath();
-    context.fill();
-  }
-
-  if (opts.dataLabel !== false && process === 1) {
-    // fix https://github.com/xiaolin3303/wx-charts/issues/132
-    var valid = false;
-    for (var i = 0, len = series.length; i < len; i++) {
-      if (series[i].data > 0) {
-        valid = true;
-        break;
-      }
-    }
-
-    if (valid) {
-      drawPieText(series, opts, config, context, radius, centerPosition);
-    }
-  }
-
-  if (process === 1 && opts.type === 'ring') {
-    drawRingTitle(opts, config, context);
-  }
-
-  return {
-    center: centerPosition,
-    radius: radius,
-    series: series };
-
-}
-
-function drawRoseDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-
-  var roseOption = opts.extra.rose || {};
-  roseOption.type = roseOption.type || 'area';
-  var centerPosition = {
-    x: opts.width / 2,
-    y: (opts.height - config.legendHeight) / 2 };
-
-  var radius = Math.min(centerPosition.x - config.pieChartLinePadding - config.pieChartTextPadding - config._pieTextMaxLength_,
-  centerPosition.y - config.pieChartLinePadding - config.pieChartTextPadding);
-  if (opts.dataLabel) {
-    radius -= 10;
-  } else {
-    radius -= 2 * config.padding;
-  }
-  var minRadius = roseOption.minRadius || radius * 0.5;
-
-  series = getRoseDataPoints(series, roseOption.type, minRadius, radius, process);
-
-  var activeRadius = config.pieChartLinePadding / 2;
-
-
-  series = series.map(function (eachSeries) {
-    eachSeries._start_ += (roseOption.offsetAngle || 0) * Math.PI / 180;
-    return eachSeries;
-  });
-
-  series.forEach(function (eachSeries, seriesIndex) {
-    if (opts.tooltip) {
-      if (opts.tooltip.index == seriesIndex) {
-        context.beginPath();
-        context.setFillStyle(hexToRgb(eachSeries.color, roseOption.activeOpacity || 0.5));
-        context.moveTo(centerPosition.x, centerPosition.y);
-        context.arc(centerPosition.x, centerPosition.y, activeRadius + eachSeries._radius_, eachSeries._start_, eachSeries._start_ + 2 * eachSeries._proportion_ * Math.PI);
-        context.closePath();
-        context.fill();
-      }
-    }
-    context.beginPath();
-    context.setLineWidth(2 * opts.pixelRatio);
-    context.lineJoin = "round";
-    context.setStrokeStyle('#ffffff');
-    context.setFillStyle(eachSeries.color);
-    context.moveTo(centerPosition.x, centerPosition.y);
-    context.arc(centerPosition.x, centerPosition.y, eachSeries._radius_, eachSeries._start_, eachSeries._start_ + 2 * eachSeries._proportion_ * Math.PI);
-    context.closePath();
-    context.fill();
-    if (opts.disablePieStroke !== true) {
-      context.stroke();
-    }
-  });
-
-
-  if (opts.dataLabel !== false && process === 1) {
-    // fix https://github.com/xiaolin3303/wx-charts/issues/132
-    var valid = false;
-    for (var i = 0, len = series.length; i < len; i++) {
-      if (series[i].data > 0) {
-        valid = true;
-        break;
-      }
-    }
-
-    if (valid) {
-      drawPieText(series, opts, config, context, radius, centerPosition);
-    }
-  }
-
-  return {
-    center: centerPosition,
-    radius: radius,
-    series: series };
-
-}
-
-function drawArcbarDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-
-  var arcbarOption = opts.extra.arcbar || {};
-  arcbarOption.startAngle = arcbarOption.startAngle ? arcbarOption.startAngle : 0.75;
-  arcbarOption.endAngle = arcbarOption.endAngle ? arcbarOption.endAngle : 0.25;
-  arcbarOption.type = arcbarOption.type ? arcbarOption.type : 'default';
-
-  series = getArcbarDataPoints(series, arcbarOption, process);
-  var centerPosition = {
-    x: opts.width / 2,
-    y: opts.height / 2 };
-
-  var radius = Math.min(centerPosition.x, centerPosition.y);
-
-  if (typeof arcbarOption.width === 'number' && arcbarOption.width > 0) {
-    arcbarOption.width = arcbarOption.width;
-  } else {
-    arcbarOption.width = 12 * opts.pixelRatio;
-  }
-  radius -= config.padding + arcbarOption.width / 2;
-
-  //背景颜色
-  context.setLineWidth(arcbarOption.width); // 设置圆环的宽度
-  context.setStrokeStyle(arcbarOption.backgroundColor || '#E9E9E9'); // 设置圆环的颜色
-  context.setLineCap('round'); // 设置圆环端点的形状
-  context.beginPath(); //开始一个新的路径
-  if (arcbarOption.type == 'default') {
-    context.arc(centerPosition.x, centerPosition.y, radius, arcbarOption.startAngle * Math.PI, arcbarOption.endAngle *
-    Math.PI, false);
-  } else {
-    context.arc(centerPosition.x, centerPosition.y, radius, 0, 2 * Math.PI, false);
-  }
-
-  context.stroke(); //对当前路径进行描边
-
-  for (var i = 0; i < series.length; i++) {
-    var eachSeries = series[i];
-    context.setLineWidth(arcbarOption.width);
-    context.setStrokeStyle(eachSeries.color);
-    context.setLineCap('round');
-    context.beginPath();
-    context.arc(centerPosition.x, centerPosition.y, radius, arcbarOption.startAngle * Math.PI, eachSeries._proportion_ *
-    Math.PI, false);
-    context.stroke();
-  }
-  drawRingTitle(opts, config, context);
-  return {
-    center: centerPosition,
-    radius: radius,
-    series: series };
-
-}
-
-function drawGaugeDataPoints(categories, series, opts, config, context) {
-  var process = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 1;
-  var gaugeOption = opts.extra.gauge || {};
-  gaugeOption.startAngle = gaugeOption.startAngle ? gaugeOption.startAngle : 0.75;
-  if (gaugeOption.oldAngle == undefined) {
-    gaugeOption.oldAngle = gaugeOption.startAngle;
-  }
-  if (gaugeOption.oldData == undefined) {
-    gaugeOption.oldData = 0;
-  }
-  gaugeOption.endAngle = gaugeOption.endAngle ? gaugeOption.endAngle : 0.25;
-  categories = getGaugeAxisPoints(categories, gaugeOption.startAngle, gaugeOption.endAngle);
-  var centerPosition = {
-    x: opts.width / 2,
-    y: opts.height / 2 };
-
-  var radius = Math.min(centerPosition.x, centerPosition.y);
-  if (typeof gaugeOption.width === 'number' && gaugeOption.width > 0) {
-    gaugeOption.width = gaugeOption.width;
-  } else {
-    gaugeOption.width = 15 * opts.pixelRatio;
-  }
-  radius -= config.padding + gaugeOption.width / 2;
-  var innerRadius = radius - gaugeOption.width;
-
-
-
-  //画背景
-  context.setLineWidth(gaugeOption.width);
-  context.setLineCap('butt');
-  for (var i = 0; i < categories.length; i++) {
-    var eachCategories = categories[i];
-    context.beginPath();
-    context.setStrokeStyle(eachCategories.color);
-    context.arc(centerPosition.x, centerPosition.y, radius, eachCategories._startAngle_ * Math.PI, eachCategories._endAngle_ *
-    Math.PI, false);
-    context.stroke();
-  }
-  context.save();
-
-  //画刻度线
-  var totalAngle = gaugeOption.startAngle - gaugeOption.endAngle + 1;
-  gaugeOption.splitLine.fixRadius = gaugeOption.splitLine.fixRadius ? gaugeOption.splitLine.fixRadius : 0;
-  gaugeOption.splitLine.splitNumber = gaugeOption.splitLine.splitNumber ? gaugeOption.splitLine.splitNumber : 10;
-  gaugeOption.splitLine.width = gaugeOption.splitLine.width ? gaugeOption.splitLine.width : 15 * opts.pixelRatio;
-  gaugeOption.splitLine.color = gaugeOption.splitLine.color ? gaugeOption.splitLine.color : '#FFFFFF';
-  gaugeOption.splitLine.childNumber = gaugeOption.splitLine.childNumber ? gaugeOption.splitLine.childNumber : 5;
-  gaugeOption.splitLine.childWidth = gaugeOption.splitLine.childWidth ? gaugeOption.splitLine.childWidth : 5 * opts.pixelRatio;
-
-  var splitAngle = totalAngle / gaugeOption.splitLine.splitNumber;
-  var childAngle = totalAngle / gaugeOption.splitLine.splitNumber / gaugeOption.splitLine.childNumber;
-  var startX = -radius - gaugeOption.width * 0.5 - gaugeOption.splitLine.fixRadius;
-  var endX = -radius - gaugeOption.width * 0.5 - gaugeOption.splitLine.fixRadius + gaugeOption.splitLine.width;
-  var childendX = -radius - gaugeOption.width * 0.5 - gaugeOption.splitLine.fixRadius + gaugeOption.splitLine.childWidth;
-
-  context.translate(centerPosition.x, centerPosition.y);
-  context.rotate((gaugeOption.startAngle - 1) * Math.PI);
-
-  for (var _i10 = 0; _i10 < gaugeOption.splitLine.splitNumber + 1; _i10++) {
-    context.beginPath();
-    context.setStrokeStyle(gaugeOption.splitLine.color);
-    context.setLineWidth(2 * opts.pixelRatio);
-    context.moveTo(startX, 0);
-    context.lineTo(endX, 0);
-    context.stroke();
-    context.rotate(splitAngle * Math.PI);
-  }
-  context.restore();
-
-  context.save();
-  context.translate(centerPosition.x, centerPosition.y);
-  context.rotate((gaugeOption.startAngle - 1) * Math.PI);
-
-  for (var _i11 = 0; _i11 < gaugeOption.splitLine.splitNumber * gaugeOption.splitLine.childNumber + 1; _i11++) {
-    context.beginPath();
-    context.setStrokeStyle(gaugeOption.splitLine.color);
-    context.setLineWidth(1 * opts.pixelRatio);
-    context.moveTo(startX, 0);
-    context.lineTo(childendX, 0);
-    context.stroke();
-    context.rotate(childAngle * Math.PI);
-  }
-  context.restore();
-
-  //画指针
-  gaugeOption.pointer.width = gaugeOption.pointer.width ? gaugeOption.pointer.width : 15 * opts.pixelRatio;
-  if (gaugeOption.pointer.color == undefined || gaugeOption.pointer.color == 'auto') {
-    gaugeOption.pointer.color == 'auto';
-  } else {
-    gaugeOption.pointer.color == gaugeOption.pointer.color;
-  }
-  series = getGaugeDataPoints(series, categories, gaugeOption, process);
-
-  for (var _i12 = 0; _i12 < series.length; _i12++) {
-    var eachSeries = series[_i12];
-    context.save();
-    context.translate(centerPosition.x, centerPosition.y);
-    context.rotate((eachSeries._proportion_ - 1) * Math.PI);
-    context.beginPath();
-    context.setFillStyle(eachSeries.color);
-    context.moveTo(gaugeOption.pointer.width, 0);
-    context.lineTo(0, -gaugeOption.pointer.width / 2);
-    context.lineTo(-innerRadius, 0);
-    context.lineTo(0, gaugeOption.pointer.width / 2);
-    context.lineTo(gaugeOption.pointer.width, 0);
-    context.closePath();
-    context.fill();
-    context.beginPath();
-    context.setFillStyle('#FFFFFF');
-    context.arc(0, 0, gaugeOption.pointer.width / 6, 0, 2 * Math.PI, false);
-    context.fill();
-    context.restore();
-  }
-
-  if (opts.dataLabel !== false) {
-    drawGaugeLabel(gaugeOption, radius, centerPosition, opts, config, context);
-  }
-
-  drawRingTitle(opts, config, context);
-
-  if (process === 1 && opts.type === 'gauge') {
-    gaugeOption.oldAngle = series[0]._proportion_;
-    gaugeOption.oldData = series[0].data;
-  }
-  return {
-    center: centerPosition,
-    radius: radius,
-    innerRadius: innerRadius,
-    categories: categories,
-    totalAngle: totalAngle };
-
-}
-
-function drawRadarDataPoints(series, opts, config, context) {
-  var process = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 1;
-
-  var radarOption = opts.extra.radar || {};
-  var coordinateAngle = getRadarCoordinateSeries(opts.categories.length);
-  var centerPosition = {
-    x: opts.width / 2,
-    y: (opts.height - config.legendHeight) / 2 };
-
-
-  var radius = Math.min(centerPosition.x - (getMaxTextListLength(opts.categories) + config.radarLabelTextMargin),
-  centerPosition.y - config.radarLabelTextMargin);
-
-  radius -= config.padding;
-
-  // draw grid
-  context.beginPath();
-  context.setLineWidth(1 * opts.pixelRatio);
-  context.setStrokeStyle(radarOption.gridColor || "#cccccc");
-  coordinateAngle.forEach(function (angle) {
-    var pos = convertCoordinateOrigin(radius * Math.cos(angle), radius * Math.sin(angle), centerPosition);
-    context.moveTo(centerPosition.x, centerPosition.y);
-    context.lineTo(pos.x, pos.y);
-  });
-  context.stroke();
-  context.closePath();
-
-  // draw split line grid
-
-  var _loop = function _loop(i) {
-    var startPos = {};
-    context.beginPath();
-    context.setLineWidth(1 * opts.pixelRatio);
-    context.setStrokeStyle(radarOption.gridColor || "#cccccc");
-    coordinateAngle.forEach(function (angle, index) {
-      var pos = convertCoordinateOrigin(radius / config.radarGridCount * i * Math.cos(angle), radius / config.radarGridCount * i * Math.sin(angle), centerPosition);
-      if (index === 0) {
-        startPos = pos;
-        context.moveTo(pos.x, pos.y);
-      } else {
-        context.lineTo(pos.x, pos.y);
-      }
-    });
-    context.lineTo(startPos.x, startPos.y);
-    context.stroke();
-    context.closePath();
-  };
-
-  for (var i = 1; i <= config.radarGridCount; i++) {
-    _loop(i);
-  }
-
-  var radarDataPoints = getRadarDataPoints(coordinateAngle, centerPosition, radius, series, opts, process);
-
-  radarDataPoints.forEach(function (eachSeries, seriesIndex) {
-    // 绘制区域数据
-    context.beginPath();
-    context.setFillStyle(eachSeries.color);
-    context.setGlobalAlpha(0.3);
-    eachSeries.data.forEach(function (item, index) {
-      if (index === 0) {
-        context.moveTo(item.position.x, item.position.y);
-      } else {
-        context.lineTo(item.position.x, item.position.y);
-      }
-    });
-    context.closePath();
-    context.fill();
-    context.setGlobalAlpha(1);
-
-    if (opts.dataPointShape !== false) {
-      var shape = config.dataPointShape[seriesIndex % config.dataPointShape.length];
-      var points = eachSeries.data.map(function (item) {
-        return item.position;
-      });
-      drawPointShape(points, eachSeries.color, shape, context, opts);
-    }
-  });
-  // draw label text
-  drawRadarLabel(coordinateAngle, radius, centerPosition, opts, config, context);
-
-  return {
-    center: centerPosition,
-    radius: radius,
-    angleList: coordinateAngle };
-
-}
-
-function drawCanvas(opts, context) {
-  context.draw();
-}
-
-var Timing = {
-  easeIn: function easeIn(pos) {
-    return Math.pow(pos, 3);
-  },
-
-  easeOut: function easeOut(pos) {
-    return Math.pow(pos - 1, 3) + 1;
-  },
-
-  easeInOut: function easeInOut(pos) {
-    if ((pos /= 0.5) < 1) {
-      return 0.5 * Math.pow(pos, 3);
-    } else {
-      return 0.5 * (Math.pow(pos - 2, 3) + 2);
-    }
-  },
-
-  linear: function linear(pos) {
-    return pos;
-  } };
-
-
-function Animation(opts) {
-  this.isStop = false;
-  opts.duration = typeof opts.duration === 'undefined' ? 1000 : opts.duration;
-  opts.timing = opts.timing || 'linear';
-
-  var delay = 17;
-
-  var createAnimationFrame = function createAnimationFrame() {
-
-    if (typeof requestAnimationFrame !== 'undefined') {
-      return requestAnimationFrame;
-    } else if (typeof setTimeout !== 'undefined') {
-
-      return function (step, delay) {
-        setTimeout(function () {
-          var timeStamp = +new Date();
-          step(timeStamp);
-        }, delay);
-      };
-    } else {
-
-      return function (step) {
-        step(null);
-      };
-    }
-  };
-  var animationFrame = createAnimationFrame();
-  var startTimeStamp = null;
-
-  var _step = function step(timestamp) {
-
-    if (timestamp === null || this.isStop === true) {
-      opts.onProcess && opts.onProcess(1);
-      opts.onAnimationFinish && opts.onAnimationFinish();
-      return;
-    }
-    if (startTimeStamp === null) {
-      startTimeStamp = timestamp;
-    }
-    if (timestamp - startTimeStamp < opts.duration) {
-      var process = (timestamp - startTimeStamp) / opts.duration;
-      var timingFunction = Timing[opts.timing];
-      process = timingFunction(process);
-
-      opts.onProcess && opts.onProcess(process);
-      animationFrame(_step, delay);
-    } else {
-      opts.onProcess && opts.onProcess(1);
-      opts.onAnimationFinish && opts.onAnimationFinish();
-    }
-  };
-  _step = _step.bind(this);
-  animationFrame(_step, delay);
-}
-
-// stop animation immediately
-// and tigger onAnimationFinish
-Animation.prototype.stop = function () {
-  this.isStop = true;
-};
-
-function drawCharts(type, opts, config, context) {
-  var _this = this;
-
-  var series = opts.series;
-  var categories = opts.categories;
-  series = fillSeriesColor(series, config);
-  series = fillSeriesType(series, opts);
-  var seriesMA = null;
-
-
-  if (type == 'candle') {
-    var average = assign({}, opts.extra.candle.average);
-    if (average.show) {
-      seriesMA = calCandleMA(average.day, average.name, average.color, series[0].data);
-      opts.seriesMA = seriesMA;
-    }
-  }
-
-  var _calLegendData = calLegendData(series, opts, config),
-  legendHeight = _calLegendData.legendHeight;
-
-  config.legendHeight = legendHeight;
-
-  var _calYAxisData = calYAxisData(series, opts, config),
-  yAxisWidth = _calYAxisData.yAxisWidth;
-
-  config.yAxisWidth = yAxisWidth;
-  if (categories && categories.length) {
-    var _calCategoriesData = calCategoriesData(categories, opts, config),
-    xAxisHeight = _calCategoriesData.xAxisHeight,
-    angle = _calCategoriesData.angle;
-
-    config.xAxisHeight = xAxisHeight;
-    config._xAxisTextAngle_ = angle;
-  }
-  if (type === 'pie' || type === 'ring' || type === 'rose') {
-    config._pieTextMaxLength_ = opts.dataLabel === false ? 0 : getPieTextMaxLength(series);
-  }
-
-  var duration = opts.animation ? 1000 : 0;
-  this.animationInstance && this.animationInstance.stop();
-
-  //先清空画布,不然百度和支付宝ToolTip有重影
-  context.clearRect(0, 0, opts.width, opts.height);
-
-
-  switch (type) {
-    case 'line':
-      this.animationInstance = new Animation({
-        timing: 'easeIn',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          drawYAxisGrid(categories, opts, config, context);
-          drawXAxis(categories, opts, config, context);
-          var _drawLineDataPoints = drawLineDataPoints(series, opts, config, context, process),
-          xAxisPoints = _drawLineDataPoints.xAxisPoints,
-          calPoints = _drawLineDataPoints.calPoints,
-          eachSpacing = _drawLineDataPoints.eachSpacing;
-
-          _this.chartData.xAxisPoints = xAxisPoints;
-          _this.chartData.calPoints = calPoints;
-          _this.chartData.eachSpacing = eachSpacing;
-          drawLegend(opts.series, opts, config, context);
-          drawYAxis(series, opts, config, context);
-          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
-          drawCanvas(opts, context);
-
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-
-      break;
-    case 'mix':
-      this.animationInstance = new Animation({
-        timing: 'easeIn',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          drawYAxisGrid(categories, opts, config, context);
-          drawXAxis(categories, opts, config, context);
-          var _drawMixDataPoints = drawMixDataPoints(series, opts, config, context, process),
-          xAxisPoints = _drawMixDataPoints.xAxisPoints,
-          calPoints = _drawMixDataPoints.calPoints,
-          eachSpacing = _drawMixDataPoints.eachSpacing;
-
-          _this.chartData.xAxisPoints = xAxisPoints;
-          _this.chartData.calPoints = calPoints;
-          _this.chartData.eachSpacing = eachSpacing;
-          drawLegend(opts.series, opts, config, context);
-          drawYAxis(series, opts, config, context);
-          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-
-      break;
-    case 'column':
-      this.animationInstance = new Animation({
-        timing: 'easeIn',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          drawYAxisGrid(categories, opts, config, context);
-          drawXAxis(categories, opts, config, context);
-          var _drawColumnDataPoints = drawColumnDataPoints(series, opts, config, context, process),
-          xAxisPoints = _drawColumnDataPoints.xAxisPoints,
-          calPoints = _drawColumnDataPoints.calPoints,
-          eachSpacing = _drawColumnDataPoints.eachSpacing;
-          _this.chartData.xAxisPoints = xAxisPoints;
-          _this.chartData.calPoints = calPoints;
-          _this.chartData.eachSpacing = eachSpacing;
-          drawLegend(opts.series, opts, config, context);
-          drawYAxis(series, opts, config, context);
-          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'area':
-      this.animationInstance = new Animation({
-        timing: 'easeIn',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          drawYAxisGrid(categories, opts, config, context);
-          drawXAxis(categories, opts, config, context);
-          var _drawAreaDataPoints = drawAreaDataPoints(series, opts, config, context, process),
-          xAxisPoints = _drawAreaDataPoints.xAxisPoints,
-          calPoints = _drawAreaDataPoints.calPoints,
-          eachSpacing = _drawAreaDataPoints.eachSpacing;
-
-          _this.chartData.xAxisPoints = xAxisPoints;
-          _this.chartData.calPoints = calPoints;
-          _this.chartData.eachSpacing = eachSpacing;
-          drawLegend(opts.series, opts, config, context);
-          drawYAxis(series, opts, config, context);
-          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
-
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'ring':
-    case 'pie':
-      this.animationInstance = new Animation({
-        timing: 'easeInOut',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          _this.chartData.pieData = drawPieDataPoints(series, opts, config, context, process);
-          drawLegend(opts.series, opts, config, context);
-          drawToolTipBridge(opts, config, context, process);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'rose':
-      this.animationInstance = new Animation({
-        timing: 'easeInOut',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          _this.chartData.pieData = drawRoseDataPoints(series, opts, config, context, process);
-          drawLegend(opts.series, opts, config, context);
-          drawToolTipBridge(opts, config, context, process);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'radar':
-      this.animationInstance = new Animation({
-        timing: 'easeInOut',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          _this.chartData.radarData = drawRadarDataPoints(series, opts, config, context, process);
-          drawLegend(opts.series, opts, config, context);
-          drawToolTipBridge(opts, config, context, process);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'arcbar':
-      this.animationInstance = new Animation({
-        timing: 'easeInOut',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          _this.chartData.arcbarData = drawArcbarDataPoints(series, opts, config, context, process);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'gauge':
-      this.animationInstance = new Animation({
-        timing: 'easeInOut',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          _this.chartData.gaugeData = drawGaugeDataPoints(categories, series, opts, config, context, process);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;
-    case 'candle':
-      this.animationInstance = new Animation({
-        timing: 'easeIn',
-        duration: duration,
-        onProcess: function onProcess(process) {
-          if (opts.rotate) {
-            contextRotate(context, opts);
-          }
-          drawYAxisGrid(categories, opts, config, context);
-          drawXAxis(categories, opts, config, context);
-          var _drawCandleDataPoints = drawCandleDataPoints(series, seriesMA, opts, config, context, process),
-          xAxisPoints = _drawCandleDataPoints.xAxisPoints,
-          calPoints = _drawCandleDataPoints.calPoints,
-          eachSpacing = _drawCandleDataPoints.eachSpacing;
-
-          _this.chartData.xAxisPoints = xAxisPoints;
-          _this.chartData.calPoints = calPoints;
-          _this.chartData.eachSpacing = eachSpacing;
-          if (seriesMA) {
-            drawLegend(seriesMA, opts, config, context);
-          } else {
-            drawLegend(opts.series, opts, config, context);
-          }
-          drawYAxis(series, opts, config, context);
-          drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints);
-          drawCanvas(opts, context);
-        },
-        onAnimationFinish: function onAnimationFinish() {
-          _this.event.trigger('renderComplete');
-        } });
-
-      break;}
-
-}
-
-// simple event implement
-
-function Event() {
-  this.events = {};
-}
-
-Event.prototype.addEventListener = function (type, listener) {
-  this.events[type] = this.events[type] || [];
-  this.events[type].push(listener);
-};
-
-Event.prototype.trigger = function () {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  var type = args[0];
-  var params = args.slice(1);
-  if (!!this.events[type]) {
-    this.events[type].forEach(function (listener) {
-      try {
-        listener.apply(null, params);
-      } catch (e) {
-        console.error(e);
-      }
-    });
-  }
-};
-
-var Charts = function Charts(opts) {
-  opts.fontSize = opts.fontSize ? opts.fontSize * opts.pixelRatio : 13 * opts.pixelRatio;
-  opts.title = opts.title || {};
-  opts.subtitle = opts.subtitle || {};
-  opts.yAxis = opts.yAxis || {};
-  opts.yAxis.gridType = opts.yAxis.gridType ? opts.yAxis.gridType : 'solid';
-  opts.yAxis.dashLength = opts.yAxis.dashLength ? opts.yAxis.dashLength : 4 * opts.pixelRatio;
-  opts.xAxis = opts.xAxis || {};
-  opts.xAxis.rotateLabel = opts.xAxis.rotateLabel ? true : false;
-  opts.xAxis.type = opts.xAxis.type ? opts.xAxis.type : 'calibration';
-  opts.xAxis.gridType = opts.xAxis.gridType ? opts.xAxis.gridType : 'solid';
-  opts.xAxis.dashLength = opts.xAxis.dashLength ? opts.xAxis.dashLength : 4 * opts.pixelRatio;
-  // opts.xAxis.itemCount = opts.xAxis.itemCount ? opts.xAxis.itemCount : 5;
-  opts.xAxis.scrollAlign = opts.xAxis.scrollAlign ? opts.xAxis.scrollAlign : 'left';
-  opts.extra = opts.extra || {};
-
-  opts.legend = opts.legend === false ? false : true;
-  opts.rotate = opts.rotate ? true : false;
-  opts.animation = opts.animation === false ? false : true;
-  var config$$1 = assign({}, config);
-  config$$1.yAxisTitleWidth = opts.yAxis.disabled !== true && opts.yAxis.title ? config$$1.yAxisTitleWidth : 0;
-  if (opts.type == 'pie' || opts.type == 'ring') {
-    config$$1.pieChartLinePadding = opts.dataLabel === false ? 0 : opts.extra.pie.lableWidth * opts.pixelRatio || config$$1.pieChartLinePadding * opts.pixelRatio;
-  }
-  config$$1.pieChartTextPadding = opts.dataLabel === false ? 0 : config$$1.pieChartTextPadding * opts.pixelRatio;
-  config$$1.yAxisSplit = opts.yAxis.splitNumber ? opts.yAxis.splitNumber : config.yAxisSplit;
-  //屏幕旋转
-  config$$1.rotate = opts.rotate;
-  if (opts.rotate) {
-    var tempWidth = opts.width;
-    var tempHeight = opts.height;
-    opts.width = tempHeight;
-    opts.height = tempWidth;
-  }
-
-  //适配H5高分屏
-  config$$1.yAxisWidth = config.yAxisWidth * opts.pixelRatio;
-  config$$1.xAxisHeight = config.xAxisHeight * opts.pixelRatio;
-  if (opts.enableScroll && opts.xAxis.scrollShow) {
-    config$$1.xAxisHeight += 6 * opts.pixelRatio;
-  }
-  config$$1.xAxisLineHeight = config.xAxisLineHeight * opts.pixelRatio;
-  config$$1.legendHeight = config.legendHeight * opts.pixelRatio;
-  //config$$1.yAxisTitleWidth=config.yAxisTitleWidth*opts.pixelRatio;
-  config$$1.padding = config.padding * opts.pixelRatio;
-  config$$1.fontSize = opts.fontSize;
-  config$$1.titleFontSize = config.titleFontSize * opts.pixelRatio;
-  config$$1.subtitleFontSize = config.subtitleFontSize * opts.pixelRatio;
-  config$$1.toolTipPadding = config.toolTipPadding * opts.pixelRatio;
-  config$$1.toolTipLineHeight = config.toolTipLineHeight * opts.pixelRatio;
-  config$$1.columePadding = config.columePadding * opts.pixelRatio;
-  //config$$1.xAxisTextPadding=config.xAxisTextPadding*opts.pixelRatio;
-
-  //向配置中传入当前pixelRatio及字体大小
-  config.pixelRatio = opts.pixelRatio;
-  config.fontSize = opts.fontSize;
-  config.rotate = opts.rotate;
-
-  this.opts = opts;
-  this.config = config$$1;
-  opts.$this = opts.$this ? opts.$this : this;
-  this.context = uni.createCanvasContext(opts.canvasId, opts.$this);
-  // store calcuated chart data
-  // such as chart point coordinate
-  this.chartData = {};
-  this.event = new Event();
-
-  this.scrollOption = {
-    currentOffset: 0,
-    startTouchX: 0,
-    distance: 0,
-    lastMoveTime: 0 };
-
-
-  //计算右对齐偏移距离
-  if (opts.enableScroll && opts.xAxis.scrollAlign == 'right') {
-    var _calYAxisData = calYAxisData(opts.series, opts, config$$1),
-    yAxisWidth = _calYAxisData.yAxisWidth;
-    config$$1.yAxisWidth = yAxisWidth;
-    var offsetLeft = 0;
-    var _getXAxisPoints0 = getXAxisPoints(opts.categories, opts, config$$1),
-    xAxisPoints = _getXAxisPoints0.xAxisPoints,
-    startX = _getXAxisPoints0.startX,
-    endX = _getXAxisPoints0.endX,
-    eachSpacing = _getXAxisPoints0.eachSpacing;
-    var totalWidth = eachSpacing * (xAxisPoints.length - 1);
-    var screenWidth = endX - startX;
-    offsetLeft = screenWidth - totalWidth;
-    this.scrollOption = {
-      currentOffset: offsetLeft,
-      startTouchX: offsetLeft,
-      distance: 0,
-      lastMoveTime: 0 };
-
-    opts._scrollDistance_ = offsetLeft;
-  }
-
-  drawCharts.call(this, opts.type, opts, config$$1, this.context);
-};
-
-Charts.prototype.updateData = function () {
-  var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  this.opts = assign({}, this.opts, data);
-  this.opts.yAxis.format = data.unit ? function (val) {return val.toFixed(data.fixed || 0) + (data.unit || '');} : this.opts.yAxis.format;
-  var scrollPosition = data.scrollPosition || 'current';
-  switch (scrollPosition) {
-    case 'current':
-      this.opts._scrollDistance_ = this.scrollOption.currentOffset;
-      break;
-    case 'left':
-      this.opts._scrollDistance_ = 0;
-      this.scrollOption = {
-        currentOffset: 0,
-        startTouchX: 0,
-        distance: 0,
-        lastMoveTime: 0 };
-
-      break;
-    case 'right':
-      var _calYAxisData = calYAxisData(this.opts.series, this.opts, this.config),
-      yAxisWidth = _calYAxisData.yAxisWidth;
-      this.config.yAxisWidth = yAxisWidth;
-      var offsetLeft = 0;
-      var _getXAxisPoints0 = getXAxisPoints(this.opts.categories, this.opts, this.config),
-      xAxisPoints = _getXAxisPoints0.xAxisPoints,
-      startX = _getXAxisPoints0.startX,
-      endX = _getXAxisPoints0.endX,
-      eachSpacing = _getXAxisPoints0.eachSpacing;
-      var totalWidth = eachSpacing * (xAxisPoints.length - 1);
-      var screenWidth = endX - startX;
-      offsetLeft = screenWidth - totalWidth;
-      this.scrollOption = {
-        currentOffset: offsetLeft,
-        startTouchX: offsetLeft,
-        distance: 0,
-        lastMoveTime: 0 };
-
-      this.opts._scrollDistance_ = offsetLeft;
-      break;}
-
-  var animation = data.animation == undefined ? this.opts.animation : data.animation;
-  this.opts.animation = animation;
-  this.opts.title = assign({}, this.opts.title, data.title || {});
-  this.opts.subtitle = assign({}, this.opts.subtitle, data.subtitle || {});
-  drawCharts.call(this, this.opts.type, this.opts, this.config, this.context);
-};
-
-Charts.prototype.zoom = function () {
-  var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.opts.xAxis.itemCount;
-  if (this.opts.enableScroll !== true) {
-    console.log('请启用滚动条后使用！');
-    return;
-  }
-  //当前屏幕中间点
-  var centerPoint = Math.round(Math.abs(this.scrollOption.currentOffset) / this.chartData.eachSpacing) + Math.round(
-  this.opts.xAxis.itemCount / 2);
-  this.opts.animation = false;
-  this.opts.xAxis.itemCount = val.itemCount;
-  //重新计算x轴偏移距离
-  var _calYAxisData = calYAxisData(this.opts.series, this.opts, this.config),
-  yAxisWidth = _calYAxisData.yAxisWidth;
-  this.config.yAxisWidth = yAxisWidth;
-  var offsetLeft = 0;
-  var _getXAxisPoints0 = getXAxisPoints(this.opts.categories, this.opts, this.config),
-  xAxisPoints = _getXAxisPoints0.xAxisPoints,
-  startX = _getXAxisPoints0.startX,
-  endX = _getXAxisPoints0.endX,
-  eachSpacing = _getXAxisPoints0.eachSpacing;
-  var centerLeft = eachSpacing * centerPoint;
-  var screenWidth = endX - startX;
-  var MaxLeft = screenWidth - eachSpacing * (xAxisPoints.length - 1);
-  offsetLeft = screenWidth / 2 - centerLeft;
-  if (offsetLeft > 0) {
-    offsetLeft = 0;
-  }
-  if (offsetLeft < MaxLeft) {
-    offsetLeft = MaxLeft;
-  }
-  this.scrollOption = {
-    currentOffset: offsetLeft,
-    startTouchX: offsetLeft,
-    distance: 0,
-    lastMoveTime: 0 };
-
-  this.opts._scrollDistance_ = offsetLeft;
-
-  drawCharts.call(this, this.opts.type, this.opts, this.config, this.context);
-};
-
-Charts.prototype.stopAnimation = function () {
-  this.animationInstance && this.animationInstance.stop();
-};
-
-Charts.prototype.addEventListener = function (type, listener) {
-  this.event.addEventListener(type, listener);
-};
-
-Charts.prototype.getCurrentDataIndex = function (e) {
-  var touches = e.mp.changedTouches[0] || e.changedTouches[0];
-  if (touches) {
-    var _touches$ = getTouches(touches, this.opts, e);
-    if (this.opts.type === 'pie' || this.opts.type === 'ring' || this.opts.type === 'rose') {
-      return findPieChartCurrentIndex({
-        x: _touches$.x,
-        y: _touches$.y },
-      this.chartData.pieData);
-    } else if (this.opts.type === 'radar') {
-      return findRadarChartCurrentIndex({
-        x: _touches$.x,
-        y: _touches$.y },
-      this.chartData.radarData, this.opts.categories.length);
-    } else {
-      return findCurrentIndex({
-        x: _touches$.x,
-        y: _touches$.y },
-      this.chartData.xAxisPoints, this.opts, this.config, Math.abs(this.scrollOption.currentOffset));
-    }
-  }
-  return -1;
-};
-
-Charts.prototype.showToolTip = function (e) {
-  var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  var touches = e.mp.changedTouches[0] || e.changedTouches[0];
-  var _touches$ = getTouches(touches, this.opts, e);
-
-  if (this.opts.type === 'line' || this.opts.type === 'area' || this.opts.type === 'column') {
-    var index = this.getCurrentDataIndex(e);
-    var currentOffset = this.scrollOption.currentOffset;
-
-    var opts = assign({}, this.opts, {
-      _scrollDistance_: currentOffset,
-      animation: false });
-
-    if (index > -1) {
-
-      var seriesData = getSeriesDataItem(this.opts.series, index);
-      if (seriesData.length !== 0) {
-        var _getToolTipData = getToolTipData(seriesData, this.chartData.calPoints, index, this.opts.categories, option),
-        textList = _getToolTipData.textList,
-        offset = _getToolTipData.offset;
-        offset.y = _touches$.y;
-        opts.tooltip = {
-          textList: textList,
-          offset: offset,
-          option: option,
-          index: index };
-
-      }
-    }
-    drawCharts.call(this, opts.type, opts, this.config, this.context);
-  }
-  if (this.opts.type === 'mix') {
-
-    var index = this.getCurrentDataIndex(e);
-    var currentOffset = this.scrollOption.currentOffset;
-
-    var opts = assign({}, this.opts, {
-      _scrollDistance_: currentOffset,
-      animation: false });
-
-    if (index > -1) {
-      var seriesData = getSeriesDataItem(this.opts.series, index);
-      if (seriesData.length !== 0) {
-        var _getMixToolTipData = getMixToolTipData(seriesData, this.chartData.calPoints, index, this.opts.categories, option),
-        textList = _getMixToolTipData.textList,
-        offset = _getMixToolTipData.offset;
-        offset.y = _touches$.y;
-        opts.tooltip = {
-          textList: textList,
-          offset: offset,
-          option: option,
-          index: index };
-
-      }
-    }
-    drawCharts.call(this, opts.type, opts, this.config, this.context);
-  }
-  if (this.opts.type === 'candle') {
-
-    var index = this.getCurrentDataIndex(e);
-    var currentOffset = this.scrollOption.currentOffset;
-
-    var opts = assign({}, this.opts, {
-      _scrollDistance_: currentOffset,
-      animation: false });
-
-    if (index > -1) {
-      var seriesData = getSeriesDataItem(this.opts.series, index);
-      if (seriesData.length !== 0) {
-        var _getToolTipData = getCandleToolTipData(this.opts.series[0].data, seriesData, this.chartData.calPoints, index, this.opts.categories, this.opts.extra.candle, option),
-        textList = _getToolTipData.textList,
-        offset = _getToolTipData.offset;
-        offset.y = _touches$.y;
-        opts.tooltip = {
-          textList: textList,
-          offset: offset,
-          option: option,
-          index: index };
-
-      }
-    }
-    drawCharts.call(this, opts.type, opts, this.config, this.context);
-  }
-  if (this.opts.type === 'pie' || this.opts.type === 'ring' || this.opts.type === 'rose') {
-    var index = this.getCurrentDataIndex(e);
-    var currentOffset = this.scrollOption.currentOffset;
-
-    var opts = assign({}, this.opts, {
-      _scrollDistance_: currentOffset,
-      animation: false });
-
-    if (index > -1) {
-
-      var seriesData = this.opts.series[index];
-      var textList = [{
-        text: option.format ? option.format(seriesData) : seriesData.name + ': ' + seriesData.data,
-        color: seriesData.color }];
-
-      var offset = {
-        x: _touches$.x,
-        y: _touches$.y };
-
-
-      opts.tooltip = {
-        textList: textList,
-        offset: offset,
-        option: option,
-        index: index };
-
-    }
-    drawCharts.call(this, opts.type, opts, this.config, this.context);
-  }
-  if (this.opts.type === 'radar') {
-    var index = this.getCurrentDataIndex(e);
-    var currentOffset = this.scrollOption.currentOffset;
-
-    var opts = assign({}, this.opts, {
-      _scrollDistance_: currentOffset,
-      animation: false });
-
-    if (index > -1) {
-
-      var seriesData = getSeriesDataItem(this.opts.series, index);
-      if (seriesData.length !== 0) {
-        var textList = seriesData.map(function (item) {
-          return {
-            text: option.format ? option.format(item) : item.name + ': ' + item.data,
-            color: item.color };
-
-        });
-        var offset = {
-          x: _touches$.x,
-          y: _touches$.y };
-
-        opts.tooltip = {
-          textList: textList,
-          offset: offset,
-          option: option,
-          index: index };
-
-      }
-    }
-    drawCharts.call(this, opts.type, opts, this.config, this.context);
-  }
-};
-
-Charts.prototype.translate = function (distance) {
-  this.scrollOption = {
-    currentOffset: distance,
-    startTouchX: distance,
-    distance: 0,
-    lastMoveTime: 0 };
-
-  var opts = assign({}, this.opts, {
-    _scrollDistance_: distance,
-    animation: false });
-
-  drawCharts.call(this, this.opts.type, opts, this.config, this.context);
-};
-
-Charts.prototype.scrollStart = function (e) {
-  var touches = e.mp.changedTouches[0] || e.changedTouches[0];
-  var _touches$ = getTouches(touches, this.opts, e);
-  if (touches && this.opts.enableScroll === true) {
-    if (touches.x) {
-      this.scrollOption.startTouchX = _touches$.x;
-    } else {
-      this.scrollOption.startTouchX = _touches$.clientX;
-    }
-  }
-};
-
-Charts.prototype.scroll = function (e) {
-  if (this.scrollOption.lastMoveTime === 0) {
-    this.scrollOption.lastMoveTime = Date.now();
-  }
-  var Limit = this.opts.extra.touchMoveLimit || 20;
-  var currMoveTime = Date.now();
-  var duration = currMoveTime - this.scrollOption.lastMoveTime;
-  if (duration < Math.floor(1000 / Limit)) return;
-
-  this.scrollOption.lastMoveTime = currMoveTime;
-
-  var touches = e.mp.changedTouches[0] || e.changedTouches[0];
-  var _touches$ = getTouches(touches, this.opts, e);
-  if (touches && this.opts.enableScroll === true) {
-    var _distance;
-    if (touches.x) {
-      _distance = _touches$.x - this.scrollOption.startTouchX;
-    } else {
-      _distance = _touches$.clientX - this.scrollOption.startTouchX;
-    }
-    var currentOffset = this.scrollOption.currentOffset;
-
-    var validDistance = calValidDistance(currentOffset + _distance, this.chartData, this.config, this.opts);
-
-    this.scrollOption.distance = _distance = validDistance - currentOffset;
-    var opts = assign({}, this.opts, {
-      _scrollDistance_: currentOffset + _distance,
-      animation: false });
-
-    drawCharts.call(this, opts.type, opts, this.config, this.context);
-    return currentOffset + _distance;
-  }
-};
-
-Charts.prototype.scrollEnd = function (e) {
-  if (this.opts.enableScroll === true) {
-    var _scrollOption = this.scrollOption,
-    currentOffset = _scrollOption.currentOffset,
-    distance = _scrollOption.distance;
-
-    this.scrollOption.currentOffset = currentOffset + distance;
-    this.scrollOption.distance = 0;
-  }
-};
-
-module.exports = Charts;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+module.exports = __webpack_require__(/*! regenerator-runtime */ 40);
 
 /***/ }),
 
 /***/ 4:
-/*!**********************************************************!*\
-  !*** /Users/wenjieliu/hbuilderSpaces/newSjty/pages.json ***!
-  \**********************************************************/
+/*!*********************************************************!*\
+  !*** /Users/wenjieliu/Desktop/兴业银行2021/bsxt/pages.json ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -14175,18 +8100,7 @@ module.exports = Charts;
 
 /***/ }),
 
-/***/ 53:
-/*!**********************************************************!*\
-  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! regenerator-runtime */ 54);
-
-/***/ }),
-
-/***/ 54:
+/***/ 40:
 /*!************************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
   \************************************************************/
@@ -14217,7 +8131,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ 55);
+module.exports = __webpack_require__(/*! ./runtime */ 41);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -14234,7 +8148,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 55:
+/***/ 41:
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
   \*****************************************************/
@@ -14963,6 +8877,531 @@ if (hadRuntime) {
   })() || Function("return this")()
 );
 
+
+/***/ }),
+
+/***/ 42:
+/*!*******************************************************!*\
+  !*** /Users/wenjieliu/Desktop/兴业银行2021/bsxt/utils.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(uni) {function _createForOfIteratorHelper(o, allowArrayLike) {var it;if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {if (it) o = it;var i = 0;var F = function F() {};return { s: F, n: function n() {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };}, e: function e(_e) {throw _e;}, f: F };}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var normalCompletion = true,didErr = false,err;return { s: function s() {it = o[Symbol.iterator]();}, n: function n() {var step = it.next();normalCompletion = step.done;return step;}, e: function e(_e2) {didErr = true;err = _e2;}, f: function f() {try {if (!normalCompletion && it.return != null) it.return();} finally {if (didErr) throw err;}} };}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;} /*
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * Digest Algorithm, as defined in RFC 1321.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * Version 2.1 Copyright (C) Paul Johnston 1999 - 2002.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * Distributed under the BSD License
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * See http://pajhome.org.uk/crypt/md5 for more info.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        */
+
+/*
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * Configurable variables. You may need to tweak these to be compatible with
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * the server-side, but the defaults work in most cases.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            */
+var mytest = '20210309';
+var hexcase = 0; /* hex output format. 0 - lowercase; 1 - uppercase        */
+var b64pad = ""; /* base-64 pad character. "=" for strict RFC compliance   */
+var chrsz = 8; /* bits per input character. 8 - ASCII; 16 - Unicode      */
+
+/*
+                                                                             * These are the functions you'll usually want to call
+                                                                             * They take string arguments and return either hex or base-64 encoded strings
+                                                                             */
+function hex_md5(s) {return binl2hex(core_md5(str2binl(s), s.length * chrsz));}
+function b64_md5(s) {return binl2b64(core_md5(str2binl(s), s.length * chrsz));}
+function str_md5(s) {return binl2str(core_md5(str2binl(s), s.length * chrsz));}
+function hex_hmac_md5(key, data) {return binl2hex(core_hmac_md5(key, data));}
+function b64_hmac_md5(key, data) {return binl2b64(core_hmac_md5(key, data));}
+function str_hmac_md5(key, data) {return binl2str(core_hmac_md5(key, data));}
+
+/*
+                                                                               * Perform a simple self-test to see if the VM is working
+                                                                               */
+function md5_vm_test()
+{
+  return hex_md5("abc") == "900150983cd24fb0d6963f7d28e17f72";
+}
+
+/*
+   * Calculate the MD5 of an array of little-endian words, and a bit length
+   */
+function core_md5(x, len)
+{
+  /* append padding */
+  x[len >> 5] |= 0x80 << len % 32;
+  x[(len + 64 >>> 9 << 4) + 14] = len;
+
+  var a = 1732584193;
+  var b = -271733879;
+  var c = -1732584194;
+  var d = 271733878;
+
+  for (var i = 0; i < x.length; i += 16)
+  {
+    var olda = a;
+    var oldb = b;
+    var oldc = c;
+    var oldd = d;
+
+    a = md5_ff(a, b, c, d, x[i + 0], 7, -680876936);
+    d = md5_ff(d, a, b, c, x[i + 1], 12, -389564586);
+    c = md5_ff(c, d, a, b, x[i + 2], 17, 606105819);
+    b = md5_ff(b, c, d, a, x[i + 3], 22, -1044525330);
+    a = md5_ff(a, b, c, d, x[i + 4], 7, -176418897);
+    d = md5_ff(d, a, b, c, x[i + 5], 12, 1200080426);
+    c = md5_ff(c, d, a, b, x[i + 6], 17, -1473231341);
+    b = md5_ff(b, c, d, a, x[i + 7], 22, -45705983);
+    a = md5_ff(a, b, c, d, x[i + 8], 7, 1770035416);
+    d = md5_ff(d, a, b, c, x[i + 9], 12, -1958414417);
+    c = md5_ff(c, d, a, b, x[i + 10], 17, -42063);
+    b = md5_ff(b, c, d, a, x[i + 11], 22, -1990404162);
+    a = md5_ff(a, b, c, d, x[i + 12], 7, 1804603682);
+    d = md5_ff(d, a, b, c, x[i + 13], 12, -40341101);
+    c = md5_ff(c, d, a, b, x[i + 14], 17, -1502002290);
+    b = md5_ff(b, c, d, a, x[i + 15], 22, 1236535329);
+
+    a = md5_gg(a, b, c, d, x[i + 1], 5, -165796510);
+    d = md5_gg(d, a, b, c, x[i + 6], 9, -1069501632);
+    c = md5_gg(c, d, a, b, x[i + 11], 14, 643717713);
+    b = md5_gg(b, c, d, a, x[i + 0], 20, -373897302);
+    a = md5_gg(a, b, c, d, x[i + 5], 5, -701558691);
+    d = md5_gg(d, a, b, c, x[i + 10], 9, 38016083);
+    c = md5_gg(c, d, a, b, x[i + 15], 14, -660478335);
+    b = md5_gg(b, c, d, a, x[i + 4], 20, -405537848);
+    a = md5_gg(a, b, c, d, x[i + 9], 5, 568446438);
+    d = md5_gg(d, a, b, c, x[i + 14], 9, -1019803690);
+    c = md5_gg(c, d, a, b, x[i + 3], 14, -187363961);
+    b = md5_gg(b, c, d, a, x[i + 8], 20, 1163531501);
+    a = md5_gg(a, b, c, d, x[i + 13], 5, -1444681467);
+    d = md5_gg(d, a, b, c, x[i + 2], 9, -51403784);
+    c = md5_gg(c, d, a, b, x[i + 7], 14, 1735328473);
+    b = md5_gg(b, c, d, a, x[i + 12], 20, -1926607734);
+
+    a = md5_hh(a, b, c, d, x[i + 5], 4, -378558);
+    d = md5_hh(d, a, b, c, x[i + 8], 11, -2022574463);
+    c = md5_hh(c, d, a, b, x[i + 11], 16, 1839030562);
+    b = md5_hh(b, c, d, a, x[i + 14], 23, -35309556);
+    a = md5_hh(a, b, c, d, x[i + 1], 4, -1530992060);
+    d = md5_hh(d, a, b, c, x[i + 4], 11, 1272893353);
+    c = md5_hh(c, d, a, b, x[i + 7], 16, -155497632);
+    b = md5_hh(b, c, d, a, x[i + 10], 23, -1094730640);
+    a = md5_hh(a, b, c, d, x[i + 13], 4, 681279174);
+    d = md5_hh(d, a, b, c, x[i + 0], 11, -358537222);
+    c = md5_hh(c, d, a, b, x[i + 3], 16, -722521979);
+    b = md5_hh(b, c, d, a, x[i + 6], 23, 76029189);
+    a = md5_hh(a, b, c, d, x[i + 9], 4, -640364487);
+    d = md5_hh(d, a, b, c, x[i + 12], 11, -421815835);
+    c = md5_hh(c, d, a, b, x[i + 15], 16, 530742520);
+    b = md5_hh(b, c, d, a, x[i + 2], 23, -995338651);
+
+    a = md5_ii(a, b, c, d, x[i + 0], 6, -198630844);
+    d = md5_ii(d, a, b, c, x[i + 7], 10, 1126891415);
+    c = md5_ii(c, d, a, b, x[i + 14], 15, -1416354905);
+    b = md5_ii(b, c, d, a, x[i + 5], 21, -57434055);
+    a = md5_ii(a, b, c, d, x[i + 12], 6, 1700485571);
+    d = md5_ii(d, a, b, c, x[i + 3], 10, -1894986606);
+    c = md5_ii(c, d, a, b, x[i + 10], 15, -1051523);
+    b = md5_ii(b, c, d, a, x[i + 1], 21, -2054922799);
+    a = md5_ii(a, b, c, d, x[i + 8], 6, 1873313359);
+    d = md5_ii(d, a, b, c, x[i + 15], 10, -30611744);
+    c = md5_ii(c, d, a, b, x[i + 6], 15, -1560198380);
+    b = md5_ii(b, c, d, a, x[i + 13], 21, 1309151649);
+    a = md5_ii(a, b, c, d, x[i + 4], 6, -145523070);
+    d = md5_ii(d, a, b, c, x[i + 11], 10, -1120210379);
+    c = md5_ii(c, d, a, b, x[i + 2], 15, 718787259);
+    b = md5_ii(b, c, d, a, x[i + 9], 21, -343485551);
+
+    a = safe_add(a, olda);
+    b = safe_add(b, oldb);
+    c = safe_add(c, oldc);
+    d = safe_add(d, oldd);
+  }
+  return Array(a, b, c, d);
+
+}
+
+/*
+   * These functions implement the four basic operations the algorithm uses.
+   */
+function md5_cmn(q, a, b, x, s, t)
+{
+  return safe_add(bit_rol(safe_add(safe_add(a, q), safe_add(x, t)), s), b);
+}
+function md5_ff(a, b, c, d, x, s, t)
+{
+  return md5_cmn(b & c | ~b & d, a, b, x, s, t);
+}
+function md5_gg(a, b, c, d, x, s, t)
+{
+  return md5_cmn(b & d | c & ~d, a, b, x, s, t);
+}
+function md5_hh(a, b, c, d, x, s, t)
+{
+  return md5_cmn(b ^ c ^ d, a, b, x, s, t);
+}
+function md5_ii(a, b, c, d, x, s, t)
+{
+  return md5_cmn(c ^ (b | ~d), a, b, x, s, t);
+}
+
+/*
+   * Calculate the HMAC-MD5, of a key and some data
+   */
+function core_hmac_md5(key, data)
+{
+  var bkey = str2binl(key);
+  if (bkey.length > 16) bkey = core_md5(bkey, key.length * chrsz);
+
+  var ipad = Array(16),opad = Array(16);
+  for (var i = 0; i < 16; i++)
+  {
+    ipad[i] = bkey[i] ^ 0x36363636;
+    opad[i] = bkey[i] ^ 0x5C5C5C5C;
+  }
+
+  var hash = core_md5(ipad.concat(str2binl(data)), 512 + data.length * chrsz);
+  return core_md5(opad.concat(hash), 512 + 128);
+}
+
+/*
+   * Add integers, wrapping at 2^32. This uses 16-bit operations internally
+   * to work around bugs in some JS interpreters.
+   */
+function safe_add(x, y)
+{
+  var lsw = (x & 0xFFFF) + (y & 0xFFFF);
+  var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+  return msw << 16 | lsw & 0xFFFF;
+}
+
+/*
+   * Bitwise rotate a 32-bit number to the left.
+   */
+function bit_rol(num, cnt)
+{
+  return num << cnt | num >>> 32 - cnt;
+}
+
+/*
+   * Convert a string to an array of little-endian words
+   * If chrsz is ASCII, characters >255 have their hi-byte silently ignored.
+   */
+function str2binl(str)
+{
+  var bin = Array();
+  var mask = (1 << chrsz) - 1;
+  for (var i = 0; i < str.length * chrsz; i += chrsz) {
+    bin[i >> 5] |= (str.charCodeAt(i / chrsz) & mask) << i % 32;}
+  return bin;
+}
+
+/*
+   * Convert an array of little-endian words to a string
+   */
+function binl2str(bin)
+{
+  var str = "";
+  var mask = (1 << chrsz) - 1;
+  for (var i = 0; i < bin.length * 32; i += chrsz) {
+    str += String.fromCharCode(bin[i >> 5] >>> i % 32 & mask);}
+  return str;
+}
+
+/*
+   * Convert an array of little-endian words to a hex string.
+   */
+function binl2hex(binarray)
+{
+  var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
+  var str = "";
+  for (var i = 0; i < binarray.length * 4; i++)
+  {
+    str += hex_tab.charAt(binarray[i >> 2] >> i % 4 * 8 + 4 & 0xF) +
+    hex_tab.charAt(binarray[i >> 2] >> i % 4 * 8 & 0xF);
+  }
+  return str;
+}
+
+/*
+   * Convert an array of little-endian words to a base-64 string
+   */
+function binl2b64(binarray)
+{
+  var tab = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+  var str = "";
+  for (var i = 0; i < binarray.length * 4; i += 3)
+  {
+    var triplet = (binarray[i >> 2] >> 8 * (i % 4) & 0xFF) << 16 |
+    (binarray[i + 1 >> 2] >> 8 * ((i + 1) % 4) & 0xFF) << 8 |
+    binarray[i + 2 >> 2] >> 8 * ((i + 2) % 4) & 0xFF;
+    for (var j = 0; j < 4; j++)
+    {
+      if (i * 8 + j * 6 > binarray.length * 32) str += b64pad;else
+      str += tab.charAt(triplet >> 6 * (3 - j) & 0x3F);
+    }
+  }
+  return str;
+}
+var commRequest = function commRequest(trancode, data, succ) {
+  console.log(trancode + " send: " + JSON.stringify(data));
+  if (trancode != '6001') {
+    data.accessToken = uni.getStorageSync('accessToken');
+  }
+  uni.request({
+    url: 'http://www.sjyjr.net/sjyjf/app/' + trancode, //仅为示例，并非真实接口地址。
+    data: data,
+    method: 'POST',
+    dataType: 'application/json',
+    header: {
+      "Content-Type": "application/x-www-form-urlencoded" },
+
+    success: function success(res) {
+      console.log(trancode + " success:" + res.data);
+      succ(res);
+      //  this.text = 'request success';
+    },
+    complete: function complete(res) {
+
+    } });
+
+};
+
+var isEmpty = function isEmpty(obj) {
+  if (!obj || obj == 0 || obj == '' || obj == 'null' || obj == 'undefined') {
+    return true;
+  }
+
+  if (Array.prototype.isPrototypeOf(obj) && obj.length == 0) {
+    return true;
+  }
+
+  return false;
+};
+
+var get_time_str = function get_time_str(date1) {
+
+  var date2 = new Date(); //结束时间  
+  var date3 = date2.getTime() - new Date(date1.replace(/\-/g, '/')).getTime(); //时间差的毫秒数        
+
+  //------------------------------  
+
+  //计算出相差天数  
+  var days = Math.floor(date3 / (24 * 3600 * 1000));
+
+  //计算出小时数  
+
+  var leave1 = date3 % (24 * 3600 * 1000); //计算天数后剩余的毫秒数  
+  var hours = Math.floor(leave1 / (3600 * 1000));
+  //计算相差分钟数  
+  var leave2 = leave1 % (3600 * 1000); //计算小时数后剩余的毫秒数  
+  var minutes = Math.floor(leave2 / (60 * 1000));
+  //计算相差秒数  
+  var leave3 = leave2 % (60 * 1000); //计算分钟数后剩余的毫秒数  
+  var seconds = Math.round(leave3 / 1000);
+
+  if (days > 0) {
+    var arys1 = date1.substr(0, 10).split("-");
+    var ssdate = new Date(arys1[0], parseInt(arys1[1] - 1), arys1[2]);
+    var week1 = String(ssdate.getDay()).replace("0", "日").replace("1", "一").replace("2", "二").replace("3", "三").replace("4", "四").replace("5", "五").replace("6", "六"); //就是你要的星期几
+    var week = date1.substr(2, 8) + " 星期" + week1;
+    return week;
+  } else {
+    if (hours > 0) {
+      return hours + "小时前";
+    } else {
+      if (minutes > 0) {
+        return minutes + "分钟前";
+      } else {
+        return "刚才";
+      }
+    }
+  }
+};
+
+var getLoanName = function getLoanName(ids) {
+  var loanTypeTree = uni.getStorageSync('loanTypeTree');
+  for (var i = 0; i < loanTypeTree.length; i++) {
+    for (var j = 0; j < loanTypeTree[i].children.length; j++) {
+      if (ids == loanTypeTree[i].children[j].id) {
+        return loanTypeTree[i].children[j].label;
+      }
+    }
+  }
+};
+var getLoanClassid = function getLoanClassid(ids) {
+  console.log("ids=" + ids);
+  var loanTypeTree = uni.getStorageSync('loanTypeTree');
+  for (var i = 0; i < loanTypeTree.length; i++) {
+    for (var j = 0; j < loanTypeTree[i].children.length; j++) {
+      if (ids == loanTypeTree[i].children[j].id) {
+        return loanTypeTree[i].children[j].porgnId;
+      }
+    }
+  }
+};
+var twoJsonMerge = function twoJsonMerge(json1, json2) {
+  var length1 = 0,length2 = 0,jsonStr,str;
+
+  for (var ever in json1) {length1++;}
+  for (var ever in json2) {length2++;}
+
+  if (length1 && length2) str = ',';else
+  str = '';
+
+  jsonStr = (JSON.stringify(json1).replace(/,}/, '}') + JSON.stringify(json2).replace(/,}/, '}')).replace(/}{/, str);
+
+  return JSON.parse(jsonStr);
+};
+var getImgUrlList = function getImgUrlList(imgStr, fileno) {
+  var imgList = imgStr.split("|");
+  var resultList = [];
+  var imgPath = "http://www.sjyjr.net/static/";var _iterator = _createForOfIteratorHelper(
+  imgList),_step;try {for (_iterator.s(); !(_step = _iterator.n()).done;) {var item = _step.value;
+      item = imgPath + fileno + '/' + item;
+      console.log("item:" + item);
+      resultList.push(item);
+    }} catch (err) {_iterator.e(err);} finally {_iterator.f();}
+
+  return resultList;
+};
+
+var getImgType = function getImgType(index) {
+  var img_map = [
+  "imgMf",
+  "imgMfdlr",
+  "imgJkrTp",
+  "imgGtjkrTp",
+  "imgJkrDlrTp",
+  "imgJy",
+  "jkhtTp",
+  "imgFc",
+  "imgFcPg",
+  "imgCwyfTp",
+  "img_jjxx",
+  "imgJkrQtzc",
+  "clTp",
+  "dkTp",
+  "jyTp",
+  "qyTp"];
+
+  return img_map[index];
+};
+
+var getIdArrayIndex = function getIdArrayIndex(idType) {
+  var idTypeValue = ['E1', 'E2', 'I1', 'I2', 'I3', 'I4', 'I5', 'I6', 'I9', 'Ia', 'I8'];
+
+  for (var i = 0; i < idTypeValue.length; i++) {
+    if (idTypeValue[i] == idType) {
+      return i;
+    }
+  }
+  //默认就返回2
+  return 2;
+};
+
+var getNowTime = function getNowTime() {
+  var now = new Date();
+  var year = now.getFullYear();
+  var month = now.getMonth() + 1;
+  var day = now.getDate();
+  var hh = now.getHours();
+  var mm = now.getMinutes();
+  var ss = now.getSeconds();
+  var clock = year + "-";
+  if (month < 10)
+  clock += "0";
+  clock += month + "-";
+  if (day < 10)
+  clock += "0";
+  clock += day + " ";
+  if (hh < 10)
+  clock += "0";
+  clock += hh + ":";
+  if (mm < 10) clock += '0';
+  clock += mm + ":";
+  if (ss < 10) clock += '0';
+  clock += ss;
+  return clock;
+};
+/**
+    * 图片路径转成canvas
+    * @param {图片url} url
+    */
+function imgToCanvas(url) {
+  console.log("imgToCanvas:" + url);
+  // 创建img元素
+  var img = document.createElement("img");
+  img.src = url;
+  img.setAttribute("crossOrigin", "anonymous"); // 防止跨域引起的 Failed to execute 'toDataURL' on 'HTMLCanvasElement': Tainted canvases may not be exported.
+  new Promise(function (resolve) {return img.onload = resolve;});
+  // 创建canvas DOM元素，并设置其宽高和图片一样
+  var canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+  // 坐标(0,0) 表示从此处开始绘制，相当于偏移。
+  canvas.getContext("2d").drawImage(img, 0, 0);
+  return canvas;
+}
+
+/**
+   * canvas添加水印
+   * @param {canvas对象} canvas
+   * @param {水印文字} text
+   */
+function addWatermark(canvas, text) {
+  console.log("addWatermark:" + JSON.stringify(canvas));
+  var ctx = canvas.getContext("2d");
+  ctx.fillStyle = "red";
+  ctx.textBaseline = "middle";
+  ctx.fillText(text, 20, 20);
+  return canvas;
+}
+
+/**
+   * canvas转成img
+   * @param {canvas对象} canvas
+   */
+function convasToImg(canvas) {
+  console.log("convasToImg:" + JSON.stringify(canvas));
+  // 新建Image对象，可以理解为DOM
+  var image = new Image();
+  //canvas.toDataURL 返回的是一串Base64编码的URL
+  //指定格式 PNG
+  image.src = canvas.toDataURL("image/png");
+  return image;
+  //return canvas.toDataURL("image/png");
+
+}
+
+// 运行示例
+var imgAddWater = function imgAddWater(water, imgurl) {
+  console.log("imgAddWater water:" + water + ";imgurl" + imgurl);
+  // 1.图片路径转成canvas
+  var tempCanvas = imgToCanvas(imgurl);
+  // 2.canvas添加水印
+  var canvas = addWatermark(tempCanvas, water);
+  //3.canvas转成img
+  var img = convasToImg(canvas);
+  // 查看效果
+  document.body.appendChild(img);
+  //return convasToImg(canvas);
+};
+module.exports = {
+  hex_md5: hex_md5,
+  commRequest: commRequest,
+  isEmpty: isEmpty,
+  get_time_str: get_time_str,
+  getLoanName: getLoanName,
+  getLoanClassid: getLoanClassid,
+  twoJsonMerge: twoJsonMerge,
+  getImgUrlList: getImgUrlList,
+  getImgType: getImgType,
+  getIdArrayIndex: getIdArrayIndex,
+  imgAddWater: imgAddWater,
+  getNowTime: getNowTime };
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 

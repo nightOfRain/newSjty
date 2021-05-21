@@ -316,7 +316,7 @@ const get_time_str=function(date1){
         var arys1 = date1.substr(0,10).split("-");
         var ssdate = new Date(arys1[0], parseInt(arys1[1] - 1), arys1[2]);
         var  week1=String(ssdate.getDay()).replace("0","日").replace("1","一").replace("2","二").replace("3","三").replace("4","四").replace("5","五").replace("6","六")//就是你要的星期几
-        var week=date1.substr(0,10)+" 星期"+week1;
+        var week=date1.substr(2,8)+" 星期"+week1;
     	return week;
     }else{
     	if(hours > 0){
