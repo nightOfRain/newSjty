@@ -1999,6 +1999,531 @@ function normalizeComponent (
 
 /***/ }),
 
+/***/ 16:
+/*!*******************************************************!*\
+  !*** /Users/wenjieliu/Desktop/兴业银行2021/bsxt/utils.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(uni) {function _createForOfIteratorHelper(o, allowArrayLike) {var it;if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {if (it) o = it;var i = 0;var F = function F() {};return { s: F, n: function n() {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };}, e: function e(_e) {throw _e;}, f: F };}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var normalCompletion = true,didErr = false,err;return { s: function s() {it = o[Symbol.iterator]();}, n: function n() {var step = it.next();normalCompletion = step.done;return step;}, e: function e(_e2) {didErr = true;err = _e2;}, f: function f() {try {if (!normalCompletion && it.return != null) it.return();} finally {if (didErr) throw err;}} };}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;} /*
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * Digest Algorithm, as defined in RFC 1321.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * Version 2.1 Copyright (C) Paul Johnston 1999 - 2002.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * Distributed under the BSD License
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * See http://pajhome.org.uk/crypt/md5 for more info.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        */
+
+/*
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * Configurable variables. You may need to tweak these to be compatible with
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * the server-side, but the defaults work in most cases.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            */
+var mytest = '20210309';
+var hexcase = 0; /* hex output format. 0 - lowercase; 1 - uppercase        */
+var b64pad = ''; /* base-64 pad character. "=" for strict RFC compliance   */
+var chrsz = 8; /* bits per input character. 8 - ASCII; 16 - Unicode      */
+
+/*
+                                                                             * These are the functions you'll usually want to call
+                                                                             * They take string arguments and return either hex or base-64 encoded strings
+                                                                             */
+function hex_md5(s) {return binl2hex(core_md5(str2binl(s), s.length * chrsz));}
+function b64_md5(s) {return binl2b64(core_md5(str2binl(s), s.length * chrsz));}
+function str_md5(s) {return binl2str(core_md5(str2binl(s), s.length * chrsz));}
+function hex_hmac_md5(key, data) {return binl2hex(core_hmac_md5(key, data));}
+function b64_hmac_md5(key, data) {return binl2b64(core_hmac_md5(key, data));}
+function str_hmac_md5(key, data) {return binl2str(core_hmac_md5(key, data));}
+
+/*
+                                                                               * Perform a simple self-test to see if the VM is working
+                                                                               */
+function md5_vm_test()
+{
+  return hex_md5('abc') == '900150983cd24fb0d6963f7d28e17f72';
+}
+
+/*
+   * Calculate the MD5 of an array of little-endian words, and a bit length
+   */
+function core_md5(x, len)
+{
+  /* append padding */
+  x[len >> 5] |= 0x80 << len % 32;
+  x[(len + 64 >>> 9 << 4) + 14] = len;
+
+  var a = 1732584193;
+  var b = -271733879;
+  var c = -1732584194;
+  var d = 271733878;
+
+  for (var i = 0; i < x.length; i += 16)
+  {
+    var olda = a;
+    var oldb = b;
+    var oldc = c;
+    var oldd = d;
+
+    a = md5_ff(a, b, c, d, x[i + 0], 7, -680876936);
+    d = md5_ff(d, a, b, c, x[i + 1], 12, -389564586);
+    c = md5_ff(c, d, a, b, x[i + 2], 17, 606105819);
+    b = md5_ff(b, c, d, a, x[i + 3], 22, -1044525330);
+    a = md5_ff(a, b, c, d, x[i + 4], 7, -176418897);
+    d = md5_ff(d, a, b, c, x[i + 5], 12, 1200080426);
+    c = md5_ff(c, d, a, b, x[i + 6], 17, -1473231341);
+    b = md5_ff(b, c, d, a, x[i + 7], 22, -45705983);
+    a = md5_ff(a, b, c, d, x[i + 8], 7, 1770035416);
+    d = md5_ff(d, a, b, c, x[i + 9], 12, -1958414417);
+    c = md5_ff(c, d, a, b, x[i + 10], 17, -42063);
+    b = md5_ff(b, c, d, a, x[i + 11], 22, -1990404162);
+    a = md5_ff(a, b, c, d, x[i + 12], 7, 1804603682);
+    d = md5_ff(d, a, b, c, x[i + 13], 12, -40341101);
+    c = md5_ff(c, d, a, b, x[i + 14], 17, -1502002290);
+    b = md5_ff(b, c, d, a, x[i + 15], 22, 1236535329);
+
+    a = md5_gg(a, b, c, d, x[i + 1], 5, -165796510);
+    d = md5_gg(d, a, b, c, x[i + 6], 9, -1069501632);
+    c = md5_gg(c, d, a, b, x[i + 11], 14, 643717713);
+    b = md5_gg(b, c, d, a, x[i + 0], 20, -373897302);
+    a = md5_gg(a, b, c, d, x[i + 5], 5, -701558691);
+    d = md5_gg(d, a, b, c, x[i + 10], 9, 38016083);
+    c = md5_gg(c, d, a, b, x[i + 15], 14, -660478335);
+    b = md5_gg(b, c, d, a, x[i + 4], 20, -405537848);
+    a = md5_gg(a, b, c, d, x[i + 9], 5, 568446438);
+    d = md5_gg(d, a, b, c, x[i + 14], 9, -1019803690);
+    c = md5_gg(c, d, a, b, x[i + 3], 14, -187363961);
+    b = md5_gg(b, c, d, a, x[i + 8], 20, 1163531501);
+    a = md5_gg(a, b, c, d, x[i + 13], 5, -1444681467);
+    d = md5_gg(d, a, b, c, x[i + 2], 9, -51403784);
+    c = md5_gg(c, d, a, b, x[i + 7], 14, 1735328473);
+    b = md5_gg(b, c, d, a, x[i + 12], 20, -1926607734);
+
+    a = md5_hh(a, b, c, d, x[i + 5], 4, -378558);
+    d = md5_hh(d, a, b, c, x[i + 8], 11, -2022574463);
+    c = md5_hh(c, d, a, b, x[i + 11], 16, 1839030562);
+    b = md5_hh(b, c, d, a, x[i + 14], 23, -35309556);
+    a = md5_hh(a, b, c, d, x[i + 1], 4, -1530992060);
+    d = md5_hh(d, a, b, c, x[i + 4], 11, 1272893353);
+    c = md5_hh(c, d, a, b, x[i + 7], 16, -155497632);
+    b = md5_hh(b, c, d, a, x[i + 10], 23, -1094730640);
+    a = md5_hh(a, b, c, d, x[i + 13], 4, 681279174);
+    d = md5_hh(d, a, b, c, x[i + 0], 11, -358537222);
+    c = md5_hh(c, d, a, b, x[i + 3], 16, -722521979);
+    b = md5_hh(b, c, d, a, x[i + 6], 23, 76029189);
+    a = md5_hh(a, b, c, d, x[i + 9], 4, -640364487);
+    d = md5_hh(d, a, b, c, x[i + 12], 11, -421815835);
+    c = md5_hh(c, d, a, b, x[i + 15], 16, 530742520);
+    b = md5_hh(b, c, d, a, x[i + 2], 23, -995338651);
+
+    a = md5_ii(a, b, c, d, x[i + 0], 6, -198630844);
+    d = md5_ii(d, a, b, c, x[i + 7], 10, 1126891415);
+    c = md5_ii(c, d, a, b, x[i + 14], 15, -1416354905);
+    b = md5_ii(b, c, d, a, x[i + 5], 21, -57434055);
+    a = md5_ii(a, b, c, d, x[i + 12], 6, 1700485571);
+    d = md5_ii(d, a, b, c, x[i + 3], 10, -1894986606);
+    c = md5_ii(c, d, a, b, x[i + 10], 15, -1051523);
+    b = md5_ii(b, c, d, a, x[i + 1], 21, -2054922799);
+    a = md5_ii(a, b, c, d, x[i + 8], 6, 1873313359);
+    d = md5_ii(d, a, b, c, x[i + 15], 10, -30611744);
+    c = md5_ii(c, d, a, b, x[i + 6], 15, -1560198380);
+    b = md5_ii(b, c, d, a, x[i + 13], 21, 1309151649);
+    a = md5_ii(a, b, c, d, x[i + 4], 6, -145523070);
+    d = md5_ii(d, a, b, c, x[i + 11], 10, -1120210379);
+    c = md5_ii(c, d, a, b, x[i + 2], 15, 718787259);
+    b = md5_ii(b, c, d, a, x[i + 9], 21, -343485551);
+
+    a = safe_add(a, olda);
+    b = safe_add(b, oldb);
+    c = safe_add(c, oldc);
+    d = safe_add(d, oldd);
+  }
+  return Array(a, b, c, d);
+
+}
+
+/*
+   * These functions implement the four basic operations the algorithm uses.
+   */
+function md5_cmn(q, a, b, x, s, t)
+{
+  return safe_add(bit_rol(safe_add(safe_add(a, q), safe_add(x, t)), s), b);
+}
+function md5_ff(a, b, c, d, x, s, t)
+{
+  return md5_cmn(b & c | ~b & d, a, b, x, s, t);
+}
+function md5_gg(a, b, c, d, x, s, t)
+{
+  return md5_cmn(b & d | c & ~d, a, b, x, s, t);
+}
+function md5_hh(a, b, c, d, x, s, t)
+{
+  return md5_cmn(b ^ c ^ d, a, b, x, s, t);
+}
+function md5_ii(a, b, c, d, x, s, t)
+{
+  return md5_cmn(c ^ (b | ~d), a, b, x, s, t);
+}
+
+/*
+   * Calculate the HMAC-MD5, of a key and some data
+   */
+function core_hmac_md5(key, data)
+{
+  var bkey = str2binl(key);
+  if (bkey.length > 16) bkey = core_md5(bkey, key.length * chrsz);
+
+  var ipad = Array(16),opad = Array(16);
+  for (var i = 0; i < 16; i++)
+  {
+    ipad[i] = bkey[i] ^ 0x36363636;
+    opad[i] = bkey[i] ^ 0x5C5C5C5C;
+  }
+
+  var hash = core_md5(ipad.concat(str2binl(data)), 512 + data.length * chrsz);
+  return core_md5(opad.concat(hash), 512 + 128);
+}
+
+/*
+   * Add integers, wrapping at 2^32. This uses 16-bit operations internally
+   * to work around bugs in some JS interpreters.
+   */
+function safe_add(x, y)
+{
+  var lsw = (x & 0xFFFF) + (y & 0xFFFF);
+  var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+  return msw << 16 | lsw & 0xFFFF;
+}
+
+/*
+   * Bitwise rotate a 32-bit number to the left.
+   */
+function bit_rol(num, cnt)
+{
+  return num << cnt | num >>> 32 - cnt;
+}
+
+/*
+   * Convert a string to an array of little-endian words
+   * If chrsz is ASCII, characters >255 have their hi-byte silently ignored.
+   */
+function str2binl(str)
+{
+  var bin = Array();
+  var mask = (1 << chrsz) - 1;
+  for (var i = 0; i < str.length * chrsz; i += chrsz) {
+    bin[i >> 5] |= (str.charCodeAt(i / chrsz) & mask) << i % 32;}
+  return bin;
+}
+
+/*
+   * Convert an array of little-endian words to a string
+   */
+function binl2str(bin)
+{
+  var str = '';
+  var mask = (1 << chrsz) - 1;
+  for (var i = 0; i < bin.length * 32; i += chrsz) {
+    str += String.fromCharCode(bin[i >> 5] >>> i % 32 & mask);}
+  return str;
+}
+
+/*
+   * Convert an array of little-endian words to a hex string.
+   */
+function binl2hex(binarray)
+{
+  var hex_tab = hexcase ? '0123456789ABCDEF' : '0123456789abcdef';
+  var str = '';
+  for (var i = 0; i < binarray.length * 4; i++)
+  {
+    str += hex_tab.charAt(binarray[i >> 2] >> i % 4 * 8 + 4 & 0xF) +
+    hex_tab.charAt(binarray[i >> 2] >> i % 4 * 8 & 0xF);
+  }
+  return str;
+}
+
+/*
+   * Convert an array of little-endian words to a base-64 string
+   */
+function binl2b64(binarray)
+{
+  var tab = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+  var str = '';
+  for (var i = 0; i < binarray.length * 4; i += 3)
+  {
+    var triplet = (binarray[i >> 2] >> 8 * (i % 4) & 0xFF) << 16 |
+    (binarray[i + 1 >> 2] >> 8 * ((i + 1) % 4) & 0xFF) << 8 |
+    binarray[i + 2 >> 2] >> 8 * ((i + 2) % 4) & 0xFF;
+    for (var j = 0; j < 4; j++)
+    {
+      if (i * 8 + j * 6 > binarray.length * 32) str += b64pad;else
+      str += tab.charAt(triplet >> 6 * (3 - j) & 0x3F);
+    }
+  }
+  return str;
+}
+var commRequest = function commRequest(trancode, data, succ) {
+  console.log(trancode + ' send: ' + JSON.stringify(data));
+  if (trancode != '6001') {
+    data.accessToken = uni.getStorageSync('accessToken');
+  }
+  uni.request({
+    url: 'http://www.sjyjr.net/sjyjf/app/' + trancode, //仅为示例，并非真实接口地址。
+    data: data,
+    method: 'POST',
+    dataType: 'application/json',
+    header: {
+      'Content-Type': 'application/x-www-form-urlencoded' },
+
+    success: function success(res) {
+      console.log(trancode + ' success:' + res.data);
+      succ(res);
+      //  this.text = 'request success';
+    },
+    complete: function complete(res) {
+
+    } });
+
+};
+
+var isEmpty = function isEmpty(obj) {
+  if (!obj || obj == 0 || obj == '' || obj == 'null' || obj == 'undefined') {
+    return true;
+  }
+
+  if (Array.prototype.isPrototypeOf(obj) && obj.length == 0) {
+    return true;
+  }
+
+  return false;
+};
+
+var get_time_str = function get_time_str(date1) {
+
+  var date2 = new Date(); //结束时间  
+  var date3 = date2.getTime() - new Date(date1.replace(/\-/g, '/')).getTime(); //时间差的毫秒数        
+
+  //------------------------------  
+
+  //计算出相差天数  
+  var days = Math.floor(date3 / (24 * 3600 * 1000));
+
+  //计算出小时数  
+
+  var leave1 = date3 % (24 * 3600 * 1000); //计算天数后剩余的毫秒数  
+  var hours = Math.floor(leave1 / (3600 * 1000));
+  //计算相差分钟数  
+  var leave2 = leave1 % (3600 * 1000); //计算小时数后剩余的毫秒数  
+  var minutes = Math.floor(leave2 / (60 * 1000));
+  //计算相差秒数  
+  var leave3 = leave2 % (60 * 1000); //计算分钟数后剩余的毫秒数  
+  var seconds = Math.round(leave3 / 1000);
+
+  if (days > 0) {
+    var arys1 = date1.substr(0, 10).split('-');
+    var ssdate = new Date(arys1[0], parseInt(arys1[1] - 1), arys1[2]);
+    var week1 = String(ssdate.getDay()).replace('0', '日').replace('1', '一').replace('2', '二').replace('3', '三').replace('4', '四').replace('5', '五').replace('6', '六'); //就是你要的星期几
+    var week = date1.substr(2, 8) + ' 星期' + week1;
+    return week;
+  } else {
+    if (hours > 0) {
+      return hours + '小时前';
+    } else {
+      if (minutes > 0) {
+        return minutes + '分钟前';
+      } else {
+        return '刚才';
+      }
+    }
+  }
+};
+
+var getLoanName = function getLoanName(ids) {
+  var loanTypeTree = uni.getStorageSync('loanTypeTree');
+  for (var i = 0; i < loanTypeTree.length; i++) {
+    for (var j = 0; j < loanTypeTree[i].children.length; j++) {
+      if (ids == loanTypeTree[i].children[j].id) {
+        return loanTypeTree[i].children[j].label;
+      }
+    }
+  }
+};
+var getLoanClassid = function getLoanClassid(ids) {
+  console.log('ids=' + ids);
+  var loanTypeTree = uni.getStorageSync('loanTypeTree');
+  for (var i = 0; i < loanTypeTree.length; i++) {
+    for (var j = 0; j < loanTypeTree[i].children.length; j++) {
+      if (ids == loanTypeTree[i].children[j].id) {
+        return loanTypeTree[i].children[j].porgnId;
+      }
+    }
+  }
+};
+var twoJsonMerge = function twoJsonMerge(json1, json2) {
+  var length1 = 0,length2 = 0,jsonStr,str;
+
+  for (var ever in json1) {length1++;}
+  for (var ever in json2) {length2++;}
+
+  if (length1 && length2) str = ',';else
+  str = '';
+
+  jsonStr = (JSON.stringify(json1).replace(/,}/, '}') + JSON.stringify(json2).replace(/,}/, '}')).replace(/}{/, str);
+
+  return JSON.parse(jsonStr);
+};
+var getImgUrlList = function getImgUrlList(imgStr, fileno) {
+  var imgList = imgStr.split('|');
+  var resultList = [];
+  var imgPath = 'http://www.sjyjr.net/static/';var _iterator = _createForOfIteratorHelper(
+  imgList),_step;try {for (_iterator.s(); !(_step = _iterator.n()).done;) {var item = _step.value;
+      item = imgPath + fileno + '/' + item;
+      console.log('item:' + item);
+      resultList.push(item);
+    }} catch (err) {_iterator.e(err);} finally {_iterator.f();}
+
+  return resultList;
+};
+
+var getImgType = function getImgType(index) {
+  var img_map = [
+  'imgMf',
+  'imgMfdlr',
+  'imgJkrTp',
+  'imgGtjkrTp',
+  'imgJkrDlrTp',
+  'imgJy',
+  'jkhtTp',
+  'imgFc',
+  'imgFcPg',
+  'imgCwyfTp',
+  'img_jjxx',
+  'imgJkrQtzc',
+  'clTp',
+  'dkTp',
+  'jyTp',
+  'qyTp'];
+
+  return img_map[index];
+};
+
+var getIdArrayIndex = function getIdArrayIndex(idType) {
+  var idTypeValue = ['E1', 'E2', 'I1', 'I2', 'I3', 'I4', 'I5', 'I6', 'I9', 'Ia', 'I8'];
+
+  for (var i = 0; i < idTypeValue.length; i++) {
+    if (idTypeValue[i] == idType) {
+      return i;
+    }
+  }
+  //默认就返回2
+  return 2;
+};
+
+var getNowTime = function getNowTime() {
+  var now = new Date();
+  var year = now.getFullYear();
+  var month = now.getMonth() + 1;
+  var day = now.getDate();
+  var hh = now.getHours();
+  var mm = now.getMinutes();
+  var ss = now.getSeconds();
+  var clock = year + '-';
+  if (month < 10)
+  clock += '0';
+  clock += month + '-';
+  if (day < 10)
+  clock += '0';
+  clock += day + ' ';
+  if (hh < 10)
+  clock += '0';
+  clock += hh + ':';
+  if (mm < 10) clock += '0';
+  clock += mm + ':';
+  if (ss < 10) clock += '0';
+  clock += ss;
+  return clock;
+};
+/**
+    * 图片路径转成canvas
+    * @param {图片url} url
+    */
+function imgToCanvas(url) {
+  console.log('imgToCanvas:' + url);
+  // 创建img元素
+  var img = document.createElement('img');
+  img.src = url;
+  img.setAttribute('crossOrigin', 'anonymous'); // 防止跨域引起的 Failed to execute 'toDataURL' on 'HTMLCanvasElement': Tainted canvases may not be exported.
+  new Promise(function (resolve) {return img.onload = resolve;});
+  // 创建canvas DOM元素，并设置其宽高和图片一样
+  var canvas = document.createElement('canvas');
+  canvas.width = img.width;
+  canvas.height = img.height;
+  // 坐标(0,0) 表示从此处开始绘制，相当于偏移。
+  canvas.getContext('2d').drawImage(img, 0, 0);
+  return canvas;
+}
+
+/**
+   * canvas添加水印
+   * @param {canvas对象} canvas
+   * @param {水印文字} text
+   */
+function addWatermark(canvas, text) {
+  console.log('addWatermark:' + JSON.stringify(canvas));
+  var ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'red';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text, 20, 20);
+  return canvas;
+}
+
+/**
+   * canvas转成img
+   * @param {canvas对象} canvas
+   */
+function convasToImg(canvas) {
+  console.log('convasToImg:' + JSON.stringify(canvas));
+  // 新建Image对象，可以理解为DOM
+  var image = new Image();
+  //canvas.toDataURL 返回的是一串Base64编码的URL
+  //指定格式 PNG
+  image.src = canvas.toDataURL('image/png');
+  return image;
+  //return canvas.toDataURL("image/png");
+
+}
+
+// 运行示例
+var imgAddWater = function imgAddWater(water, imgurl) {
+  console.log('imgAddWater water:' + water + ';imgurl' + imgurl);
+  // 1.图片路径转成canvas
+  var tempCanvas = imgToCanvas(imgurl);
+  // 2.canvas添加水印
+  var canvas = addWatermark(tempCanvas, water);
+  //3.canvas转成img
+  var img = convasToImg(canvas);
+  // 查看效果
+  document.body.appendChild(img);
+  //return convasToImg(canvas);
+};
+module.exports = {
+  hex_md5: hex_md5,
+  commRequest: commRequest,
+  isEmpty: isEmpty,
+  get_time_str: get_time_str,
+  getLoanName: getLoanName,
+  getLoanClassid: getLoanClassid,
+  twoJsonMerge: twoJsonMerge,
+  getImgUrlList: getImgUrlList,
+  getImgType: getImgType,
+  getIdArrayIndex: getIdArrayIndex,
+  imgAddWater: imgAddWater,
+  getNowTime: getNowTime };
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
 /***/ 2:
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!
@@ -8047,6 +8572,1311 @@ internalMixin(Vue);
 
 /***/ }),
 
+/***/ 219:
+/*!*************************************************************!*\
+  !*** /Users/wenjieliu/Desktop/兴业银行2021/bsxt/store/index.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 220));
+var _getters = _interopRequireDefault(__webpack_require__(/*! ./getters */ 229));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+_vue.default.use(_vuex.default);
+
+var modulesFiles = __webpack_require__(227);
+
+var modules = modulesFiles.keys().reduce(function (modules, modulePath) {
+  var moduleName = modulePath.replace(/^\.\/(.*)\.\w+$/, '$1');
+  var value = modulesFiles(modulePath);
+
+  console.log("modules:" + JSON.stringify(value));
+  modules[moduleName] = value.default;
+
+  return modules;
+}, {});
+
+var store = new _vuex.default.Store({
+  modules: modules,
+  //	todos,
+  getters: _getters.default });var _default =
+
+
+store;
+
+/*
+       const store = new Vuex.Store({
+       	state: {
+       		"username":"lwj",
+       		"age":37,
+       		todos: [{
+       			id: 1,
+       			text: '我是内容1',
+       			done: true
+       		},
+       		{
+       			id: 2,
+       			text: '我是内容2',
+       			done: false
+       		}]
+       	},
+       	getters: {
+       		doneTodos: state => {
+       			//return state.todos.filter(todo => todo.done)
+       			return state.todos
+       		},
+       		doneTodosCount: (state, getters) => {
+       			return getters.doneTodos.length
+       		},
+       		getTodoById: (state) => (id) => {
+       			return state.todos.find(todo => todo.id === id)
+       		}
+       	},
+       	mutations: {
+       		changeName(state, obj) {
+       			state.username = obj.name
+       		}
+       	},
+       	actions: {
+       		changeNameAction (context, obj) {
+       			context.commit('changeName', obj)
+       		}
+       	}
+       })
+       
+       export default store
+       
+       */exports.default = _default;
+
+/***/ }),
+
+/***/ 220:
+/*!********************************************!*\
+  !*** ./node_modules/vuex/dist/vuex.esm.js ***!
+  \********************************************/
+/*! exports provided: default, Store, createNamespacedHelpers, install, mapActions, mapGetters, mapMutations, mapState */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Store", function() { return Store; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNamespacedHelpers", function() { return createNamespacedHelpers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "install", function() { return install; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapActions", function() { return mapActions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapGetters", function() { return mapGetters; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapMutations", function() { return mapMutations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapState", function() { return mapState; });
+/*!
+ * vuex v3.4.0
+ * (c) 2020 Evan You
+ * @license MIT
+ */
+function applyMixin (Vue) {
+  var version = Number(Vue.version.split('.')[0]);
+
+  if (version >= 2) {
+    Vue.mixin({ beforeCreate: vuexInit });
+  } else {
+    // override init and inject vuex init procedure
+    // for 1.x backwards compatibility.
+    var _init = Vue.prototype._init;
+    Vue.prototype._init = function (options) {
+      if ( options === void 0 ) options = {};
+
+      options.init = options.init
+        ? [vuexInit].concat(options.init)
+        : vuexInit;
+      _init.call(this, options);
+    };
+  }
+
+  /**
+   * Vuex init hook, injected into each instances init hooks list.
+   */
+
+  function vuexInit () {
+    var options = this.$options;
+    // store injection
+    if (options.store) {
+      this.$store = typeof options.store === 'function'
+        ? options.store()
+        : options.store;
+    } else if (options.parent && options.parent.$store) {
+      this.$store = options.parent.$store;
+    }
+  }
+}
+
+var target = typeof window !== 'undefined'
+  ? window
+  : typeof global !== 'undefined'
+    ? global
+    : {};
+var devtoolHook = target.__VUE_DEVTOOLS_GLOBAL_HOOK__;
+
+function devtoolPlugin (store) {
+  if (!devtoolHook) { return }
+
+  store._devtoolHook = devtoolHook;
+
+  devtoolHook.emit('vuex:init', store);
+
+  devtoolHook.on('vuex:travel-to-state', function (targetState) {
+    store.replaceState(targetState);
+  });
+
+  store.subscribe(function (mutation, state) {
+    devtoolHook.emit('vuex:mutation', mutation, state);
+  }, { prepend: true });
+
+  store.subscribeAction(function (action, state) {
+    devtoolHook.emit('vuex:action', action, state);
+  }, { prepend: true });
+}
+
+/**
+ * Get the first item that pass the test
+ * by second argument function
+ *
+ * @param {Array} list
+ * @param {Function} f
+ * @return {*}
+ */
+
+/**
+ * forEach for object
+ */
+function forEachValue (obj, fn) {
+  Object.keys(obj).forEach(function (key) { return fn(obj[key], key); });
+}
+
+function isObject (obj) {
+  return obj !== null && typeof obj === 'object'
+}
+
+function isPromise (val) {
+  return val && typeof val.then === 'function'
+}
+
+function assert (condition, msg) {
+  if (!condition) { throw new Error(("[vuex] " + msg)) }
+}
+
+function partial (fn, arg) {
+  return function () {
+    return fn(arg)
+  }
+}
+
+// Base data struct for store's module, package with some attribute and method
+var Module = function Module (rawModule, runtime) {
+  this.runtime = runtime;
+  // Store some children item
+  this._children = Object.create(null);
+  // Store the origin module object which passed by programmer
+  this._rawModule = rawModule;
+  var rawState = rawModule.state;
+
+  // Store the origin module's state
+  this.state = (typeof rawState === 'function' ? rawState() : rawState) || {};
+};
+
+var prototypeAccessors = { namespaced: { configurable: true } };
+
+prototypeAccessors.namespaced.get = function () {
+  return !!this._rawModule.namespaced
+};
+
+Module.prototype.addChild = function addChild (key, module) {
+  this._children[key] = module;
+};
+
+Module.prototype.removeChild = function removeChild (key) {
+  delete this._children[key];
+};
+
+Module.prototype.getChild = function getChild (key) {
+  return this._children[key]
+};
+
+Module.prototype.hasChild = function hasChild (key) {
+  return key in this._children
+};
+
+Module.prototype.update = function update (rawModule) {
+  this._rawModule.namespaced = rawModule.namespaced;
+  if (rawModule.actions) {
+    this._rawModule.actions = rawModule.actions;
+  }
+  if (rawModule.mutations) {
+    this._rawModule.mutations = rawModule.mutations;
+  }
+  if (rawModule.getters) {
+    this._rawModule.getters = rawModule.getters;
+  }
+};
+
+Module.prototype.forEachChild = function forEachChild (fn) {
+  forEachValue(this._children, fn);
+};
+
+Module.prototype.forEachGetter = function forEachGetter (fn) {
+  if (this._rawModule.getters) {
+    forEachValue(this._rawModule.getters, fn);
+  }
+};
+
+Module.prototype.forEachAction = function forEachAction (fn) {
+  if (this._rawModule.actions) {
+    forEachValue(this._rawModule.actions, fn);
+  }
+};
+
+Module.prototype.forEachMutation = function forEachMutation (fn) {
+  if (this._rawModule.mutations) {
+    forEachValue(this._rawModule.mutations, fn);
+  }
+};
+
+Object.defineProperties( Module.prototype, prototypeAccessors );
+
+var ModuleCollection = function ModuleCollection (rawRootModule) {
+  // register root module (Vuex.Store options)
+  this.register([], rawRootModule, false);
+};
+
+ModuleCollection.prototype.get = function get (path) {
+  return path.reduce(function (module, key) {
+    return module.getChild(key)
+  }, this.root)
+};
+
+ModuleCollection.prototype.getNamespace = function getNamespace (path) {
+  var module = this.root;
+  return path.reduce(function (namespace, key) {
+    module = module.getChild(key);
+    return namespace + (module.namespaced ? key + '/' : '')
+  }, '')
+};
+
+ModuleCollection.prototype.update = function update$1 (rawRootModule) {
+  update([], this.root, rawRootModule);
+};
+
+ModuleCollection.prototype.register = function register (path, rawModule, runtime) {
+    var this$1 = this;
+    if ( runtime === void 0 ) runtime = true;
+
+  if ((true)) {
+    assertRawModule(path, rawModule);
+  }
+
+  var newModule = new Module(rawModule, runtime);
+  if (path.length === 0) {
+    this.root = newModule;
+  } else {
+    var parent = this.get(path.slice(0, -1));
+    parent.addChild(path[path.length - 1], newModule);
+  }
+
+  // register nested modules
+  if (rawModule.modules) {
+    forEachValue(rawModule.modules, function (rawChildModule, key) {
+      this$1.register(path.concat(key), rawChildModule, runtime);
+    });
+  }
+};
+
+ModuleCollection.prototype.unregister = function unregister (path) {
+  var parent = this.get(path.slice(0, -1));
+  var key = path[path.length - 1];
+  if (!parent.getChild(key).runtime) { return }
+
+  parent.removeChild(key);
+};
+
+ModuleCollection.prototype.isRegistered = function isRegistered (path) {
+  var parent = this.get(path.slice(0, -1));
+  var key = path[path.length - 1];
+
+  return parent.hasChild(key)
+};
+
+function update (path, targetModule, newModule) {
+  if ((true)) {
+    assertRawModule(path, newModule);
+  }
+
+  // update target module
+  targetModule.update(newModule);
+
+  // update nested modules
+  if (newModule.modules) {
+    for (var key in newModule.modules) {
+      if (!targetModule.getChild(key)) {
+        if ((true)) {
+          console.warn(
+            "[vuex] trying to add a new module '" + key + "' on hot reloading, " +
+            'manual reload is needed'
+          );
+        }
+        return
+      }
+      update(
+        path.concat(key),
+        targetModule.getChild(key),
+        newModule.modules[key]
+      );
+    }
+  }
+}
+
+var functionAssert = {
+  assert: function (value) { return typeof value === 'function'; },
+  expected: 'function'
+};
+
+var objectAssert = {
+  assert: function (value) { return typeof value === 'function' ||
+    (typeof value === 'object' && typeof value.handler === 'function'); },
+  expected: 'function or object with "handler" function'
+};
+
+var assertTypes = {
+  getters: functionAssert,
+  mutations: functionAssert,
+  actions: objectAssert
+};
+
+function assertRawModule (path, rawModule) {
+  Object.keys(assertTypes).forEach(function (key) {
+    if (!rawModule[key]) { return }
+
+    var assertOptions = assertTypes[key];
+
+    forEachValue(rawModule[key], function (value, type) {
+      assert(
+        assertOptions.assert(value),
+        makeAssertionMessage(path, key, type, value, assertOptions.expected)
+      );
+    });
+  });
+}
+
+function makeAssertionMessage (path, key, type, value, expected) {
+  var buf = key + " should be " + expected + " but \"" + key + "." + type + "\"";
+  if (path.length > 0) {
+    buf += " in module \"" + (path.join('.')) + "\"";
+  }
+  buf += " is " + (JSON.stringify(value)) + ".";
+  return buf
+}
+
+var Vue; // bind on install
+
+var Store = function Store (options) {
+  var this$1 = this;
+  if ( options === void 0 ) options = {};
+
+  // Auto install if it is not done yet and `window` has `Vue`.
+  // To allow users to avoid auto-installation in some cases,
+  // this code should be placed here. See #731
+  if (!Vue && typeof window !== 'undefined' && window.Vue) {
+    install(window.Vue);
+  }
+
+  if ((true)) {
+    assert(Vue, "must call Vue.use(Vuex) before creating a store instance.");
+    assert(typeof Promise !== 'undefined', "vuex requires a Promise polyfill in this browser.");
+    assert(this instanceof Store, "store must be called with the new operator.");
+  }
+
+  var plugins = options.plugins; if ( plugins === void 0 ) plugins = [];
+  var strict = options.strict; if ( strict === void 0 ) strict = false;
+
+  // store internal state
+  this._committing = false;
+  this._actions = Object.create(null);
+  this._actionSubscribers = [];
+  this._mutations = Object.create(null);
+  this._wrappedGetters = Object.create(null);
+  this._modules = new ModuleCollection(options);
+  this._modulesNamespaceMap = Object.create(null);
+  this._subscribers = [];
+  this._watcherVM = new Vue();
+  this._makeLocalGettersCache = Object.create(null);
+
+  // bind commit and dispatch to self
+  var store = this;
+  var ref = this;
+  var dispatch = ref.dispatch;
+  var commit = ref.commit;
+  this.dispatch = function boundDispatch (type, payload) {
+    return dispatch.call(store, type, payload)
+  };
+  this.commit = function boundCommit (type, payload, options) {
+    return commit.call(store, type, payload, options)
+  };
+
+  // strict mode
+  this.strict = strict;
+
+  var state = this._modules.root.state;
+
+  // init root module.
+  // this also recursively registers all sub-modules
+  // and collects all module getters inside this._wrappedGetters
+  installModule(this, state, [], this._modules.root);
+
+  // initialize the store vm, which is responsible for the reactivity
+  // (also registers _wrappedGetters as computed properties)
+  resetStoreVM(this, state);
+
+  // apply plugins
+  plugins.forEach(function (plugin) { return plugin(this$1); });
+
+  var useDevtools = options.devtools !== undefined ? options.devtools : Vue.config.devtools;
+  if (useDevtools) {
+    devtoolPlugin(this);
+  }
+};
+
+var prototypeAccessors$1 = { state: { configurable: true } };
+
+prototypeAccessors$1.state.get = function () {
+  return this._vm._data.$$state
+};
+
+prototypeAccessors$1.state.set = function (v) {
+  if ((true)) {
+    assert(false, "use store.replaceState() to explicit replace store state.");
+  }
+};
+
+Store.prototype.commit = function commit (_type, _payload, _options) {
+    var this$1 = this;
+
+  // check object-style commit
+  var ref = unifyObjectStyle(_type, _payload, _options);
+    var type = ref.type;
+    var payload = ref.payload;
+    var options = ref.options;
+
+  var mutation = { type: type, payload: payload };
+  var entry = this._mutations[type];
+  if (!entry) {
+    if ((true)) {
+      console.error(("[vuex] unknown mutation type: " + type));
+    }
+    return
+  }
+  this._withCommit(function () {
+    entry.forEach(function commitIterator (handler) {
+      handler(payload);
+    });
+  });
+
+  this._subscribers
+    .slice() // shallow copy to prevent iterator invalidation if subscriber synchronously calls unsubscribe
+    .forEach(function (sub) { return sub(mutation, this$1.state); });
+
+  if (
+    ( true) &&
+    options && options.silent
+  ) {
+    console.warn(
+      "[vuex] mutation type: " + type + ". Silent option has been removed. " +
+      'Use the filter functionality in the vue-devtools'
+    );
+  }
+};
+
+Store.prototype.dispatch = function dispatch (_type, _payload) {
+    var this$1 = this;
+
+  // check object-style dispatch
+  var ref = unifyObjectStyle(_type, _payload);
+    var type = ref.type;
+    var payload = ref.payload;
+
+  var action = { type: type, payload: payload };
+  var entry = this._actions[type];
+  if (!entry) {
+    if ((true)) {
+      console.error(("[vuex] unknown action type: " + type));
+    }
+    return
+  }
+
+  try {
+    this._actionSubscribers
+      .slice() // shallow copy to prevent iterator invalidation if subscriber synchronously calls unsubscribe
+      .filter(function (sub) { return sub.before; })
+      .forEach(function (sub) { return sub.before(action, this$1.state); });
+  } catch (e) {
+    if ((true)) {
+      console.warn("[vuex] error in before action subscribers: ");
+      console.error(e);
+    }
+  }
+
+  var result = entry.length > 1
+    ? Promise.all(entry.map(function (handler) { return handler(payload); }))
+    : entry[0](payload);
+
+  return new Promise(function (resolve, reject) {
+    result.then(function (res) {
+      try {
+        this$1._actionSubscribers
+          .filter(function (sub) { return sub.after; })
+          .forEach(function (sub) { return sub.after(action, this$1.state); });
+      } catch (e) {
+        if ((true)) {
+          console.warn("[vuex] error in after action subscribers: ");
+          console.error(e);
+        }
+      }
+      resolve(res);
+    }, function (error) {
+      try {
+        this$1._actionSubscribers
+          .filter(function (sub) { return sub.error; })
+          .forEach(function (sub) { return sub.error(action, this$1.state, error); });
+      } catch (e) {
+        if ((true)) {
+          console.warn("[vuex] error in error action subscribers: ");
+          console.error(e);
+        }
+      }
+      reject(error);
+    });
+  })
+};
+
+Store.prototype.subscribe = function subscribe (fn, options) {
+  return genericSubscribe(fn, this._subscribers, options)
+};
+
+Store.prototype.subscribeAction = function subscribeAction (fn, options) {
+  var subs = typeof fn === 'function' ? { before: fn } : fn;
+  return genericSubscribe(subs, this._actionSubscribers, options)
+};
+
+Store.prototype.watch = function watch (getter, cb, options) {
+    var this$1 = this;
+
+  if ((true)) {
+    assert(typeof getter === 'function', "store.watch only accepts a function.");
+  }
+  return this._watcherVM.$watch(function () { return getter(this$1.state, this$1.getters); }, cb, options)
+};
+
+Store.prototype.replaceState = function replaceState (state) {
+    var this$1 = this;
+
+  this._withCommit(function () {
+    this$1._vm._data.$$state = state;
+  });
+};
+
+Store.prototype.registerModule = function registerModule (path, rawModule, options) {
+    if ( options === void 0 ) options = {};
+
+  if (typeof path === 'string') { path = [path]; }
+
+  if ((true)) {
+    assert(Array.isArray(path), "module path must be a string or an Array.");
+    assert(path.length > 0, 'cannot register the root module by using registerModule.');
+  }
+
+  this._modules.register(path, rawModule);
+  installModule(this, this.state, path, this._modules.get(path), options.preserveState);
+  // reset store to update getters...
+  resetStoreVM(this, this.state);
+};
+
+Store.prototype.unregisterModule = function unregisterModule (path) {
+    var this$1 = this;
+
+  if (typeof path === 'string') { path = [path]; }
+
+  if ((true)) {
+    assert(Array.isArray(path), "module path must be a string or an Array.");
+  }
+
+  this._modules.unregister(path);
+  this._withCommit(function () {
+    var parentState = getNestedState(this$1.state, path.slice(0, -1));
+    Vue.delete(parentState, path[path.length - 1]);
+  });
+  resetStore(this);
+};
+
+Store.prototype.hasModule = function hasModule (path) {
+  if (typeof path === 'string') { path = [path]; }
+
+  if ((true)) {
+    assert(Array.isArray(path), "module path must be a string or an Array.");
+  }
+
+  return this._modules.isRegistered(path)
+};
+
+Store.prototype.hotUpdate = function hotUpdate (newOptions) {
+  this._modules.update(newOptions);
+  resetStore(this, true);
+};
+
+Store.prototype._withCommit = function _withCommit (fn) {
+  var committing = this._committing;
+  this._committing = true;
+  fn();
+  this._committing = committing;
+};
+
+Object.defineProperties( Store.prototype, prototypeAccessors$1 );
+
+function genericSubscribe (fn, subs, options) {
+  if (subs.indexOf(fn) < 0) {
+    options && options.prepend
+      ? subs.unshift(fn)
+      : subs.push(fn);
+  }
+  return function () {
+    var i = subs.indexOf(fn);
+    if (i > -1) {
+      subs.splice(i, 1);
+    }
+  }
+}
+
+function resetStore (store, hot) {
+  store._actions = Object.create(null);
+  store._mutations = Object.create(null);
+  store._wrappedGetters = Object.create(null);
+  store._modulesNamespaceMap = Object.create(null);
+  var state = store.state;
+  // init all modules
+  installModule(store, state, [], store._modules.root, true);
+  // reset vm
+  resetStoreVM(store, state, hot);
+}
+
+function resetStoreVM (store, state, hot) {
+  var oldVm = store._vm;
+
+  // bind store public getters
+  store.getters = {};
+  // reset local getters cache
+  store._makeLocalGettersCache = Object.create(null);
+  var wrappedGetters = store._wrappedGetters;
+  var computed = {};
+  forEachValue(wrappedGetters, function (fn, key) {
+    // use computed to leverage its lazy-caching mechanism
+    // direct inline function use will lead to closure preserving oldVm.
+    // using partial to return function with only arguments preserved in closure environment.
+    computed[key] = partial(fn, store);
+    Object.defineProperty(store.getters, key, {
+      get: function () { return store._vm[key]; },
+      enumerable: true // for local getters
+    });
+  });
+
+  // use a Vue instance to store the state tree
+  // suppress warnings just in case the user has added
+  // some funky global mixins
+  var silent = Vue.config.silent;
+  Vue.config.silent = true;
+  store._vm = new Vue({
+    data: {
+      $$state: state
+    },
+    computed: computed
+  });
+  Vue.config.silent = silent;
+
+  // enable strict mode for new vm
+  if (store.strict) {
+    enableStrictMode(store);
+  }
+
+  if (oldVm) {
+    if (hot) {
+      // dispatch changes in all subscribed watchers
+      // to force getter re-evaluation for hot reloading.
+      store._withCommit(function () {
+        oldVm._data.$$state = null;
+      });
+    }
+    Vue.nextTick(function () { return oldVm.$destroy(); });
+  }
+}
+
+function installModule (store, rootState, path, module, hot) {
+  var isRoot = !path.length;
+  var namespace = store._modules.getNamespace(path);
+
+  // register in namespace map
+  if (module.namespaced) {
+    if (store._modulesNamespaceMap[namespace] && ("development" !== 'production')) {
+      console.error(("[vuex] duplicate namespace " + namespace + " for the namespaced module " + (path.join('/'))));
+    }
+    store._modulesNamespaceMap[namespace] = module;
+  }
+
+  // set state
+  if (!isRoot && !hot) {
+    var parentState = getNestedState(rootState, path.slice(0, -1));
+    var moduleName = path[path.length - 1];
+    store._withCommit(function () {
+      if ((true)) {
+        if (moduleName in parentState) {
+          console.warn(
+            ("[vuex] state field \"" + moduleName + "\" was overridden by a module with the same name at \"" + (path.join('.')) + "\"")
+          );
+        }
+      }
+      Vue.set(parentState, moduleName, module.state);
+    });
+  }
+
+  var local = module.context = makeLocalContext(store, namespace, path);
+
+  module.forEachMutation(function (mutation, key) {
+    var namespacedType = namespace + key;
+    registerMutation(store, namespacedType, mutation, local);
+  });
+
+  module.forEachAction(function (action, key) {
+    var type = action.root ? key : namespace + key;
+    var handler = action.handler || action;
+    registerAction(store, type, handler, local);
+  });
+
+  module.forEachGetter(function (getter, key) {
+    var namespacedType = namespace + key;
+    registerGetter(store, namespacedType, getter, local);
+  });
+
+  module.forEachChild(function (child, key) {
+    installModule(store, rootState, path.concat(key), child, hot);
+  });
+}
+
+/**
+ * make localized dispatch, commit, getters and state
+ * if there is no namespace, just use root ones
+ */
+function makeLocalContext (store, namespace, path) {
+  var noNamespace = namespace === '';
+
+  var local = {
+    dispatch: noNamespace ? store.dispatch : function (_type, _payload, _options) {
+      var args = unifyObjectStyle(_type, _payload, _options);
+      var payload = args.payload;
+      var options = args.options;
+      var type = args.type;
+
+      if (!options || !options.root) {
+        type = namespace + type;
+        if (( true) && !store._actions[type]) {
+          console.error(("[vuex] unknown local action type: " + (args.type) + ", global type: " + type));
+          return
+        }
+      }
+
+      return store.dispatch(type, payload)
+    },
+
+    commit: noNamespace ? store.commit : function (_type, _payload, _options) {
+      var args = unifyObjectStyle(_type, _payload, _options);
+      var payload = args.payload;
+      var options = args.options;
+      var type = args.type;
+
+      if (!options || !options.root) {
+        type = namespace + type;
+        if (( true) && !store._mutations[type]) {
+          console.error(("[vuex] unknown local mutation type: " + (args.type) + ", global type: " + type));
+          return
+        }
+      }
+
+      store.commit(type, payload, options);
+    }
+  };
+
+  // getters and state object must be gotten lazily
+  // because they will be changed by vm update
+  Object.defineProperties(local, {
+    getters: {
+      get: noNamespace
+        ? function () { return store.getters; }
+        : function () { return makeLocalGetters(store, namespace); }
+    },
+    state: {
+      get: function () { return getNestedState(store.state, path); }
+    }
+  });
+
+  return local
+}
+
+function makeLocalGetters (store, namespace) {
+  if (!store._makeLocalGettersCache[namespace]) {
+    var gettersProxy = {};
+    var splitPos = namespace.length;
+    Object.keys(store.getters).forEach(function (type) {
+      // skip if the target getter is not match this namespace
+      if (type.slice(0, splitPos) !== namespace) { return }
+
+      // extract local getter type
+      var localType = type.slice(splitPos);
+
+      // Add a port to the getters proxy.
+      // Define as getter property because
+      // we do not want to evaluate the getters in this time.
+      Object.defineProperty(gettersProxy, localType, {
+        get: function () { return store.getters[type]; },
+        enumerable: true
+      });
+    });
+    store._makeLocalGettersCache[namespace] = gettersProxy;
+  }
+
+  return store._makeLocalGettersCache[namespace]
+}
+
+function registerMutation (store, type, handler, local) {
+  var entry = store._mutations[type] || (store._mutations[type] = []);
+  entry.push(function wrappedMutationHandler (payload) {
+    handler.call(store, local.state, payload);
+  });
+}
+
+function registerAction (store, type, handler, local) {
+  var entry = store._actions[type] || (store._actions[type] = []);
+  entry.push(function wrappedActionHandler (payload) {
+    var res = handler.call(store, {
+      dispatch: local.dispatch,
+      commit: local.commit,
+      getters: local.getters,
+      state: local.state,
+      rootGetters: store.getters,
+      rootState: store.state
+    }, payload);
+    if (!isPromise(res)) {
+      res = Promise.resolve(res);
+    }
+    if (store._devtoolHook) {
+      return res.catch(function (err) {
+        store._devtoolHook.emit('vuex:error', err);
+        throw err
+      })
+    } else {
+      return res
+    }
+  });
+}
+
+function registerGetter (store, type, rawGetter, local) {
+  if (store._wrappedGetters[type]) {
+    if ((true)) {
+      console.error(("[vuex] duplicate getter key: " + type));
+    }
+    return
+  }
+  store._wrappedGetters[type] = function wrappedGetter (store) {
+    return rawGetter(
+      local.state, // local state
+      local.getters, // local getters
+      store.state, // root state
+      store.getters // root getters
+    )
+  };
+}
+
+function enableStrictMode (store) {
+  store._vm.$watch(function () { return this._data.$$state }, function () {
+    if ((true)) {
+      assert(store._committing, "do not mutate vuex store state outside mutation handlers.");
+    }
+  }, { deep: true, sync: true });
+}
+
+function getNestedState (state, path) {
+  return path.reduce(function (state, key) { return state[key]; }, state)
+}
+
+function unifyObjectStyle (type, payload, options) {
+  if (isObject(type) && type.type) {
+    options = payload;
+    payload = type;
+    type = type.type;
+  }
+
+  if ((true)) {
+    assert(typeof type === 'string', ("expects string as the type, but found " + (typeof type) + "."));
+  }
+
+  return { type: type, payload: payload, options: options }
+}
+
+function install (_Vue) {
+  if (Vue && _Vue === Vue) {
+    if ((true)) {
+      console.error(
+        '[vuex] already installed. Vue.use(Vuex) should be called only once.'
+      );
+    }
+    return
+  }
+  Vue = _Vue;
+  applyMixin(Vue);
+}
+
+/**
+ * Reduce the code which written in Vue.js for getting the state.
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} states # Object's item can be a function which accept state and getters for param, you can do something for state and getters in it.
+ * @param {Object}
+ */
+var mapState = normalizeNamespace(function (namespace, states) {
+  var res = {};
+  if (( true) && !isValidMap(states)) {
+    console.error('[vuex] mapState: mapper parameter must be either an Array or an Object');
+  }
+  normalizeMap(states).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    res[key] = function mappedState () {
+      var state = this.$store.state;
+      var getters = this.$store.getters;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapState', namespace);
+        if (!module) {
+          return
+        }
+        state = module.context.state;
+        getters = module.context.getters;
+      }
+      return typeof val === 'function'
+        ? val.call(this, state, getters)
+        : state[val]
+    };
+    // mark vuex getter for devtools
+    res[key].vuex = true;
+  });
+  return res
+});
+
+/**
+ * Reduce the code which written in Vue.js for committing the mutation
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} mutations # Object's item can be a function which accept `commit` function as the first param, it can accept anthor params. You can commit mutation and do any other things in this function. specially, You need to pass anthor params from the mapped function.
+ * @return {Object}
+ */
+var mapMutations = normalizeNamespace(function (namespace, mutations) {
+  var res = {};
+  if (( true) && !isValidMap(mutations)) {
+    console.error('[vuex] mapMutations: mapper parameter must be either an Array or an Object');
+  }
+  normalizeMap(mutations).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    res[key] = function mappedMutation () {
+      var args = [], len = arguments.length;
+      while ( len-- ) args[ len ] = arguments[ len ];
+
+      // Get the commit method from store
+      var commit = this.$store.commit;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapMutations', namespace);
+        if (!module) {
+          return
+        }
+        commit = module.context.commit;
+      }
+      return typeof val === 'function'
+        ? val.apply(this, [commit].concat(args))
+        : commit.apply(this.$store, [val].concat(args))
+    };
+  });
+  return res
+});
+
+/**
+ * Reduce the code which written in Vue.js for getting the getters
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} getters
+ * @return {Object}
+ */
+var mapGetters = normalizeNamespace(function (namespace, getters) {
+  var res = {};
+  if (( true) && !isValidMap(getters)) {
+    console.error('[vuex] mapGetters: mapper parameter must be either an Array or an Object');
+  }
+  normalizeMap(getters).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    // The namespace has been mutated by normalizeNamespace
+    val = namespace + val;
+    res[key] = function mappedGetter () {
+      if (namespace && !getModuleByNamespace(this.$store, 'mapGetters', namespace)) {
+        return
+      }
+      if (( true) && !(val in this.$store.getters)) {
+        console.error(("[vuex] unknown getter: " + val));
+        return
+      }
+      return this.$store.getters[val]
+    };
+    // mark vuex getter for devtools
+    res[key].vuex = true;
+  });
+  return res
+});
+
+/**
+ * Reduce the code which written in Vue.js for dispatch the action
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} actions # Object's item can be a function which accept `dispatch` function as the first param, it can accept anthor params. You can dispatch action and do any other things in this function. specially, You need to pass anthor params from the mapped function.
+ * @return {Object}
+ */
+var mapActions = normalizeNamespace(function (namespace, actions) {
+  var res = {};
+  if (( true) && !isValidMap(actions)) {
+    console.error('[vuex] mapActions: mapper parameter must be either an Array or an Object');
+  }
+  normalizeMap(actions).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    res[key] = function mappedAction () {
+      var args = [], len = arguments.length;
+      while ( len-- ) args[ len ] = arguments[ len ];
+
+      // get dispatch function from store
+      var dispatch = this.$store.dispatch;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapActions', namespace);
+        if (!module) {
+          return
+        }
+        dispatch = module.context.dispatch;
+      }
+      return typeof val === 'function'
+        ? val.apply(this, [dispatch].concat(args))
+        : dispatch.apply(this.$store, [val].concat(args))
+    };
+  });
+  return res
+});
+
+/**
+ * Rebinding namespace param for mapXXX function in special scoped, and return them by simple object
+ * @param {String} namespace
+ * @return {Object}
+ */
+var createNamespacedHelpers = function (namespace) { return ({
+  mapState: mapState.bind(null, namespace),
+  mapGetters: mapGetters.bind(null, namespace),
+  mapMutations: mapMutations.bind(null, namespace),
+  mapActions: mapActions.bind(null, namespace)
+}); };
+
+/**
+ * Normalize the map
+ * normalizeMap([1, 2, 3]) => [ { key: 1, val: 1 }, { key: 2, val: 2 }, { key: 3, val: 3 } ]
+ * normalizeMap({a: 1, b: 2, c: 3}) => [ { key: 'a', val: 1 }, { key: 'b', val: 2 }, { key: 'c', val: 3 } ]
+ * @param {Array|Object} map
+ * @return {Object}
+ */
+function normalizeMap (map) {
+  if (!isValidMap(map)) {
+    return []
+  }
+  return Array.isArray(map)
+    ? map.map(function (key) { return ({ key: key, val: key }); })
+    : Object.keys(map).map(function (key) { return ({ key: key, val: map[key] }); })
+}
+
+/**
+ * Validate whether given map is valid or not
+ * @param {*} map
+ * @return {Boolean}
+ */
+function isValidMap (map) {
+  return Array.isArray(map) || isObject(map)
+}
+
+/**
+ * Return a function expect two param contains namespace and map. it will normalize the namespace and then the param's function will handle the new namespace and the map.
+ * @param {Function} fn
+ * @return {Function}
+ */
+function normalizeNamespace (fn) {
+  return function (namespace, map) {
+    if (typeof namespace !== 'string') {
+      map = namespace;
+      namespace = '';
+    } else if (namespace.charAt(namespace.length - 1) !== '/') {
+      namespace += '/';
+    }
+    return fn(namespace, map)
+  }
+}
+
+/**
+ * Search a special module from store by namespace. if module not exist, print error message.
+ * @param {Object} store
+ * @param {String} helper
+ * @param {String} namespace
+ * @return {Object}
+ */
+function getModuleByNamespace (store, helper, namespace) {
+  var module = store._modulesNamespaceMap[namespace];
+  if (( true) && !module) {
+    console.error(("[vuex] module namespace not found in " + helper + "(): " + namespace));
+  }
+  return module
+}
+
+var index = {
+  Store: Store,
+  install: install,
+  version: '3.4.0',
+  mapState: mapState,
+  mapMutations: mapMutations,
+  mapGetters: mapGetters,
+  mapActions: mapActions,
+  createNamespacedHelpers: createNamespacedHelpers
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (index);
+
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 3)))
+
+/***/ }),
+
+/***/ 227:
+/*!***********************************************************************!*\
+  !*** /Users/wenjieliu/Desktop/兴业银行2021/bsxt/store/modules sync \.js$ ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./todos.js": 228
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 227;
+
+/***/ }),
+
+/***/ 228:
+/*!*********************************************************************!*\
+  !*** /Users/wenjieliu/Desktop/兴业银行2021/bsxt/store/modules/todos.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var state = {
+  "username": "lwj",
+  "age": 37,
+  todos: [{
+    id: 1,
+    text: '我是内容1',
+    done: true },
+
+  {
+    id: 2,
+    text: '我是内容2',
+    done: false }] };
+
+
+
+var mutations = {
+  changeName: function changeName(state, obj) {
+    state.username = obj.name;
+  } };
+
+
+var actions = {
+  changeNameAction: function changeNameAction(context, obj) {
+    context.commit('changeName', obj);
+  } };
+
+var getters = {
+  doneTodos: function doneTodos(state) {
+    //return state.todos.filter(todo => todo.done)
+    return state.todos;
+  },
+  doneTodosCount: function doneTodosCount(state, getters) {
+    return getters.doneTodos.length;
+  },
+  getTodoById: function getTodoById(state) {return function (id) {
+      return state.todos.find(function (todo) {return todo.id === id;});
+    };} };var _default =
+
+{
+  namespaced: true,
+  state: state,
+  mutations: mutations,
+  actions: actions,
+  getters: getters };exports.default = _default;
+
+/***/ }),
+
+/***/ 229:
+/*!***************************************************************!*\
+  !*** /Users/wenjieliu/Desktop/兴业银行2021/bsxt/store/getters.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var getters = {
+  doneTodos: function doneTodos(state) {
+    //return state.todos.filter(todo => todo.done)
+    return state.todos.todos;
+  },
+  doneTodosCount: function doneTodosCount(state, getters) {
+    return getters.doneTodos.length;
+  },
+  getTodoById: function getTodoById(state) {return function (id) {
+      return state.todos.find(function (todo) {return todo.id === id;});
+    };} };var _default =
+
+
+getters;exports.default = _default;
+
+/***/ }),
+
 /***/ 3:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -8078,17 +9908,6 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 39:
-/*!**********************************************************!*\
-  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! regenerator-runtime */ 40);
-
-/***/ }),
-
 /***/ 4:
 /*!*********************************************************!*\
   !*** /Users/wenjieliu/Desktop/兴业银行2021/bsxt/pages.json ***!
@@ -8100,7 +9919,18 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ 40);
 
 /***/ }),
 
-/***/ 40:
+/***/ 45:
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ 46);
+
+/***/ }),
+
+/***/ 46:
 /*!************************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
   \************************************************************/
@@ -8131,7 +9961,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ 41);
+module.exports = __webpack_require__(/*! ./runtime */ 47);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -8148,7 +9978,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 41:
+/***/ 47:
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
   \*****************************************************/
@@ -8877,531 +10707,6 @@ if (hadRuntime) {
   })() || Function("return this")()
 );
 
-
-/***/ }),
-
-/***/ 42:
-/*!*******************************************************!*\
-  !*** /Users/wenjieliu/Desktop/兴业银行2021/bsxt/utils.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(uni) {function _createForOfIteratorHelper(o, allowArrayLike) {var it;if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {if (it) o = it;var i = 0;var F = function F() {};return { s: F, n: function n() {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };}, e: function e(_e) {throw _e;}, f: F };}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var normalCompletion = true,didErr = false,err;return { s: function s() {it = o[Symbol.iterator]();}, n: function n() {var step = it.next();normalCompletion = step.done;return step;}, e: function e(_e2) {didErr = true;err = _e2;}, f: function f() {try {if (!normalCompletion && it.return != null) it.return();} finally {if (didErr) throw err;}} };}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;} /*
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * Digest Algorithm, as defined in RFC 1321.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * Version 2.1 Copyright (C) Paul Johnston 1999 - 2002.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * Distributed under the BSD License
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * See http://pajhome.org.uk/crypt/md5 for more info.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        */
-
-/*
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * Configurable variables. You may need to tweak these to be compatible with
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * the server-side, but the defaults work in most cases.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            */
-var mytest = '20210309';
-var hexcase = 0; /* hex output format. 0 - lowercase; 1 - uppercase        */
-var b64pad = ""; /* base-64 pad character. "=" for strict RFC compliance   */
-var chrsz = 8; /* bits per input character. 8 - ASCII; 16 - Unicode      */
-
-/*
-                                                                             * These are the functions you'll usually want to call
-                                                                             * They take string arguments and return either hex or base-64 encoded strings
-                                                                             */
-function hex_md5(s) {return binl2hex(core_md5(str2binl(s), s.length * chrsz));}
-function b64_md5(s) {return binl2b64(core_md5(str2binl(s), s.length * chrsz));}
-function str_md5(s) {return binl2str(core_md5(str2binl(s), s.length * chrsz));}
-function hex_hmac_md5(key, data) {return binl2hex(core_hmac_md5(key, data));}
-function b64_hmac_md5(key, data) {return binl2b64(core_hmac_md5(key, data));}
-function str_hmac_md5(key, data) {return binl2str(core_hmac_md5(key, data));}
-
-/*
-                                                                               * Perform a simple self-test to see if the VM is working
-                                                                               */
-function md5_vm_test()
-{
-  return hex_md5("abc") == "900150983cd24fb0d6963f7d28e17f72";
-}
-
-/*
-   * Calculate the MD5 of an array of little-endian words, and a bit length
-   */
-function core_md5(x, len)
-{
-  /* append padding */
-  x[len >> 5] |= 0x80 << len % 32;
-  x[(len + 64 >>> 9 << 4) + 14] = len;
-
-  var a = 1732584193;
-  var b = -271733879;
-  var c = -1732584194;
-  var d = 271733878;
-
-  for (var i = 0; i < x.length; i += 16)
-  {
-    var olda = a;
-    var oldb = b;
-    var oldc = c;
-    var oldd = d;
-
-    a = md5_ff(a, b, c, d, x[i + 0], 7, -680876936);
-    d = md5_ff(d, a, b, c, x[i + 1], 12, -389564586);
-    c = md5_ff(c, d, a, b, x[i + 2], 17, 606105819);
-    b = md5_ff(b, c, d, a, x[i + 3], 22, -1044525330);
-    a = md5_ff(a, b, c, d, x[i + 4], 7, -176418897);
-    d = md5_ff(d, a, b, c, x[i + 5], 12, 1200080426);
-    c = md5_ff(c, d, a, b, x[i + 6], 17, -1473231341);
-    b = md5_ff(b, c, d, a, x[i + 7], 22, -45705983);
-    a = md5_ff(a, b, c, d, x[i + 8], 7, 1770035416);
-    d = md5_ff(d, a, b, c, x[i + 9], 12, -1958414417);
-    c = md5_ff(c, d, a, b, x[i + 10], 17, -42063);
-    b = md5_ff(b, c, d, a, x[i + 11], 22, -1990404162);
-    a = md5_ff(a, b, c, d, x[i + 12], 7, 1804603682);
-    d = md5_ff(d, a, b, c, x[i + 13], 12, -40341101);
-    c = md5_ff(c, d, a, b, x[i + 14], 17, -1502002290);
-    b = md5_ff(b, c, d, a, x[i + 15], 22, 1236535329);
-
-    a = md5_gg(a, b, c, d, x[i + 1], 5, -165796510);
-    d = md5_gg(d, a, b, c, x[i + 6], 9, -1069501632);
-    c = md5_gg(c, d, a, b, x[i + 11], 14, 643717713);
-    b = md5_gg(b, c, d, a, x[i + 0], 20, -373897302);
-    a = md5_gg(a, b, c, d, x[i + 5], 5, -701558691);
-    d = md5_gg(d, a, b, c, x[i + 10], 9, 38016083);
-    c = md5_gg(c, d, a, b, x[i + 15], 14, -660478335);
-    b = md5_gg(b, c, d, a, x[i + 4], 20, -405537848);
-    a = md5_gg(a, b, c, d, x[i + 9], 5, 568446438);
-    d = md5_gg(d, a, b, c, x[i + 14], 9, -1019803690);
-    c = md5_gg(c, d, a, b, x[i + 3], 14, -187363961);
-    b = md5_gg(b, c, d, a, x[i + 8], 20, 1163531501);
-    a = md5_gg(a, b, c, d, x[i + 13], 5, -1444681467);
-    d = md5_gg(d, a, b, c, x[i + 2], 9, -51403784);
-    c = md5_gg(c, d, a, b, x[i + 7], 14, 1735328473);
-    b = md5_gg(b, c, d, a, x[i + 12], 20, -1926607734);
-
-    a = md5_hh(a, b, c, d, x[i + 5], 4, -378558);
-    d = md5_hh(d, a, b, c, x[i + 8], 11, -2022574463);
-    c = md5_hh(c, d, a, b, x[i + 11], 16, 1839030562);
-    b = md5_hh(b, c, d, a, x[i + 14], 23, -35309556);
-    a = md5_hh(a, b, c, d, x[i + 1], 4, -1530992060);
-    d = md5_hh(d, a, b, c, x[i + 4], 11, 1272893353);
-    c = md5_hh(c, d, a, b, x[i + 7], 16, -155497632);
-    b = md5_hh(b, c, d, a, x[i + 10], 23, -1094730640);
-    a = md5_hh(a, b, c, d, x[i + 13], 4, 681279174);
-    d = md5_hh(d, a, b, c, x[i + 0], 11, -358537222);
-    c = md5_hh(c, d, a, b, x[i + 3], 16, -722521979);
-    b = md5_hh(b, c, d, a, x[i + 6], 23, 76029189);
-    a = md5_hh(a, b, c, d, x[i + 9], 4, -640364487);
-    d = md5_hh(d, a, b, c, x[i + 12], 11, -421815835);
-    c = md5_hh(c, d, a, b, x[i + 15], 16, 530742520);
-    b = md5_hh(b, c, d, a, x[i + 2], 23, -995338651);
-
-    a = md5_ii(a, b, c, d, x[i + 0], 6, -198630844);
-    d = md5_ii(d, a, b, c, x[i + 7], 10, 1126891415);
-    c = md5_ii(c, d, a, b, x[i + 14], 15, -1416354905);
-    b = md5_ii(b, c, d, a, x[i + 5], 21, -57434055);
-    a = md5_ii(a, b, c, d, x[i + 12], 6, 1700485571);
-    d = md5_ii(d, a, b, c, x[i + 3], 10, -1894986606);
-    c = md5_ii(c, d, a, b, x[i + 10], 15, -1051523);
-    b = md5_ii(b, c, d, a, x[i + 1], 21, -2054922799);
-    a = md5_ii(a, b, c, d, x[i + 8], 6, 1873313359);
-    d = md5_ii(d, a, b, c, x[i + 15], 10, -30611744);
-    c = md5_ii(c, d, a, b, x[i + 6], 15, -1560198380);
-    b = md5_ii(b, c, d, a, x[i + 13], 21, 1309151649);
-    a = md5_ii(a, b, c, d, x[i + 4], 6, -145523070);
-    d = md5_ii(d, a, b, c, x[i + 11], 10, -1120210379);
-    c = md5_ii(c, d, a, b, x[i + 2], 15, 718787259);
-    b = md5_ii(b, c, d, a, x[i + 9], 21, -343485551);
-
-    a = safe_add(a, olda);
-    b = safe_add(b, oldb);
-    c = safe_add(c, oldc);
-    d = safe_add(d, oldd);
-  }
-  return Array(a, b, c, d);
-
-}
-
-/*
-   * These functions implement the four basic operations the algorithm uses.
-   */
-function md5_cmn(q, a, b, x, s, t)
-{
-  return safe_add(bit_rol(safe_add(safe_add(a, q), safe_add(x, t)), s), b);
-}
-function md5_ff(a, b, c, d, x, s, t)
-{
-  return md5_cmn(b & c | ~b & d, a, b, x, s, t);
-}
-function md5_gg(a, b, c, d, x, s, t)
-{
-  return md5_cmn(b & d | c & ~d, a, b, x, s, t);
-}
-function md5_hh(a, b, c, d, x, s, t)
-{
-  return md5_cmn(b ^ c ^ d, a, b, x, s, t);
-}
-function md5_ii(a, b, c, d, x, s, t)
-{
-  return md5_cmn(c ^ (b | ~d), a, b, x, s, t);
-}
-
-/*
-   * Calculate the HMAC-MD5, of a key and some data
-   */
-function core_hmac_md5(key, data)
-{
-  var bkey = str2binl(key);
-  if (bkey.length > 16) bkey = core_md5(bkey, key.length * chrsz);
-
-  var ipad = Array(16),opad = Array(16);
-  for (var i = 0; i < 16; i++)
-  {
-    ipad[i] = bkey[i] ^ 0x36363636;
-    opad[i] = bkey[i] ^ 0x5C5C5C5C;
-  }
-
-  var hash = core_md5(ipad.concat(str2binl(data)), 512 + data.length * chrsz);
-  return core_md5(opad.concat(hash), 512 + 128);
-}
-
-/*
-   * Add integers, wrapping at 2^32. This uses 16-bit operations internally
-   * to work around bugs in some JS interpreters.
-   */
-function safe_add(x, y)
-{
-  var lsw = (x & 0xFFFF) + (y & 0xFFFF);
-  var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
-  return msw << 16 | lsw & 0xFFFF;
-}
-
-/*
-   * Bitwise rotate a 32-bit number to the left.
-   */
-function bit_rol(num, cnt)
-{
-  return num << cnt | num >>> 32 - cnt;
-}
-
-/*
-   * Convert a string to an array of little-endian words
-   * If chrsz is ASCII, characters >255 have their hi-byte silently ignored.
-   */
-function str2binl(str)
-{
-  var bin = Array();
-  var mask = (1 << chrsz) - 1;
-  for (var i = 0; i < str.length * chrsz; i += chrsz) {
-    bin[i >> 5] |= (str.charCodeAt(i / chrsz) & mask) << i % 32;}
-  return bin;
-}
-
-/*
-   * Convert an array of little-endian words to a string
-   */
-function binl2str(bin)
-{
-  var str = "";
-  var mask = (1 << chrsz) - 1;
-  for (var i = 0; i < bin.length * 32; i += chrsz) {
-    str += String.fromCharCode(bin[i >> 5] >>> i % 32 & mask);}
-  return str;
-}
-
-/*
-   * Convert an array of little-endian words to a hex string.
-   */
-function binl2hex(binarray)
-{
-  var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
-  var str = "";
-  for (var i = 0; i < binarray.length * 4; i++)
-  {
-    str += hex_tab.charAt(binarray[i >> 2] >> i % 4 * 8 + 4 & 0xF) +
-    hex_tab.charAt(binarray[i >> 2] >> i % 4 * 8 & 0xF);
-  }
-  return str;
-}
-
-/*
-   * Convert an array of little-endian words to a base-64 string
-   */
-function binl2b64(binarray)
-{
-  var tab = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-  var str = "";
-  for (var i = 0; i < binarray.length * 4; i += 3)
-  {
-    var triplet = (binarray[i >> 2] >> 8 * (i % 4) & 0xFF) << 16 |
-    (binarray[i + 1 >> 2] >> 8 * ((i + 1) % 4) & 0xFF) << 8 |
-    binarray[i + 2 >> 2] >> 8 * ((i + 2) % 4) & 0xFF;
-    for (var j = 0; j < 4; j++)
-    {
-      if (i * 8 + j * 6 > binarray.length * 32) str += b64pad;else
-      str += tab.charAt(triplet >> 6 * (3 - j) & 0x3F);
-    }
-  }
-  return str;
-}
-var commRequest = function commRequest(trancode, data, succ) {
-  console.log(trancode + " send: " + JSON.stringify(data));
-  if (trancode != '6001') {
-    data.accessToken = uni.getStorageSync('accessToken');
-  }
-  uni.request({
-    url: 'http://www.sjyjr.net/sjyjf/app/' + trancode, //仅为示例，并非真实接口地址。
-    data: data,
-    method: 'POST',
-    dataType: 'application/json',
-    header: {
-      "Content-Type": "application/x-www-form-urlencoded" },
-
-    success: function success(res) {
-      console.log(trancode + " success:" + res.data);
-      succ(res);
-      //  this.text = 'request success';
-    },
-    complete: function complete(res) {
-
-    } });
-
-};
-
-var isEmpty = function isEmpty(obj) {
-  if (!obj || obj == 0 || obj == '' || obj == 'null' || obj == 'undefined') {
-    return true;
-  }
-
-  if (Array.prototype.isPrototypeOf(obj) && obj.length == 0) {
-    return true;
-  }
-
-  return false;
-};
-
-var get_time_str = function get_time_str(date1) {
-
-  var date2 = new Date(); //结束时间  
-  var date3 = date2.getTime() - new Date(date1.replace(/\-/g, '/')).getTime(); //时间差的毫秒数        
-
-  //------------------------------  
-
-  //计算出相差天数  
-  var days = Math.floor(date3 / (24 * 3600 * 1000));
-
-  //计算出小时数  
-
-  var leave1 = date3 % (24 * 3600 * 1000); //计算天数后剩余的毫秒数  
-  var hours = Math.floor(leave1 / (3600 * 1000));
-  //计算相差分钟数  
-  var leave2 = leave1 % (3600 * 1000); //计算小时数后剩余的毫秒数  
-  var minutes = Math.floor(leave2 / (60 * 1000));
-  //计算相差秒数  
-  var leave3 = leave2 % (60 * 1000); //计算分钟数后剩余的毫秒数  
-  var seconds = Math.round(leave3 / 1000);
-
-  if (days > 0) {
-    var arys1 = date1.substr(0, 10).split("-");
-    var ssdate = new Date(arys1[0], parseInt(arys1[1] - 1), arys1[2]);
-    var week1 = String(ssdate.getDay()).replace("0", "日").replace("1", "一").replace("2", "二").replace("3", "三").replace("4", "四").replace("5", "五").replace("6", "六"); //就是你要的星期几
-    var week = date1.substr(2, 8) + " 星期" + week1;
-    return week;
-  } else {
-    if (hours > 0) {
-      return hours + "小时前";
-    } else {
-      if (minutes > 0) {
-        return minutes + "分钟前";
-      } else {
-        return "刚才";
-      }
-    }
-  }
-};
-
-var getLoanName = function getLoanName(ids) {
-  var loanTypeTree = uni.getStorageSync('loanTypeTree');
-  for (var i = 0; i < loanTypeTree.length; i++) {
-    for (var j = 0; j < loanTypeTree[i].children.length; j++) {
-      if (ids == loanTypeTree[i].children[j].id) {
-        return loanTypeTree[i].children[j].label;
-      }
-    }
-  }
-};
-var getLoanClassid = function getLoanClassid(ids) {
-  console.log("ids=" + ids);
-  var loanTypeTree = uni.getStorageSync('loanTypeTree');
-  for (var i = 0; i < loanTypeTree.length; i++) {
-    for (var j = 0; j < loanTypeTree[i].children.length; j++) {
-      if (ids == loanTypeTree[i].children[j].id) {
-        return loanTypeTree[i].children[j].porgnId;
-      }
-    }
-  }
-};
-var twoJsonMerge = function twoJsonMerge(json1, json2) {
-  var length1 = 0,length2 = 0,jsonStr,str;
-
-  for (var ever in json1) {length1++;}
-  for (var ever in json2) {length2++;}
-
-  if (length1 && length2) str = ',';else
-  str = '';
-
-  jsonStr = (JSON.stringify(json1).replace(/,}/, '}') + JSON.stringify(json2).replace(/,}/, '}')).replace(/}{/, str);
-
-  return JSON.parse(jsonStr);
-};
-var getImgUrlList = function getImgUrlList(imgStr, fileno) {
-  var imgList = imgStr.split("|");
-  var resultList = [];
-  var imgPath = "http://www.sjyjr.net/static/";var _iterator = _createForOfIteratorHelper(
-  imgList),_step;try {for (_iterator.s(); !(_step = _iterator.n()).done;) {var item = _step.value;
-      item = imgPath + fileno + '/' + item;
-      console.log("item:" + item);
-      resultList.push(item);
-    }} catch (err) {_iterator.e(err);} finally {_iterator.f();}
-
-  return resultList;
-};
-
-var getImgType = function getImgType(index) {
-  var img_map = [
-  "imgMf",
-  "imgMfdlr",
-  "imgJkrTp",
-  "imgGtjkrTp",
-  "imgJkrDlrTp",
-  "imgJy",
-  "jkhtTp",
-  "imgFc",
-  "imgFcPg",
-  "imgCwyfTp",
-  "img_jjxx",
-  "imgJkrQtzc",
-  "clTp",
-  "dkTp",
-  "jyTp",
-  "qyTp"];
-
-  return img_map[index];
-};
-
-var getIdArrayIndex = function getIdArrayIndex(idType) {
-  var idTypeValue = ['E1', 'E2', 'I1', 'I2', 'I3', 'I4', 'I5', 'I6', 'I9', 'Ia', 'I8'];
-
-  for (var i = 0; i < idTypeValue.length; i++) {
-    if (idTypeValue[i] == idType) {
-      return i;
-    }
-  }
-  //默认就返回2
-  return 2;
-};
-
-var getNowTime = function getNowTime() {
-  var now = new Date();
-  var year = now.getFullYear();
-  var month = now.getMonth() + 1;
-  var day = now.getDate();
-  var hh = now.getHours();
-  var mm = now.getMinutes();
-  var ss = now.getSeconds();
-  var clock = year + "-";
-  if (month < 10)
-  clock += "0";
-  clock += month + "-";
-  if (day < 10)
-  clock += "0";
-  clock += day + " ";
-  if (hh < 10)
-  clock += "0";
-  clock += hh + ":";
-  if (mm < 10) clock += '0';
-  clock += mm + ":";
-  if (ss < 10) clock += '0';
-  clock += ss;
-  return clock;
-};
-/**
-    * 图片路径转成canvas
-    * @param {图片url} url
-    */
-function imgToCanvas(url) {
-  console.log("imgToCanvas:" + url);
-  // 创建img元素
-  var img = document.createElement("img");
-  img.src = url;
-  img.setAttribute("crossOrigin", "anonymous"); // 防止跨域引起的 Failed to execute 'toDataURL' on 'HTMLCanvasElement': Tainted canvases may not be exported.
-  new Promise(function (resolve) {return img.onload = resolve;});
-  // 创建canvas DOM元素，并设置其宽高和图片一样
-  var canvas = document.createElement("canvas");
-  canvas.width = img.width;
-  canvas.height = img.height;
-  // 坐标(0,0) 表示从此处开始绘制，相当于偏移。
-  canvas.getContext("2d").drawImage(img, 0, 0);
-  return canvas;
-}
-
-/**
-   * canvas添加水印
-   * @param {canvas对象} canvas
-   * @param {水印文字} text
-   */
-function addWatermark(canvas, text) {
-  console.log("addWatermark:" + JSON.stringify(canvas));
-  var ctx = canvas.getContext("2d");
-  ctx.fillStyle = "red";
-  ctx.textBaseline = "middle";
-  ctx.fillText(text, 20, 20);
-  return canvas;
-}
-
-/**
-   * canvas转成img
-   * @param {canvas对象} canvas
-   */
-function convasToImg(canvas) {
-  console.log("convasToImg:" + JSON.stringify(canvas));
-  // 新建Image对象，可以理解为DOM
-  var image = new Image();
-  //canvas.toDataURL 返回的是一串Base64编码的URL
-  //指定格式 PNG
-  image.src = canvas.toDataURL("image/png");
-  return image;
-  //return canvas.toDataURL("image/png");
-
-}
-
-// 运行示例
-var imgAddWater = function imgAddWater(water, imgurl) {
-  console.log("imgAddWater water:" + water + ";imgurl" + imgurl);
-  // 1.图片路径转成canvas
-  var tempCanvas = imgToCanvas(imgurl);
-  // 2.canvas添加水印
-  var canvas = addWatermark(tempCanvas, water);
-  //3.canvas转成img
-  var img = convasToImg(canvas);
-  // 查看效果
-  document.body.appendChild(img);
-  //return convasToImg(canvas);
-};
-module.exports = {
-  hex_md5: hex_md5,
-  commRequest: commRequest,
-  isEmpty: isEmpty,
-  get_time_str: get_time_str,
-  getLoanName: getLoanName,
-  getLoanClassid: getLoanClassid,
-  twoJsonMerge: twoJsonMerge,
-  getImgUrlList: getImgUrlList,
-  getImgType: getImgType,
-  getIdArrayIndex: getIdArrayIndex,
-  imgAddWater: imgAddWater,
-  getNowTime: getNowTime };
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 

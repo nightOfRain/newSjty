@@ -39,6 +39,7 @@
 </template>
 
 <script>
+	
 	export default {
 		data() {
 			return {
@@ -48,11 +49,40 @@
 		},
 		methods: {
 			NavChange: function(e) {
+				var _this = this;
 				console.log("NavChange:"+JSON.stringify(e));
 				if(e.currentTarget.dataset.cur == 'add'){
+					
+					//for test
 					uni.navigateTo({
-						url:'/pages/add/index'
+						url:'/pages/todos/index'
 					})
+					/*
+					if(_this.isLogin()){
+						uni.showActionSheet({
+						    itemList: ['管理部门', '经营机构'],
+						    success: function (res) {
+						        console.log('选中了第' + (res.tapIndex + 1) + '个按钮');
+								if(res.tapIndex == 2){
+									return;
+								}
+								var type = 1- res.tapIndex;
+								uni.navigateTo({
+									url:'/pages/add/index?type='+type
+								})
+							},
+						    fail: function (res) {
+						        console.log(res.errMsg);
+						    }
+						});
+					}else{
+						uni.navigateTo({
+							url:'/pages/login/index'
+						})
+					}
+					*/
+					
+					
 					//var userInfo = uni.getStorageSync("userInfo");
 					// if(userInfo.loginStat){
 					// 	uni.navigateTo({

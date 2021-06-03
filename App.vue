@@ -8,13 +8,16 @@
 					Vue.prototype.StatusBar = e.statusBarHeight;
 					if (e.platform == 'android') {
 						Vue.prototype.CustomBar = e.statusBarHeight + 50;
+						Vue.prototype.BodyMarginTop =  50;
 					} else {
 						Vue.prototype.CustomBar = e.statusBarHeight + 45;
+						Vue.prototype.BodyMarginTop =  45;
 					};
 					// #endif
 
 					// #ifdef MP-WEIXIN
 					Vue.prototype.StatusBar = e.statusBarHeight;
+					Vue.prototype.BodyMarginTop =  45;
 					let custom = wx.getMenuButtonBoundingClientRect();
 					Vue.prototype.Custom = custom;
 					Vue.prototype.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
@@ -23,7 +26,13 @@
 					// #ifdef MP-ALIPAY
 					Vue.prototype.StatusBar = e.statusBarHeight;
 					Vue.prototype.CustomBar = e.statusBarHeight + e.titleBarHeight;
+					Vue.prototype.BodyMarginTop =  45;
 					// #endif
+					
+					
+					Vue.prototype.bodyTop =  Vue.prototype.CustomBar;
+					Vue.prototype.windowHeight = e.screenHeight;
+					
 				}
 			})
 

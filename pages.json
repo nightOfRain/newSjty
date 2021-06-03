@@ -106,8 +106,20 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
+                "enablePullDownRefresh": false
             }
+            
+        },{
+            "path" : "pages/login/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        },{
+            "path" : "pages/todos/index",
+            "style" : {}
             
         }
     ],
@@ -121,6 +133,9 @@
 		"navigationBarTitleText": "ColorUi for UniApp",
 		"navigationStyle": "custom",
 		"navigationBarTextStyle": "white"
+	},
+	"permission": {
+		"scope.userInfo":"需要获取微信授权"
 	},
 	"usingComponts": true,
 		"condition": { //模式配置，仅开发期间生效

@@ -1,18 +1,18 @@
 <template>
 	<view>
-		<view class="header" v-bind:class="{'status':isH5Plus}">
+		<view class="header" v-bind:class="{'status':isH5Plus}" :style="'padding-top:'+bodyTop+'px'" >
 			<view class="userinfo" @click="userTap">
-				<view class="face"><image src="/static/images/me.png"></image></view>
+				<view class="face"><image :src="userinfo.avatarUrl"></image></view>
 				<view class="info">
-					<view class="username">张三</view>
-					<view class="integral">XX支行XX部门</view>
+					<view class="username">{{userinfo.nickName}}</view>
+					<view class="integral">{{userinfo.deptName}}</view>
 				</view>
 			</view>
-			<view class="setting" @click="userTap"><text class="cuIcon-settings text-white"></text></view>
+			<view class="setting" @click="userTap"><text class="cuIcon-settings text-white text-sl"></text></view>
 			
 		</view>
 
-		<view class="orders" v-if="loginStat">
+<!-- 		<view class="orders" v-if="loginStat">
 			<view class="box">
 				<view class="cu-list grid" :class="['col-' + gridCol,gridBorder?'':'no-border']" style="width: 100%;height:100%;border-radius:24upx;">
 					<view class="cu-item"   v-for="(item,index) in cuIconList" :key="item.name" >
@@ -27,16 +27,16 @@
 					</view>
 				</view>
 			</view>
-		</view>
+		</view> -->
 	
-		<view class="list" v-for="(list,list_i) in severList" :key="list_i" v-if="loginStat">
+	<!-- 	<view class="list margin-top" v-for="(list,list_i) in severList" :key="list_i" v-if="loginStat">
 			<view class="li" v-for="(li,li_i) in list" @tap="toPage(list_i,li_i)" v-bind:class="{'noborder':li_i==list.length-1}"  hover-class="hover" :key="li.name" >
-				<!-- <view class="icon"><image :src="'../../static/sever/'+li.icon"></image></view> -->
+				
 				<view><text :class="['cuIcon-' + li.icon,'text-' + li.color]" style="font-size: 40upx;"></text></view>
 				<view class="text">{{li.name}}</view>
 				<image class="to" src="/static/images/to.png"></image>
 			</view>
-		</view>
+		</view> -->
 		<view class="padding flex flex-direction margin-bottom-xl" @click="quitApp()" v-if="loginStat">
 			<button class="cu-btn bg-red margin-tb-sm lg">退出</button>
 		</view>
@@ -52,6 +52,7 @@
 </template>
 <script>
 	import utils from '../../utils.js'
+	import Vue from 'vue'
 	export default {
 		data() {
 			return {
@@ -62,7 +63,7 @@
 				isH5Plus:false,
 				//#endif
 				userinfo:{},
-				loginStat:true,
+				loginStat:false,
 				cuIconList: [{
 					cuIcon: 'cardboardfill',
 					color: 'red',
@@ -100,8 +101,8 @@
 				severList:[
 					[
 						{name:'修改密码',icon:'global',color: 'olive',url:'/pages/map/index'},
-						{name:'我的问题',icon:'qrcode',color: 'olive',url:'/pages/plugin/tki-qrcode'},
-						{name:'我的项目',icon:'pic',color: 'olive',url:'/pages/plugin/canvas'},
+					//	{name:'我的问题',icon:'qrcode',color: 'olive',url:'/pages/plugin/tki-qrcode'},
+					//	{name:'我的项目',icon:'pic',color: 'olive',url:'/pages/plugin/canvas'},
 						//{name:'我的视频',icon:'renw.png',url:'/pages/plugin/myVideo'},
 					],
 					[
@@ -118,16 +119,31 @@
 				],
 				gridCol: 4,
 				gridBorder: false,
+				bodyTop:0
 			};
 		},
 		mounted() {
-			var userInfo = uni.getStorageSync("userInfo");
+			var userInfo_wx = uni.getStorageSync("userInfo_wx");
 			var _this = this;
+			
+			
+			console.log("me mounted:"+JSON.stringify(userInfo_wx))
+			_this.userinfo.nickName = userInfo_wx.nickName;
+			_this.userinfo.avatarUrl = userInfo_wx.avatarUrl;
+			_this.userinfo.deptName = "分行营业部";
 			// _this.loginStat = userInfo.loginStat;
 			// //加载
 			// this.init();
 			// //页面间通讯监听
 			// uni.$on('update', this.updated);
+			this.bodyTop =  Vue.prototype.bodyTop;
+			
+			//如果状态为登录则获取数据
+			if(this.isLogin()){
+				this.loginStat = true
+			}else{
+				this.loginStat = false
+			}
 		},
 		methods: {
 			init() {
@@ -163,7 +179,7 @@
 				var userInfo = uni.getStorageSync("userInfo");
 				userInfo.loginStat = false;
 				userInfo.accessToken = '';
-				userInfo.sysUserDetailRelate = ''
+				
 				uni.setStorage({
 					key: 'userInfo',
 					data: userInfo,
@@ -179,8 +195,9 @@
 				_this.loginStat = userInfo.loginStat;
 			},
 			loginApp:function(e){
+				console.log("loginApp :"+JSON.stringify(e));
 				uni.navigateTo({
-					url:'/pages/login/login'
+					url:'/pages/login/index'
 				})
 			},
 			userTap:function(){
@@ -196,7 +213,7 @@
 page{background-color:#fff}
 .header{
 	&.status{padding-top:var(--status-bar-height);}
-	background-color:#0081ff;width:100%;height:30vw;padding:0 4%;display:flex;align-items:center;
+	background-color:#0081ff;width:100%;height:40vw;padding:0 4%;display:flex;align-items:center;
 	.userinfo{
 		width:100%;display:flex;
 		.face{flex-shrink:0;width:15vw;height:15vw;

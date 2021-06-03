@@ -3289,6 +3289,10 @@ scroll-view.cu-steps .cu-item {
 	background-color: #ffffff;
 	color: #666666;
 }
+.bg-littleblue{
+	background-color: #99CCFF;
+	color:#ffffff;
+}
 .bg-shadeTop {
 	background-image: -webkit-linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.01));
 	background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.01));
@@ -3564,6 +3568,9 @@ scroll-view.cu-steps .cu-item {
 }
 .text-right {
 	text-align: right;
+}
+.text-underline {
+	text-decoration: underline;
 }
 .text-red,
 .line-red,

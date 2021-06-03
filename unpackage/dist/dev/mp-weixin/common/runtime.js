@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"common/main":1,"pages/home/home":1,"pages/me/home":1,"pages/zhlb/index":1};
+/******/ 		var cssChunks = {"pages/home/home":1,"pages/me/home":1,"pages/zhlb/index":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"colorui/components/cu-custom":"colorui/components/cu-custom","common/main":"common/main","pages/home/home":"pages/home/home","pages/me/home":"pages/me/home","pages/zhlb/index":"pages/zhlb/index"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"colorui/components/cu-custom":"colorui/components/cu-custom","pages/home/home":"pages/home/home","pages/me/home":"pages/me/home","pages/zhlb/index":"pages/zhlb/index"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

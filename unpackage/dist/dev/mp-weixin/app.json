@@ -19,7 +19,9 @@
     "pages/me/userCenter",
     "pages/me/calculator",
     "pages/add/index",
-    "pages/undo/home"
+    "pages/undo/home",
+    "pages/login/index",
+    "pages/todos/index"
   ],
   "subPackages": [],
   "window": {
@@ -28,6 +30,7 @@
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
   },
+  "permission": {},
   "usingComponents": {
     "home": "/pages/home/home",
     "undo": "/pages/zhlb/index",

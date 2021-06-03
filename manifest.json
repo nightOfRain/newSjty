@@ -132,7 +132,8 @@
         "setting" : {
             "urlCheck" : false,
             "es6" : true
-        }
+        },
+        "permission" : {}
     },
     "h5" : {
         "title" : "ColorUi for UniApp",

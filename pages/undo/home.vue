@@ -1,22 +1,13 @@
 
 <template>
 	<view>
-		<view class="padding flex flex-direction margin-top-xl" v-if="!loginStat" @click="loginApp">
+		<view class="padding flex flex-direction margin-top-xl" :style="'margin-top:'+bodyMarginTop+'px'" v-if="!loginStat" @click="loginApp">
 			<button class="cu-btn bg-grey lg">请先登录</button>
 		</view>
-<!-- 		<view class="cu-bar search bg-white fixed"   style="padding-top:40upx;height:128upx;" v-if="loginStat">
-			<view class="search-form round">
-				<text class="cuIcon-search"></text>
-				<input @focus="InputFocus" @blur="InputBlur" :adjust-position="false" type="text" placeholder="搜索图片、文章、视频" style="text-align:left;line-height:16px;" confirm-type="search"></input>
-			</view>
-			<view class="action">
-				<button class="cu-btn bg-green shadow-blur round">搜索</button>
-			</view>
-		</view> -->
 		<cu-custom bgColor="bg-gradual-blue" :isBack="false">
 			<block slot="content">待办事项</block>
 		</cu-custom>
-		<scroll-view scroll-x class="bg-white nav fixed" style="top:64px" v-if="loginStat">
+		<scroll-view scroll-x class="bg-white nav fixed" :style="'margin-top:'+bodyTop+'px'" v-if="loginStat">
 			<view class="flex text-center">
 				<view class="cu-item flex-sub" :class="index==TabCur?'text-orange cur':''" v-for="(item,index) in 4" :key="index" @tap="tabSelect" :data-id="index">
 					<!-- <view class="cu-tag badge" v-if="undos[index]!=0">
@@ -28,12 +19,12 @@
 		</scroll-view>
 		
 
-		<view class="cu-card dynamic no-card" style="margin-top:88upx;padding-bottom:216upx;" v-if="loginStat">
+		<view class="cu-card dynamic no-card" style="padding-bottom:216upx;" :style="'margin-top:'+bodyMarginTop+'px'"  v-if="loginStat">
 			<view class="cu-item shadow">
-				<view class="cu-list menu-avatar comment solids-top bg-gray">
-					<view class="cu-item" :class="index == 0?'':'margin-top'"  v-for="(item,index) in undoList" :key="index" :data-index="index"  @click="doBySlef" :data-item="item.fileNo">
-						<view class="cu-avatar round" :style="'background-image:url(../../static/images/icon'+(index+1)+'.png);'"></view>
-						<view class="content">
+				<view class="cu-list menu-avatar comment  bg-gray">
+					<view class="cu-item" :class="index == 0?'':'margin-top'"  v-for="(item,index) in undoList" :key="index" >
+						<view class="cu-avatar round" :style="'background-image:url(https://7869-xiyutool-5op3h-1300784412.tcb.qcloud.la/icon/icon'+((index+1)%4+1)+'.png);'"></view>
+						<view class="content" :data-index="index"  @click="doBySlef" :data-item="item.fileNo">
 							<view class="flex justify-between">
 								<text class="text-grey">{{item.jbr}}-{{item.deptName}}</text>
 								<text class="text-grey text-xs">{{doneTimeStr(item.dynamicTime)}}</text>
@@ -86,6 +77,7 @@
 
 <script>
 	import utils from '../../utils.js'; 
+	import Vue from 'vue'
 	export default {
 		data() {
 			return {
@@ -95,37 +87,49 @@
 				currPage : [0,0,0,0],
 				isZhongjie:false,
 				loginUserId:'',
-				loginStat:true,
+				loginStat:false,
 				TabCur:0,
 				Tab:['我发起','我经办','处理中','已完成'],
-				showMore:[false, false, false, false]
+				showMore:[false, false, false, false],
+				bodyTop:0,
+				bodyMarginTop:0
 			};
 		},
 		mounted(){
 			var _this = this;
-			// var userInfo = uni.getStorageSync("userInfo");
-			// _this.loginStat = userInfo.loginStat;
-			// _this.loginUserId = userInfo.userId;
+			var userInfo = uni.getStorageSync("userInfo");
+			_this.loginStat = userInfo.loginStat;
+			_this.loginUserId = userInfo.userId;
 			
-			// if(_this.loginStat){
-			// 	this.refreshData();
-			// }
+			if(_this.loginStat){
+				this.getData();
+			}
+			this.bodyTop = Vue.prototype.bodyTop;
+			this.bodyMarginTop = Vue.prototype.BodyMarginTop;
+			console.log("mounted：BODYHeight:"+Vue.prototype.bodyTop);
+		
 			// //页面间通讯监听
 			uni.$on('update', this.updated);
-			this.getData();
-			uni.startPullDownRefresh();
+			
+			//uni.startPullDownRefresh();
 		},
-		onPullDownRefresh() {
-			console.log('refresh');
-			this.currPage[this.TabCur] = 0;
-			this.getData();
-			setTimeout(function () {
-				uni.stopPullDownRefresh();
-			}, 1000);
-		},
+		// onPullDownRefresh() {
+		// 	console.log('refresh');
+		// 	this.currPage[this.TabCur] = 0;
+		// 	this.getData();
+		// 	setTimeout(function () {
+		// 		uni.stopPullDownRefresh();
+		// 	}, 1000);
+		// },
 		methods: {
 			updated:function(e){
-				this.getData();
+				
+				var userInfo = uni.getStorageSync("userInfo");
+				this.loginStat = userInfo.loginStat;
+				//如果状态为登录则获取数据
+				if(this.loginStat){
+					this.getData();
+				}
 			},
 			InputFocus(e) {
 				this.InputBottom = e.detail.height
@@ -169,13 +173,16 @@
 			getData(){
 				var _this = this; 
 				var data = {};
-				data.userId = _this.userId;
+				data.userId = _this.loginUserId;
 				data.flag = this.TabCur;
-				data.pages = this.currPage[this.TabCur]++;
-				data.number = 20;
-				     
-				console.log("currPage:"+JSON.stringify(this.currPage));
-				this.commRequest('/app/getUndoList',data,function(res){
+				const pages = this.currPage[this.TabCur]++;
+				
+				data.type = 0;
+				
+				
+				const url = '/wei/getUndoList?pageNum='+pages+'&pageSize=20'    
+				
+				this.commRequest(url,data,function(res){
 					console.log("res: " + JSON.stringify(res));
 					if(_this.currPage[_this.TabCur] == 1){
 						_this.undoList = res.list;
@@ -207,7 +214,7 @@
 			},
 			loginApp:function(e){
 				uni.navigateTo({
-					url:'/pages/login/login'
+					url:'/pages/login/index'
 				})
 			}
 			

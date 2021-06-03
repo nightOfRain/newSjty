@@ -13,9 +13,8 @@
 		<view class="padding bg-white text-left">
 			<view class="">问题编号：{{fileNo}}</view>
 			<view class="">发起时间：{{createDate}}</view>
-			<view class="">发 起 人 ：{{name}}</view>
-			<view class="">所属支行：{{bankName}}</view>
-			<view class="">所属部门：{{dept}}</view>
+			<view class="">发 起 人 ：{{fqr}}</view>
+			<view class="">所属部门：{{deptName}}</view>
 			<view class="">问题标题：{{title}}</view>
 			<view class="">具体描述：{{note}}</view>
 		
@@ -27,9 +26,9 @@
 				<text class="cuIcon-title text-orange"></text>当前进度
 			</view>
 		</view>
-		<scroll-view scroll-x class="bg-white padding response cu-steps steps-bottom"  :scroll-into-view="'scroll-' + scroll"
+		<scroll-view scroll-x class="bg-white padding response cu-steps steps-bottom"  :scroll-into-view="'scroll-' + stat"
 		 scroll-with-animation>
-			<view class="cu-item padding-lr-xl" :class="index<(currentPoint-1)?'text-blue':''" v-for="(item,index) in fileFlow" :key="index" :id="'scroll-' + index">
+			<view class="cu-item padding-lr-xl" :class="index<(stat+1)?'text-blue':''" v-for="(item,index) in fileFlow" :key="index" :id="'scroll-' + index">
 				{{item}} <text class="num" :data-index="index + 1"></text>
 			</view>
 		</scroll-view>
@@ -52,8 +51,7 @@
 					</view>
 				</view>
 				<view class="content" :class="index==0?'bg-brown':'bg-cyan'"   :data-flowno="item.flowNo" :data-vno="item.versionNo">
-					<view class="">经办人：{{item.userName}}<text class="fr text-white" ></text></view>
-					<view class="">联系方式：{{item.tel}}</view>
+					<view class="">经办人：{{item.jbr}}<text class="fr text-white" ></text></view>
 					<view class="" v-if="item.flowNote!=''">备注：{{item.flowNote}}</view>
 					<view class="" v-if="index != 0">开始时间：{{item.beginTime}}</view>
 					<view class="" v-if="index == 0">完成时间：{{item.endTime==''?'处理中。。。':item.endTime}}</view>
@@ -75,6 +73,7 @@
 				dept:'',
 				title:'',
 				note:'',
+				stat:0,
 				fileFlow:['发起', '处理中','完成'],
 				list:[],
 	
@@ -83,10 +82,10 @@
 		},
 		onLoad(options){
 			var _this = this;
-			console.log("options.item:"+JSON.stringify(options));
+			console.log("options:"+JSON.stringify(options));
 			var data = {};
 			data.fileNo = options.fileNo;
-			
+			data.type = options.type;
 			     
 			console.log("currPage:"+JSON.stringify(this.currPage));
 			this.commRequest('/app/getFileInfo',data,function(res){
@@ -98,7 +97,7 @@
 				_this.dept = res.dept;	
 				_this.title = res.title;	
 				_this.note = res.note;
-				_this.flow = res.flow;	
+				_this.stat = res.stat;	
 
 				_this.list = res.list;
 
